@@ -1,0 +1,316 @@
+<style>
+    :root {
+      --announcement-bar-is-sticky: {% if section.settings.enable_sticky %}1{% else %}0{% endif %};
+    }
+
+    {% if section.settings.enable_sticky %}
+    #shopify-section-{{ section.id }} {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+    {% endif %}
+
+    #shopify-section-{{ section.id }} {
+      --announcement-bar-font-size: {{ section.settings.mobile_font_size | divided_by: 16.0 }}rem;
+    }
+
+    @media (min-width: 999px) {
+      #shopify-section-{{ section.id }} {
+        --announcement-bar-font-size: {{ section.settings.desktop_font_size | divided_by: 16.0 }}rem;
+      }
+    }
+    p.prose {
+      font-family: var(--heading-body-family);
+  }
+    .announcement-timer {
+      display: inline-flex;
+      gap: 6px;
+      margin-left: 10px;
+    }
+
+    .announcement-timer__box {
+      padding: 2px 6px;
+      font-size: 14px;
+      font-weight: 600;
+      background: rgba(0,0,0,.15);
+    }
+
+    /* hide only the timer block */
+    .clock-hidden {
+      display: none !important;
+    }
+
+    /* Same-day delivery timer styles */
+    .same-day-timer {
+      display: inline-flex;
+      gap: 6px;
+      margin-left: 10px;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 0.98em;
+      font-weight: 600;
+      vertical-align: middle;
+      line-height: 1.2;
+    }
+    .same-day-timer__box {
+      min-width: 22px;
+      display: inline-block;
+      text-align: center;
+      font-variant-numeric: tabular-nums;
+    }
+    @media (max-width: 600px) {
+      [data-countdown-block] {
+        font-size: 0.95rem;
+      }
+    }
+</style>
+<height-observer variable="announcement-bar">
+  <div class="announcement-bar color-scheme color-scheme--{{ section.settings.color_scheme.id }}">
+    {% assign carousel_id = 'carousel-' | append: section.id %}
+    <announcement-bar-carousel
+      allow-swipe
+      {% if section.settings.autoplay %}
+        autoplay="{{ section.settings.cycle_speed }}"
+      {% endif %}
+      id="{{ carousel_id }}"
+      class="announcement-bar__carousel"
+    >
+      {% for block in section.blocks %}
+        {% if block.type == 'message' %}
+          <p
+            class="prose heading announcement-block {% if forloop.first %}is-selected{% endif %}"
+            {{ block.shopify_attributes }}
+          >
+            {% if block.settings.icon != blank %}
+              <img
+                src="{{ block.settings.icon | image_url: width: 20 }}"
+                alt=""
+                width="20"
+                height="20"
+                loading="lazy"
+                style="display: inline-block; vertical-align: middle; margin-right: 8px;"
+              >
+            {% endif %}
+            {{ block.settings.text }}
+          </p>
+        {% elsif block.type == 'message_with_timer' %}
+          <p
+            class="prose heading announcement-block {% if forloop.first %}is-selected{% endif %}"
+            data-countdown-block
+            {{ block.shopify_attributes }}
+          >
+            {% if block.settings.icon != blank %}
+              <img
+                src="{{ block.settings.icon | image_url: width: 20 }}"
+                alt=""
+                width="20"
+                height="20"
+                loading="lazy"
+                style="display: inline-block; vertical-align: middle; margin-right: 8px;"
+              >
+            {% endif %}
+            <span class="same-day-text">
+              {{ block.settings.text }}
+              <span class="same-day-timer">
+                <span class="same-day-timer__box" id="sameday-hour">00</span> :
+                <span class="same-day-timer__box" id="sameday-min">00</span> :
+                <span class="same-day-timer__box" id="sameday-sec">00</span>
+              </span>
+              {% comment %} PST {% endcomment %}
+            </span>
+          </p>
+        {% endif %}
+      {% endfor %}
+    </announcement-bar-carousel>
+  </div>
+</height-observer>
+
+<script>
+  (function () {
+    // Window in PST
+    const START_HOUR = 8;
+    const END_HOUR = 13; // 1 PM, 24hr
+
+    // TEST MODE: Set to true to test with your local timezone
+    // Or add ?testTimer=true to the URL to enable test mode
+    const TEST_MODE = new URLSearchParams(window.location.search).get('testTimer') === 'true' || false;
+
+    // TEST MODE: Override time window for testing (set to your current hour +/- a few hours)
+    // Example: If it's 2 PM your time, set TEST_START_HOUR to 13 and TEST_END_HOUR to 18
+    const TEST_START_HOUR = 13; // Adjust this to test
+    const TEST_END_HOUR = 19; // Adjust this to test
+
+    function getPSTNow() {
+      if (TEST_MODE) {
+        // In test mode, use local timezone
+        return new Date();
+      }
+      // Always get date in America/Los_Angeles
+      const now = new Date();
+      const pstString = now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' });
+      return new Date(pstString);
+    }
+
+    // Store reference to the announcement block and its position
+    let storedAnnouncementBlock = null;
+    let storedParent = null;
+    let storedNextSibling = null;
+
+    function updateSameDayBar() {
+      const now = getPSTNow();
+
+      // Use test hours if in test mode, otherwise use production hours
+      const startHour = TEST_MODE ? TEST_START_HOUR : START_HOUR;
+      const endHour = TEST_MODE ? TEST_END_HOUR : END_HOUR;
+
+      // Construct "today" at start and end hours
+      let start = new Date(now);
+      start.setHours(startHour, 0, 0, 0);
+      let end = new Date(now);
+      end.setHours(endHour, 0, 0, 0);
+
+      // Find the announcement block (the <p> element with data-countdown-block)
+      let announcementBlock = document.querySelector('[data-countdown-block]');
+
+      if (now < start || now >= end) {
+        // Before window opens or after cutoff: remove the entire announcement block
+        if (announcementBlock) {
+          // Store the element and its position before removing (only if not already stored)
+          if (!storedAnnouncementBlock) {
+            storedAnnouncementBlock = announcementBlock;
+            storedParent = announcementBlock.parentNode;
+            storedNextSibling = announcementBlock.nextSibling;
+          }
+          announcementBlock.remove();
+        }
+        return;
+      }
+
+      // In window: restore the announcement block if it was removed
+      if (!announcementBlock && storedAnnouncementBlock && storedParent) {
+        if (storedNextSibling && storedNextSibling.parentNode) {
+          storedParent.insertBefore(storedAnnouncementBlock, storedNextSibling);
+        } else {
+          storedParent.appendChild(storedAnnouncementBlock);
+        }
+        announcementBlock = storedAnnouncementBlock;
+      }
+
+      if (!announcementBlock) return;
+
+      // Calculate remaining time until cutoff
+      let diff = end - now;
+      if (diff < 0) diff = 0;
+      let hours = Math.floor(diff / 3600000);
+      let mins = Math.floor((diff % 3600000) / 60000);
+      let secs = Math.floor((diff % 60000) / 1000);
+
+      const hourEl = document.getElementById('sameday-hour');
+      const minEl = document.getElementById('sameday-min');
+      const secEl = document.getElementById('sameday-sec');
+
+      if (hourEl) hourEl.textContent = String(hours).padStart(2, '0');
+      if (minEl) minEl.textContent = String(mins).padStart(2, '0');
+      if (secEl) secEl.textContent = String(secs).padStart(2, '0');
+    }
+    updateSameDayBar();
+    setInterval(updateSameDayBar, 1000);
+  })();
+</script>
+{% schema %}
+{
+  "name": "Timer bar",
+  "tag": "aside",
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "Free shipping on all orders"
+        }
+      ]
+    },
+    {
+      "type": "message_with_timer",
+      "name": "Message with countdown",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "Offer ends in"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-3"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky",
+      "label": "Enable sticky bar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto rotate",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "cycle_speed",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "unit": "sec",
+      "label": "Rotation speed",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "desktop_font_size",
+      "min": 9,
+      "max": 15,
+      "unit": "px",
+      "label": "Desktop text size",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "mobile_font_size",
+      "min": 9,
+      "max": 15,
+      "unit": "px",
+      "label": "Mobile text size",
+      "default": 10
+    }
+  ],
+  "presets": [
+    {
+      "name": "Timer bar"
+    }
+  ]
+}
+{% endschema %}

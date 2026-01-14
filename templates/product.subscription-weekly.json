@@ -47,36 +47,6 @@
             "liquid": "{% if product.selling_plan_groups.size > 0 %}\n<p class=\"pdp_heading\">Purchase Options:</p>\n{% endif %}"
           }
         },
-        "subscription_plus_subscription_plus_Ty9nJH": {
-          "type": "shopify://apps/subscription-plus/blocks/subscription-plus/79c17119-154e-465c-8480-a7e0399512ff",
-          "settings": {
-            "advance_widget": true,
-            "default_option": "subscription",
-            "template": "modern",
-            "text_color": "#000000",
-            "branding_color": "#efefef",
-            "terms_page_link": "",
-            "one_time_translation": "One time purchase",
-            "widget_type": "widget_6",
-            "show_term_checkbox": false,
-            "subscription_policy_text": "You’re subscribing to receive this item multiple times, on a recurring basis (according to the frequency you select) with a discount on every recurring order. You may cancel or change your subscription at any time.",
-            "enable_benifits": true,
-            "tooltip_text": "You can edit, skip, cancel and reschedule the subscription at any time.",
-            "enable_shadow": true,
-            "delivery_text": "Select Delivery Frequency",
-            "selected_text_color": "#000000",
-            "hover_text_color": "",
-            "radio_color": "",
-            "bg_color_selected": "",
-            "discount_bg": "#efefef",
-            "discount_text_color": "",
-            "border_color": "",
-            "default_font": true,
-            "fonts": "helvetica_n4",
-            "font_size_heading": 13,
-            "font_size_price": 16
-          }
-        },
         "inventory_AaCHna": {
           "type": "inventory",
           "disabled": true,
@@ -149,7 +119,6 @@
         "price",
         "variant_picker",
         "liquid_NPCCBW",
-        "subscription_plus_subscription_plus_Ty9nJH",
         "inventory_AaCHna",
         "buy_buttons",
         "link_text_nTaKnr",
