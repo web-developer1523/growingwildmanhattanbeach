@@ -1,0 +1,314 @@
+{% schema %}
+{
+  "name": "Service Arch Grid (Slope)",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#6B7051"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Line & Border Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Main Heading",
+      "default": "Flowers for Every Kind of\nCelebration"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service Card",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Service Title",
+          "default": "Wedding Florals"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Romantic bouquets, ceremony florals, and reception styling for your big day."
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Service Arch Grid (Slope)",
+      "blocks": [
+        {
+          "type": "service",
+          "settings": {
+            "title": "Wedding Florals",
+            "description": "Romantic bouquets, ceremony florals, and reception styling for your big day."
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "title": "Party Events",
+            "description": "Statement arrangements and décor to elevate birthdays, showers, and celebrations."
+          }
+        },
+        {
+          "type": "service",
+          "settings": {
+            "title": "Full Setup",
+            "description": "We handle delivery, installation, and teardown so your event feels effortless."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400&display=swap');
+
+  .sag-section {
+    background-color: {{ section.settings.bg_color }};
+    padding: 80px 20px;
+    font-family: 'Larken', sans-serif;
+    color: {{ section.settings.text_color }};
+  }
+
+  .sag-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Main Heading */
+  .sag-main-title {
+    text-align: center;
+    font-family: 'Larken', serif;
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 60px;
+    white-space: pre-line;
+  }
+
+  /* Grid Layout */
+  .sag-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap; 
+    align-items: flex-start; /* Important for the slope effect */
+  }
+
+  .sag-card {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    /* cursor: pointer; removed global pointer, applied only to links via tag */
+    transition: transform 0.3s ease;
+  }
+
+  /* Only show pointer cursor if it's an anchor tag */
+  a.sag-card {
+    cursor: pointer;
+  }
+
+  /* 
+     THE SLOPE EFFECT 
+     Only applies on desktop screens (wider than 990px)
+  */
+  @media (min-width: 990px) {
+    /* The 2nd card is pushed down 80px */
+    .sag-card:nth-child(2) {
+      margin-top: 80px; 
+    }
+    /* The 3rd card is pushed down 160px */
+    .sag-card:nth-child(3) {
+      margin-top: 160px; 
+    }
+  }
+
+  /* Arch Image Styling */
+  .sag-img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1.15; 
+    margin-bottom: 30px;
+    padding: 8px; 
+  }
+
+  /* The Thin White Outline */
+  .sag-img-border {
+    position: absolute;
+    inset: 0;
+    border: 1px solid {{ section.settings.border_color }};
+    border-radius: 200px 200px 0 0; 
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+
+  /* The Image Itself */
+  .sag-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 190px 190px 0 0; 
+    display: block;
+    background-color: rgba(0,0,0,0.1);
+  }
+
+  /* Text Content */
+  .sag-card-title {
+    font-family: 'Larken', serif;
+    font-size: 32px;
+    font-weight: 500;
+    margin: 0 0 15px 0;
+  }
+
+  .sag-card-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0 0 40px 0;
+    opacity: 0.9;
+    flex-grow: 1; 
+    font-weight: 300;
+  }
+
+  /* Footer Line & Arrow */
+  .sag-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    border-bottom: 1px solid {{ section.settings.border_color }};
+    padding-bottom: 10px;
+    position: relative;
+  }
+  
+  .sag-footer::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: {{ section.settings.border_color }};
+    opacity: 0.4;
+  }
+
+  .sag-arrow {
+    width: 30px;
+    height: 20px;
+    fill: {{ section.settings.border_color }};
+    transition: transform 0.3s ease;
+  }
+
+  /* Hover Effects - Only apply hover effects if it's a link */
+  a.sag-card:hover .sag-arrow {
+    transform: translateX(5px);
+  }
+  
+  a.sag-card:hover .sag-img-border {
+    opacity: 1;
+    border-width: 1.5px;
+  }
+
+  /* Mobile */
+  @media (max-width: 989px) {
+    .sag-main-title {
+      font-size: 36px;
+    }
+    .sag-grid {
+      flex-direction: column;
+      gap: 60px;
+    }
+    .sag-img-wrapper {
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+  }
+{% endstyle %}
+
+<div class="sag-section">
+  <div class="sag-container">
+    
+    <h2 class="sag-main-title">{{ section.settings.title }}</h2>
+
+    <div class="sag-grid">
+      {% for block in section.blocks %}
+        
+        <!-- Logic to switch between A tag and DIV tag -->
+        {% if block.settings.link != blank %}
+          <a href="{{ block.settings.link }}" class="sag-card" {{ block.shopify_attributes }}>
+        {% else %}
+          <div class="sag-card" {{ block.shopify_attributes }}>
+        {% endif %}
+          
+          <!-- Arch Image Area -->
+          <div class="sag-img-wrapper">
+            <div class="sag-img-border"></div>
+            {% if block.settings.image %}
+              {{ block.settings.image | image_url: width: 1200 | image_tag: class: 'sag-img', loading: 'lazy' }}
+            {% else %}
+              {{ 'collection-' | append: forloop.index | placeholder_svg_tag: 'sag-img' }}
+            {% endif %}
+          </div>
+
+          <!-- Text Content -->
+          <h3 class="sag-card-title">{{ block.settings.title }}</h3>
+          <p class="sag-card-desc">{{ block.settings.description }}</p>
+
+          <!-- Arrow Line -->
+          <div class="sag-footer">
+            {% if block.settings.link != blank %}
+              <svg class="sag-arrow" viewBox="0 0 24 24">
+                <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"/>
+              </svg>
+            {% endif %}
+          </div>
+
+        {% if block.settings.link != blank %}
+          </a>
+        {% else %}
+          </div>
+        {% endif %}
+
+      {% endfor %}
+    </div>
+
+  </div>
+</div>

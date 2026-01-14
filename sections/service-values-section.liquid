@@ -1,0 +1,236 @@
+{% schema %}
+{
+  "name": "Service Values Banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FAF8F5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Heading Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Subtitle/Icon Color",
+      "default": "#6B7051"
+    },
+    {
+      "type": "header",
+      "content": "Text Content"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Small Top Subtitle",
+      "default": "YOUR LOCAL EVENT FLORIST"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Main Heading",
+      "default": "Beautiful, handcrafted florals designed to match your celebration, your style, and your story."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Item",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon Image (Transparent PNG or SVG)"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Feature Text",
+          "default": "CUSTOM\nFLORAL DESIGN"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Service Values Banner",
+      "blocks": [
+        {
+          "type": "feature",
+          "settings": {
+            "text": "CUSTOM\nFLORAL DESIGN"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "text": "FULL DELIVERY\n& SETUP"
+          }
+        },
+        {
+          "type": "feature",
+          "settings": {
+            "text": "PERFECT FOR\nEVERY CELEBRATION"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap');
+
+  .sv-section {
+    background-color: {{ section.settings.bg_color }};
+    padding: 80px 20px;
+    font-family: 'Larken', sans-serif;
+    text-align: center;
+    color: {{ section.settings.text_color }};
+  }
+
+  .sv-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Header Text Styling */
+  .sv-subtitle {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: {{ section.settings.accent_color }};
+    margin-bottom: 20px;
+    opacity: 0.9;
+  }
+
+  .sv-title {
+    font-family: 'Larken', serif;
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 0 0 60px 0;
+    font-weight: 600;
+    max-width: 1200px;
+    color: {{ section.settings.text_color }};
+  }
+
+  /* Icons Grid */
+  .sv-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .sv-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px;
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .sv-icon-wrapper {
+    height: 60px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sv-icon-img {
+    width: auto;
+    height: 100%;
+    max-height: 50px;
+    object-fit: contain;
+  }
+
+  /* SVG Fallback coloring */
+  .sv-icon-wrapper svg {
+    width: 45px;
+    height: 45px;
+    fill: none;
+    stroke: {{ section.settings.accent_color }};
+    stroke-width: 1.5;
+  }
+
+  .sv-item-text {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    line-height: 1.6;
+    color: #555; /* Slightly lighter than black for elegance */
+    white-space: pre-line; /* Allows new lines in text box */
+  }
+
+  /* Responsive Mobile */
+  @media (max-width: 768px) {
+    .sv-section {
+      padding: 60px 20px;
+    }
+    .sv-title {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+    .sv-grid {
+      gap: 40px;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+{% endstyle %}
+
+<div class="sv-section">
+  <div class="sv-container">
+    
+    {% if section.settings.subtitle != blank %}
+      <p class="sv-subtitle">{{ section.settings.subtitle }}</p>
+    {% endif %}
+
+    <h2 class="sv-title">{{ section.settings.title }}</h2>
+
+    <div class="sv-grid">
+      {% for block in section.blocks %}
+        <div class="sv-item" {{ block.shopify_attributes }}>
+          <div class="sv-icon-wrapper">
+            {% if block.settings.icon != blank %}
+              {{ block.settings.icon | image_url: width: 200 | image_tag: class: 'sv-icon-img', loading: 'lazy' }}
+            {% else %}
+              <!-- Fallback SVGs based on block index to give variety if no image uploaded -->
+              {% if forloop.index == 1 %}
+                 <!-- Flower Icon -->
+                 <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7.5a4.5 4.5 0 1 1 4.5 4.5M12 7.5A4.5 4.5 0 1 0 7.5 12M12 7.5V12m0 0a4.5 4.5 0 1 1-4.5 4.5M12 12a4.5 4.5 0 1 0 4.5 4.5"/></svg>
+              {% elsif forloop.index == 2 %}
+                 <!-- Map/Scroll Icon -->
+                 <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/><path d="M20 21v-8a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8l6-4 6 4 6-4 4 4z"/></svg>
+              {% else %}
+                 <!-- Palm/Tree Icon -->
+                 <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13c-2-4-5-5-5-5s2 1 2 4"/><path d="M12 13c2-4 5-5 5-5s-2 1-2 4"/><path d="M8 22h8"/></svg>
+              {% endif %}
+            {% endif %}
+          </div>
+          <p class="sv-item-text">{{ block.settings.text }}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</div>

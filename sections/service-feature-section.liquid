@@ -1,0 +1,368 @@
+{% schema %}
+{
+  "name": "Service Feature Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FAF8F5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Button Color",
+      "default": "#6B7051"
+    },
+    {
+      "type": "header",
+      "content": "Main Content"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Top Badge Text",
+      "default": "TOP-RATED EVENT FLORALS"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Florals That Make Moments Last"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "From weddings to milestone parties, our handcrafted arrangements turn any celebration into a picture-perfect memory."
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Plan My Event Florals"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "text",
+      "id": "sub_note",
+      "label": "Small Note under button",
+      "default": "Same-day delivery & full event setup available"
+    },
+    {
+      "type": "header",
+      "content": "Testimonial Card"
+    },
+    {
+      "type": "image_picker",
+      "id": "review_image",
+      "label": "Reviewer Photo"
+    },
+    {
+      "type": "text",
+      "id": "review_name",
+      "label": "Reviewer Name",
+      "default": "Casey"
+    },
+    {
+      "type": "textarea",
+      "id": "review_text",
+      "label": "Review Text",
+      "default": "Growing Wild designed our wedding florals and it took everyone's breath away. The colors, the details everything was beyond perfect."
+    },
+    {
+      "type": "header",
+      "content": "Gallery Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "feature_image",
+      "label": "Feature Image (Right Side)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Service Feature Section"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500&display=swap');
+
+  .fs-section-wrapper {
+    background-color: {{ section.settings.bg_color }};
+    padding: 60px 20px;
+    font-family: 'Larken', sans-serif;
+    color: {{ section.settings.text_color }};
+    overflow: hidden;
+  }
+
+  .fs-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+
+  /* Left Content Styling */
+  .fs-content {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .fs-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #333;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    background: transparent;
+    white-space: nowrap;
+  }
+
+  .fs-stars {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 2px;
+  }
+
+  .fs-stars svg {
+    width: 14px;
+    height: 14px;
+    fill: #EAA983;
+    display: block;
+  }
+
+  .fs-title {
+    font-family: 'Larken', serif;
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: {{ section.settings.text_color }};
+  }
+
+  .fs-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 40px;
+  }
+
+  /* Testimonial Card */
+  .fs-testimonial {
+    background-color: #FFF;
+    border: 1px solid #FFD8C2;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  }
+
+  .fs-testi-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+  }
+
+  .fs-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .fs-name {
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0;
+    line-height: 1.2;
+  }
+  
+  .fs-review-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .fs-verified {
+    font-size: 11px;
+    color: #EAA983;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .fs-verified svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .fs-quote {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    font-style: italic;
+  }
+
+  /* Button & Note */
+  .fs-btn {
+    display: inline-block;
+    background-color: {{ section.settings.accent_color }};
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.3s ease;
+  }
+
+  .fs-btn:hover {
+    opacity: 0.9;
+  }
+
+  .fs-note {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 12px;
+    color: #444;
+  }
+
+  /* Right Side Single Image */
+  .fs-gallery {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fs-single-img {
+    width: 100%;
+    height: 100%;
+    min-height: 400px; /* Minimum height for mobile so it looks good */
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+
+  /* Desktop Layout */
+  @media (min-width: 990px) {
+    .fs-container {
+      flex-direction: row;
+      align-items: center; /* Center visually if image height differs */
+      justify-content: space-between;
+    }
+    .fs-content {
+      width: 45%;
+    }
+    .fs-gallery {
+      width: 50%;
+      height: 100%;
+    }
+    .fs-single-img {
+        min-height: 600px; /* Taller image on desktop */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .fs-title {
+      font-size: 36px;
+    }
+  }
+{% endstyle %}
+
+<div class="fs-section-wrapper">
+  <div class="fs-container">
+    
+    <!-- Left Side: Text & Content -->
+    <div class="fs-content">
+      
+      <div class="fs-badge">
+        <div class="fs-stars">
+          {%- for i in (1..5) -%}
+             <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+          {%- endfor -%}
+        </div>
+        {{ section.settings.badge_text }}
+      </div>
+
+      <h2 class="fs-title">{{ section.settings.title }}</h2>
+      <p class="fs-description">{{ section.settings.description }}</p>
+
+      <!-- Testimonial Card -->
+      <div class="fs-testimonial">
+        <div class="fs-testi-header">
+          {% if section.settings.review_image %}
+            <img src="{{ section.settings.review_image | image_url: width: 100 }}" alt="{{ section.settings.review_name }}" class="fs-avatar" loading="lazy">
+          {% else %}
+            <div class="fs-avatar" style="background: #ddd;"></div>
+          {% endif %}
+          
+          <div>
+            <h4 class="fs-name">{{ section.settings.review_name }}</h4>
+            <div class="fs-review-meta">
+                <div class="fs-stars">
+                {%- for i in (1..5) -%}
+                    <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                {%- endfor -%}
+                </div>
+                <span class="fs-verified">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> Verified Client
+                </span>
+            </div>
+          </div>
+        </div>
+        <p class="fs-quote">"{{ section.settings.review_text }}"</p>
+      </div>
+
+      {% comment %} Button hidden if link is empty {% endcomment %}
+      {% if section.settings.btn_link != blank %}
+        <a href="{{ section.settings.btn_link }}" class="fs-btn">{{ section.settings.btn_text }}</a>
+      {% endif %}
+      
+      <p class="fs-note">{{ section.settings.sub_note }}</p>
+    </div>
+
+    <!-- Right Side: Single Image -->
+    <div class="fs-gallery">
+        {% if section.settings.feature_image %}
+          {{ section.settings.feature_image | image_url: width: 1200 | image_tag: class: 'fs-single-img', loading: 'lazy' }}
+        {% else %}
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'fs-single-img' }}
+        {% endif %}
+    </div>
+
+  </div>
+</div>

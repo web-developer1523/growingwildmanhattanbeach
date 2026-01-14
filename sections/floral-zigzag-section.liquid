@@ -1,0 +1,332 @@
+{% schema %}
+{
+  "name": "Floral Zig-Zag (Custom)",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FAF8F5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main Top Heading",
+      "default": "Florals that make every celebration unforgettable"
+    },
+    {
+      "type": "text",
+      "id": "top_sub",
+      "label": "Tiny Top Label",
+      "default": "OVERVIEW"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Content Row",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Text Content"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_icon",
+          "label": "Icon Image (Optional)",
+          "info": "Upload a small PNG/SVG. If blank, default leaf shows."
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Small Subtitle",
+          "default": "WEDDINGS"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Heading",
+          "default": "Elegant florals for your perfect day"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Paragraph",
+          "default": "We create romantic, cohesive florals for your ceremony and reception from bouquets and aisle arrangements to arches."
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Label",
+          "default": "View wedding florals"
+        },
+        {
+          "type": "url",
+          "id": "btn_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "header",
+          "content": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "main_image",
+          "label": "Image (Upload exact design)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Floral Zig-Zag (Custom)",
+      "blocks": [
+        {
+          "type": "row",
+          "settings": {
+            "subtitle": "WEDDINGS",
+            "title": "Elegant florals for your perfect day"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "subtitle": "PARTIES & EVENTS",
+            "title": "Floral styling that brings celebrations to life"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "subtitle": "FULL SERVICE",
+            "title": "We handle delivery, setup, and teardown"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  /* UPDATED: Using static weights for better compatibility */
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap');
+
+  .fzz-section {
+    background-color: {{ section.settings.bg_color }};
+    padding: 80px 20px;
+    font-family: 'Larken', sans-serif;
+    color: {{ section.settings.text_color }};
+    overflow: visible;
+  }
+
+  .fzz-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* --- Top Header --- */
+  .fzz-header {
+    text-align: center;
+    margin-bottom: 80px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .fzz-top-sub {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 15px;
+    display: block;
+    font-weight: 600;
+  }
+
+  /* UPDATED: Added !important to force the font */
+  .fzz-main-title {
+    font-family: 'Larken', serif !important; 
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: -1px;
+  }
+
+  /* --- Zig Zag Rows --- */
+  .fzz-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    gap: 60px;
+  }
+
+  .fzz-row:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  /* --- Image Column --- */
+  .fzz-col-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .fzz-main-img {
+    width: 100%;
+    max-width: 500px; 
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  /* --- Text Column --- */
+  .fzz-col-text {
+    flex: 1;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 450px;
+  }
+
+  /* Icon Logic */
+  .fzz-leaf-icon, .fzz-custom-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 15px auto; 
+    display: block; 
+    object-fit: contain;
+  }
+  
+  .fzz-leaf-icon {
+    opacity: 0.7;
+    fill: #7A8068; 
+  }
+
+  .fzz-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    display: block;
+    opacity: 0.7;
+  }
+
+  /* UPDATED: Added !important to force the font here too */
+  .fzz-row-title {
+    font-family: 'Larken', serif !important;
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+  }
+
+  .fzz-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+  }
+
+  /* Button Style */
+  .fzz-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid #333;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: #333;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+
+  .fzz-btn:hover {
+    background: #333;
+    color: #fff;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .fzz-main-title { font-size: 36px; }
+    
+    .fzz-row, 
+    .fzz-row:nth-child(even) {
+      flex-direction: column; 
+      gap: 50px;
+      margin-bottom: 80px;
+    }
+
+    .fzz-col-img { order: 1; }
+    .fzz-col-text { order: 2; }
+    
+    .fzz-main-img {
+        max-width: 100%;
+    }
+  }
+{% endstyle %}
+
+<div class="fzz-section">
+  <div class="fzz-container">
+    
+    <!-- Top Header -->
+    <div class="fzz-header">
+      {% if section.settings.top_sub != blank %}
+        <span class="fzz-top-sub">{{ section.settings.top_sub }}</span>
+      {% endif %}
+      <h2 class="fzz-main-title">{{ section.settings.main_heading }}</h2>
+    </div>
+
+    <!-- Rows Loop -->
+    {% for block in section.blocks %}
+      <div class="fzz-row" {{ block.shopify_attributes }}>
+        
+        <!-- Text Column -->
+        <div class="fzz-col-text">
+          
+          <!-- ICON LOGIC -->
+          {% if block.settings.custom_icon %}
+             <img src="{{ block.settings.custom_icon | image_url: width: 60 }}" alt="Icon" class="fzz-custom-icon" loading="lazy">
+          {% else %}
+             <svg class="fzz-leaf-icon" viewBox="0 0 24 24">
+                <path d="M17,8C8,10,5.9,16.17,3.82,21.34L5.71,22l1-2.3A4.49,4.49,0,0,0,8,20C19,20,22,3,22,3,21,5,14,5.25,9,6.25S2,11.5,2,13.5a6.22,6.22,0,0,0,1.75,3.75C7,8,17,8,17,8Z"/>
+             </svg>
+          {% endif %}
+
+          <span class="fzz-subtitle">{{ block.settings.subtitle }}</span>
+          <h3 class="fzz-row-title">{{ block.settings.title }}</h3>
+          <p class="fzz-desc">{{ block.settings.description }}</p>
+          
+          {% if block.settings.btn_text != blank %}
+            <a href="{{ block.settings.btn_link }}" class="fzz-btn">{{ block.settings.btn_text }}</a>
+          {% endif %}
+        </div>
+
+        <!-- Image Column -->
+        <div class="fzz-col-img">
+          {% if block.settings.main_image %}
+            {{ block.settings.main_image | image_url: width: 1200 | image_tag: class: 'fzz-main-img', loading: 'lazy' }}
+          {% else %}
+            {{ 'collection-' | append: forloop.index | placeholder_svg_tag: 'fzz-main-img' }}
+          {% endif %}
+        </div>
+
+      </div>
+    {% endfor %}
+
+  </div>
+</div>

@@ -1,0 +1,61 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "contact-form": {
+      "type": "contact",
+      "blocks": {
+        "text_yFxTB3": {
+          "type": "text",
+          "settings": {
+            "title": "Subject",
+            "use_long_text": false,
+            "required": false
+          }
+        }
+      },
+      "block_order": [
+        "text_yFxTB3"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "subheading": "",
+        "title": "Contact Us",
+        "content": ""
+      }
+    },
+    "custom_liquid_VTBEd7": {
+      "type": "custom-liquid",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div class=\"shop-info\">\n    <div class=\"shop-hours\">\n        <h3>Store Hours</h3>\n        <ul>\n            <li>Monday: 8 AM - 5 PM</li>\n            <li>Tuesday: 8 AM - 5 PM</li>\n            <li>Wednesday: 8 AM - 5 PM</li>\n            <li>Thursday: 8 AM - 6 PM</li>\n            <li>Friday: 8 AM - 6 PM</li>\n            <li>Saturday: 8 AM - 4 PM</li>\n            <li>Sunday: 10 AM - 4 PM</li>\n        </ul>\n    </div>\n    <div class=\"shop-address\">\n        <h3>Address</h3>\n        <p>\n            <a href=\"https://www.google.com/maps/dir/?api=1&amp;origin=&amp;destination=1201+Highland+Ave+Manhattan+Beach%2C+CA%2C+90266\" target=\"_blank\">\n                1201 Highland Ave Manhattan Beach, CA, 90266\n            </a>\n        </p>\n    </div>\n    <div class=\"shop-contact\">\n        <h3>Contact</h3>\n        <p>Phone: <a href=\"tel:3105454432\">(310) 545-4432</a></p>\n        <p>Email: <a href=\"mailto:Growingwildmb@gmail.com\">Growingwildmb@gmail.com</a></p>\n    </div>\n</div>\n\n\n<style>\n/* General container styling */\n.shop-info {\n    background-color: #fff;\n    padding: 15px; /* Reduced padding for mobile */\n    border-radius: 10px;\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n    margin-bottom: 20px;\n    max-width: 100%; /* Ensure it fits on small screens */\n    margin: 0 auto;\n    display: flex;\n    flex-direction: column; /* Stack elements vertically for mobile */\n    text-align: left;\n}\n\n/* Flexbox styling for larger screens */\n@media (min-width: 768px) {\n    .shop-info {\n        flex-direction: row; /* Horizontal layout for larger screens */\n        justify-content: space-between;\n    }\n}\n\n/* Store hours list styling */\n.shop-hours ul {\n    list-style: none;\n    padding: 0;\n}\n\n.shop-hours li {\n    font-size: 14px; /* Smaller font size for mobile */\n    margin: 5px 0;\n}\n\n/* Address and contact styling */\n.shop-address, .shop-contact {\n    margin-top: 10px; /* Add some margin for spacing */\n}\n\n/* Title styling */\n.shop-info h3 {\n    margin-bottom: 10px;\n    font-size: 16px; /* Reduced font size */\n}\n\n/* Link styling */\n.shop-info a {\n    color: #0066c0;\n    text-decoration: none;\n}\n\n.shop-info a:hover {\n    text-decoration: underline;\n}\n\n/* Make iframe responsive */\niframe {\n    width: 100%;\n    height: 300px; /* Adjust height for mobile */\n    border: 0;\n}\n\n/* Media query for very small screens */\n@media (max-width: 480px) {\n    .shop-info {\n        padding: 10px; /* Further reduce padding for small screens */\n    }\n\n    .shop-hours li {\n        font-size: 12px; /* Further reduce font size */\n    }\n\n    .shop-info h3 {\n        font-size: 14px;\n    }\n\n    iframe {\n        height: 250px; /* Adjust map height for small screens */\n    }\n}\n</style>\n\n\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d65291229.265817314!2d-135.31806679281758!3d2.7984254050691773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b3ec7923b49d%3A0x727c641233c57a02!2s1201%20Highland%20Ave%2C%20Manhattan%20Beach%2C%20CA%2090266%2C%20Egyes%C3%BClt%20%C3%81llamok!5e0!3m2!1shu!2shu!4v1724675987434!5m2!1shu!2shu\" width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "contact-form",
+    "custom_liquid_VTBEd7"
+  ]
+}

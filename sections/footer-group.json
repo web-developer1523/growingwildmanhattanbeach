@@ -1,0 +1,102 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "title": "Enjoy 10% Off on your first order",
+            "content": "<h3>Sign Up for exlusive offers and plants care tips</h3>",
+            "button_background": "#6a6e49",
+            "button_text_color": "#dcdbdb"
+          }
+        },
+        "text_qG3Wtw": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "About",
+            "content": "<p>Growing Wild is more than just a flower shop on the corner of Highland and 12th street in Manhattan Beach. It’s a store that’s known for creating unusual and artistic floral arrangements, and has been doing so for over 30 years.<br/></p>",
+            "enable_follow_on_shop": false
+          }
+        },
+        "links_cKj4Yx": {
+          "type": "links",
+          "settings": {
+            "menu": "shop",
+            "show_menu_title": true,
+            "menu_title": ""
+          }
+        },
+        "links": {
+          "type": "links",
+          "settings": {
+            "menu": "learn",
+            "show_menu_title": true,
+            "menu_title": "Learn"
+          }
+        },
+        "links_3YmbNr": {
+          "type": "links",
+          "settings": {
+            "menu": "more",
+            "show_menu_title": true,
+            "menu_title": "More"
+          }
+        },
+        "links_kbaVBE": {
+          "type": "links",
+          "settings": {
+            "menu": "other",
+            "show_menu_title": true,
+            "menu_title": ""
+          }
+        },
+        "text_wzfCBd": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "title": "Store & Pick-Up Address",
+            "content": "<p><strong>Address:</strong><br/><a href=\"https://www.google.com/maps/dir/?api=1&origin=&destination=1201+Highland+Ave%2C+Manhattan+Beach%2C+CA%2C+90266\" target=\"_blank\">1201 Highland AveManhattan Beach, CA 90266 (310) 545-4432</a></p><p><strong>Emali:<br/></strong><a href=\"mailto:shop@growingwildmanhattanbeach.com\">shop@growingwildmanhattanbeach.com</a><a href=\"https://www.google.com/maps/dir/?api=1&origin=&destination=1201+Highland+Ave%2C+Manhattan+Beach%2C+CA%2C+90266\" target=\"_blank\"><br/></a></p>",
+            "enable_follow_on_shop": false
+          }
+        }
+      },
+      "block_order": [
+        "newsletter",
+        "text_qG3Wtw",
+        "links_cKj4Yx",
+        "links",
+        "links_3YmbNr",
+        "links_kbaVBE",
+        "text_wzfCBd"
+      ],
+      "settings": {
+        "logo": "shopify://shop_images/Mask_group.png",
+        "color_scheme": "scheme-3",
+        "separate_section_with_border": false,
+        "show_social_media": true,
+        "show_payment_icons": true,
+        "show_country_selector": true,
+        "show_country_name": true,
+        "show_country_flag": true,
+        "show_locale_selector": true
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

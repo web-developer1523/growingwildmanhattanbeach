@@ -1,0 +1,377 @@
+{{ 'cstm-testomonial.css' | asset_url | stylesheet_tag }}
+<style>
+
+
+    .z_testimonials_block{
+
+      background: {{section.settings.z_color_heading}};
+
+    }
+    a.cstm-url-trust-pilot {
+      text-decoration: none;
+  }
+    .z_testimonials_explain{
+      color:{{ section.settings.z_color_review}};
+      font-weight:500 !important;
+    }
+    .author-name{
+      color:{{section.settings.z_color_author }};
+      font-weight:600;
+    }
+
+
+    .z_testimonials {
+      padding-top: {{section.settings.z_padding_top_mb}}px;
+      padding-bottom: {{section.settings.z_padding_bottom_mb}}px;
+       background-color: {{section.settings.bg_color}};
+    }
+
+    @media (min-width:769px) {
+
+    .z_testimonials {
+      padding-top: {{section.settings.z_padding_top}}px;
+      padding-bottom: {{section.settings.z_padding_bottom}}px;
+    }
+    }
+</style>
+
+{% stylesheet %}
+{% endstylesheet %}
+
+<div class="z_testimonials">
+  <div class="container">
+    <div class="inner-container">
+      <div class="z_testimonials_header">
+        <div class="z_testimonials_heading">
+          <h2 class="z_testimonials_main_heading h2">{{ section.settings.z_heading }}</h2>
+        </div>
+        {% if section.settings.z_subtitle != blank %}
+          <span class="z_testo_subtitle manrope-family">{{ section.settings.z_subtitle }}</span>
+        {% endif %}
+      </div>
+      <div class="cstm-upper-bet-re-tet">
+        <div class="z_testimonials_blocks swiper">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              {% if block.type == 'testimonials_block' %}
+                <div class="z_testimonials_block swiper-slide">
+                  <span class="z_rating_stars">
+                    {% if block.settings.Stars == '5' %}
+                      {% for i in (1..5) %}
+                        {% render 'star' %}
+                      {% endfor %}
+                    {% elsif block.settings.Stars == '4' %}
+                      {% for i in (1..4) %}
+                        {% render 'star' %}
+                      {% endfor %}
+                    {% elsif block.settings.Stars == '3' %}
+                      {% for i in (1..3) %}
+                        {% render 'star' %}
+                      {% endfor %}
+                    {% elsif block.settings.Stars == '2' %}
+                      {% for i in (1..2) %}
+                        {% render 'star' %}
+                      {% endfor %}
+                    {% elsif block.settings.Stars == '1' %}
+                      {% render 'star' %}
+                    {% endif %}
+                  </span>
+
+                  <p class="z_testimonials_explain ">{{ block.settings.z_review }}</p>
+
+                  <div class="z_info_txt">
+                    <div class="z_testimonials_block_img">
+                      <img src="{{ block.settings.z_img | img_url :'master'}}" alt="">
+                    </div>
+                    <div class="z_client_info">
+                      <div class="author-name ">{{ block.settings.z_author }}</div>
+                      {% if block.settings.z_post_name != blank %}
+                        <span class="z_post_name ">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="12"
+                            height="13"
+                            viewBox="0 0 12 13"
+                            fill="none"
+                          >
+                            <path d="M11.1429 2.16146V4.25836C11.1429 12 5.57143 13 5.57143 13C5.57143 13 0 12 0 4.25836V2.16146C3.5541 2.16146 5.57143 0 5.57143 0C5.57143 0 7.7169 2.16146 11.1429 2.16146Z" fill="#00B67A"/>
+                            <path d="M4.71807 9.62925L2.86743 7.76483L3.8821 6.7431L4.57891 7.44459L7.20043 4.02136L8.33624 4.9044L4.71807 9.62925Z" fill="white"/>
+                          </svg>
+                          {{ block.settings.z_post_name -}}
+                        </span>
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="slider__pagination"></div>
+        </div>
+        {% if section.settings.Image != blank or section.settings.review != blank %}
+          <div class="trust-pilot">
+            <div class="cstm-trust-pilot">
+              {% if section.settings.url != blank %}
+                <a
+                  href="{{ section.settings.url  }}"
+                  {% if section.settings.open_in_new %}
+                    target="_blank"
+                  {% endif %}
+                  class="cstm-url-trust-pilot"
+                >
+              {% endif %}
+              {% if section.settings.Image != blank %}
+                <img src="{{ section.settings.Image | img_url : "master"}}" class="trust-pilot-image">
+              {% endif %}
+              {% if section.settings.review != blank %}
+                <p class="cstm-review-trust-pilot">
+                  {{ section.settings.review }}
+                </p>
+              {% endif %}
+              {% if section.settings.url != blank %}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+{% endjavascript %}
+<script>
+    // Function to equalize the height of all divs
+    function equalizeDivHeights() {
+        // Select all divs with the class 'content-div'
+        const divs = document.querySelectorAll('.z_testimonials_block');
+        
+        // Variable to store the maximum height
+        let maxHeight = 0;
+
+        // Loop through each div to find the maximum height
+        divs.forEach(div => {
+            // Reset the height to auto to get the actual content height
+            div.style.height = 'auto';
+            // Update maxHeight if this div's height is greater
+            if (div.offsetHeight > maxHeight) {
+                maxHeight = div.offsetHeight;
+            }
+        });
+
+        // Set all div heights to the maximum height
+        divs.forEach(div => {
+            div.style.height = `${maxHeight}px`;
+        });
+    }
+
+    // Call the function to equalize div heights
+    window.onload = equalizeDivHeights;
+
+    // Optional: Call the function on window resize to maintain equal heights
+    window.onresize = equalizeDivHeights;
+
+    // Wait for DOM content to be fully loaded before initializing the Swiper instance
+   document.addEventListener("DOMContentLoaded", function() {
+    var swiper = new Swiper(".z_testimonials_blocks", {
+        spaceBetween: 10,     
+        slidesPerView: 1.3, // Center the active slide
+        loop: true, 
+        navigation: {
+            nextEl: ".z_right_arrows",
+            prevEl: ".z_left_arrow",
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3.3,
+                spaceBetween: 20,        
+                centeredSlides: true, 
+            },
+            1024: {
+                slidesPerView: 3.3,
+                spaceBetween: 20,
+                centeredSlides: true, 
+            },
+        },
+    });
+});
+</script>
+
+{% schema %}
+  {
+    "name": "Testimonials V2",
+    "settings": [{
+      "type" : "richtext" ,
+      "label" : "Enter Main Heading" ,
+      "id" : "z_heading"
+    },
+      {
+        "type" : "text",
+        "label" : "Subtitle",
+        "id" : "z_subtitle",
+        "default" : "testimonials"
+      },
+    {
+      "type" : "color" ,
+      "label" : "Block color",
+      "id" : "z_color_heading",
+      "default" : "#FFFFFF"
+    },
+      {
+        "type" : "color" ,
+      "label" : "pick Color For Review",
+      "id" : "z_color_review",
+        "default" : "#FFFFFF"
+      },
+      {
+        "type" : "color" ,
+      "label" : "pick Color For Author",
+      "id" : "z_color_author",
+        "default" : "#FFFFFF"
+      },
+      {
+        "type": "image_picker",
+        "id": "Image",
+        "label"  : "Image"
+      },
+      {
+        "type" : "text",
+        "label" : "Review text",
+        "id" : "review",
+        "default" : "4.7 out of 5 based on 227 reviews"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "Trustoilot Url",
+      },
+      {
+        "type": "checkbox",
+        "id": "open_in_new",
+        "label": "Open in new tab",
+        "default": false
+      },
+      {
+"type":"color",
+"id":"bg_color",
+"label":"Background Color",
+"default":"#f4f0ed"
+},
+             {
+  "type": "range",
+  "id": "z_padding_top",
+  "min": 0,
+  "max": 100,
+  "step": 1,
+  "unit": "px",
+    "label": "Padding top",
+  "default": 80
+}
+,
+      {
+  "type": "range",
+  "id": "z_padding_bottom",
+ "min": 0,
+  "max": 100,
+  "step": 1,
+  "unit": "px",
+    "label": "Padding bottom",
+  "default": 80
+},
+           {
+  "type": "range",
+  "id": "z_padding_top_mb",
+  "min": 0,
+  "max": 100,
+  "step": 1,
+  "unit": "px",
+    "label": "Padding top mobile",
+  "default": 60
+}
+,
+      {
+  "type": "range",
+  "id": "z_padding_bottom_mb",
+ "min": 0,
+  "max": 100,
+  "step": 1,
+  "unit": "px",
+    "label": "Padding bottom mobile",
+  "default": 60
+}
+    ] ,
+    "blocks" :[
+
+
+      {
+        "type" : "testimonials_block",
+        "name" : "Block",
+        "settings":[
+          {
+  "type": "select",
+  "id": "Stars",
+  "label": "Rating",
+  "options": [
+    {
+      "value": "1",
+      "label": "1"
+    },
+    {
+      "value": "2",
+      "label": "2"
+    },
+    {
+      "value": "3",
+      "label": "3"
+    },
+    {
+      "value": "4",
+      "label": "4"
+    },
+    {
+      "value": "5",
+      "label": "5"
+    }
+  ],
+  "default": "5"
+},
+
+          {
+            "type" : "image_picker",
+        "label" : "Enter image",
+        "id" :"z_img"
+          },
+        {
+      "type" : "textarea" ,
+      "label" : "Client Review " ,
+      "id" : "z_review",
+        "default" : "My Ford F150 runs like new. The team’s expertise and attention to detail were outstanding. I’m now a lifelong customer."
+    } ,
+        {
+           "type" : "text" ,
+      "label" : "Enter Client name " ,
+      "id" : "z_author",
+          "default" : "Sophia Moore"
+        },
+          {
+            "type" : "text",
+            "label" : "Post name",
+            "id" : "z_post_name",
+  "default" : "CEO at Webflow Agency"
+          }
+        ]
+      }
+    ],
+    "presets" : [
+      {
+        "name" : "Testomonials V2",
+        "category" : "select"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,103 @@
+<style>
+  .fw-description-section {
+    width: 100%;
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .fw-description-container {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    padding-left: 20px; /* Padding for mobile */
+    padding-right: 20px; /* Padding for mobile */
+    box-sizing: border-box;
+  }
+
+  /* Use a media query to apply larger padding on desktop */
+  @media screen and (min-width: 768px) {
+    .fw-description-container {
+      padding-left: 100px; /* UPDATED Padding for desktop */
+      padding-right: 100px; /* UPDATED Padding for desktop */
+    }
+  }
+
+  .fw-description-content {
+    /* Optional: If you want to center the text content itself */
+    text-align: {{ section.settings.text_alignment }};
+  }
+
+  /* Ensures headings and paragraphs inside the content don't have weird margins */
+  .fw-description-content h1,
+  .fw-description-content h2,
+  .fw-description-content h3,
+  .fw-description-content p {
+      margin-left: 0;
+      margin-right: 0;
+  }
+</style>
+
+<div class="fw-description-section">
+  <div class="fw-description-container">
+    <div class="fw-description-content">
+      {{ section.settings.description }}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Full-Width Description",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 40
+    },
+    {
+      "id": "padding_bottom",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Full-Width Description"
+    }
+  ]
+}
+{% endschema %}

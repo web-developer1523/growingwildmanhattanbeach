@@ -1,0 +1,886 @@
+{% comment %} {% comment %} {%- if section.blocks.size > 0 -%}
+  <style>
+    :root {
+      --announcement-bar-is-sticky: {% if section.settings.enable_sticky %}1{% else %}0{% endif %};
+
+      {%- if section.index == 1 and section.settings.enable_sticky == false -%}
+        --header-scroll-tracker-offset: var(--announcement-bar-height);
+      {%- endif -%}
+    }
+
+    {%- if section.settings.enable_sticky -%}
+      #shopify-section-{{ section.id }} {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+      }
+
+      .shopify-section--header ~ #shopify-section-{{ section.id }} {
+        top: calc(var(--header-is-sticky, 0) * var(--header-height, 0px));
+        z-index: 4; /* We have to lower the z-index in case the announcement bar is displayed after the header */
+      }
+    {%- endif -%}
+
+    #shopify-section-{{ section.id }} {
+      --announcement-bar-font-size: {{ section.settings.mobile_font_size | divided_by: 16.0 }}rem;
+    }
+
+    @media screen and (min-width: 999px) {
+      #shopify-section-{{ section.id }} {
+        --announcement-bar-font-size: {{ section.settings.desktop_font_size | divided_by: 16.0 }}rem;
+      }
+    }
+  </style>
+
+  <height-observer variable="announcement-bar">
+    <div class="announcement-bar color-scheme color-scheme--{{ section.settings.color_scheme.id }}">
+      {%- assign carousel_id = 'carousel-' | append: section.id -%}
+
+      {%- if section.blocks.size > 1 -%}
+        <carousel-prev-button aria-controls="{{ carousel_id }}" class="contents">
+          <button type="button" class="tap-area">
+            <span class="sr-only">{{ 'general.accessibility.previous' | t }}</span>
+            {%- render 'icon' with 'arrow-left', width: 12, direction_aware: true -%}
+          </button>
+        </carousel-prev-button>
+      {%- endif -%}
+
+      <announcement-bar-carousel
+        allow-swipe
+        {% if section.settings.autoplay %}
+          autoplay="{{ section.settings.cycle_speed }}"
+        {% endif %}
+        id="{{ carousel_id }}"
+        class="announcement-bar__carousel"
+      >
+        {%- for block in section.blocks -%}
+          <p class="prose heading {% if forloop.first %}is-selected{% endif %}" {{ block.shopify_attributes }}>
+            {% if block.settings.icon != blank %}
+              <img src="{{ block.settings.icon | image_url }}">
+            {% endif %}
+            {{- block.settings.text -}}
+          </p>
+        {%- endfor -%}
+      </announcement-bar-carousel>
+
+      {%- if section.blocks.size > 1 -%}
+        <carousel-next-button aria-controls="{{ carousel_id }}" class="contents">
+          <button type="button" class="tap-area">
+            <span class="sr-only">{{ 'general.accessibility.next' | t }}</span>
+            {%- render 'icon' with 'arrow-right', width: 12, direction_aware: true -%}
+          </button>
+        </carousel-next-button>
+      {%- endif -%}
+    </div>
+  </height-observer>
+
+  <script>
+    document.documentElement.style.setProperty('--announcement-bar-height', `${document.getElementById('shopify-section-{{ section.id }}').clientHeight.toFixed(2)}px`);
+  </script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.announcement_bar.name",
+  "class": "shopify-section--announcement-bar",
+  "tag": "aside",
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "message",
+      "name": "t:sections.announcement_bar.blocks.message.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "select Icon"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "t:sections.announcement_bar.blocks.message.text",
+          "default": "Announce something here"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:global.colors.scheme",
+      "default": "scheme-3"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky",
+      "label": "t:sections.announcement_bar.enable_sticky_bar"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "t:sections.announcement_bar.auto_rotate_between_messages",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "cycle_speed",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "unit": "sec",
+      "label": "t:sections.announcement_bar.cycle_speed",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "desktop_font_size",
+      "min": 9,
+      "max": 15,
+      "unit": "px",
+      "label": "t:sections.announcement_bar.desktop_text_size",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "mobile_font_size",
+      "min": 9,
+      "max": 15,
+      "unit": "px",
+      "label": "t:sections.announcement_bar.mobile_text_size",
+      "default": 10
+    }
+  ]
+}
+{% endschema %} {% endcomment %}
+{%- if section.blocks.size > 0 -%}
+<style>
+  :root {
+    --announcement-bar-is-sticky: {% if section.settings.enable_sticky %}1{% else %}0{% endif %};
+  }
+
+  {% if section.settings.enable_sticky %}
+    #shopify-section-{{ section.id }} {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+  {% endif %}
+
+  #shopify-section-{{ section.id }} {
+    --announcement-bar-font-size: {{ section.settings.mobile_font_size | divided_by: 16.0 }}rem;
+  }
+
+  @media (min-width: 999px) {
+    #shopify-section-{{ section.id }} {
+      --announcement-bar-font-size: {{ section.settings.desktop_font_size | divided_by: 16.0 }}rem;
+    }
+  }
+
+  /* TIMER (inherits bar colors automatically) */
+  .announcement-timer {
+    display: inline-flex;
+    gap: 6px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+
+  .announcement-timer__box {
+    padding: 2px 6px;
+    font-size: 16px;
+    font-weight: 600;
+    background: rgba(0,0,0,.15);
+  }
+</style>
+
+<height-observer variable="announcement-bar">
+  <div class="announcement-bar color-scheme color-scheme--{{ section.settings.color_scheme.id }}">
+    {% assign carousel_id = 'carousel-' | append: section.id %}
+
+    <announcement-bar-carousel
+      allow-swipe
+      {% if section.settings.autoplay %}
+        autoplay="{{ section.settings.cycle_speed }}"
+      {% endif %}
+      id="{{ carousel_id }}"
+      class="announcement-bar__carousel"
+    >
+
+      {% for block in section.blocks %}
+        {% case block.type %}
+
+        {% when 'message' %}
+          {% comment %} <p class="prose heading {% if forloop.first %}is-selected{% endif %}" {{ block.shopify_attributes }}>
+            {{ block.settings.text }}
+          </p> {% endcomment %}
+           <p class="prose heading {% if forloop.first %}is-selected{% endif %}" {{ block.shopify_attributes }}>
+            {% if block.settings.icon != blank %}
+              <img src="{{ block.settings.icon | image_url }}">
+            {% endif %}
+            {{- block.settings.text -}}
+          </p>
+
+        {% when 'message_with_timer' %}
+          <p
+            class="prose heading {% if forloop.first %}is-selected{% endif %}"
+            id="timer-{{ block.id }}"
+            data-hour="{{ block.settings.cutoff_hour }}"
+            data-minute="{{ block.settings.cutoff_minute }}"
+            {{ block.shopify_attributes }}
+          >
+            {{ block.settings.text }}
+
+            <span class="announcement-timer">
+              <span class="announcement-timer__box" id="h-{{ block.id }}">00</span>:
+              <span class="announcement-timer__box" id="m-{{ block.id }}">00</span>:
+              <span class="announcement-timer__box" id="s-{{ block.id }}">00</span>
+            </span>
+          </p>
+
+        {% endcase %}
+      {% endfor %}
+
+    </announcement-bar-carousel>
+  </div>
+</height-observer>
+
+<script>
+(function startAnnouncementTimers() {
+
+  function initTimer(timer) {
+    if (timer.dataset.started === 'true') return;
+    timer.dataset.started = 'true';
+
+    const id = timer.id.replace('timer-', '');
+    const hour = Number(timer.dataset.hour);
+    const minute = Number(timer.dataset.minute);
+
+    const hEl = document.getElementById('h-' + id);
+    const mEl = document.getElementById('m-' + id);
+    const sEl = document.getElementById('s-' + id);
+
+    if (!hEl || !mEl || !sEl) return;
+
+    function tick() {
+      const now = new Date();
+
+      // Create cutoff time TODAY using 24h format
+      const cutoff = new Date();
+      cutoff.setHours(hour, minute, 0, 0);
+
+      let diff = cutoff - now;
+
+      // If time is past cutoff, stop at zero
+      if (diff <= 0) {
+        hEl.textContent = '00';
+        mEl.textContent = '00';
+        sEl.textContent = '00';
+        return;
+      }
+
+      const hours = Math.floor(diff / 3600000);
+      const minutes = Math.floor((diff % 3600000) / 60000);
+      const seconds = Math.floor((diff % 60000) / 1000);
+
+      hEl.textContent = String(hours).padStart(2, '0');
+      mEl.textContent = String(minutes).padStart(2, '0');
+      sEl.textContent = String(seconds).padStart(2, '0');
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  function scan() {
+    document.querySelectorAll('[id^="timer-"]').forEach(initTimer);
+  }
+
+  scan();
+
+  // Re-scan after carousel initializes
+  setTimeout(scan, 500);
+  setTimeout(scan, 1500);
+  setTimeout(scan, 3000);
+
+})();
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "tag": "aside",
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+         {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "select Icon"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "100% satisfaction guaranteed on every order"
+        }
+      ]
+    },
+    {
+      "type": "message_with_timer",
+      "name": "Message with timer",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "Same-day delivery ends in"
+        },
+        {
+          "type": "range",
+          "id": "cutoff_hour",
+          "label": "Cutoff hour",
+          "min": 0,
+          "max": 23,
+          "step": 1,
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "cutoff_minute",
+          "label": "Cutoff minute",
+          "min": 0,
+          "max": 59,
+          "step": 1,
+          "default": 0
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-3"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky",
+      "label": "Enable sticky bar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto rotate",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "cycle_speed",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "unit": "sec",
+      "label": "Rotation speed",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "desktop_font_size",
+      "min": 9,
+      "max": 15,
+      "unit": "px",
+      "label": "Desktop text size",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "mobile_font_size",
+      "min": 9,
+      "max": 15,
+      "unit": "px",
+      "label": "Mobile text size",
+      "default": 10
+    }
+  ]
+}
+{% endschema %} {% endcomment %}
+{% comment %} {%- if section.blocks.size > 0 -%}
+<style>
+  :root {
+    --announcement-bar-is-sticky: {% if section.settings.enable_sticky %}1{% else %}0{% endif %};
+  }
+
+  {% if section.settings.enable_sticky %}
+    #shopify-section-{{ section.id }} {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+  {% endif %}
+
+  #shopify-section-{{ section.id }} {
+    --announcement-bar-font-size: {{ section.settings.mobile_font_size | divided_by: 16.0 }}rem;
+  }
+
+  @media (min-width: 999px) {
+    #shopify-section-{{ section.id }} {
+      --announcement-bar-font-size: {{ section.settings.desktop_font_size | divided_by: 16.0 }}rem;
+    }
+  }
+
+  .announcement-timer {
+    display: inline-flex;
+    gap: 6px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
+
+  .announcement-timer__box {
+    padding: 2px 6px;
+    font-size: 16px;
+    font-weight: 600;
+    background: rgba(0,0,0,.15);
+  }
+</style>
+
+<height-observer variable="announcement-bar">
+  <div class="announcement-bar color-scheme color-scheme--{{ section.settings.color_scheme.id }}">
+    {% assign carousel_id = 'carousel-' | append: section.id %}
+
+    <announcement-bar-carousel
+      allow-swipe
+      {% if section.settings.autoplay %}
+        autoplay="{{ section.settings.cycle_speed }}"
+      {% endif %}
+      id="{{ carousel_id }}"
+      class="announcement-bar__carousel"
+    >
+      {% for block in section.blocks %}
+        <p class="prose heading announcement-timer-block {% if forloop.first %}is-selected{% endif %}" {{ block.shopify_attributes }}>
+          {% if block.settings.icon != blank %}
+            <img src="{{ block.settings.icon | image_url }}">
+          {% endif %}
+
+          {{ block.settings.text }}
+
+          {% if block.type == 'message_with_timer' %}
+            <span class="announcement-timer">
+              <span class="announcement-timer__box" id="h-{{ block.id }}">00</span> :
+              <span class="announcement-timer__box" id="m-{{ block.id }}">00</span>
+            </span>
+          {% endif %}
+        </p>
+      {% endfor %}
+    </announcement-bar-carousel>
+  </div>
+</height-observer> {% endcomment %}
+
+
+{% comment %} {%- if section.blocks.size > 0 -%}
+<style>
+  :root {
+    --announcement-bar-is-sticky: {% if section.settings.enable_sticky %}1{% else %}0{% endif %};
+  }
+
+  {% if section.settings.enable_sticky %}
+  #shopify-section-{{ section.id }} {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+  {% endif %}
+
+  #shopify-section-{{ section.id }} {
+    --announcement-bar-font-size: {{ section.settings.mobile_font_size | divided_by: 16.0 }}rem;
+  }
+
+  @media (min-width: 999px) {
+    #shopify-section-{{ section.id }} {
+      --announcement-bar-font-size: {{ section.settings.desktop_font_size | divided_by: 16.0 }}rem;
+    }
+  }
+
+  .announcement-timer {
+    display: inline-flex;
+    gap: 6px;
+    margin-left: 10px;
+  }
+
+  .announcement-timer__box {
+    padding: 2px 6px;
+    font-size: 14px;
+    font-weight: 600;
+    background: rgba(0,0,0,.15);
+  }
+
+  /* hide only expired timer block */
+  .timer-expired {
+    display: none !important;
+  }
+</style>
+
+<height-observer variable="announcement-bar">
+  <div class="announcement-bar color-scheme color-scheme--{{ section.settings.color_scheme.id }}">
+    {% assign carousel_id = 'carousel-' | append: section.id %}
+
+    <announcement-bar-carousel
+      allow-swipe
+      {% if section.settings.autoplay %}
+      autoplay="{{ section.settings.cycle_speed }}"
+      {% endif %}
+      id="{{ carousel_id }}"
+      class="announcement-bar__carousel"
+    >
+      {% for block in section.blocks %}
+        <p
+          class="prose heading announcement-block {% if forloop.first %}is-selected{% endif %}"
+          {% if block.type == 'message_with_timer' %}
+            data-timer-block
+            data-hours="{{ section.settings.start_hours }}"
+            data-minutes="{{ section.settings.start_minutes }}"
+          {% endif %}
+          {{ block.shopify_attributes }}
+        >
+          {% if block.settings.icon != blank %}
+            <img src="{{ block.settings.icon | image_url }}">
+          {% endif %}
+
+          {{ block.settings.text }}
+
+          {% if block.type == 'message_with_timer' %}
+            <span class="announcement-timer">
+              <span class="announcement-timer__box hours">00</span> :
+              <span class="announcement-timer__box minutes">00</span> :
+              <span class="announcement-timer__box seconds">00</span>
+            </span>
+          {% endif %}
+        </p>
+      {% endfor %}
+    </announcement-bar-carousel>
+  </div>
+</height-observer> {% endcomment %}
+{%- if section.blocks.size > 0 -%}
+<style>
+  :root {
+    --announcement-bar-is-sticky: {% if section.settings.enable_sticky %}1{% else %}0{% endif %};
+  }
+
+  {% if section.settings.enable_sticky %}
+  #shopify-section-{{ section.id }} {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+  {% endif %}
+
+  #shopify-section-{{ section.id }} {
+    --announcement-bar-font-size: {{ section.settings.mobile_font_size | divided_by: 16.0 }}rem;
+  }
+
+  @media (min-width: 999px) {
+    #shopify-section-{{ section.id }} {
+      --announcement-bar-font-size: {{ section.settings.desktop_font_size | divided_by: 16.0 }}rem;
+    }
+  }
+
+  /* hide only clock-based block */
+  .clock-hidden {
+    display: none !important;
+  }
+</style>
+
+<height-observer variable="announcement-bar">
+  <div class="announcement-bar color-scheme color-scheme--{{ section.settings.color_scheme.id }}">
+    {% assign carousel_id = 'carousel-' | append: section.id %}
+
+    <announcement-bar-carousel
+      allow-swipe
+      {% if section.settings.autoplay %}
+      autoplay="{{ section.settings.cycle_speed }}"
+      {% endif %}
+      id="{{ carousel_id }}"
+      class="announcement-bar__carousel"
+    >
+      {% for block in section.blocks %}
+        <p
+          class="prose heading announcement-block {% if forloop.first %}is-selected{% endif %}"
+          {% if block.type == 'message_with_timer' %}
+            data-clock-window
+          {% endif %}
+          {{ block.shopify_attributes }}
+        >
+          {% if block.settings.icon != blank %}
+            <img src="{{ block.settings.icon | image_url }}">
+          {% endif %}
+
+          {{ block.settings.text }}
+        </p>
+      {% endfor %}
+    </announcement-bar-carousel>
+  </div>
+</height-observer>
+
+<script>
+{% comment %} (function announcementBarCountdown() {
+
+  // ⏱ START TIME FROM SCHEMA
+  let totalSeconds =
+    ({{ section.settings.start_hours | default: 0 }} * 3600) +
+    ({{ section.settings.start_minutes | default: 0 }} * 60);
+
+  let started = false;
+
+  function startTimer() {
+    if (started || totalSeconds <= 0) return;
+    started = true;
+
+    const section = document.getElementById('shopify-section-{{ section.id }}');
+    const hEls = document.querySelectorAll('[id^="h-"]');
+    const mEls = document.querySelectorAll('[id^="m-"]');
+
+    if (!section || !mEls.length) return;
+
+    function updateUI() {
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+
+      hEls.forEach(el => el.textContent = String(hours).padStart(2, '0'));
+      mEls.forEach(el => el.textContent = String(minutes).padStart(2, '0'));
+    }
+
+    updateUI();
+
+    const interval = setInterval(() => {
+      totalSeconds--;
+
+      if (totalSeconds <= 0) {
+        clearInterval(interval);
+
+        hEls.forEach(el => el.textContent = '00');
+        mEls.forEach(el => el.textContent = '00');
+
+        section.style.transition = 'opacity 0.4s ease';
+        section.style.opacity = '0';
+
+        setTimeout(() => {
+          section.style.display = 'none';
+        }, 400);
+
+        return;
+      }
+
+      updateUI();
+    }, 1000);
+  }
+
+  setTimeout(startTimer, 500);
+  setTimeout(startTimer, 1500);
+  setTimeout(startTimer, 3000);
+
+})(); {% endcomment %}
+{% comment %} (function () {
+
+  function startTimer(block) {
+    if (block.dataset.started) return;
+    block.dataset.started = "true";
+
+    let totalSeconds =
+      (parseInt(block.dataset.hours || 0) * 3600) +
+      (parseInt(block.dataset.minutes || 0) * 60);
+
+    if (totalSeconds <= 0) {
+      block.classList.add('timer-expired');
+      return;
+    }
+
+    const h = block.querySelector('.hours');
+    const m = block.querySelector('.minutes');
+    const s = block.querySelector('.seconds');
+
+    function update() {
+      if (totalSeconds <= 0) {
+        block.classList.add('timer-expired'); // 👈 hide ONLY this block
+        return;
+      }
+
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      h.textContent = String(hours).padStart(2, '0');
+      m.textContent = String(minutes).padStart(2, '0');
+      s.textContent = String(seconds).padStart(2, '0');
+
+      totalSeconds--;
+    }
+
+    update();
+    setInterval(update, 1000);
+  }
+
+  function init() {
+    document.querySelectorAll('[data-timer-block]').forEach(startTimer);
+  }
+
+  init();
+  setTimeout(init, 1000);
+  setTimeout(init, 3000);
+
+})(); {% endcomment %}
+
+(function () {
+
+  // ⏰ SHOW BETWEEN 8:00 AM – 1:00 PM PST
+  const START_HOUR = 8;
+  const END_HOUR = 11:10;
+
+  function isWithinPSTWindow() {
+    const now = new Date();
+
+    // Convert to PST
+    const pstTime = new Date(
+      now.toLocaleString("en-US", { timeZone: "America/Los_Angeles" })
+    );
+
+    const hour = pstTime.getHours();
+    const minute = pstTime.getMinutes();
+
+    return hour >= START_HOUR && (hour < END_HOUR || (hour === END_HOUR && minute === 0));
+  }
+
+  function updateBlocks() {
+    document.querySelectorAll('[data-clock-window]').forEach(block => {
+      if (isWithinPSTWindow()) {
+        block.classList.remove('clock-hidden');
+      } else {
+        block.classList.add('clock-hidden');
+      }
+    });
+  }
+
+  // Initial check
+  updateBlocks();
+
+  // Recheck every minute (auto start next day)
+  setInterval(updateBlocks, 60000);
+
+})();
+</script>
+
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar timer",
+  "tag": "aside",
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "Free shipping on all orders"
+        }
+      ]
+    },
+    {
+      "type": "message_with_timer",
+      "name": "Message with countdown",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "Offer ends in"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "range",
+      "id": "start_hours",
+      "label": "Countdown start hours",
+      "min": 0,
+      "max": 23,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "start_minutes",
+      "label": "Countdown start minutes",
+      "min": 0,
+      "max": 59,
+      "step": 1,
+      "default": 59
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-3"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky",
+      "label": "Enable sticky bar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto rotate",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "cycle_speed",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "unit": "sec",
+      "label": "Rotation speed",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "desktop_font_size",
+      "min": 9,
+      "max": 15,
+      "unit": "px",
+      "label": "Desktop text size",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "mobile_font_size",
+      "min": 9,
+      "max": 15,
+      "unit": "px",
+     "label": "Mobile text size",
+      "default": 10
+    }
+  ]
+}
+{% endschema %}

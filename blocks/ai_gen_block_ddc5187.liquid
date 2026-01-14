@@ -1,0 +1,566 @@
+{% doc %}
+  @prompt
+    a popup , which will welcome my customers to this new website. this will be an overlay popup
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-welcome-popup-overlay-{{ ai_gen_id }} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, {{ block.settings.overlay_opacity }});
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity0.3s ease, visibility 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .ai-welcome-popup-overlay-{{ ai_gen_id }}.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .ai-welcome-popup-{{ ai_gen_id }} {
+    background-color: {{ block.settings.popup_background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    padding: {{ block.settings.padding }}px;
+    max-width: {{ block.settings.max_width }}px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    text-align: {{ block.settings.text_alignment }};
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .ai-welcome-popup-overlay-{{ ai_gen_id }}.active .ai-welcome-popup-{{ ai_gen_id }} {
+    transform: scale(1);
+  }
+
+  .ai-welcome-popup-close-{{ ai_gen_id }} {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: {{ block.settings.text_color }};
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+    z-index: 1;
+  }
+
+  .ai-welcome-popup-close-{{ ai_gen_id }}:hover {
+    opacity: 1;
+  }
+
+  .ai-welcome-popup-image-{{ ai_gen_id }} {
+    margin-bottom: 20px;
+  }
+
+  .ai-welcome-popup-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: auto;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    max-height: 200px;
+    object-fit: cover;
+  }
+
+  .ai-welcome-popup-image-placeholder-{{ ai_gen_id }} {
+    width: 100%;
+    height: 150px;
+    background-color: #f4f4f4;
+    border-radius: {{ block.settings.image_border_radius }}px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .ai-welcome-popup-image-placeholder-{{ ai_gen_id }} svg {
+    width: 60px;
+    height: 60px;
+    color: #ccc;
+  }
+
+  .ai-welcome-popup-title-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.title_size }}px;
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+  }
+
+  .ai-welcome-popup-content-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.content_size }}px;
+    line-height: 1.5;
+    margin-bottom: 25px;
+  }
+
+  .ai-welcome-popup-content-{{ ai_gen_id }} p {
+    margin: 00 15px 0;}
+
+  .ai-welcome-popup-content-{{ ai_gen_id }} p:last-child {
+    margin-bottom: 0;
+  }
+
+  .ai-welcome-popup-button-{{ ai_gen_id }} {
+    background-color: {{ block.settings.button_background_color }};
+    color: {{ block.settings.button_text_color }};
+    border: none;
+    padding: 12px 30px;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: {{ block.settings.button_size }}px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  .ai-welcome-popup-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+  }
+
+  .ai-welcome-popup-checkbox-wrapper-{{ ai_gen_id }} {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;color: {{ block.settings.text_color }};
+  }
+
+  .ai-welcome-popup-checkbox-{{ ai_gen_id }} {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-welcome-popup-{{ ai_gen_id }} {
+      padding: {{ block.settings.padding | times: 0.7 }}px;
+      max-width:95%;
+    }
+
+    .ai-welcome-popup-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size | times: 0.9 }}px;
+    }
+
+    .ai-welcome-popup-content-{{ ai_gen_id }} {
+      font-size: {{ block.settings.content_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}<welcome-popup-{{ ai_gen_id }} 
+  class="ai-welcome-popup-overlay-{{ ai_gen_id }}"
+  data-delay="{{ block.settings.display_delay }}"
+  data-show-once="{{ block.settings.show_once }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="cst-main-area ai-welcome-popup-{{ ai_gen_id }}">
+    <button
+      class=" cst-popup-btn ai-welcome-popup-close-{{ ai_gen_id }}"
+      aria-label="Close welcome popup"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    {% if block.settings.popup_image %}
+      <div class="cst-img-section ai-welcome-popup-image-{{ ai_gen_id }}">
+        <img
+          src="{{ block.settings.popup_image | image_url: width: 600}}"
+          alt="{{ block.settings.popup_image.alt | escape }}"
+          loading="lazy"
+          width="{{ block.settings.popup_image.width }}"
+          height="{{ block.settings.popup_image.height }}"
+        >
+      </div>
+    {% elsif block.settings.show_placeholder_image %}
+      <div class="cst-placeholder ai-welcome-popup-image-{{ ai_gen_id }}">
+        <div class="cst-svg-icon ai-welcome-popup-image-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if block.settings.popup_title != blank %}
+      <h2 class="cst-head-main ai-welcome-popup-title-{{ ai_gen_id }}">
+        {{ block.settings.popup_title }}
+      </h2>
+    {% endif %}
+
+    {% if block.settings.popup_content != blank %}
+      <div class="cst-content-ai ai-welcome-popup-content-{{ ai_gen_id }}">
+        {{ block.settings.popup_content }}
+      </div>
+    {% endif %}
+
+    {% if block.settings.primary_button_text != blank %}<a 
+        href="{{ block.settings.primary_button_link | default: '#' }}"
+        class="ai-welcome-popup-button-{{ ai_gen_id }}"
+      >
+        {{ block.settings.primary_button_text }}
+      </a>
+    {% endif %}
+
+    {% if block.settings.secondary_button_text != blank %}
+      <button 
+        class="ai-welcome-popup-button-{{ ai_gen_id }} ai-welcome-popup-secondary-{{ ai_gen_id }}"
+        style="background-color: transparent; color: {{ block.settings.text_color }}; border: 1px solid {{ block.settings.text_color }};"
+      >
+        {{ block.settings.secondary_button_text }}
+      </button>
+    {% endif %}
+
+    {% if block.settings.show_dont_show_again %}
+      <div class="cst-ai-content ai-welcome-popup-checkbox-wrapper-{{ ai_gen_id }}">
+        <input 
+          type="checkbox" 
+          id="ai-welcome-popup-dont-show-{{ ai_gen_id }}"
+          class="ai-welcome-popup-checkbox-{{ ai_gen_id }}"
+        >
+        <label for="ai-welcome-popup-dont-show-{{ ai_gen_id }}">
+          Don't show this again
+        </label>
+      </div>
+    {% endif %}
+  </div>
+</welcome-popup-{{ ai_gen_id }}><script>
+  (function() {
+    class WelcomePopup{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.delay = parseInt(this.dataset.delay) * 1000;
+        this.showOnce = this.dataset.showOnce === 'true';
+        this.storageKey = 'ai-welcome-popup-{{ ai_gen_id }}-dismissed';
+      }
+
+      connectedCallback() {
+        this.setupEventListeners();
+        this.checkAndShowPopup();
+      }
+
+      setupEventListeners() {
+        const closeButton = this.querySelector('.ai-welcome-popup-close-{{ ai_gen_id }}');
+        const secondaryButton = this.querySelector('.ai-welcome-popup-secondary-{{ ai_gen_id }}');
+        const dontShowCheckbox = this.querySelector('.ai-welcome-popup-checkbox-{{ ai_gen_id }}');
+
+        closeButton.addEventListener('click', () => {
+          this.closePopup();
+        });
+
+        if (secondaryButton) {
+          secondaryButton.addEventListener('click', () => {
+            this.closePopup();
+          });
+        }
+
+        this.addEventListener('click', (e) => {
+          if (e.target === this) {
+            this.closePopup();
+          }
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && this.classList.contains('active')) {
+            this.closePopup();
+          }
+        });
+
+        if (dontShowCheckbox) {
+          dontShowCheckbox.addEventListener('change', (e) => {
+            if (e.target.checked) {
+              localStorage.setItem(this.storageKey, 'true');
+            } else {
+              localStorage.removeItem(this.storageKey);
+            }
+          });
+        }
+      }
+
+      checkAndShowPopup() {
+        if (this.showOnce && localStorage.getItem(this.storageKey)) {
+          return;
+        }
+
+        setTimeout(() => {
+          this.showPopup();
+        }, this.delay);
+      }
+
+      showPopup() {
+        this.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        const firstFocusable = this.querySelector('button, a, input');
+        if (firstFocusable) {
+          firstFocusable.focus();
+        }
+      }
+
+      closePopup() {
+        this.classList.remove('active');
+        document.body.style.overflow = '';
+
+        const dontShowCheckbox = this.querySelector('.ai-welcome-popup-checkbox-{{ ai_gen_id }}');
+        if (dontShowCheckbox &&dontShowCheckbox.checked) {
+          localStorage.setItem(this.storageKey, 'true');
+        }
+      }
+    }
+
+    customElements.define('welcome-popup-{{ ai_gen_id }}', WelcomePopup{{ ai_gen_id }});
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Welcome popup",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "popup_title",
+      "label": "Title",
+      "default": "Welcome to our store!"
+    },
+    {
+      "type": "richtext",
+      "id": "popup_content",
+      "label": "Content",
+      "default": "<p>We're excited to have you here. Discover our amazing products and enjoy a seamless shopping experience.</p>"
+    },
+    {
+      "type": "image_picker",
+      "id": "popup_image",
+      "label": "Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_placeholder_image",
+      "label": "Show placeholder when no image selected",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "text",
+      "id": "primary_button_text",
+      "label": "Primary button text",
+      "default": "Start shopping"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_text",
+      "label": "Secondary button text",
+      "default": "Maybe later"
+    },
+    {
+      "type": "header",
+      "content": "Behavior"
+    },
+    {
+      "type": "range",
+      "id": "display_delay",
+      "label": "Display delay",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 2
+    },
+    {
+      "type": "checkbox",
+      "id": "show_once",
+      "label": "Show only once per visitor",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dont_show_again",
+      "label": "Show 'Don't show again' option",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Maximum width",
+      "min": 300,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "default": 500
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Padding",
+      "min": 20,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "popup_background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 1,
+      "step": 0.1,
+      "default": 0.7
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button hover background",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title size",
+      "min": 18,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "content_size",
+      "label": "Content size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_size",
+      "label": "Button text size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "default": 6
+    }
+  ],
+  "presets": [
+    {
+      "name": "Welcome popup"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}

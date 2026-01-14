@@ -1,0 +1,87 @@
+<section class="{{ section.settings.custom_css_class }} page-width" style="padding:40px; background-color:#6b7d5a;">
+  <div class="cst-main-layout">
+
+    <!-- Left Content -->
+    <div class="cst-left-col">
+      <h2 class="cst-mission-head"">
+        {{ section.settings.heading }}
+      </h2>
+      <p class="cst-mission-desc">
+        {{ section.settings.description }}
+      </p>
+    </div>
+
+    <!-- Right Images -->
+    <div class="cst-main-grid-img">
+      <div class="cst-both-img">
+      {% if section.settings.image1 %}
+        <img src="{{ section.settings.image1 | img_url: '600x' }}" style="width:100%; border-radius:8px;">
+      {% endif %}
+
+      {% if section.settings.image2 %}
+        <img src="{{ section.settings.image2 | img_url: '600x' }}" style="width:100%; border-radius:8px;">
+      {% endif %}
+    </div>
+    <div class="cst-imag-two">
+      {% if section.settings.image3 %}
+        <img src="{{ section.settings.image3 | img_url: '600x' }}" style="width:100%; border-radius:8px;">
+      {% endif %}
+
+      {% if section.settings.image4 %}
+        <img src="{{ section.settings.image4 | img_url: '600x' }}" style="width:100%; border-radius:8px;">
+      {% endif %}
+    </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Our Purposeful Mission",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Purposeful Mission"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "We believe flowers are more than decor — they tell stories, hold memories, and make moments unforgettable."
+    },
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image3",
+      "label": "Image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image4",
+      "label": "Image 4"
+    },
+    {
+        "type": "text",
+        "id": "custom_css_class",
+        "label": "Custom CSS Class"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our Purposeful Mission",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}

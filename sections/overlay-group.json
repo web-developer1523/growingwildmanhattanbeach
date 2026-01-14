@@ -1,0 +1,98 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "custom.overlay",
+  "name": "Overlay group",
+  "sections": {
+    "17584367848a36c73c": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ddc5187_MrwVtg": {
+          "type": "ai_gen_block_ddc5187",
+          "disabled": true,
+          "settings": {
+            "popup_title": "Welcome to Growing Wild",
+            "popup_content": "<p>We're excited to share our brand new website with you!<br/>If you have any feedback or questions, please don't hesitate to contact us: <br/>shop@growingwildmanhattanbeach.com<br/>562-386-1792</p>",
+            "show_placeholder_image": false,
+            "primary_button_text": "Continue Shopping",
+            "primary_button_link": "",
+            "secondary_button_text": "",
+            "display_delay": 2,
+            "show_once": true,
+            "show_dont_show_again": true,
+            "text_alignment": "center",
+            "max_width": 500,
+            "padding": 40,
+            "border_radius": 12,
+            "image_border_radius": 8,
+            "popup_background_color": "#ffffff",
+            "text_color": "#000000",
+            "overlay_opacity": 0.7,
+            "button_background_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#333333",
+            "title_size": 24,
+            "content_size": 16,
+            "button_size": 14,
+            "button_border_radius": 6
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ddc5187_MrwVtg"
+      ],
+      "settings": {}
+    },
+    "cart-drawer": {
+      "type": "cart-drawer",
+      "settings": {
+        "color_scheme": "",
+        "show_cart_note": true,
+        "show_shipping_text": true,
+        "show_view_cart_button": false,
+        "show_checkout_button": true,
+        "show_price_in_checkout_button": true,
+        "cross_sell_products": [],
+        "cross_sell_title": "Complete with",
+        "cross_sell_stack_products": false
+      }
+    },
+    "newsletter-popup": {
+      "type": "newsletter-popup",
+      "settings": {
+        "color_scheme": "",
+        "apparition_delay": 5,
+        "show_only_on_index": true,
+        "hide_for_account_holders": true,
+        "show_only_once": true,
+        "show_newsletter_form": true,
+        "title": "Signup for our newsletter",
+        "content": "Describe what your customers will receive when subscribing to your newsletter.",
+        "button_text": "Subscribe"
+      }
+    },
+    "privacy-banner": {
+      "type": "privacy-banner",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "title": "🍪 Cookie policy",
+        "content": "<p>We use cookies and similar technologies to provide the best experience on our website. Refer to our Privacy Policy for more information.</p>"
+      }
+    }
+  },
+  "order": [
+    "17584367848a36c73c",
+    "cart-drawer",
+    "newsletter-popup",
+    "privacy-banner"
+  ]
+}

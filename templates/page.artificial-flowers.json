@@ -1,0 +1,296 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "media_grid_rnWWVp": {
+      "type": "media-grid",
+      "blocks": {
+        "image_e4mGCY": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/IMG_3028.jpg",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_RWUbyL": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/IMG_1180.heic",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_ywQAyB": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/IMG_1195.heic",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_pjcPa4": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "image": "shopify://shop_images/IMG_1273.heic",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_e4mGCY",
+        "image_RWUbyL",
+        "image_ywQAyB",
+        "image_pjcPa4"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "desktop_row_height": 400,
+        "mobile_row_height": 400,
+        "section_width": "lg",
+        "spacing": "xs",
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "media_grid_itQT3p": {
+      "type": "media-grid",
+      "blocks": {
+        "image_CaqNDJ": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/IMG_1189.heic",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_tkqdPx": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/IMG_1182.heic",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_7mhNhz": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/IMG_1190.heic",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_Wn9D9U": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "image": "shopify://shop_images/IMG_1261.heic",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_CaqNDJ",
+        "image_tkqdPx",
+        "image_7mhNhz",
+        "image_Wn9D9U"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "desktop_row_height": 400,
+        "mobile_row_height": 400,
+        "section_width": "lg",
+        "spacing": "xs",
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "faq_wgcMyX": {
+      "type": "faq",
+      "blocks": {
+        "question_6h4JjX": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Do artificial flowers look fake?</strong>",
+            "answer": "<p>Not when made with premium materials like ours. We create real-looking artificial flowers that fool your judgmental friends regularly. The good ones make people reach out and touch them to check.</p>"
+          }
+        },
+        "question_iapQyX": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>What makes these the best artificial flowers?</strong>",
+            "answer": "<p>Premium materials that feel real, expert design that works for actual spaces, and custom creation for your specific life. The best artificial flower arrangement is not cheap or pre-made stuff. It's quality-made for you.</p>"
+          }
+        },
+        "question_9xY7yW": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Do you create artificial wedding flowers?</strong>",
+            "answer": "<p>Yes, our Custom Bridal Bouquets, centerpieces, and ceremony arrangements stay perfect all day. You keep your bouquet forever and have one less thing stressing you out on your wedding day.</p>"
+          }
+        },
+        "question_heA6W7": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>How do I clean or maintain artificial flowers?</strong>",
+            "answer": "<p>Dust them every few weeks with a soft brush or use a hairdryer on a cool setting to blow dust off. That's literally it. No watering, no trimming, no \"why are these dying already\" stress.</p>"
+          }
+        },
+        "question_3xriwn": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Are artificial flowers better than real flowers for allergies?</strong>",
+            "answer": "<p>Yes, artificial flowers won't make you sneeze, give you itchy eyes, or force you to choose between beauty and breathing. You get gorgeous arrangements without the allergy medication.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_6h4JjX",
+        "question_iapQyX",
+        "question_9xY7yW",
+        "question_heA6W7",
+        "question_3xriwn"
+      ],
+      "name": "t:sections.faq.presets.faq.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "",
+        "title": "Frequently Asked Questions",
+        "content": ""
+      }
+    },
+    "contact-form": {
+      "type": "contact",
+      "blocks": {
+        "text_yFxTB3": {
+          "type": "text",
+          "settings": {
+            "title": "Phone",
+            "use_long_text": false,
+            "required": false
+          }
+        }
+      },
+      "block_order": [
+        "text_yFxTB3"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "subheading": "",
+        "title": "<strong>Schedule a Consultation</strong>",
+        "content": "<p>Ready to bring lasting beauty to your space? <br/>Apply for a consultation here or call us at <a href=\"tel:(310) 545-4432\" title=\"tel:(310) 545-4432\"><strong>(310) 545-4432</strong></a> to get started. We would love to help you create the perfect arrangement for your home or a special gift for your loved ones.</p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "media_grid_rnWWVp",
+    "media_grid_itQT3p",
+    "faq_wgcMyX",
+    "contact-form"
+  ]
+}

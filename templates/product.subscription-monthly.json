@@ -1,0 +1,416 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h2"
+          }
+        },
+        "judge_me_reviews_preview_badge_8bQbrP": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "disabled": true,
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {
+            "show_rating": false,
+            "show_taxes_notice": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "selector_style": "block",
+            "swatch_selector_style": "swatch",
+            "variant_image_options": "Color",
+            "size_chart_page": ""
+          }
+        },
+        "liquid_NPCCBW": {
+          "type": "liquid",
+          "disabled": true,
+          "settings": {
+            "liquid": "{% if product.selling_plan_groups.size > 0 %}\n<p class=\"pdp_heading\">Purchase Options:</p>\n{% endif %}"
+          }
+        },
+        "subscription_plus_subscription_plus_Ty9nJH": {
+          "type": "shopify://apps/subscription-plus/blocks/subscription-plus/79c17119-154e-465c-8480-a7e0399512ff",
+          "settings": {
+            "advance_widget": false,
+            "default_option": "subscription",
+            "template": "standard",
+            "text_color": "#000000",
+            "branding_color": "#efefef",
+            "terms_page_link": "",
+            "one_time_translation": "",
+            "widget_type": "widget_1",
+            "show_term_checkbox": false,
+            "subscription_policy_text": "You’re subscribing to receive this item multiple times, on a recurring basis (according to the frequency you select) with a discount on every recurring order. You may cancel or change your subscription at any time.",
+            "enable_benifits": true,
+            "tooltip_text": "You can edit, skip, cancel and reschedule the subscription at any time.",
+            "enable_shadow": true,
+            "delivery_text": "Select Delivery Frequency",
+            "selected_text_color": "#000000",
+            "hover_text_color": "",
+            "radio_color": "",
+            "bg_color_selected": "#efefef",
+            "discount_bg": "#6a6e49",
+            "discount_text_color": "#ffffff",
+            "border_color": "#2e2e2e",
+            "default_font": true,
+            "fonts": "helvetica_n4",
+            "font_size_heading": 13,
+            "font_size_price": 16
+          }
+        },
+        "inventory_AaCHna": {
+          "type": "inventory",
+          "disabled": true,
+          "settings": {
+            "show_in_stock_quantity": true,
+            "low_inventory_threshold": 10,
+            "show_progress_bar": true,
+            "progress_bar_max_value": 50
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": true,
+            "atc_button_background": "#6a6e49",
+            "atc_button_text_color": "",
+            "payment_button_background": "#2e2e2e",
+            "payment_button_text_color": ""
+          }
+        },
+        "link_text_nTaKnr": {
+          "type": "link_text",
+          "settings": {
+            "text": "Enter your zip code to see if we deliver to your location.",
+            "link_text": "Check now.",
+            "link": ""
+          }
+        },
+        "complementary_products": {
+          "type": "complementary_products",
+          "disabled": true,
+          "settings": {
+            "title": "Pairs well with",
+            "products_count": 2,
+            "show_below_gallery": true,
+            "stack_products": false,
+            "show_quick_buy": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "collapse_content": true,
+            "show_below_gallery": false
+          }
+        },
+        "share_buttons_zcKhWN": {
+          "type": "share_buttons",
+          "settings": {}
+        },
+        "tabs_PttPtX": {
+          "type": "tabs",
+          "disabled": true,
+          "settings": {
+            "title1": "Product Details",
+            "text1": "",
+            "show_description": true,
+            "title2": "Delivery Information",
+            "text2": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>",
+            "title3": "FAQs",
+            "text3": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "judge_me_reviews_preview_badge_8bQbrP",
+        "price",
+        "variant_picker",
+        "liquid_NPCCBW",
+        "subscription_plus_subscription_plus_Ty9nJH",
+        "inventory_AaCHna",
+        "buy_buttons",
+        "link_text_nTaKnr",
+        "complementary_products",
+        "description",
+        "share_buttons_zcKhWN",
+        "tabs_PttPtX"
+      ],
+      "custom_css": [
+        ".subscription-option-frequency {padding: 5px 0 20px 32px !important; width: 33%;}"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "container_size": "lg",
+        "product_info_size": 50,
+        "show_sticky_add_to_cart": true,
+        "center_basic_info": false,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "desktop_media_grid_gap": 18,
+        "mobile_controls": "thumbnails",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 2.5
+      }
+    },
+    "features_section_qdTX3F": {
+      "type": "features-section",
+      "blocks": {
+        "feature_UqmBaE": {
+          "type": "feature",
+          "settings": {
+            "title": "Exceptional Quality",
+            "text": "Our flowers are hand-selected and crafted into stunning arrangements, ensuring freshness and lasting beauty."
+          }
+        },
+        "feature_y8dU3F": {
+          "type": "feature",
+          "settings": {
+            "title": "Customizable Options",
+            "text": "Tailor each bouquet to your preferences with a variety of flower types, colors, and vase options."
+          }
+        },
+        "feature_U4nzkh": {
+          "type": "feature",
+          "settings": {
+            "title": "Convenient Delivery",
+            "text": "Enjoy free shipping and same-day delivery options to ensure your flowers arrive fresh and on time."
+          }
+        },
+        "feature_7Dy6bj": {
+          "type": "feature",
+          "settings": {
+            "title": "Expert Florists",
+            "text": "Our skilled florists bring years of experience to create unique and beautiful designs, perfect for any occasion."
+          }
+        }
+      },
+      "block_order": [
+        "feature_UqmBaE",
+        "feature_y8dU3F",
+        "feature_U4nzkh",
+        "feature_7Dy6bj"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "title": "",
+        "heading_size": "h1",
+        "heading_alighment": "center",
+        "image": "shopify://shop_images/IMG_4359.png",
+        "padding_top": 60,
+        "padding_bottom": 80
+      }
+    },
+    "scrolling_content_qTjdYB": {
+      "type": "scrolling-content",
+      "blocks": {
+        "text_wkTBA6": {
+          "type": "text",
+          "settings": {
+            "text": "Exceptional Service"
+          }
+        },
+        "image_4rCECG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_4_f2ac0845-aa08-42f8-82bd-819b7edb40bb.png",
+            "set_custom_width": true,
+            "custom_width": 20
+          }
+        },
+        "text_xz4Bx7": {
+          "type": "text",
+          "settings": {
+            "text": "Perfect Flowers"
+          }
+        },
+        "image_UXJWgA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_4_f2ac0845-aa08-42f8-82bd-819b7edb40bb.png",
+            "set_custom_width": true,
+            "custom_width": 20
+          }
+        },
+        "text_qajgrt": {
+          "type": "text",
+          "settings": {
+            "text": "Reliable Delivery"
+          }
+        },
+        "image_dxKPH4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_4_f2ac0845-aa08-42f8-82bd-819b7edb40bb.png",
+            "set_custom_width": true,
+            "custom_width": 20
+          }
+        }
+      },
+      "block_order": [
+        "text_wkTBA6",
+        "image_4rCECG",
+        "text_xz4Bx7",
+        "image_UXJWgA",
+        "text_qajgrt",
+        "image_dxKPH4"
+      ],
+      "disabled": true,
+      "settings": {
+        "separate_section_with_border": false,
+        "scrolling_speed": 0.1,
+        "scroll_direction": "left",
+        "pause_on_hover": false,
+        "text_font": "heading",
+        "text_font_size_mobile": 18,
+        "text_font_size_desktop": 48,
+        "section_vertical_spacing_mobile": 20,
+        "section_vertical_spacing_desktop": 24,
+        "item_horizontal_spacing_mobile": 35,
+        "item_horizontal_spacing_desktop": 50,
+        "background": "#6a6e49",
+        "text_color": "#ffffff"
+      }
+    },
+    "image_with_text_TTpj8m": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_BFmXPk": {
+          "type": "heading",
+          "settings": {
+            "text": "Beautiful Blooms for Every Moment, Every Day",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_JUDEJy": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Discover the unmatched quality of Fleur De Luxe, where every floral arrangement is a work of art crafted from premium blooms. Customize your bouquet with a variety of options to suit any occasion.<br/><br/>Enjoy the convenience of free shipping and same-day delivery, ensuring your flowers always arrive fresh and beautiful.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BFmXPk",
+        "richtext_JUDEJy"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "color_scheme_inner": "",
+        "narrow_section": true,
+        "remove_left_padding": false,
+        "separate_section_with_border": true,
+        "image": "{{ product.featured_image }}",
+        "reveal_on_scroll": true,
+        "image_position": "end",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "image_with_text_JzLbGf": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_b9q6wm": {
+          "type": "heading",
+          "settings": {
+            "text": "Luxurious Blooms for Every Occasion",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_GJHzCb": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Discover the unmatched quality of Fleur De Luxe, where every floral arrangement is a work of art crafted from premium blooms. Customize your bouquet with a variety of options to suit any occasion.<br/><br/>Enjoy the convenience of free shipping and same-day delivery, ensuring your flowers always arrive fresh and beautiful.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_b9q6wm",
+        "richtext_GJHzCb"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "color_scheme_inner": "scheme-b2459d77-d7ab-4f31-9c8c-a30bbfd3eb4a",
+        "narrow_section": false,
+        "remove_left_padding": false,
+        "separate_section_with_border": true,
+        "image": "shopify://shop_images/IMG_6926.png",
+        "reveal_on_scroll": true,
+        "image_position": "start",
+        "content_width": "sm",
+        "remove_vertical_spacing": true
+      }
+    },
+    "1726426033792a5e8e": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_rhMVcR": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_rhMVcR"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "hide_product_information": false,
+        "stack_products": false,
+        "recommendations_count": 10,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "",
+        "title": "You May Also Like",
+        "content": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "features_section_qdTX3F",
+    "scrolling_content_qTjdYB",
+    "image_with_text_TTpj8m",
+    "image_with_text_JzLbGf",
+    "1726426033792a5e8e",
+    "related-products"
+  ]
+}

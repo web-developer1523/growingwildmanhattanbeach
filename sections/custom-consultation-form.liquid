@@ -1,0 +1,262 @@
+{% comment %}
+  This section creates a custom consultation form.
+  - It uses Shopify's built-in contact form functionality.
+  - All text content is editable in the theme customizer.
+  - Submissions are sent to the store's customer email address.
+{% endcomment %}
+
+<style>
+  .consultation-form-wrapper {
+    padding: 50px 20px;
+    background-color: {{ section.settings.background_color }};
+  }
+
+  .consultation-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    color: {{ section.settings.text_color }};
+  }
+
+  .consultation-form-container h2 {
+    font-size: 2.5rem;
+    font-family: "Times New Roman", Times, serif; /* Or your theme's serif font */
+    font-weight: 400;
+    color: {{ section.settings.text_color }};
+    margin-bottom: 15px;
+  }
+
+  .consultation-form-container .subheading {
+    font-size: 1rem;
+    color: {{ section.settings.text_color | color_modify: 'alpha', 0.75 }};
+    max-width: 450px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+  }
+
+  .consultation-form {
+    text-align: left;
+  }
+
+  .form-field {
+    margin-bottom: 20px;
+  }
+
+  .form-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Important for consistent sizing */
+  }
+
+  .form-field input:focus,
+  .form-field textarea:focus {
+    border-color: #333;
+    outline: none;
+  }
+  
+  /* Style for the date input placeholder */
+  input[type="date"] {
+    position: relative;
+    color: #555;
+  }
+  
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    opacity: 0.8;
+  }
+
+  .form-success p {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .form-errors {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+
+  .form-errors ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .form-submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: {{ section.settings.button_background_color }};
+    color: {{ section.settings.button_text_color }};
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+
+  .form-submit-button:hover {
+    opacity: 0.85;
+  }
+
+  @media (max-width: 768px) {
+    .consultation-form-container h2 {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+<div class="consultation-form-wrapper">
+  <div class="consultation-form-container">
+    {% if section.settings.heading != blank %}
+      <h2>{{ section.settings.heading | escape }}</h2>
+    {% endif %}
+
+    {% if section.settings.subheading != blank %}
+      <div class="subheading">{{ section.settings.subheading }}</div>
+    {% endif %}
+
+    <div class="consultation-form">
+      {%- form 'contact', id: 'ConsultationForm' -%}
+        {%- if form.posted_successfully? -%}
+          <div class="form-success">
+            <p>{{ section.settings.success_message }}</p>
+          </div>
+        {%- endif -%}
+
+        {%- if form.errors -%}
+          <div class="form-errors">
+             <p><strong>Please fix the following errors:</strong></p>
+             <ul>
+              {%- for field in form.errors -%}
+                <li>
+                  {{ form.errors.translated_fields[field] | capitalize }} {{ form.errors.messages[field] }}.
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+
+        <div class="form-field">
+          <label for="ContactForm-name">Full Name</label>
+          <input type="text" id="ContactForm-name" name="contact[name]" required>
+        </div>
+
+        <div class="form-field">
+          <label for="ContactForm-email">Email Address</label>
+          <input type="email" id="ContactForm-email" name="contact[email]" required>
+        </div>
+
+        <div class="form-field">
+          <label for="ContactForm-phone">Phone Number</label>
+          <input type="tel" id="ContactForm-phone" name="contact[phone_number]">
+        </div>
+
+        <div class="form-field">
+          <label for="ContactForm-wedding-date">Wedding Date (Approximate)</label>
+          <input type="date" id="ContactForm-wedding-date" name="contact[Wedding Date]">
+        </div>
+
+        <div class="form-field">
+          <label for="ContactForm-body">Tell us about your vision (optional)</label>
+          <textarea rows="5" id="ContactForm-body" name="contact[body]"></textarea>
+        </div>
+
+    <button type="submit" class="form-submit-button">
+  {{ section.settings.button_text | escape }}
+</button>
+
+      {%- endform -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Consultation Form",
+  "tag": "section",
+  "class": "section-consultation-form",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Book Your Free Consultation"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>Ready to start planning your dream wedding flowers? Fill out the form below, and one of our expert designers will be in touch shortly.</p>"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success Message",
+      "default": "Thanks for contacting us! We'll be in touch shortly."
+    },
+    {
+      "type": "header",
+      "content": "Colors & Styling"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button Background",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#FFFFFF"
+    }
+        ,
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Submit"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Consultation Form"
+    }
+  ]
+}
+{% endschema %}

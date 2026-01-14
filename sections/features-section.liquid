@@ -1,0 +1,274 @@
+{{ 'component-features-section.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div
+  class="color-{{ section.settings.color_scheme }} isolate gradient section-{{ section.id }}-padding"
+>
+  <div class="{{ section.settings.heading_alighment }} title-wrapper title-wrapper--no-top-margin container">
+    {%- if section.settings.title != blank -%}
+      <h2 class="title inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+        {{ section.settings.title }}
+      </h2>
+    {%- endif -%}
+  </div>
+  <div class="features-container container page-width-narrow">
+    <div class="features-left">
+      {% for block in section.blocks %}
+        {% case forloop.index %}
+          {% when 1 %}
+            {% if block.settings.title != blank or block.settings.text != blank %}
+              <div class="features-inner features_inner1">
+                <svg
+                  class="arrow_icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="140"
+                  height="30"
+                  viewBox="0 0 140 30"
+                  fill="none"
+                >
+                  <path d="M0.5 4C0.5 6.20914 2.29086 8 4.5 8C6.70914 8 8.5 6.20914 8.5 4C8.5 1.79086 6.70914 0 4.5 0C2.29086 0 0.5 1.79086 0.5 4ZM72.748 4L72.9944 3.29163L72.8748 3.25H72.748V4ZM132 26C132 28.2091 133.791 30 136 30C138.209 30 140 28.2091 140 26C140 23.7909 138.209 22 136 22C133.791 22 132 23.7909 132 26ZM4.5 4.75H72.748V3.25H4.5V4.75ZM72.5017 4.70837L135.754 26.7084L136.246 25.2916L72.9944 3.29163L72.5017 4.70837Z" fill="#CDB494"/>
+                </svg>
+                <svg
+                  class="dot_icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                >
+                  <circle cx="4" cy="4" r="4" fill="#6A6E49"/>
+                </svg>
+                <div class="features_content">
+                  <h2>{{ block.settings.title }}</h2>
+                  <p>{{ block.settings.text }}</p>
+                </div>
+              </div>
+            {% endif %}
+          {% when 2 %}
+            {% if block.settings.title != blank or block.settings.text != blank %}
+              <div class="features-inner features_inner2">
+                <svg
+                  class="arrow_icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="140"
+                  height="30"
+                  viewBox="0 0 140 30"
+                  fill="none"
+                >
+                  <path d="M0.5 26C0.5 23.7909 2.29086 22 4.5 22C6.70914 22 8.5 23.7909 8.5 26C8.5 28.2091 6.70914 30 4.5 30C2.29086 30 0.5 28.2091 0.5 26ZM72.748 26L72.9944 26.7084L72.8748 26.75H72.748V26ZM132 4C132 1.79086 133.791 0 136 0C138.209 0 140 1.79086 140 4C140 6.20914 138.209 8 136 8C133.791 8 132 6.20914 132 4ZM4.5 25.25H72.748V26.75H4.5V25.25ZM72.5017 25.2916L135.754 3.29163L136.246 4.70837L72.9944 26.7084L72.5017 25.2916Z" fill="#CDB494"/>
+                </svg>
+                <svg
+                  class="dot_icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                >
+                  <circle cx="4" cy="4" r="4" fill="#6A6E49"/>
+                </svg>
+                <div class="features_content">
+                  <h2>{{ block.settings.title }}</h2>
+                  <p>{{ block.settings.text }}</p>
+                </div>
+              </div>
+            {% endif %}
+        {% endcase %}
+      {% endfor %}
+    </div>
+   {% if product.featured_image != blank %}
+  <div class="features-middle">
+    <img src="{{ product.featured_image | image_url }}">
+  </div>
+{% endif %}
+
+    <div class="features-right">
+      {% for block in section.blocks %}
+        {% case forloop.index %}
+          {% when 3 %}
+            {% if block.settings.title != blank or block.settings.text != blank %}
+              <div class="features-inner features_inner3">
+                <svg
+                  class="arrow_icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="140"
+                  height="30"
+                  viewBox="0 0 140 30"
+                  fill="none"
+                >
+                  <path d="M139.5 4C139.5 6.20914 137.709 8 135.5 8C133.291 8 131.5 6.20914 131.5 4C131.5 1.79086 133.291 0 135.5 0C137.709 0 139.5 1.79086 139.5 4ZM67.252 4L67.0056 3.29163L67.1252 3.25H67.252V4ZM8 26C8 28.2091 6.20914 30 4 30C1.79086 30 0 28.2091 0 26C0 23.7909 1.79086 22 4 22C6.20914 22 8 23.7909 8 26ZM135.5 4.75H67.252V3.25H135.5V4.75ZM67.4983 4.70837L4.24638 26.7084L3.75362 25.2916L67.0056 3.29163L67.4983 4.70837Z" fill="#CDB494"/>
+                </svg>
+                <svg
+                  class="dot_icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                >
+                  <circle cx="4" cy="4" r="4" fill="#6A6E49"/>
+                </svg>
+                <div class="features_content">
+                  <h2>{{ block.settings.title }}</h2>
+                  <p>{{ block.settings.text }}</p>
+                </div>
+              </div>
+            {% endif %}
+          {% when 4 %}
+            {% if block.settings.title != blank or block.settings.text != blank %}
+              <div class="features-inner features_inner4">
+                <svg
+                  class="arrow_icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="140"
+                  height="30"
+                  viewBox="0 0 140 30"
+                  fill="none"
+                >
+                  <path d="M139.5 26C139.5 23.7909 137.709 22 135.5 22C133.291 22 131.5 23.7909 131.5 26C131.5 28.2091 133.291 30 135.5 30C137.709 30 139.5 28.2091 139.5 26ZM67.252 26L67.0056 26.7084L67.1252 26.75H67.252V26ZM8 4C8 1.79086 6.20914 0 4 0C1.79086 0 0 1.79086 0 4C0 6.20914 1.79086 8 4 8C6.20914 8 8 6.20914 8 4ZM135.5 25.25H67.252V26.75H135.5V25.25ZM67.4983 25.2916L4.24638 3.29163L3.75362 4.70837L67.0056 26.7084L67.4983 25.2916Z" fill="#CDB494"/>
+                </svg>
+                <svg
+                  class="dot_icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                >
+                  <circle cx="4" cy="4" r="4" fill="#6A6E49"/>
+                </svg>
+                <div class="features_content">
+                  <h2>{{ block.settings.title }}</h2>
+                  <p>{{ block.settings.text }}</p>
+                </div>
+              </div>
+            {% endif %}
+        {% endcase %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Features Section",
+  "settings": [
+  {
+    "type": "color_scheme",
+    "id": "color_scheme",
+    "label": "Color Scheme",
+    "default": "scheme-1"
+  },
+  {
+    "type": "inline_richtext",
+    "id": "title",
+    "default": "Heading",
+    "label": "Heading"
+  },
+  {
+    "type": "select",
+    "id": "heading_size",
+    "options": [
+      {
+        "value": "h2",
+        "label": "H2"
+      },
+      {
+        "value": "h1",
+        "label": "H1"
+      },
+      {
+        "value": "h3",
+        "label": "H3"
+      },
+      {
+        "value": "h4",
+        "label": "H4"
+      }
+    ],
+    "default": "h2",
+    "label": "Heading Size"
+  },
+  {
+    "type": "select",
+    "id": "heading_alighment",
+    "options": [
+      {
+        "value": "left",
+        "label": "Left"
+      },
+      {
+        "value": "center",
+        "label": "Center"
+      },
+      {
+        "value": "right",
+        "label": "RIght"
+      }
+    ],
+    "default": "center",
+    "label": "Heading Alignment"
+  },
+  {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Select Image"
+  },
+  {
+    "type": "range",
+    "id": "padding_top",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "label": "Padding Top",
+    "default": 36
+  },
+  {
+    "type": "range",
+    "id": "padding_bottom",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "label": "Padding Bottom",
+    "default": 36
+  }
+  ],
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Features Section"
+    }
+  ]
+}
+{% endschema %}

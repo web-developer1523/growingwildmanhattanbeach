@@ -1,0 +1,215 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "rich_text_UQePJ9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yFkrhQ": {
+          "type": "heading",
+          "settings": {
+            "text": "Flower Delivery in Marina Del Rey.",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_Hgq9Az": {
+          "type": "richtext",
+          "settings": {
+            "content": "<h3>Growing Wild, your local Marina Del Rey florist.<br/><br/></h3>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yFkrhQ",
+        "richtext_Hgq9Az"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "multiple_media_with_text_Hh7W6m": {
+      "type": "multiple-media-with-text",
+      "blocks": {
+        "image_x4rdCF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_6926.png",
+            "rotation": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_x4rdCF"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": true,
+        "media_position_desktop": "after_text",
+        "media_position_mobile": "before_text",
+        "media_layout": "overlap",
+        "media_alignment": "center",
+        "media_alignment_offset": 0,
+        "media_mobile_alignment_offset": 0,
+        "text_alignment": "center",
+        "subheading": "",
+        "title": "Growing Wild, serving Marina Del Rey, CA",
+        "content": "<p>Located a few miles from LAX, is the charming neighborhood of <a href=\"https://visitmdr.com/\">Marina del Rey</a>. It is renowned for its beautiful beaches, bike paths, and the world's largest man-made small craft harbor - the Marina Del Rey Marina. Washington Boulevard borders Marina del Rey’s northern perimeter, while <a href=\"https://www.culvercity.org/Explore/Ballona-Creek\">Ballona Creek</a> borders the southern perimeter. Head east to find Lincoln Boulevard or go west to find Via Dolce. The colorful buildings at <a href=\"https://visitmdr.com/place/fishermans-village\">Fisherman's Village</a> greatly add to its beauty. Concerts featuring talented musicians are often held at <a href=\"https://chacepark.com/\">Burton Chace Park</a></p><p>The most popular Growing Wild floral arrangements among residents are our Spring Fling, White Loveliness, and Joyous flowers. Our seasoned designers will be happy to make romantic, floral centerpieces for anniversary celebrations held at Fisherman's Village restaurants. Customers at the Pacific Yacht Club, California Yacht Club, UCLA Aquatic Center, and the Ritz Carlton at the Marina Del Rey Marina rely on us frequently for birthday bouquets and special event floral decorations. Buy the stunning Simple Summer bouquet on our website now for concert performers at Burton Chace Park.</p>",
+        "button_1_text": "",
+        "button_1_link": "",
+        "button_1_style": "solid",
+        "button_2_text": "",
+        "button_2_link": "",
+        "button_2_style": "solid"
+      }
+    },
+    "text_with_icons_Bzf7Vd": {
+      "type": "text-with-icons",
+      "blocks": {
+        "item_838FnN": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-delivery-truck",
+            "icon_width": 24,
+            "mobile_icon_width": 24,
+            "title": "Hand Delivery",
+            "content": "<p> We are open Monday from 8:00am to 5:00pm. We are open Tuesday from 8:00am to 5:00pm. We are open Wednesday from 8:00am to 6:00pm. We are open Thursday from 8:00am to 6:00pm. We are open Friday from 8:00am to 6:00pm. We are open Saturday from 8:00am to 4:00pm. We are open Sunday from 10:00am to 3:00pm. We offer hand delivery on all orders starting at $30.00. We also guarantee same day delivery tomarina del reyfor orders placed before 1:00 PM.</p>"
+          }
+        },
+        "item_6adrJw": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-customer-support",
+            "icon_width": 24,
+            "mobile_icon_width": 24,
+            "title": "Always Local",
+            "content": "<p>Growing Wild delivers to homes and businesses in the 90292, 90295 zip codes in marina del rey.</p>"
+          }
+        },
+        "item_gnECQj": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-shield",
+            "icon_width": 24,
+            "mobile_icon_width": 24,
+            "title": "Areas Served",
+            "content": "<p>Growing Wild is located inManhattan Beachand hand delivers flowers inmarina del rey as well as<a href=\"https://growingwildmanhattanbeach.com/nearby/el-segundo/\">el segundo</a>,<a href=\"https://growingwildmanhattanbeach.com/nearby/hermosa-beach/\">hermosa beach</a>and<a href=\"https://growingwildmanhattanbeach.com/nearby/redondo-beach/\">redondo beach</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_838FnN",
+        "item_6adrJw",
+        "item_gnECQj"
+      ],
+      "name": "t:sections.text_with_icons.presets.text_with_icons.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "stack_on_mobile": false,
+        "icon_color": "",
+        "text_color": "",
+        "text_alignment": "center"
+      }
+    },
+    "featured_collections_JBgkiT": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_NDXqY4": {
+          "type": "collection",
+          "settings": {
+            "collection": "arrangements",
+            "products_count": 8,
+            "title": "Shop Now",
+            "link_url": "",
+            "link_text": "View all"
+          }
+        }
+      },
+      "block_order": [
+        "collection_NDXqY4"
+      ],
+      "name": "t:sections.featured_collections.presets.featured_collections.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": ""
+      }
+    },
+    "rich_text_UEFaAP": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_34yVab": {
+          "type": "heading",
+          "settings": {
+            "text": "Send a Custom Arrangement to Marina Del Rey",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_Mj89Kn": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Growing Wild's prompt flower delivery to Marina del Rey is highly rated by customers. Recipients of our magnificent, floral creations often feel awe-struck the moment they receive our fresh and vibrant floral arrangements. Your loved one will smile when you surprise them with a one-of-a-kind Mother's Day, birthday, anniversary, or Valentine's Day bouquet from Growing Wild. Experience our amazing flower delivery to Marina del Rey for yourself today.<br/><br/><strong>Design your custom arrangement now</strong><br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_34yVab",
+        "richtext_Mj89Kn"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "custom_liquid_8gVfEj": {
+      "type": "custom-liquid",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<div class=\"shop-info\">\n    <div class=\"shop-hours\">\n        <h3>Store Hours</h3>\n        <ul>\n            <li>Monday: 8 AM - 5 PM</li>\n            <li>Tuesday: 8 AM - 5 PM</li>\n            <li>Wednesday: 8 AM - 5 PM</li>\n            <li>Thursday: 8 AM - 6 PM</li>\n            <li>Friday: 8 AM - 6 PM</li>\n            <li>Saturday: 8 AM - 4 PM</li>\n            <li>Sunday: 10 AM - 4 PM</li>\n        </ul>\n    </div>\n    <div class=\"shop-address\">\n        <h3>Address</h3>\n        <p>\n            <a href=\"https://www.google.com/maps/dir/?api=1&amp;origin=&amp;destination=1201+Highland+Ave+Manhattan+Beach%2C+CA%2C+90266\" target=\"_blank\">\n                1201 Highland Ave Manhattan Beach, CA, 90266\n            </a>\n        </p>\n    </div>\n    <div class=\"shop-contact\">\n        <h3>Contact</h3>\n        <p>Phone: <a href=\"tel:3105454432\">(310) 545-4432</a></p>\n        <p>Email: <a href=\"mailto:Growingwildmb@gmail.com\">Growingwildmb@gmail.com</a></p>\n    </div>\n</div>\n\n\n<style>\n/* General container styling */\n.shop-info {\n    background-color: #fff;\n    padding: 15px; /* Reduced padding for mobile */\n    border-radius: 10px;\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n    margin-bottom: 20px;\n    max-width: 100%; /* Ensure it fits on small screens */\n    margin: 0 auto;\n    display: flex;\n    flex-direction: column; /* Stack elements vertically for mobile */\n    text-align: left;\n}\n\n/* Flexbox styling for larger screens */\n@media (min-width: 768px) {\n    .shop-info {\n        flex-direction: row; /* Horizontal layout for larger screens */\n        justify-content: space-between;\n    }\n}\n\n/* Store hours list styling */\n.shop-hours ul {\n    list-style: none;\n    padding: 0;\n}\n\n.shop-hours li {\n    font-size: 14px; /* Smaller font size for mobile */\n    margin: 5px 0;\n}\n\n/* Address and contact styling */\n.shop-address, .shop-contact {\n    margin-top: 10px; /* Add some margin for spacing */\n}\n\n/* Title styling */\n.shop-info h3 {\n    margin-bottom: 10px;\n    font-size: 16px; /* Reduced font size */\n}\n\n/* Link styling */\n.shop-info a {\n    color: #0066c0;\n    text-decoration: none;\n}\n\n.shop-info a:hover {\n    text-decoration: underline;\n}\n\n/* Make iframe responsive */\niframe {\n    width: 100%;\n    height: 300px; /* Adjust height for mobile */\n    border: 0;\n}\n\n/* Media query for very small screens */\n@media (max-width: 480px) {\n    .shop-info {\n        padding: 10px; /* Further reduce padding for small screens */\n    }\n\n    .shop-hours li {\n        font-size: 12px; /* Further reduce font size */\n    }\n\n    .shop-info h3 {\n        font-size: 14px;\n    }\n\n    iframe {\n        height: 250px; /* Adjust map height for small screens */\n    }\n}\n</style>\n\n\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d65291229.265817314!2d-135.31806679281758!3d2.7984254050691773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b3ec7923b49d%3A0x727c641233c57a02!2s1201%20Highland%20Ave%2C%20Manhattan%20Beach%2C%20CA%2090266%2C%20Egyes%C3%BClt%20%C3%81llamok!5e0!3m2!1shu!2shu!4v1724675987434!5m2!1shu!2shu\" width=\"100%\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+        "text_alignment": "center"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_UQePJ9",
+    "multiple_media_with_text_Hh7W6m",
+    "text_with_icons_Bzf7Vd",
+    "featured_collections_JBgkiT",
+    "rich_text_UEFaAP",
+    "custom_liquid_8gVfEj"
+  ]
+}

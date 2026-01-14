@@ -1,0 +1,181 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "service_feature_section_N66d9L": {
+      "type": "service-feature-section",
+      "name": "Service Feature Section",
+      "settings": {
+        "bg_color": "#faf8f5",
+        "text_color": "#1a1a1a",
+        "accent_color": "#6b7051",
+        "badge_text": "TOP-RATED EVENT FLORALS",
+        "title": "Florals That Make Moments Last",
+        "description": "From weddings to milestone parties, our handcrafted arrangements turn any celebration into a picture-perfect memory.",
+        "btn_text": "Plan My Event Florals",
+        "btn_link": "",
+        "sub_note": "Same-day delivery & full event setup available",
+        "review_image": "shopify://shop_images/Customer_Avatar.png",
+        "review_name": "Casey",
+        "review_text": "Growing Wild designed our wedding florals and it took everyone's breath away. The colors, the details everything was beyond perfect.",
+        "feature_image": "shopify://shop_images/Florals_That_Make_Moments_Last.png"
+      }
+    },
+    "service_values_section_wKNVi8": {
+      "type": "service-values-section",
+      "blocks": {
+        "feature_we83Ea": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Custom_Floral_Design.svg",
+            "text": "CUSTOM\nFLORAL DESIGN"
+          }
+        },
+        "feature_EhnbRb": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Full_Delivery_Setup.svg",
+            "text": "FULL DELIVERY\n& SETUP"
+          }
+        },
+        "feature_gQWPPn": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Perfect_for_Every_Celebration.svg",
+            "text": "PERFECT FOR\nEVERY CELEBRATION"
+          }
+        }
+      },
+      "block_order": [
+        "feature_we83Ea",
+        "feature_EhnbRb",
+        "feature_gQWPPn"
+      ],
+      "name": "Service Values Banner",
+      "settings": {
+        "bg_color": "#faf8f5",
+        "text_color": "#1a1a1a",
+        "accent_color": "#6b7051",
+        "subtitle": "YOUR LOCAL EVENT FLORIST",
+        "title": "Beautiful, handcrafted florals designed to match your celebration, your style, and your story."
+      }
+    },
+    "service_arch_grid_7Y6BMH": {
+      "type": "service-arch-grid",
+      "blocks": {
+        "service_UwcMjJ": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/wedding_florals_19734b75-ef38-43a3-9d65-086efd8bc9d3.png",
+            "title": "Wedding Florals",
+            "description": "Romantic bouquets, ceremony florals, and reception styling for your big day.",
+            "link": ""
+          }
+        },
+        "service_nBAgnX": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/party_events.png",
+            "title": "Party Events",
+            "description": "Statement arrangements and décor to elevate birthdays, showers, and celebrations.",
+            "link": ""
+          }
+        },
+        "service_HiJN7a": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/full_setup.png",
+            "title": "Full Setup",
+            "description": "We handle delivery, installation, and teardown so your event feels effortless.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "service_UwcMjJ",
+        "service_nBAgnX",
+        "service_HiJN7a"
+      ],
+      "name": "Service Arch Grid (Slope)",
+      "settings": {
+        "bg_color": "#6b7051",
+        "text_color": "#ffffff",
+        "border_color": "#ffffff",
+        "title": "Flowers for Every Kind of\nCelebration"
+      }
+    },
+    "floral_zigzag_section_ihYt4G": {
+      "type": "floral-zigzag-section",
+      "blocks": {
+        "row_qnUk8V": {
+          "type": "row",
+          "settings": {
+            "subtitle": "WEDDINGS",
+            "title": "Elegant florals for your perfect day",
+            "description": "We create romantic, cohesive florals for your ceremony and reception from bouquets and aisle arrangements to arches.",
+            "btn_text": "View wedding florals",
+            "btn_link": "",
+            "main_image": "shopify://shop_images/Elegant_florals_for_your_perfect_day.png"
+          }
+        },
+        "row_9c3QBj": {
+          "type": "row",
+          "settings": {
+            "subtitle": "PARTIES & EVENTS",
+            "title": "Floral styling that brings celebrations to life",
+            "description": "We create romantic, cohesive florals for your ceremony and reception from bouquets and aisle arrangements to arches.",
+            "btn_text": "View wedding florals",
+            "btn_link": "",
+            "main_image": "shopify://shop_images/We_handle_delivery_setup_and_teardown.png"
+          }
+        },
+        "row_dDgFqW": {
+          "type": "row",
+          "settings": {
+            "subtitle": "FULL SERVICE",
+            "title": "We handle delivery, setup, and teardown",
+            "description": "We create romantic, cohesive florals for your ceremony and reception from bouquets and aisle arrangements to arches.",
+            "btn_text": "View wedding florals",
+            "btn_link": "",
+            "main_image": "shopify://shop_images/Floral_styling_that_brings_celebrations_to_life.png"
+          }
+        }
+      },
+      "block_order": [
+        "row_qnUk8V",
+        "row_9c3QBj",
+        "row_dDgFqW"
+      ],
+      "name": "Floral Zig-Zag (No Shape)",
+      "settings": {
+        "bg_color": "#FAF8F5",
+        "text_color": "#1a1a1a",
+        "main_heading": "Florals that make every celebration unforgettable",
+        "top_sub": "OVERVIEW"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "service_feature_section_N66d9L",
+    "service_values_section_wKNVi8",
+    "service_arch_grid_7Y6BMH",
+    "floral_zigzag_section_ihYt4G"
+  ]
+}

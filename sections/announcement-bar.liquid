@@ -1,0 +1,246 @@
+{%- if section.blocks.size > 0 -%}
+<style>
+  :root {
+    --announcement-bar-is-sticky: {% if section.settings.enable_sticky %}1{% else %}0{% endif %};
+  }
+
+  {% if section.settings.enable_sticky %}
+  #shopify-section-{{ section.id }} {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+  {% endif %}
+
+  #shopify-section-{{ section.id }} {
+    --announcement-bar-font-size: {{ section.settings.mobile_font_size | divided_by: 16.0 }}rem;
+  }
+
+  @media (min-width: 999px) {
+    #shopify-section-{{ section.id }} {
+      --announcement-bar-font-size: {{ section.settings.desktop_font_size | divided_by: 16.0 }}rem;
+    }
+  }
+
+  .announcement-timer {
+    display: inline-flex;
+    gap: 6px;
+    margin-left: 10px;
+  }
+
+  .announcement-timer__box {
+    padding: 2px 6px;
+    font-size: 14px;
+    font-weight: 600;
+    background: rgba(0,0,0,.15);
+  }
+
+  /* hide only the timer block */
+  .clock-hidden {
+    display: none !important;
+  }
+</style>
+
+<height-observer variable="announcement-bar">
+  <div class="announcement-bar color-scheme color-scheme--{{ section.settings.color_scheme.id }}">
+    {% assign carousel_id = 'carousel-' | append: section.id %}
+
+    <announcement-bar-carousel
+      allow-swipe
+      {% if section.settings.autoplay %}
+        autoplay="{{ section.settings.cycle_speed }}"
+      {% endif %}
+      id="{{ carousel_id }}"
+      class="announcement-bar__carousel"
+    >
+      {% for block in section.blocks %}
+        <p
+          class="prose heading announcement-block {% if forloop.first %}is-selected{% endif %}"
+          {% if block.type == 'message_with_timer' %}data-countdown-block{% endif %}
+          {{ block.shopify_attributes }}
+        >
+          {% if block.settings.icon != blank %}
+            <img src="{{ block.settings.icon | image_url }}">
+          {% endif %}
+
+          {{ block.settings.text }}
+
+          {% if block.type == 'message_with_timer' %}
+            <span class="announcement-timer">
+              <span class="announcement-timer__box hours">00</span> :
+              <span class="announcement-timer__box minutes">00</span> :
+               <span class="announcement-timer__box seconds">00</span> 
+            </span>
+          {% endif %}
+        </p>
+      {% endfor %}
+    </announcement-bar-carousel>
+  </div>
+</height-observer>
+
+<script>
+(function () {
+
+  /* ===============================
+     ⏰ TIMER WINDOW (PST)
+     =============================== */
+  const START_HOUR = 8;
+  const START_MINUTE = 0;
+
+  const END_HOUR = 13;   // 1 PM (24-hour format)
+  const END_MINUTE =00;
+
+  function getPSTNow() {
+    return new Date(
+      new Date().toLocaleString("en-US", {
+        timeZone: "America/Los_Angeles"
+      })
+    );
+  }
+
+  function updateCountdown() {
+    const now = getPSTNow();
+
+    const start = new Date(now);
+    start.setHours(START_HOUR, START_MINUTE, 0, 0);
+
+    const end = new Date(now);
+    end.setHours(END_HOUR, END_MINUTE, 0, 0);
+
+    document.querySelectorAll('[data-countdown-block]').forEach(block => {
+      const hEl = block.querySelector('.hours');
+      const mEl = block.querySelector('.minutes');
+      const sEl = block.querySelector('.seconds');
+
+      // ❌ Before START → hide timer block only
+ {% comment %} if (now < start) {
+        block.classList.add('clock-hidden');
+        return;
+      } {% endcomment %}
+
+      // ❌ After END → hide timer block only
+      {% comment %} if (now >= end) {
+        block.classList.add('clock-hidden');
+        return;
+      }  {% endcomment %}
+
+      // ✅ Remaining time until END
+      const diff = end - now;
+
+      // Safety guard (never allow negative values)
+      if (diff <= 0) {
+        block.classList.add('clock-hidden');
+        return;
+      }
+
+      const hours = Math.floor(diff / 3600000);
+      const minutes = Math.floor((diff % 3600000) / 60000);
+      const seconds = Math.floor((diff % 60000) / 1000);
+
+      hEl.textContent = String(hours).padStart(2, '0');
+      mEl.textContent = String(minutes).padStart(2, '0');
+      sEl.textContent = String(seconds).padStart(2, '0');
+
+      block.classList.remove('clock-hidden');
+    });
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+})();
+</script>
+
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar timer",
+  "tag": "aside",
+  "max_blocks": 5,
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "Free shipping on all orders"
+        }
+      ]
+    },
+    {
+      "type": "message_with_timer",
+      "name": "Message with countdown",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "Offer ends in"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-3"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky",
+      "label": "Enable sticky bar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto rotate",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "cycle_speed",
+      "min": 2,
+      "max": 20,
+      "step": 1,
+      "unit": "sec",
+      "label": "Rotation speed",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "desktop_font_size",
+      "min": 9,
+      "max": 15,
+      "unit": "px",
+      "label": "Desktop text size",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "mobile_font_size",
+      "min": 9,
+      "max": 15,
+      "unit": "px",
+      "label": "Mobile text size",
+      "default": 10
+    }
+  ]
+}
+{% endschema %}

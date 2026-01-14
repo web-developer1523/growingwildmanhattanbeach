@@ -1,0 +1,271 @@
+{% comment %}
+  This section creates a hero banner with a video background.
+  - It supports an MP4 video URL for the background.
+  - It includes a fallback image for browsers/devices that don't support video autoplay.
+  - All content and styles are customizable through the theme editor.
+{% endcomment %}
+
+<style>
+  .video-hero-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: {{ section.settings.section_height }}vh;
+    background-color: #333; /* Fallback background color */
+  }
+
+  .video-hero-wrapper .video-hero__media {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    object-fit: cover; /* This makes the video/image cover the area without stretching */
+  }
+
+  .video-hero__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ section.settings.overlay_color }};
+    opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+    z-index: 2;
+  }
+
+  .video-hero__content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: {{ section.settings.text_align }};
+    padding: 2rem;
+    color: {{ section.settings.text_color }};
+    text-align: {{ section.settings.text_align }};
+  }
+
+  .video-hero__content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    color: {{ section.settings.text_color }};
+  }
+
+  .video-hero__content .video-hero__subheading {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 1rem 0;
+    line-height: 1.5;
+  }
+  
+  /* Center align subheading text if content is centered */
+  {% if section.settings.text_align == 'center' %}
+    .video-hero__content .video-hero__subheading {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  {% endif %}
+
+  .video-hero__button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: {{ section.settings.button_bg_color }};
+    color: {{ section.settings.button_text_color }};
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 1.5rem;
+    transition: transform 0.2s ease;
+  }
+
+  .video-hero__button:hover {
+    transform: scale(1.05);
+    color: {{ section.settings.button_text_color }};
+  }
+
+  /* Mobile Responsive Styles */
+  @media (max-width: 768px) {
+    .video-hero-wrapper {
+      height: 70vh; /* A bit smaller on mobile */
+    }
+    .video-hero__content h1 {
+      font-size: 2rem;
+    }
+    .video-hero__content .video-hero__subheading {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<div class="video-hero-wrapper" data-section-id="{{ section.id }}">
+  
+  <!-- Video and Fallback Image -->
+  {%- if section.settings.video_url != blank -%}
+    <video
+      class="video-hero__media"
+      src="{{ section.settings.video_url }}"
+      autoplay
+      loop
+      muted
+      playsinline
+      {% if section.settings.fallback_image != blank %}
+        poster="{{ section.settings.fallback_image | image_url: width: 1800 }}"
+      {% endif %}
+    >
+    </video>
+  {%- elsif section.settings.fallback_image != blank -%}
+    <img
+      class="video-hero__media"
+      src="{{ section.settings.fallback_image | image_url: width: 1800 }}"
+      alt="{{ section.settings.fallback_image.alt | escape }}"
+      loading="lazy"
+    >
+  {%- endif -%}
+
+  <!-- Overlay -->
+  <div class="video-hero__overlay"></div>
+
+  <!-- Content -->
+  <div class="video-hero__content">
+    {%- if section.settings.heading != blank -%}
+      <h1>{{ section.settings.heading | escape }}</h1>
+    {%- endif -%}
+
+    {%- if section.settings.subheading != blank -%}
+      <div class="video-hero__subheading">{{ section.settings.subheading }}</div>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
+      <a href="{{ section.settings.button_link }}" class="video-hero__button">
+        {{ section.settings.button_label | escape }}
+      </a>
+    {%- endif -%}
+  </div>
+
+</div>
+
+
+{% schema %}
+{
+  "name": "Video Hero Banner",
+  "tag": "section",
+  "class": "section-video-hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Video and Image"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video URL",
+      "info": "Requires an .MP4 link. Upload your video to Shopify (Settings > Files) and paste the URL here."
+    },
+    {
+      "type": "image_picker",
+      "id": "fallback_image",
+      "label": "Fallback Image",
+      "info": "Shows if the video doesn't load. Highly recommended."
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Announce Your Big Thing"
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<p>Use this space to tell a compelling story about your products or brand.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "header",
+      "content": "Styling and Layout"
+    },
+    {
+      "type": "range",
+      "id": "section_height",
+      "min": 40,
+      "max": 100,
+      "step": 5,
+      "unit": "vh",
+      "label": "Section Height",
+      "default": 80,
+      "info": "Height relative to the screen height (e.g., 100vh is full screen)."
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Content Alignment",
+      "options": [
+        { "value": "flex-start", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "flex-end", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay Opacity",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button Text Color",
+      "default": "#000000"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Hero Banner"
+    }
+  ]
+}
+{% endschema %}

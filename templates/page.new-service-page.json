@@ -1,0 +1,399 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "service_feature_section_PkGQhK": {
+      "type": "service-feature-section",
+      "name": "Service Feature Section",
+      "settings": {
+        "bg_color": "#faf8f5",
+        "text_color": "#1a1a1a",
+        "accent_color": "#6b7051",
+        "badge_text": "TOP-RATED EVENT FLORALS",
+        "title": "Florals That Make Moments Last",
+        "description": "From weddings to milestone parties, our handcrafted arrangements turn any celebration into a picture-perfect memory.",
+        "btn_text": "",
+        "btn_link": "",
+        "sub_note": "Same-day delivery & full event setup available",
+        "review_image": "shopify://shop_images/Customer_Avatar.png",
+        "review_name": "Casey",
+        "review_text": "Growing Wild designed our wedding florals and it took everyone's breath away. The colors, the details everything was beyond perfect.",
+        "feature_image": "shopify://shop_images/Florals_That_Make_Moments_Last_4.png"
+      }
+    },
+    "service_values_section_VGVziC": {
+      "type": "service-values-section",
+      "blocks": {
+        "feature_VbHPTx": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Custom_Floral_Design.svg",
+            "text": "CUSTOM\nFLORAL DESIGN"
+          }
+        },
+        "feature_G4j6Cw": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Full_Delivery_Setup.svg",
+            "text": "FULL DELIVERY\n& SETUP"
+          }
+        },
+        "feature_wzV6e7": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Perfect_for_Every_Celebration.svg",
+            "text": "PERFECT FOR\nEVERY CELEBRATION"
+          }
+        }
+      },
+      "block_order": [
+        "feature_VbHPTx",
+        "feature_G4j6Cw",
+        "feature_wzV6e7"
+      ],
+      "name": "Service Values Banner",
+      "settings": {
+        "bg_color": "#faf8f5",
+        "text_color": "#1a1a1a",
+        "accent_color": "#6b7051",
+        "subtitle": "YOUR LOCAL EVENT FLORIST",
+        "title": "Beautiful, handcrafted florals designed to match your celebration, your style, and your story."
+      }
+    },
+    "service_arch_grid_zdjrg9": {
+      "type": "service-arch-grid",
+      "blocks": {
+        "service_AGhxtw": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/Wedding_Florals_aaa7f1ee-5fde-40f4-802b-496d30c2554d.png",
+            "title": "Wedding Florals",
+            "description": "Romantic bouquets, ceremony florals, and reception styling for your big day.",
+            "link": ""
+          }
+        },
+        "service_U7dW6H": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/Party_Events_42bda28b-2d95-40ca-8964-0f724ddac23f.png",
+            "title": "Party Events",
+            "description": "Statement arrangements and décor to elevate birthdays, showers, and celebrations.\ntouches for your event.",
+            "link": ""
+          }
+        },
+        "service_gTDz9j": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/Full_Setup_1.png",
+            "title": "Full Setup",
+            "description": "We handle delivery, installation, and teardown so your event feels effortless.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "service_AGhxtw",
+        "service_U7dW6H",
+        "service_gTDz9j"
+      ],
+      "name": "Service Arch Grid (Slope)",
+      "settings": {
+        "bg_color": "#6b7051",
+        "text_color": "#ffffff",
+        "border_color": "#ffffff",
+        "title": "Flowers for Every Kind of\nCelebration"
+      }
+    },
+    "floral_zigzag_section_jKT4X3": {
+      "type": "floral-zigzag-section",
+      "blocks": {
+        "row_6Pfb8p": {
+          "type": "row",
+          "settings": {
+            "custom_icon": "shopify://shop_images/WEDDINGS_1.png",
+            "subtitle": "WEDDINGS",
+            "title": "Elegant florals for your perfect day",
+            "description": "We create romantic, cohesive florals for your ceremony and reception from bouquets and aisle arrangements to arches and centerpieces ensuring every floral detail reflects your love story and enhances the beauty of your special day.",
+            "btn_text": "",
+            "btn_link": "",
+            "main_image": "shopify://shop_images/Elegant_florals_for_your_perfect_day_8fd27a5d-4d03-415c-b23f-8905312017c2.png"
+          }
+        },
+        "row_wRJNGA": {
+          "type": "row",
+          "settings": {
+            "custom_icon": "shopify://shop_images/WEDDINGS_1.png",
+            "subtitle": "PARTIES & EVENTS",
+            "title": "Floral styling that brings celebrations to life",
+            "description": "Whether it’s a birthday, baby shower, anniversary, dinner party, or milestone celebration, our floral styling brings color, energy, and atmosphere to your event transforming the space and making every moment feel extra special.",
+            "btn_text": "",
+            "btn_link": "",
+            "main_image": "shopify://shop_images/Floral_styling_that_brings_celebrations_to_life_7a8a9ac6-b1ae-4625-a39b-f44d93963d3f.png"
+          }
+        },
+        "row_HR3QDw": {
+          "type": "row",
+          "settings": {
+            "custom_icon": "shopify://shop_images/WEDDINGS_1.png",
+            "subtitle": "FULL SERVICE",
+            "title": "We handle delivery, setup, and teardown",
+            "description": "We take care of everything on event day, including delivery, installation, and teardown — ensuring the florals look flawless the entire time and giving you the freedom to enjoy your celebration without stress or logistics.",
+            "btn_text": "",
+            "btn_link": "",
+            "main_image": "shopify://shop_images/We_handle_delivery_setup_and_teardown_3b6cfbb0-f75f-4430-8929-6d3c032fc9c6.png"
+          }
+        }
+      },
+      "block_order": [
+        "row_6Pfb8p",
+        "row_wRJNGA",
+        "row_HR3QDw"
+      ],
+      "name": "Floral Zig-Zag (Custom)",
+      "settings": {
+        "bg_color": "#faf8f5",
+        "text_color": "#1a1a1a",
+        "main_heading": "Florals that make every celebration unforgettable",
+        "top_sub": "OVERVIEW"
+      }
+    },
+    "floral_why_us_section_jAAWyx": {
+      "type": "floral-why-us-section",
+      "blocks": {
+        "feature_YyzeQg": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/delivery_setup_included.svg",
+            "title": "Delivery & Setup Included",
+            "text": "We install florals on-site and return for teardown after your event."
+          }
+        },
+        "feature_PUWhpD": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/hassle-free_planning.svg",
+            "title": "Hassle-Free Planning",
+            "text": "Flexible scheduling, fast proposals, and easy communication every step of the way."
+          }
+        },
+        "feature_Kb6zWU": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/stunning_photo_ready_florals.svg",
+            "title": "Stunning, Photo-Ready Florals",
+            "text": "Designed to look breathtaking in person and in your event photos."
+          }
+        }
+      },
+      "block_order": [
+        "feature_YyzeQg",
+        "feature_PUWhpD",
+        "feature_Kb6zWU"
+      ],
+      "name": "Floral Why Us Section",
+      "settings": {
+        "bg_image": "shopify://shop_images/banner.png",
+        "section_bg": "#faf8f5",
+        "title": "Why clients love planning\nflorals with us",
+        "description": "Effortless planning, expert setup, and florals that transform your celebration.",
+        "btn_text": "",
+        "btn_link": "",
+        "btn_bg_color": "#6b7051"
+      }
+    },
+    "testimonial_carousel_y9ipre": {
+      "type": "testimonial-carousel",
+      "blocks": {
+        "testimonial_RKxF3X": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Nicole",
+            "text": "Our wedding flowers were stunning — every detail felt personal and perfectly matched our vision.",
+            "stars": 5
+          }
+        },
+        "testimonial_NTf7ty": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Erin C.",
+            "text": "I booked florals for a birthday celebration and I was blown away. The colors, scale, and styling completely transformed the venue.",
+            "stars": 5
+          }
+        },
+        "testimonial_xPtahf": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Sonia",
+            "text": "The floral arch took my breath away the moment I saw it. When I look at our photos, the flowers make every single moment feel magical.",
+            "stars": 5
+          }
+        },
+        "testimonial_mU8wRP": {
+          "type": "testimonial",
+          "settings": {
+            "author": "Sarah",
+            "text": "Absolutely incredible service and beautiful arrangements. Highly recommended!",
+            "stars": 5
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_RKxF3X",
+        "testimonial_NTf7ty",
+        "testimonial_xPtahf",
+        "testimonial_mU8wRP"
+      ],
+      "name": "Testimonial Carousel",
+      "settings": {
+        "bg_color": "#faf8f5",
+        "card_bg": "#ffffff",
+        "text_color": "#1a1a1a",
+        "heading": "What Clients Are Saying About Growing Wild",
+        "link_text": "",
+        "link_url": ""
+      }
+    },
+    "effortless_process_section_eacYk4": {
+      "type": "effortless-process-section",
+      "blocks": {
+        "step_EVtQRw": {
+          "type": "step",
+          "settings": {
+            "number": "01",
+            "title": "Stress-Free Planning",
+            "description": "We guide you through style, colors, and vision to make floral planning easy, clear and enjoyable."
+          }
+        },
+        "step_CCBLcw": {
+          "type": "step",
+          "settings": {
+            "number": "02",
+            "title": "Custom Floral Design",
+            "description": "Every arrangement is tailored to your theme and venue, creating a cohesive look."
+          }
+        },
+        "step_gMe4f4": {
+          "type": "step",
+          "settings": {
+            "number": "03",
+            "title": "Delivery, Setup & Teardown",
+            "description": "On event day we deliver, install, and remove florals so you simply relax and celebrate beautifully."
+          }
+        }
+      },
+      "block_order": [
+        "step_EVtQRw",
+        "step_CCBLcw",
+        "step_gMe4f4"
+      ],
+      "name": "Effortless Process",
+      "settings": {
+        "bg_color": "#6b7051",
+        "text_color": "#ffffff",
+        "number_color": "#ffffff",
+        "heading": "Making it effortless",
+        "image": "shopify://shop_images/Making_it_effortless_1.png"
+      }
+    },
+    "contact_booking_section_mHrKjV": {
+      "type": "contact-booking-section",
+      "name": "Contact & Booking Section",
+      "settings": {
+        "bg_color": "#faf8f5",
+        "accent_color": "#6b7051",
+        "eyebrow": "BOOKING YOUR FLORALS IS SIMPLE",
+        "heading_left": "Let’s bring your\ncelebration to life",
+        "email_label": "By Email",
+        "email_text": "shop@growingwildmanhattanbeach.com",
+        "phone_label": "By Phone",
+        "phone_text": "(310) 545-4432 — Call us",
+        "addr_label": "By Address",
+        "addr_text": "1201 Highland Ave, Manhattan Beach, CA 90266",
+        "addr_url": "",
+        "form_title": "Get in touch",
+        "form_sub": "Need pricing? Have a question? Contact us today!"
+      }
+    },
+    "text_marquee_section_k7UKad": {
+      "type": "text-marquee-section",
+      "blocks": {
+        "text_block_aDCq6t": {
+          "type": "text_block",
+          "settings": {
+            "text": "Bouquets",
+            "is_accent": false,
+            "show_separator": true
+          }
+        },
+        "text_block_xnWifi": {
+          "type": "text_block",
+          "settings": {
+            "text": "Flowers",
+            "is_accent": true,
+            "show_separator": true
+          }
+        },
+        "text_block_YqMBWW": {
+          "type": "text_block",
+          "settings": {
+            "text": "Ceremony",
+            "is_accent": false,
+            "show_separator": true
+          }
+        },
+        "text_block_cCXx8U": {
+          "type": "text_block",
+          "settings": {
+            "text": "Decor",
+            "is_accent": true,
+            "show_separator": true
+          }
+        }
+      },
+      "block_order": [
+        "text_block_aDCq6t",
+        "text_block_xnWifi",
+        "text_block_YqMBWW",
+        "text_block_cCXx8U"
+      ],
+      "name": "Text Marquee Slider",
+      "settings": {
+        "bg_color": "#faf8f5",
+        "text_color": "#1a1a1a",
+        "accent_color": "#6b7051",
+        "speed": 44,
+        "font_size": 80,
+        "pause_hover": true,
+        "direction": "normal"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "service_feature_section_PkGQhK",
+    "service_values_section_VGVziC",
+    "service_arch_grid_zdjrg9",
+    "floral_zigzag_section_jKT4X3",
+    "floral_why_us_section_jAAWyx",
+    "testimonial_carousel_y9ipre",
+    "effortless_process_section_eacYk4",
+    "contact_booking_section_mHrKjV",
+    "text_marquee_section_k7UKad"
+  ]
+}

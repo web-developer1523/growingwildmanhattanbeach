@@ -1,0 +1,388 @@
+{% schema %}
+{
+  "name": "Testimonial Carousel",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section Background",
+      "default": "#FAF8F5"
+    },
+    {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card Background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What Clients Are Saying About Growing Wild"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Bottom Link Text",
+      "default": "SEE ALL REVIEWS"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Bottom Link URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name",
+          "default": "Nicole"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Review Text",
+          "default": "Our wedding flowers were stunning — every detail felt personal and perfectly matched our vision. The bouquets and aisle pieces looked even more beautiful in person."
+        },
+        {
+          "type": "range",
+          "id": "stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Star Rating",
+          "default": 5
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial Carousel",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": { "author": "Nicole", "text": "Our wedding flowers were stunning — every detail felt personal and perfectly matched our vision. The bouquets and aisle pieces looked even more beautiful in person." }
+        },
+        {
+          "type": "testimonial",
+          "settings": { "author": "Erin C.", "text": "I booked florals for a birthday celebration and I was blown away. The colors, scale, and styling completely transformed the venue. Guests couldn't stop talking about it!" }
+        },
+        {
+          "type": "testimonial",
+          "settings": { "author": "Sonia", "text": "The floral arch took my breath away the moment I saw it. When I look at our photos, the flowers make every single moment feel magical." }
+        },
+        {
+          "type": "testimonial",
+          "settings": { "author": "Sarah", "text": "Absolutely incredible service and beautiful arrangements. Highly recommended!" }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Inter:wght@300;400;500;600&display=swap');
+
+  .tc-section {
+    background-color: {{ section.settings.bg_color }};
+    padding: 100px 20px;
+    font-family: 'Larken', sans-serif;
+    color: {{ section.settings.text_color }};
+    overflow: hidden;
+  }
+
+  .tc-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+  }
+
+  /* Heading */
+  .tc-heading {
+    font-family: 'Larken', serif !important;
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 60px;
+    font-weight: 600;
+    color: #111;
+  }
+
+  /* Carousel Wrapper */
+  .tc-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* This negative margin compensates for the gap to center arrows nicely */
+    margin: 0 -20px; 
+  }
+
+  /* Scroll Track */
+  .tc-track {
+    display: flex;
+    gap: 24px; /* Exact gap between cards */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 20px; /* Padding inside track so shadows don't cut off */
+    width: 100%;
+    
+    /* Hide scrollbar */
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+    
+    /* Snap effect */
+    scroll-snap-type: x mandatory;
+  }
+  
+  .tc-track::-webkit-scrollbar { 
+    display: none; 
+  }
+
+  /* Navigation Arrows */
+  .tc-arrow {
+    width: 56px;
+    height: 56px;
+    border: 1px solid #C4C4C4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    z-index: 2;
+    margin: 0 10px; /* Space between arrow and cards */
+  }
+
+  .tc-arrow:hover {
+    background: #fff;
+    border-color: #333;
+    transform: scale(1.05);
+  }
+  
+  .tc-arrow svg {
+    width: 20px;
+    height: 20px;
+    stroke: #555;
+    stroke-width: 1.2;
+    fill: none;
+  }
+
+  /* Card Styling */
+  .tc-card {
+    background-color: {{ section.settings.card_bg }};
+    min-width: 360px;
+    flex: 0 0 360px; /* Fixed width for consistency */
+    border-radius: 12px;
+    padding: 40px 32px;
+    text-align: left;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); /* Soft, premium shadow */
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,0.02);
+  }
+
+  /* Card Header Layout */
+  .tc-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    width: 100%;
+  }
+
+  /* Left Side: Name & Verified Badge Stacked */
+  .tc-author-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .tc-author-name {
+    font-family: 'Larken', sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    margin: 0;
+    color: #000;
+    line-height: 1.1;
+  }
+
+  .tc-verified {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: #22C55E; /* Matches the green checkmark */
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+  
+  .tc-verified svg {
+    width: 13px;
+    height: 13px;
+    fill: currentColor;
+  }
+
+  /* Right Side: Stars */
+  .tc-stars {
+    display: flex;
+    gap: 3px;
+    margin-top: 2px; /* Optical alignment with name */
+  }
+  
+  .tc-stars svg {
+    width: 14px;
+    height: 14px;
+    fill: #D4A373; /* Muted Gold/Beige color */
+  }
+
+  /* Review Text */
+  .tc-review-text {
+    font-family: 'Larken', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #4A4A4A;
+    margin: 0;
+    font-weight: 400;
+  }
+
+  /* Bottom Link */
+  .tc-bottom-link {
+    display: inline-block;
+    margin-top: 60px;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1px;
+    color: #1a1a1a;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    transition: opacity 0.3s;
+  }
+  
+  .tc-bottom-link:hover {
+    opacity: 0.7;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 900px) {
+    .tc-heading { font-size: 34px; margin-bottom: 40px; }
+    
+    .tc-card {
+      min-width: 300px;
+      flex: 0 0 300px;
+      padding: 30px 24px;
+    }
+    
+    .tc-arrow {
+      display: none; /* Hide arrows on mobile, let users swipe */
+    }
+    
+    .tc-wrapper {
+      margin: 0;
+    }
+    
+    .tc-track {
+      gap: 15px;
+      padding: 10px 20px;
+    }
+  }
+{% endstyle %}
+
+<div class="tc-section">
+  <div class="tc-container">
+    
+    <h2 class="tc-heading">{{ section.settings.heading }}</h2>
+
+    <div class="tc-wrapper">
+      <!-- Left Arrow -->
+      <button class="tc-arrow" id="tc-prev">
+        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+      </button>
+
+      <!-- Scroll Track -->
+      <div class="tc-track" id="tc-track">
+        {% for block in section.blocks %}
+          <div class="tc-card" {{ block.shopify_attributes }}>
+            
+            <div class="tc-card-header">
+              <!-- Left Column: Name & Verified Badge -->
+              <div class="tc-author-info">
+                <h4 class="tc-author-name">{{ block.settings.author }}</h4>
+                <div class="tc-verified">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+                  Verified Customer
+                </div>
+              </div>
+              
+              <!-- Right Column: Stars -->
+              <div class="tc-stars">
+                {% for i in (1..block.settings.stars) %}
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                {% endfor %}
+              </div>
+            </div>
+
+            <p class="tc-review-text">"{{ block.settings.text }}"</p>
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- Right Arrow -->
+      <button class="tc-arrow" id="tc-next">
+        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+      </button>
+    </div>
+
+    {% if section.settings.link_text != blank %}
+      <a href="{{ section.settings.link_url }}" class="tc-bottom-link">{{ section.settings.link_text }}</a>
+    {% endif %}
+
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const track = document.getElementById('tc-track');
+    const prevBtn = document.getElementById('tc-prev');
+    const nextBtn = document.getElementById('tc-next');
+    
+    // Width of one card + gap (360 + 24)
+    const scrollAmount = 384; 
+
+    if(nextBtn && prevBtn && track) {
+        nextBtn.addEventListener('click', () => {
+          track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+
+        prevBtn.addEventListener('click', () => {
+          track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+    }
+  });
+</script>

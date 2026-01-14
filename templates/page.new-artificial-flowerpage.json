@@ -1,0 +1,578 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "custom_rich_text_gYAgBJ": {
+      "type": "custom-rich-text",
+      "blocks": {
+        "heading_xaPhqq": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Buy Quality Custom Artificial Flowers From Growing Wild </strong>",
+            "heading_tag": "h1",
+            "font_size_desktop": 48,
+            "font_size_mobile": 32,
+            "font_family": "Larken"
+          }
+        },
+        "richtext_VHYdUF": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p><em>Love having flowers around? Ours look real, stay perfect & never need replacing.</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xaPhqq",
+        "richtext_VHYdUF"
+      ],
+      "name": "Custom Rich Text",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "media_grid_zJxGwC": {
+      "type": "media-grid",
+      "blocks": {
+        "image_jTU7xz": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/IMG_3028.jpg",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_GwxHdR": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/IMG_1180.heic",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_KNjpTY": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/IMG_1195.heic",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_yhJHj3": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "image": "shopify://shop_images/IMG_1273.heic",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_jTU7xz",
+        "image_GwxHdR",
+        "image_KNjpTY",
+        "image_yhJHj3"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "desktop_row_height": 400,
+        "mobile_row_height": 400,
+        "section_width": "lg",
+        "spacing": "xs",
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "media_grid_eEReHT": {
+      "type": "media-grid",
+      "blocks": {
+        "image_UbRTgx": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/IMG_1189.heic",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_8gURKt": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/IMG_1182.heic",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_3qK3JR": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/IMG_1190.heic",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "image_yWNPiK": {
+          "type": "image",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "image": "shopify://shop_images/IMG_1261.heic",
+            "column_count": "3",
+            "row_count": 1,
+            "title": "",
+            "heading_tag": "h4",
+            "content": "",
+            "link_text": "",
+            "link_url": "",
+            "link_style": "link",
+            "text_position": "place-self-center text-center",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "image_UbRTgx",
+        "image_8gURKt",
+        "image_3qK3JR",
+        "image_yWNPiK"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "desktop_row_height": 400,
+        "mobile_row_height": 400,
+        "section_width": "lg",
+        "spacing": "xs",
+        "subheading": "",
+        "title": "",
+        "content": ""
+      }
+    },
+    "image_with_text_MNQEqA": {
+      "type": "image-with-text",
+      "blocks": {
+        "richtext_Vf7mAg": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Expert florists at Growing Wild design each piece of <em>Artificial flowers </em>by hand. Based on exactly what you want, using premium materials that actually look alive. Not those shiny plastic things from craft stores that scream \"fake.\" Real artistry that makes your neighbor do a double-take.</p><h3><strong>Why busy people choose us:</strong></h3><ul><li>Lasts forever, never embarrasses you</li><li>Made custom so it actually fits your space</li><li>No maintenance, no guilt, no dying</li><li>Handcrafted with care</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_Vf7mAg"
+      ],
+      "custom_css": [
+        "p.h2 {font-size: 34px !important;}"
+      ],
+      "name": "t:sections.image_with_text.presets.image_with_text.name",
+      "settings": {
+        "color_scheme": "",
+        "color_scheme_inner": "",
+        "narrow_section": false,
+        "remove_left_padding": false,
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/Untitled_design_1.png",
+        "mobile_image": "shopify://shop_images/Untitled_design_1.png",
+        "reveal_on_scroll": true,
+        "image_position": "start",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "image_with_text_JAW3EH": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_Aem3Fb": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Why Real Looking Artificial Flowers Actually Make Sense for Your Life</strong>",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_JNcRET": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Real-looking artificial flowers give you day one beauty forever. Your home looks good every single day, not just the days between flower shop trips and throwing dead ones away. Perfect for people whose to-do lists are already drowning them.</p><p>What they do for you:</p><ul><li>Look beautiful when you wake up and when you go to sleep</li><li>Never make you feel guilty for forgetting them</li><li>Stop the \"should I buy flowers today\" mental loop</li><li>Always ready when your mother-in-law surprises you</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Aem3Fb",
+        "richtext_JNcRET"
+      ],
+      "custom_css": [
+        "p.h2 {font-size: 34px !important;}"
+      ],
+      "name": "t:sections.image_with_text.presets.image_with_text.name",
+      "settings": {
+        "color_scheme": "",
+        "color_scheme_inner": "",
+        "narrow_section": false,
+        "remove_left_padding": false,
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/Rectangle_1_8.png",
+        "mobile_image": "shopify://shop_images/Rectangle_1_8.png",
+        "reveal_on_scroll": true,
+        "image_position": "end",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "image_with_text_yGhaKL": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_WpdDXx": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Get Custom Arrangements Made for Your Actual Space</strong>",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_Y8PDaF": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Visit our online store and show us a photo of your entryway that feels empty. Tell us about your dining room that needs <em>artificial flowers for a vase</em>​, but you're not sure what kind. We get it. Our service helps you out in each case.</p><p>What you get to control:</p><ul><li>Colors matching what you actually have, not Pinterest</li><li>Flower types that fit your vibe</li><li>Size that works in real life, not catalogs</li><li>Container style you'll actually like looking at</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WpdDXx",
+        "richtext_Y8PDaF"
+      ],
+      "custom_css": [
+        "p.h2 {font-size: 34px !important;}"
+      ],
+      "name": "t:sections.image_with_text.presets.image_with_text.name",
+      "settings": {
+        "color_scheme": "",
+        "color_scheme_inner": "",
+        "narrow_section": false,
+        "remove_left_padding": false,
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/Untitled_design_2.png",
+        "mobile_image": "shopify://shop_images/Untitled_design_2.png",
+        "reveal_on_scroll": true,
+        "image_position": "start",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "image_with_text_JMNYLX": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_FTHeDb": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Wedding & Outdoor Artificial Flowers That Survive Real Weather</strong>",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_LjhTgT": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Growing Wild designs outdoor artificial flowers that survive your real life. UV-resistant materials that handle the sun, weather, your sprinklers hitting them, and your kids' soccer balls.</p><p>Perfect<em> artificial flowers for outdoors</em> when you:</p><ul><li>Have better things to do than water plants</li><li>Keep killing everything you plant</li><li>Want your patio to look nice for spontaneous gatherings</li><li>Are you tired of empty planters staring at you</li></ul><p>Planning a wedding is stressful enough without worrying if your bouquet will wilt before the photos. Remember your friend's wedding where the centerpieces looked sad at the reception? Or that bride whose bouquet was drooping in every ceremony photo?</p><p><em>Artificial wedding flowers </em>give you one less thing to stress about. Why stressed brides choose artificial:</p><ul><li>Look perfect from getting ready through the last dance</li><li>Keep your bouquet without preserving services</li><li>No \"sorry, those aren't in season\" limitations</li><li>One less vendor thing to coordinate day-of</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_FTHeDb",
+        "richtext_LjhTgT"
+      ],
+      "custom_css": [
+        "p.h2 {font-size: 34px !important;}"
+      ],
+      "name": "t:sections.image_with_text.presets.image_with_text.name",
+      "settings": {
+        "color_scheme": "",
+        "color_scheme_inner": "",
+        "narrow_section": false,
+        "remove_left_padding": false,
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/Rectangle_1_1.png",
+        "mobile_image": "shopify://shop_images/blushing-cloud.webp",
+        "reveal_on_scroll": true,
+        "image_position": "end",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "image_with_text_NzrDyp": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_pPCJdn": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Who Needs Custom Artificial Flower Arrangements?</strong>",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_QBDkdf": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>If you've ever thought, \"<em>I wish my place had flowers, but I can't keep up with them</em>,\" this is for you.</p><p>Who gets custom pieces from us:</p><ul><li>Professionals are tired of bare offices</li><li>People who actually can't breathe around real flowers</li><li>Homeowners are done with the death cycle</li><li>Wedding couples avoiding day-of disasters</li><li>Anyone who travels constantly</li><li>Parents who have enough to keep themselves alive already</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_pPCJdn",
+        "richtext_QBDkdf"
+      ],
+      "custom_css": [
+        "p.h2 {font-size: 34px !important;}"
+      ],
+      "name": "t:sections.image_with_text.presets.image_with_text.name",
+      "settings": {
+        "color_scheme": "",
+        "color_scheme_inner": "",
+        "narrow_section": false,
+        "remove_left_padding": false,
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/Rectangle_1_4.png",
+        "mobile_image": "shopify://shop_images/Rectangle_1_4.png",
+        "reveal_on_scroll": true,
+        "image_position": "start",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "image_with_text_cmtxm9": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_8BFAw8": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Buy & Save Thousands and Your Sanity</strong>",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_hT6Xga": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Fresh flowers cost $50 to $100 every week or two. You're spending $2,600 to $5,200 per year on something that dies. Think about what else you could do with $5,000. Actually, don't. It'll make you mad. One custom silk arrangement costs more upfront but lasts forever. Your kids will inherit it. Seriously.</p><p>Why artificial saves your money and mind:</p><ul><li>Pay once, never again</li><li>No more weekly \"should I buy flowers\" guilt</li><li>No emergency runs when you remember guests are coming</li><li>No throwing away something you just paid for</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_8BFAw8",
+        "richtext_hT6Xga"
+      ],
+      "custom_css": [
+        "p.h2 {font-size: 34px !important;}"
+      ],
+      "name": "t:sections.image_with_text.presets.image_with_text.name",
+      "settings": {
+        "color_scheme": "",
+        "color_scheme_inner": "",
+        "narrow_section": false,
+        "remove_left_padding": false,
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/Rectangle_1_2.png",
+        "mobile_image": "shopify://shop_images/Rectangle_1_2.png",
+        "reveal_on_scroll": true,
+        "image_position": "end",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "image_with_text_aCQ8Xm": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_7bPi8f": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Order Artificial Flowers That Work for Your Real Life</strong>",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_8nLayA": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>You want your home looking nice without adding \"buy flowers\" to your mental load that's already maxing out your brain. Growing Wild’s custom pieces solve that. Beauty that lasts forever. Designed for your space and your life. The <em>best artificial flower arrangement </em>for whatever you actually need. Join hundreds of customers who stopped feeling guilty about dead flowers and started just enjoying beautiful spaces.</p><p><em>You deserve nice things that don't die on you.</em></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_7bPi8f",
+        "richtext_8nLayA"
+      ],
+      "custom_css": [
+        "p.h2 {font-size: 34px !important;}"
+      ],
+      "name": "t:sections.image_with_text.presets.image_with_text.name",
+      "settings": {
+        "color_scheme": "",
+        "color_scheme_inner": "",
+        "narrow_section": false,
+        "remove_left_padding": false,
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/Untitled_design_3.png",
+        "mobile_image": "shopify://shop_images/Untitled_design_3.png",
+        "reveal_on_scroll": true,
+        "image_position": "start",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "faq_3i6kce": {
+      "type": "faq",
+      "blocks": {
+        "question_PmREV9": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Do artificial flowers look fake?</strong>",
+            "answer": "<p>Not when made with premium materials like ours. We create real-looking artificial flowers that fool your judgmental friends regularly. The good ones make people reach out and touch them to check.</p>"
+          }
+        },
+        "question_ni898R": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>What makes these the best artificial flowers?</strong>",
+            "answer": "<p>Premium materials that feel real, expert design that works for actual spaces, and custom creation for your specific life. The best artificial flower arrangement is not cheap or pre-made stuff. It's quality-made for you.</p>"
+          }
+        },
+        "question_cmqGJ7": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Do you create artificial wedding flowers?</strong>",
+            "answer": "<p>Yes, our Custom Bridal Bouquets, centerpieces, and ceremony arrangements stay perfect all day. You keep your bouquet forever and have one less thing stressing you out on your wedding day.</p>"
+          }
+        },
+        "question_QN3KGf": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>How do I clean or maintain artificial flowers?</strong>",
+            "answer": "<p>Dust them every few weeks with a soft brush or use a hairdryer on a cool setting to blow dust off. That's literally it. No watering, no trimming, no \"why are these dying already\" stress.</p>"
+          }
+        },
+        "question_FUqCnk": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>Are artificial flowers better than real flowers for allergies?</strong>",
+            "answer": "<p>Yes, artificial flowers won't make you sneeze, give you itchy eyes, or force you to choose between beauty and breathing. You get gorgeous arrangements without the allergy medication.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_PmREV9",
+        "question_ni898R",
+        "question_cmqGJ7",
+        "question_QN3KGf",
+        "question_FUqCnk"
+      ],
+      "name": "t:sections.faq.presets.faq.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "",
+        "title": "Frequently Asked Questions",
+        "content": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_rich_text_gYAgBJ",
+    "media_grid_zJxGwC",
+    "media_grid_eEReHT",
+    "image_with_text_MNQEqA",
+    "image_with_text_JAW3EH",
+    "image_with_text_yGhaKL",
+    "image_with_text_JMNYLX",
+    "image_with_text_NzrDyp",
+    "image_with_text_cmtxm9",
+    "image_with_text_aCQ8Xm",
+    "faq_3i6kce"
+  ]
+}

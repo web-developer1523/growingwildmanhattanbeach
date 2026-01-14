@@ -1,0 +1,1412 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "image_with_text_overlay_p3qAGa": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading_QgkMBi": {
+          "type": "heading",
+          "settings": {
+            "text": "Trusted local florist for over 30 years.",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_qkMqge": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Celebrate life’s meaningful moments with unique arrangements made just for you.</p>"
+          }
+        },
+        "button_QREGNp": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Find Your Perfect Flower",
+            "url": "#",
+            "background": "#6a6e49",
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_QgkMBi",
+        "richtext_qkMqge",
+        "button_QREGNp"
+      ],
+      "name": "t:sections.image_with_text_overlay.presets.image_with_text_overlay.name",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "image_size": "sm",
+        "image": "shopify://shop_images/banner-mg.png",
+        "mobile_image": "shopify://shop_images/banner-mg.png",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": true,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-end-start sm:text-start",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "custom_css_class": "cst-new-home-banner",
+        "show_features": true,
+        "feature_icon_1": "shopify://shop_images/remium.png",
+        "feature_text_1": "Premium Blooms",
+        "feature_icon_2": "shopify://shop_images/local.png",
+        "feature_text_2": "Local Expertise",
+        "feature_icon_3": "shopify://shop_images/artisan.png",
+        "feature_text_3": "Artisan Craftsmanship"
+      }
+    },
+    "scrolling_content_xRVWiR": {
+      "type": "scrolling-content",
+      "blocks": {
+        "text_EgkAWB": {
+          "type": "text",
+          "settings": {
+            "text": "Custom Floral Design",
+            "icon": "shopify://shop_images/icn.png"
+          }
+        },
+        "text_n3Rewh": {
+          "type": "text",
+          "settings": {
+            "text": "Delivery & Setup Done For You",
+            "icon": "shopify://shop_images/icn.png"
+          }
+        },
+        "text_NNY3YG": {
+          "type": "text",
+          "settings": {
+            "text": "Manhattan Beach Local",
+            "icon": "shopify://shop_images/icn.png"
+          }
+        }
+      },
+      "block_order": [
+        "text_EgkAWB",
+        "text_n3Rewh",
+        "text_NNY3YG"
+      ],
+      "name": "t:sections.scrolling_content.presets.scrolling_content.name",
+      "settings": {
+        "separate_section_with_border": true,
+        "scrolling_speed": 0.1,
+        "scroll_direction": "left",
+        "pause_on_hover": true,
+        "text_font": "heading",
+        "text_font_size_mobile": 14,
+        "text_font_size_desktop": 20,
+        "section_vertical_spacing_mobile": 16,
+        "section_vertical_spacing_desktop": 20,
+        "item_horizontal_spacing_mobile": 60,
+        "item_horizontal_spacing_desktop": 60,
+        "background": "#f8f2ed",
+        "text_color": "#6a6e49",
+        "custom_css_class": "cst-new-scroll"
+      }
+    },
+    "featured_collections_GiitJV": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_FXqbT7": {
+          "type": "collection",
+          "settings": {
+            "collection": "best-selling-bouquets",
+            "products_count": 8,
+            "title": "",
+            "link_url": "",
+            "link_text": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_FXqbT7"
+      ],
+      "disabled": true,
+      "name": "t:sections.featured_collections.presets.featured_collections.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "",
+        "custom_css_class": "cst-new-selling-bouquets"
+      }
+    },
+    "ss_featured_coll_HMWHQP": {
+      "type": "ss-featured-coll",
+      "name": "SS - Featured Collection",
+      "settings": {
+        "items_mt": 40,
+        "collection": "best-selling-bouquets",
+        "product_list": [],
+        "stack_products": false,
+        "show_bar": false,
+        "top_bar": false,
+        "product_show": 8,
+        "product_per_desktop": 4,
+        "product_per_mobile": "1",
+        "image_radius": 12,
+        "show_description": true,
+        "image_ration": "square",
+        "use_custom_height": false,
+        "image_height_desktop": 400,
+        "image_height_mobile": 200,
+        "show_second": true,
+        "use_shadow": false,
+        "shadow_width": 0,
+        "card_padding_horizontal": 4,
+        "card_padding_vertical": 16,
+        "card_title_custom": false,
+        "card_title_font": "assistant_n4",
+        "card_title_size": 18,
+        "card_title_letter": 0,
+        "card_title_height": 100,
+        "heading": "Shop our 5-Star Products",
+        "heading_custom": false,
+        "heading_font": "assistant_n4",
+        "heading_size": 42,
+        "heading_letter": 0,
+        "heading_height": 100,
+        "heading_align": "left",
+        "sub_heading": "",
+        "sub_heading_custom": false,
+        "sub_heading_font": "assistant_n4",
+        "sub_heading_size": 18,
+        "sub_heading_letter": 0,
+        "sub_heading_height": 100,
+        "sub_heading_align": "center",
+        "invert_content": false,
+        "link": "",
+        "link_url": "",
+        "link_custom": false,
+        "link_font": "assistant_n4",
+        "link_size": 18,
+        "link_letter": 0,
+        "link_height": 100,
+        "link_position": false,
+        "card_price_custom": false,
+        "card_price_font": "assistant_n4",
+        "card_price_size": 16,
+        "card_price_letter": 0,
+        "card_price_height": 100,
+        "card_price_mt": 12,
+        "heading_color": "#000000",
+        "sub_heading_color": "#000000",
+        "link_color": "#000000",
+        "link_hover_color": "#000000",
+        "link_arrow_color": "#000000",
+        "link_background_color": "#e6e6e6",
+        "link_background_hover_color": "#000000",
+        "card_title_color": "#000000",
+        "card_price_color": "#000000",
+        "arrow_color": "#000000",
+        "arrow_hover_color": "#000000",
+        "arrow_bg_color": "#ffffff",
+        "arrow_bg_hover_color": "#ffffff",
+        "arrow_border_color": "#000000",
+        "arrow_border_hover_color": "#000000",
+        "progress_color": "#000000",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "content_width": 120,
+        "border_thickness": 0,
+        "show_shop_all": true,
+        "shop_all_text": "Shop All",
+        "shop_all_link": "#",
+        "custom_css_class": "cst-new-best-sellings-pro"
+      }
+    },
+    "ss_featured_coll_pfKA4r": {
+      "type": "ss-featured-coll",
+      "disabled": true,
+      "name": "SS - Featured Collection",
+      "settings": {
+        "items_mt": 40,
+        "collection": "loved-bouquets",
+        "product_list": [],
+        "stack_products": false,
+        "show_bar": false,
+        "top_bar": false,
+        "product_show": 8,
+        "product_per_desktop": 4,
+        "product_per_mobile": "1",
+        "image_radius": 12,
+        "show_description": true,
+        "image_ration": "square",
+        "use_custom_height": false,
+        "image_height_desktop": 400,
+        "image_height_mobile": 200,
+        "show_second": true,
+        "use_shadow": false,
+        "shadow_width": 0,
+        "card_padding_horizontal": 4,
+        "card_padding_vertical": 16,
+        "card_title_custom": false,
+        "card_title_font": "assistant_n4",
+        "card_title_size": 18,
+        "card_title_letter": 0,
+        "card_title_height": 100,
+        "heading": "Most Loved Bouquets",
+        "heading_custom": false,
+        "heading_font": "assistant_n4",
+        "heading_size": 42,
+        "heading_letter": 0,
+        "heading_height": 100,
+        "heading_align": "left",
+        "sub_heading": "",
+        "sub_heading_custom": false,
+        "sub_heading_font": "assistant_n4",
+        "sub_heading_size": 50,
+        "sub_heading_letter": 0,
+        "sub_heading_height": 100,
+        "sub_heading_align": "center",
+        "invert_content": false,
+        "link": "",
+        "link_url": "#",
+        "link_custom": false,
+        "link_font": "assistant_n4",
+        "link_size": 18,
+        "link_letter": 0,
+        "link_height": 100,
+        "link_position": false,
+        "card_price_custom": false,
+        "card_price_font": "assistant_n4",
+        "card_price_size": 16,
+        "card_price_letter": 0,
+        "card_price_height": 100,
+        "card_price_mt": 12,
+        "heading_color": "#000000",
+        "sub_heading_color": "#000000",
+        "link_color": "#000000",
+        "link_hover_color": "#000000",
+        "link_arrow_color": "#000000",
+        "link_background_color": "#e6e6e6",
+        "link_background_hover_color": "#000000",
+        "card_title_color": "#000000",
+        "card_price_color": "#000000",
+        "arrow_color": "#000000",
+        "arrow_hover_color": "#000000",
+        "arrow_bg_color": "#ffffff",
+        "arrow_bg_hover_color": "#ffffff",
+        "arrow_border_color": "#000000",
+        "arrow_border_hover_color": "#000000",
+        "progress_color": "#000000",
+        "background_color": "#ffffff",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "content_width": 120,
+        "border_thickness": 0,
+        "show_shop_all": true,
+        "shop_all_text": "Shop All",
+        "shop_all_link": "#",
+        "custom_css_class": "cst-new-loved-pro"
+      }
+    },
+    "custom_testimonials_QMAppH": {
+      "type": "custom-testimonials",
+      "blocks": {
+        "slide_zVWKg8": {
+          "type": "slide",
+          "settings": {
+            "stars_count": 5,
+            "heading": "Nicole",
+            "text": "“Absolutely beautiful flowers—fresh, elegant, and perfectly arranged. The setup was smooth and stress-free. Our guests kept complimenting the decor all night. I’ll definitely book again for future events!”",
+            "author_date": ""
+          }
+        },
+        "slide_PW8BUD": {
+          "type": "slide",
+          "settings": {
+            "stars_count": 5,
+            "heading": "Nicole",
+            "text": "“Absolutely beautiful flowers—fresh, elegant, and perfectly arranged. The setup was smooth and stress-free. Our guests kept complimenting the decor all night. I’ll definitely book again for future events!”",
+            "author_date": ""
+          }
+        },
+        "slide_KUfLWb": {
+          "type": "slide",
+          "settings": {
+            "stars_count": 5,
+            "heading": "Erin C.",
+            "text": "“The attention to detail was incredible. From bouquets to table styling, everything felt thoughtfully done and aesthetically stunning. The team understood our theme perfectly and brought it to life beyond expectations.”",
+            "author_date": ""
+          }
+        },
+        "slide_8kMiaW": {
+          "type": "slide",
+          "settings": {
+            "stars_count": 5,
+            "heading": "Erin C.",
+            "text": "“The attention to detail was incredible. From bouquets to table styling, everything felt thoughtfully done and aesthetically stunning. The team understood our theme perfectly and brought it to life beyond expectations.”",
+            "author_date": ""
+          }
+        },
+        "slide_zAKVfh": {
+          "type": "slide",
+          "settings": {
+            "stars_count": 5,
+            "heading": "Sonia",
+            "text": "“Our party florals were breathtaking—vibrant colors, premium quality blooms, and delivered right on time. It transformed the whole venue into something magical. Highly recommended for any event!”",
+            "author_date": ""
+          }
+        },
+        "slide_q4kQWd": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "stars_count": 5,
+            "heading": "Sonia",
+            "text": "“Our party florals were breathtaking—vibrant colors, premium quality blooms, and delivered right on time. It transformed the whole venue into something magical. Highly recommended for any event!”",
+            "author_date": ""
+          }
+        },
+        "slide_39mkzB": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "stars_count": 5,
+            "heading": "I love it! 😍",
+            "text": "I was initially hesitant to switch from my usual brand to this new one, but I'm so glad I did! This product has exceeded my expectations. It's not only affordable but also incredibly efficient. The quality is top-notch, and it's user-friendly.",
+            "author_date": "Cathrine"
+          }
+        },
+        "slide_87H78A": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "stars_count": 5,
+            "heading": "I love it! 😍",
+            "text": "I was initially hesitant to switch from my usual brand to this new one, but I'm so glad I did! This product has exceeded my expectations. It's not only affordable but also incredibly efficient. The quality is top-notch, and it's user-friendly.",
+            "author_date": "Cathrine"
+          }
+        },
+        "slide_qXQnxn": {
+          "type": "slide",
+          "disabled": true,
+          "settings": {
+            "stars_count": 5,
+            "heading": "I love it! 😍",
+            "text": "I was initially hesitant to switch from my usual brand to this new one, but I'm so glad I did! This product has exceeded my expectations. It's not only affordable but also incredibly efficient. The quality is top-notch, and it's user-friendly.",
+            "author_date": "Cathrine"
+          }
+        }
+      },
+      "block_order": [
+        "slide_zVWKg8",
+        "slide_PW8BUD",
+        "slide_KUfLWb",
+        "slide_8kMiaW",
+        "slide_zAKVfh",
+        "slide_q4kQWd",
+        "slide_39mkzB",
+        "slide_87H78A",
+        "slide_qXQnxn"
+      ],
+      "name": "SS - Testimonial #8",
+      "settings": {
+        "heading": "Why Customers Love Our Floral Styling",
+        "heading_custom": false,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 40,
+        "heading_size_mobile": 24,
+        "heading_height": 130,
+        "heading_align": "center",
+        "rating_text": "",
+        "rating_text_custom": false,
+        "rating_text_font": "josefin_sans_n4",
+        "rating_text_size": 24,
+        "rating_text_size_mobile": 20,
+        "rating_text_height": 130,
+        "rating_text_mt": 16,
+        "rating": 0,
+        "rating_hide": false,
+        "rating_text_hide": false,
+        "rating_align": "center",
+        "stars_count": 0,
+        "stars_size": 14,
+        "stars_size_mobile": 24,
+        "stars_align": "center",
+        "text": "",
+        "text_custom": false,
+        "text_font": "josefin_sans_n4",
+        "text_size": 20,
+        "text_size_mobile": 16,
+        "text_height": 130,
+        "text_align": "center",
+        "text_mt": 16,
+        "slider_width": 80,
+        "slider_view": 3,
+        "slider_view_mobile": 1,
+        "slider_gap": 20,
+        "slider_gap_mobile": 20,
+        "slider_mt": 36,
+        "card_padding_vertical": 32,
+        "card_padding_vertical_mobile": 24,
+        "card_padding_horizontal": 40,
+        "card_padding_horizontal_mobile": 24,
+        "card_radius": 16,
+        "card_border_thickness": 0,
+        "card_shadow": true,
+        "card_heading_custom": false,
+        "card_heading_font": "josefin_sans_n4",
+        "card_heading_size": 24,
+        "card_heading_size_mobile": 20,
+        "card_heading_height": 130,
+        "card_heading_align": "center",
+        "card_heading_mt": 16,
+        "card_text_custom": false,
+        "card_text_font": "josefin_sans_n4",
+        "card_text_size": 14,
+        "card_text_size_mobile": 14,
+        "card_text_height": 150,
+        "card_text_align": "center",
+        "card_text_mt": 16,
+        "card_text_more": "",
+        "card_text_less": "",
+        "card_count_words": 20,
+        "card_author_date_text_custom": false,
+        "card_author_date_text_font": "josefin_sans_n4",
+        "card_author_date_text_size": 16,
+        "card_author_date_text_size_mobile": 16,
+        "card_author_date_text_height": 130,
+        "card_author_date_text_align": "center",
+        "card_author_date_text_mt": 16,
+        "arrow_size": 50,
+        "arrow_size_mobile": 50,
+        "arrow_icon_size": 28,
+        "arrow_icon_size_mobile": 28,
+        "arrow_border_thickness": 0,
+        "arrow_show_desktop": true,
+        "arrow_show_mobile": false,
+        "dots_size": 12,
+        "dots_size_mobile": 12,
+        "dots_show_desktop": false,
+        "dots_show_mobile": false,
+        "button": "",
+        "button_url": "",
+        "button_custom": false,
+        "button_font": "josefin_sans_n4",
+        "button_size": 16,
+        "button_size_mobile": 14,
+        "button_height": 100,
+        "button_align": "center",
+        "button_mt": 16,
+        "button_padding_vertical": 20,
+        "button_padding_horizontal": 16,
+        "button_radius": 8,
+        "button_border_thickness": 0,
+        "button_color": "#ffffff",
+        "button_hover_color": "#ffffff",
+        "button_bg_color": "#000000",
+        "button_bg_hover_color": "#000000",
+        "button_border_color": "#000000",
+        "button_border_hover_color": "#000000",
+        "card_bg_color": "#ffffff",
+        "card_border_color": "#000000",
+        "card_shadow_color": "rgba(0,0,0,0)",
+        "card_heading_color": "#000000",
+        "card_text_color": "#000000",
+        "card_author_date_text_color": "#000000",
+        "arrow_color": "#000000",
+        "arrow_hover_color": "#000000",
+        "arrow_bg_color": "#ffffff",
+        "arrow_bg_hover_color": "#ffffff",
+        "arrow_border_color": "#9e9c9b",
+        "arrow_border_hover_color": "#ffffff",
+        "dots_color": "#9e9c9b",
+        "heading_color": "#000000",
+        "rating_text_color": "#000000",
+        "stars_bg_color": "rgba(0,0,0,0)",
+        "stars_color": "#ed8a00",
+        "text_color": "#000000",
+        "background_color": "#f8f2ed",
+        "background_gradient": "",
+        "border_color": "#000000",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": true,
+        "content_width": 120,
+        "border_thickness": 0,
+        "lazy": true,
+        "custom_css_class": "cst-new-home-testionial"
+      }
+    },
+    "collection_list_AgpwUQ": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_xqcLxp": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "collection": "birthday",
+            "image": "shopify://shop_images/birthday.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-center text-center",
+            "subheading": "",
+            "title": "Birthdays",
+            "button_text": "Shop Birthdays",
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "rgba(0,0,0,0)",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_CGMw7w": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "anniversaries",
+            "image": "shopify://shop_images/ann.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-center text-center",
+            "subheading": "",
+            "title": "Anniversaries",
+            "button_text": "Shop Anniversaries",
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "rgba(0,0,0,0)",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_de77nz": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "get-well-soon",
+            "image": "shopify://shop_images/get-well-soon.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-center text-center",
+            "subheading": "",
+            "title": "Get Well Soon",
+            "button_text": "Shop Get Well Soon",
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "rgba(0,0,0,0)",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_PWGtxq": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "collection": "sympathy-and-funeral",
+            "image": "shopify://shop_images/sympathy.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-center text-center",
+            "subheading": "",
+            "title": "Sympathy",
+            "button_text": "Shop Sympathy",
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "rgba(0,0,0,0)",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "collection_xqcLxp",
+        "collection_CGMw7w",
+        "collection_de77nz",
+        "collection_PWGtxq"
+      ],
+      "custom_css": [],
+      "name": "t:sections.collection_list.presets.collection_list.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "image_size": "auto",
+        "show_text_outside": false,
+        "space_items": true,
+        "stack_collections": false,
+        "collections_per_row_mobile": "2",
+        "collections_per_row_desktop": 4,
+        "subheading": "",
+        "title": "Shop By Category",
+        "content": "",
+        "show_shop_all": true,
+        "shop_all_text": "Shop All",
+        "shop_all_link": "#",
+        "custom_class_css": "cst-new-page-list"
+      }
+    },
+    "service_feature_section_N66d9L": {
+      "type": "service-feature-section",
+      "disabled": true,
+      "name": "Service Feature Section",
+      "settings": {
+        "bg_color": "#faf8f5",
+        "text_color": "#1a1a1a",
+        "accent_color": "#6b7051",
+        "badge_text": "TOP-RATED EVENT FLORALS",
+        "title": "Florals That Make Moments Last",
+        "description": "From weddings to milestone parties, our handcrafted arrangements turn any celebration into a picture-perfect memory.",
+        "btn_text": "Plan My Event Florals",
+        "btn_link": "",
+        "sub_note": "Same-day delivery & full event setup available",
+        "review_image": "shopify://shop_images/Customer_Avatar.png",
+        "review_name": "Casey",
+        "review_text": "Growing Wild designed our wedding florals and it took everyone's breath away. The colors, the details everything was beyond perfect.",
+        "feature_image": "shopify://shop_images/Florals_That_Make_Moments_Last.png"
+      }
+    },
+    "service_values_section_wKNVi8": {
+      "type": "service-values-section",
+      "blocks": {
+        "feature_we83Ea": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Custom_Floral_Design.svg",
+            "text": "CUSTOM\nFLORAL DESIGN"
+          }
+        },
+        "feature_EhnbRb": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Full_Delivery_Setup.svg",
+            "text": "FULL DELIVERY\n& SETUP"
+          }
+        },
+        "feature_gQWPPn": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Perfect_for_Every_Celebration.svg",
+            "text": "PERFECT FOR\nEVERY CELEBRATION"
+          }
+        }
+      },
+      "block_order": [
+        "feature_we83Ea",
+        "feature_EhnbRb",
+        "feature_gQWPPn"
+      ],
+      "disabled": true,
+      "name": "Service Values Banner",
+      "settings": {
+        "bg_color": "#faf8f5",
+        "text_color": "#1a1a1a",
+        "accent_color": "#6b7051",
+        "subtitle": "YOUR LOCAL EVENT FLORIST",
+        "title": "Beautiful, handcrafted florals designed to match your celebration, your style, and your story."
+      }
+    },
+    "service_arch_grid_7Y6BMH": {
+      "type": "service-arch-grid",
+      "blocks": {
+        "service_UwcMjJ": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/wedding_florals_19734b75-ef38-43a3-9d65-086efd8bc9d3.png",
+            "title": "Wedding Florals",
+            "description": "Romantic bouquets, ceremony florals, and reception styling for your big day.",
+            "link": ""
+          }
+        },
+        "service_nBAgnX": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/party_events.png",
+            "title": "Party Events",
+            "description": "Statement arrangements and décor to elevate birthdays, showers, and celebrations.",
+            "link": ""
+          }
+        },
+        "service_HiJN7a": {
+          "type": "service",
+          "settings": {
+            "image": "shopify://shop_images/full_setup.png",
+            "title": "Full Setup",
+            "description": "We handle delivery, installation, and teardown so your event feels effortless.",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "service_UwcMjJ",
+        "service_nBAgnX",
+        "service_HiJN7a"
+      ],
+      "disabled": true,
+      "name": "Service Arch Grid (Slope)",
+      "settings": {
+        "bg_color": "#6b7051",
+        "text_color": "#ffffff",
+        "border_color": "#ffffff",
+        "title": "Flowers for Every Kind of\nCelebration"
+      }
+    },
+    "floral_zigzag_section_ihYt4G": {
+      "type": "floral-zigzag-section",
+      "blocks": {
+        "row_qnUk8V": {
+          "type": "row",
+          "settings": {
+            "subtitle": "WEDDINGS",
+            "title": "Elegant florals for your perfect day",
+            "description": "We create romantic, cohesive florals for your ceremony and reception from bouquets and aisle arrangements to arches.",
+            "btn_text": "View wedding florals",
+            "btn_link": "",
+            "main_image": "shopify://shop_images/Elegant_florals_for_your_perfect_day.png"
+          }
+        },
+        "row_9c3QBj": {
+          "type": "row",
+          "settings": {
+            "subtitle": "PARTIES & EVENTS",
+            "title": "Floral styling that brings celebrations to life",
+            "description": "We create romantic, cohesive florals for your ceremony and reception from bouquets and aisle arrangements to arches.",
+            "btn_text": "View wedding florals",
+            "btn_link": "",
+            "main_image": "shopify://shop_images/We_handle_delivery_setup_and_teardown.png"
+          }
+        },
+        "row_dDgFqW": {
+          "type": "row",
+          "settings": {
+            "subtitle": "FULL SERVICE",
+            "title": "We handle delivery, setup, and teardown",
+            "description": "We create romantic, cohesive florals for your ceremony and reception from bouquets and aisle arrangements to arches.",
+            "btn_text": "View wedding florals",
+            "btn_link": "",
+            "main_image": "shopify://shop_images/Floral_styling_that_brings_celebrations_to_life.png"
+          }
+        }
+      },
+      "block_order": [
+        "row_qnUk8V",
+        "row_9c3QBj",
+        "row_dDgFqW"
+      ],
+      "disabled": true,
+      "name": "Floral Zig-Zag (No Shape)",
+      "settings": {
+        "bg_color": "#faf8f5",
+        "text_color": "#1a1a1a",
+        "main_heading": "Florals that make every celebration unforgettable",
+        "top_sub": "OVERVIEW"
+      }
+    },
+    "testimonials_love_slider_PhR48m": {
+      "type": "testimonials-love-slider",
+      "blocks": {
+        "testimonial_q9tDR7": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_161125124.png",
+            "name": "Emily R.",
+            "text": "“Absolutely stunning! The bouquet arrived fresh, beautifully arranged and even better than the photos. It made our anniversary feel extra special. The colors were vibrant, scent was heavenly, and customer support was lovely. I’ll definitely order again for every celebration! “Absolutely stunning The bouquet arrived fresh, beautifully arranged and even better than the photos."
+          }
+        },
+        "testimonial_GWxfnU": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_161125124.png",
+            "name": "Emily R.",
+            "text": "“Absolutely stunning! The bouquet arrived fresh, beautifully arranged and even better than the photos. It made our anniversary feel extra special. The colors were vibrant, scent was heavenly, and customer support was lovely. I’ll definitely order again for every celebration! “Absolutely stunning The bouquet arrived fresh, beautifully arranged and even better than the photos."
+          }
+        },
+        "testimonial_TXXVnm": {
+          "type": "testimonial",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_161125124.png",
+            "name": "Emily R.",
+            "text": "“Absolutely stunning! The bouquet arrived fresh, beautifully arranged and even better than the photos. It made our anniversary feel extra special. The colors were vibrant, scent was heavenly, and customer support was lovely. I’ll definitely order again for every celebration! “Absolutely stunning The bouquet arrived fresh, beautifully arranged and even better than the photos."
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_q9tDR7",
+        "testimonial_GWxfnU",
+        "testimonial_TXXVnm"
+      ],
+      "disabled": true,
+      "name": "Testimonials – Love From Customers",
+      "settings": {
+        "heading": "Sharing Love From 18,000+ Customers",
+        "custom_css": "cst-love-customers"
+      }
+    },
+    "image_with_text_HhYQN9": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_bBQkfJ": {
+          "type": "heading",
+          "settings": {
+            "text": "Crafting Moments That Last Forever",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_BaGnFJ": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>We create meaningful floral experiences designed to spark joy,</p>",
+            "testimonial_text": ".",
+            "testimonial_name": "",
+            "stars": 5
+          }
+        },
+        "feature_QKFHJz": {
+          "type": "feature",
+          "settings": {
+            "icon1": "shopify://shop_images/NEWWW.png",
+            "title1": "PREMIUM QUALITY",
+            "icon2": "shopify://shop_images/NEW2.png",
+            "title2": "HAND CRAFTED",
+            "icon3": "shopify://shop_images/long.png",
+            "title3": "LONG-LASTING FLOWERS"
+          }
+        },
+        "subheading_zn8zVC": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": "We create meaningful floral experiences designed to spark joy,"
+          }
+        },
+        "richtext_3gDQ89": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>We believe flowers do more than decorate they speak, they comfort, they celebrate, they connect. Our team crafts arrangements with intention</p>",
+            "testimonial_text": "",
+            "testimonial_name": "",
+            "stars": 5
+          }
+        },
+        "button_DqaxMy": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "solid",
+            "text": "Explore Our Story",
+            "url": "shopify://pages/about-us",
+            "background": "#6a6e49",
+            "text_color": ""
+          }
+        },
+        "richtext_aRNkPw": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "content": "",
+            "testimonial_text": "",
+            "testimonial_name": "Jane Smith",
+            "stars": 5
+          }
+        },
+        "paragraph_after_button_EUtLhC": {
+          "type": "paragraph_after_button",
+          "settings": {
+            "content": "<p>“The attention to detail is stunning  every bouquet felt like a piece of art. They made our event unforgettable.”</p>",
+            "author_name": "Jane Smith",
+            "stars": 5
+          }
+        }
+      },
+      "block_order": [
+        "heading_bBQkfJ",
+        "richtext_BaGnFJ",
+        "feature_QKFHJz",
+        "subheading_zn8zVC",
+        "richtext_3gDQ89",
+        "button_DqaxMy",
+        "richtext_aRNkPw",
+        "paragraph_after_button_EUtLhC"
+      ],
+      "name": "t:sections.image_with_text.presets.image_with_text.name",
+      "settings": {
+        "color_scheme": "",
+        "color_scheme_inner": "",
+        "narrow_section": false,
+        "remove_left_padding": false,
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/Making_it_effortless_1.png",
+        "reveal_on_scroll": true,
+        "image_position": "start",
+        "content_width": "sm",
+        "remove_vertical_spacing": true,
+        "custom_css_class": "cst-main-creafting"
+      }
+    },
+    "scrolling_content_4LXPtV": {
+      "type": "scrolling-content",
+      "blocks": {
+        "text_8UfdHh": {
+          "type": "text",
+          "settings": {
+            "text": "Fresh Premium Florals",
+            "icon": "shopify://shop_images/icn.png"
+          }
+        },
+        "text_76YiFH": {
+          "type": "text",
+          "settings": {
+            "text": "Custom Event Styling",
+            "icon": "shopify://shop_images/icn.png"
+          }
+        },
+        "text_FtthjM": {
+          "type": "text",
+          "settings": {
+            "text": "Fast Delivery Available",
+            "icon": "shopify://shop_images/icn.png"
+          }
+        },
+        "text_fUP3gg": {
+          "type": "text",
+          "settings": {
+            "text": "Party Floral Styling",
+            "icon": "shopify://shop_images/icn.png"
+          }
+        }
+      },
+      "block_order": [
+        "text_8UfdHh",
+        "text_76YiFH",
+        "text_FtthjM",
+        "text_fUP3gg"
+      ],
+      "name": "t:sections.scrolling_content.presets.scrolling_content.name",
+      "settings": {
+        "separate_section_with_border": true,
+        "scrolling_speed": 0.1,
+        "scroll_direction": "left",
+        "pause_on_hover": true,
+        "text_font": "heading",
+        "text_font_size_mobile": 14,
+        "text_font_size_desktop": 20,
+        "section_vertical_spacing_mobile": 16,
+        "section_vertical_spacing_desktop": 20,
+        "item_horizontal_spacing_mobile": 60,
+        "item_horizontal_spacing_desktop": 60,
+        "background": "#f8f2ed",
+        "text_color": "#6a6e49",
+        "custom_css_class": "cst-new-scrolling"
+      }
+    },
+    "collection_list_FXBcq9": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_RxwD8H": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "collection": "wedding-floral-design",
+            "expand_collection": true,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "VENUE STYLLING & DECOR",
+            "title": "Wedding Floral Design",
+            "button_text": "Explore Services",
+            "button_link": "",
+            "icon_image": "shopify://shop_images/arrow.png",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 21
+          }
+        },
+        "collection_QfaBYU": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "party-event-flowers",
+            "expand_collection": true,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "VENUE STYLLING & DECOR",
+            "title": "Party & Event Flowers",
+            "button_text": "Explore Services",
+            "button_link": "",
+            "icon_image": "shopify://shop_images/arrow.png",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_yjfYTa": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "",
+            "collection": "custom-floral-orders",
+            "expand_collection": true,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "VENUE STYLLING & DECOR",
+            "title": "Custom Floral Orders",
+            "button_text": "Explore Services",
+            "button_link": "",
+            "icon_image": "shopify://shop_images/arrow.png",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_RxwD8H",
+        "collection_QfaBYU",
+        "collection_yjfYTa"
+      ],
+      "custom_css": [],
+      "name": "t:sections.collection_list.presets.collection_list.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "image_size": "auto",
+        "show_text_outside": true,
+        "space_items": true,
+        "stack_collections": true,
+        "collections_per_row_mobile": "1",
+        "collections_per_row_desktop": 3,
+        "subheading": "",
+        "title": "Services We Offer",
+        "content": "",
+        "show_shop_all": true,
+        "shop_all_text": "Shop All",
+        "shop_all_link": "",
+        "custom_class_css": "cst-service"
+      }
+    },
+    "our_purposeful_mission_DLf8rr": {
+      "type": "our-purposeful-mission",
+      "name": "Our Purposeful Mission",
+      "settings": {
+        "heading": "Our Purposeful Mission",
+        "description": "We believe flowers are more than décor they tell stories, hold memories, and make moments unforgettable.\n  Our mission is to bring beauty, emotion, and meaning to every celebration through thoughtful floral design.\nEach bouquet is crafted with care, using fresh blooms, elegant styling, and your unique vision as inspiration.  From intimate gatherings to grand events, we create florals that feel personal, elevated, and beautifully expressive.",
+        "image1": "shopify://shop_images/img1.png",
+        "image2": "shopify://shop_images/img2.png",
+        "image3": "shopify://shop_images/img3.png",
+        "image4": "shopify://shop_images/img4.png",
+        "custom_css_class": "cst-mission"
+      }
+    },
+    "rich_text_KRQEjR": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading_FJX9wV": {
+          "type": "subheading",
+          "settings": {
+            "text": "Exclusive Access for Flower Lovers"
+          }
+        },
+        "heading_jCxAJX": {
+          "type": "heading",
+          "settings": {
+            "text": "Let’s Bloom Through Every Season",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_cQa7nQ": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "content": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_FJX9wV",
+        "heading_jCxAJX",
+        "richtext_cQa7nQ"
+      ],
+      "name": "t:sections.rich_text.presets.rich_text.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false,
+        "custom_Css_Class": "cst-bloom"
+      }
+    },
+    "image_with_text_AkMLEQ": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_9WUUwU": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_VNHpYL": {
+          "type": "heading",
+          "settings": {
+            "text": "Unlock Savings On Every Celebration ",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_b89rMn": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Exclusive offers, seasonal bouquets & event styling inspiration — just for subscribers.<br/></p>",
+            "testimonial_text": "",
+            "testimonial_name": "",
+            "stars": 5
+          }
+        },
+        "button_PkKG7E": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Subscribe",
+            "url": "shopify://pages/subscriptions",
+            "background": "#6a6e49",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_9WUUwU",
+        "heading_VNHpYL",
+        "richtext_b89rMn",
+        "button_PkKG7E"
+      ],
+      "name": "t:sections.image_with_text.presets.image_with_text.name",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "color_scheme_inner": "scheme-1",
+        "narrow_section": false,
+        "remove_left_padding": false,
+        "separate_section_with_border": true,
+        "image": "shopify://shop_images/Rectangle_161125158_1.png",
+        "reveal_on_scroll": true,
+        "image_position": "end",
+        "content_width": "sm",
+        "remove_vertical_spacing": true,
+        "custom_css_class": "cst-unlock-saving"
+      }
+    },
+    "image_with_text_HNndLc": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_XbkzRV": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_7dJnwT": {
+          "type": "heading",
+          "settings": {
+            "text": "Create a Custom Bouquet With Our Florists",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_edz6Lz": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Whether it’s a last-minute celebration or a planned event, our team is ready to assis<br/></p>",
+            "testimonial_text": "",
+            "testimonial_name": "",
+            "stars": 5
+          }
+        },
+        "button_PCa4BN": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Call (310) 545-4432",
+            "url": "shopify://pages/contact",
+            "background": "#6a6e49",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_XbkzRV",
+        "heading_7dJnwT",
+        "richtext_edz6Lz",
+        "button_PCa4BN"
+      ],
+      "name": "t:sections.image_with_text.presets.image_with_text.name",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "color_scheme_inner": "scheme-1",
+        "narrow_section": false,
+        "remove_left_padding": false,
+        "separate_section_with_border": true,
+        "image": "shopify://shop_images/Rectangle_161125160_1.png",
+        "reveal_on_scroll": true,
+        "image_position": "start",
+        "content_width": "sm",
+        "remove_vertical_spacing": true,
+        "custom_css_class": "cst-customer"
+      }
+    },
+    "faq_wMjKR3": {
+      "type": "faq",
+      "blocks": {
+        "category_ieBYTX": {
+          "type": "category",
+          "disabled": true,
+          "settings": {
+            "title": "Order",
+            "icon": "none",
+            "icon_width": 16
+          }
+        },
+        "question_AdPJdj": {
+          "type": "question",
+          "settings": {
+            "question": "1. Do you offer custom floral arrangements?",
+            "answer": "<p>Yes — we specialize in custom designs for weddings, parties, and events. Share your theme, colors, and inspiration</p>"
+          }
+        },
+        "question_cxJXzM": {
+          "type": "question",
+          "settings": {
+            "question": "2. How far in advance should I book?",
+            "answer": "<p>It depends on where you are. Orders processed here will take 5-7 business days to arrive. Overseas deliveries can take anywhere from 7-16 days. Delivery details will be provided in your confirmation email.</p>"
+          }
+        },
+        "question_NKtUAL": {
+          "type": "question",
+          "settings": {
+            "question": "3. What is the price range for arrangements?",
+            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        },
+        "question_hNNGAf": {
+          "type": "question",
+          "settings": {
+            "question": "4. Do you deliver to event locations?",
+            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        },
+        "question_N7kEgD": {
+          "type": "question",
+          "settings": {
+            "question": "5. Do you provide full event styling?",
+            "answer": "<p>You can contact us through our contact page! We will be happy to assist you.</p>"
+          }
+        },
+        "button_XDrXXM": {
+          "type": "button",
+          "settings": {
+            "button_text": "Shop Best Sellers",
+            "button_url": "#",
+            "open_in_new_tab": "_self"
+          }
+        }
+      },
+      "block_order": [
+        "category_ieBYTX",
+        "question_AdPJdj",
+        "question_cxJXzM",
+        "question_NKtUAL",
+        "question_hNNGAf",
+        "question_N7kEgD",
+        "button_XDrXXM"
+      ],
+      "name": "t:sections.faq.presets.faq.name",
+      "settings": {
+        "right_image": "shopify://shop_images/answer.png",
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "show_categories": false,
+        "subheading": "",
+        "title": "Answers To Your Most Asked Questions",
+        "content": "",
+        "custom_css_Class": "cst-faq"
+      }
+    },
+    "scrolling_content_9NN9Yx": {
+      "type": "scrolling-content",
+      "blocks": {
+        "text_J6gtKW": {
+          "type": "text",
+          "settings": {
+            "text": "Welcome Wedding Bouquets Flowers—Ceremony Flowers"
+          }
+        },
+        "text_39eHgi": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Discover our products"
+          }
+        }
+      },
+      "block_order": [
+        "text_J6gtKW",
+        "text_39eHgi"
+      ],
+      "name": "t:sections.scrolling_content.presets.scrolling_content.name",
+      "settings": {
+        "separate_section_with_border": true,
+        "scrolling_speed": 0.2,
+        "scroll_direction": "left",
+        "pause_on_hover": false,
+        "text_font": "heading",
+        "text_font_size_mobile": 18,
+        "text_font_size_desktop": 48,
+        "section_vertical_spacing_mobile": 20,
+        "section_vertical_spacing_desktop": 36,
+        "item_horizontal_spacing_mobile": 25,
+        "item_horizontal_spacing_desktop": 50,
+        "background": "",
+        "text_color": "",
+        "custom_css_class": "cst-flowers"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_overlay_p3qAGa",
+    "scrolling_content_xRVWiR",
+    "featured_collections_GiitJV",
+    "ss_featured_coll_HMWHQP",
+    "ss_featured_coll_pfKA4r",
+    "custom_testimonials_QMAppH",
+    "collection_list_AgpwUQ",
+    "service_feature_section_N66d9L",
+    "service_values_section_wKNVi8",
+    "service_arch_grid_7Y6BMH",
+    "floral_zigzag_section_ihYt4G",
+    "testimonials_love_slider_PhR48m",
+    "image_with_text_HhYQN9",
+    "scrolling_content_4LXPtV",
+    "collection_list_FXBcq9",
+    "our_purposeful_mission_DLf8rr",
+    "rich_text_KRQEjR",
+    "image_with_text_AkMLEQ",
+    "image_with_text_HNndLc",
+    "faq_wMjKR3",
+    "scrolling_content_9NN9Yx"
+  ]
+}

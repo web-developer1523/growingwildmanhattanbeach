@@ -1,0 +1,177 @@
+{%- comment -%}
+  FILE: /snippets/tip_3647.liquid
+  PURPOSE: Displays tip buttons AND custom note fields on the cart page.
+{%- endcomment -%}
+
+{%- comment -%} =================================================================
+  PART 1: TIP BUTTONS
+==================================================================== {%- endcomment -%}
+
+{% if tip_added == false %}
+  {%- assign tip_product = all_products['tip-for-your-florist'] -%}
+
+  {% if tip_product and tip_product.variants.size > 0 %}
+    <div class="custom-tip-container">
+      <p class="custom-tip-heading">Add a tip for your florist?</p>
+      <div class="custom-tip-buttons">
+        {%- for variant in tip_product.variants -%}
+          <button
+            type="button"
+            class="button"
+            data-variant-id="{{ variant.id }}"
+          >
+            {{ variant.price | money_without_trailing_zeros }}
+          </button>
+        {%- endfor -%}
+      </div>
+    </div>
+  {% endif %}
+{% endif %}
+
+
+{%- comment -%} =================================================================
+  PART 2: CUSTOM NOTE FIELDS
+  These fields use cart attributes to save the data with the order.
+==================================================================== {%- endcomment -%}
+
+<div class="custom-note-fields">
+  <div class="note-field-group">
+    <label for="PersonalizedNote">Write your message for the recipient</label>
+    <textarea
+      id="PersonalizedNote"
+      name="attributes[Personalized Note]"
+      class="text-area"
+      rows="4"
+      placeholder="We’ll write this message on the card delivered with your flowers"
+      maxlength="150"
+    >{{ cart.attributes['Personalized Note'] }}</textarea>
+  </div>
+
+  {% comment %} <div class="note-field-group">
+    <label for="NoteSignature">
+      Note Signature - <span class="note-signature-instruction">Make sure to add your name to take credit for these epic blooms and gifts!</span>
+    </label>
+    <input
+      type="text"
+      id="NoteSignature"
+      name="attributes[Note Signature]"
+      class="input-text"
+      placeholder="Enter your name"
+      value="{{ cart.attributes['Note Signature'] }}"
+    >
+  </div> {% endcomment %}
+  {% comment %}
+  <div class="note-field-group">
+    <label for="SpecialInstructions">Notes for the florist / special instructions (optional)</label>
+    <textarea
+      id="SpecialInstructions"
+      name="attributes[Special instructions for seller]"
+      class="text-area"
+      rows="4"
+      placeholder="Enter notes to florist, allergies, delivery instructions, etc (150 character limit)"
+      maxlength="150"
+    >{{ cart.attributes['Special instructions for seller'] }}</textarea>
+  </div>{% endcomment %}
+</div>
+
+
+{%- comment -%} =================================================================
+  PART 3: JAVASCRIPT AND STYLES
+==================================================================== {%- endcomment -%}
+
+<script>
+  // This script is self-contained and should work on any theme.
+  document.addEventListener('DOMContentLoaded', () => {
+    const tipButtons = document.querySelectorAll('.custom-tip-buttons .button');
+    if (!tipButtons.length) return;
+
+    tipButtons.forEach(button => {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        const variantId = button.dataset.variantId;
+        const originalText = button.innerHTML;
+
+        button.disabled = true;
+        button.innerHTML = 'Adding...';
+
+        const formData = {
+          'items': [{ 'id': variantId, 'quantity': 1 }]
+        };
+
+        fetch('{{ routes.cart_add_url }}.js', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(() => {
+          window.location.href = '{{ routes.cart_url }}';
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+          button.disabled = false;
+          button.innerHTML = originalText;
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  /* Styling for Tip Buttons */
+  .custom-tip-container {
+    text-align: left;
+    padding: 20px 0;
+    margin: 20px 0;
+    border-top: 1px solid #e5e5e5;
+  }
+  .custom-tip-heading {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+  .custom-tip-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .custom-tip-buttons .button {
+    cursor: pointer;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    text-align: center;
+    min-width: 70px;
+  }
+  .custom-tip-buttons .button:hover {
+    border-color: #aaa;
+    background-color: #f0f0f0;
+  }
+
+  /* NEW: Styling for Note Fields */
+  .custom-note-fields {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .note-field-group {
+    margin-bottom: 20px;
+  }
+  .note-field-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  .note-field-group .note-signature-instruction {
+    color: red;
+    font-weight: normal;
+  }
+  .note-field-group input,
+  .note-field-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important */
+  }
+</style>

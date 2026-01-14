@@ -1,0 +1,118 @@
+<div class="section-{{ section.id }} {{ section.settings.custom_css }} page-width">
+  {% if section.settings.heading != blank %}
+    {% assign heading_words = section.settings.heading | split: ' ' %}
+    <h2 class="testimonials-heading-{{ section.id }}">
+      {% for word in heading_words %}
+        {% if word contains '18,000+' or word contains '18,000+' %}
+          <span class="customers-span">{{ word }}</span>
+        {% else %}
+          {{ word }}
+        {% endif %}
+        {% unless forloop.last %} {% endunless %}
+      {% endfor %}
+    </h2>
+  {% endif %}
+
+  <div class="swiper testimonials-slider-{{ section.id }}">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide testimonial-card">
+          <div class="testimonial-inner">
+
+            <div class="testimonial-img">
+              {% if block.settings.image != blank %}
+                <img src="{{ block.settings.image | image_url }}">
+              {% endif %}
+            </div>
+
+            <div>
+              <div class="testimonial-stars">★★★★★</div>
+
+              <div class="testimonial-text">
+                {{ block.settings.text }}
+              </div>
+
+              <div class="testimonial-author">
+                <strong>{{ block.settings.name }}</strong>
+                <div class="verified-badge">
+                  <span class="verified-icon">✔</span>
+                  <span>Verified Customer</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<script>
+  new Swiper('.testimonials-slider-{{ section.id }}', {
+    slidesPerView: 1,
+    loop: true,
+    centeredSlides: true,
+ autoplay: {
+      delay: 3000,        // 3 seconds
+      disableOnInteraction: false
+    },
+
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Love  Customers Slider",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Sharing Love From 18,000+ Customers"
+    },
+    {
+    "type": "text",
+    "id":"custom_css",
+    "label":"Custom CSS Class"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Customer Image"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer Name",
+          "default": "Nicole"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Review Text",
+          "default": "Absolutely beautiful flowers—fresh, elegant, and perfectly arranged."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials – Love From Customers",
+      "category": "Testimonials"
+    }
+  ]
+}
+{% endschema %}

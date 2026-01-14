@@ -1,0 +1,223 @@
+{% schema %}
+{
+  "name": "Text Marquee Slider",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#FAF8F5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Standard Text Color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent Text Color (Green)",
+      "default": "#6B7051"
+    },
+    {
+      "type": "header",
+      "content": "Settings"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 5,
+      "max": 50,
+      "step": 1,
+      "unit": "s",
+      "label": "Scroll Speed (Lower is Faster)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 20,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Font Size",
+      "default": 80
+    },
+    {
+      "type": "checkbox",
+      "id": "pause_hover",
+      "label": "Pause on Hover",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "direction",
+      "label": "Direction",
+      "options": [
+        { "value": "normal", "label": "Right to Left" },
+        { "value": "reverse", "label": "Left to Right" }
+      ],
+      "default": "normal"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "Word / Phrase",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Bouquets"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_accent",
+          "label": "Style as Accent? (Italic Green)",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_separator",
+          "label": "Show Separator after text?",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Text Marquee Slider",
+      "blocks": [
+        { "type": "text_block", "settings": { "text": "Bouquets", "is_accent": false } },
+        { "type": "text_block", "settings": { "text": "Flowers", "is_accent": true } },
+        { "type": "text_block", "settings": { "text": "Ceremony", "is_accent": false } },
+        { "type": "text_block", "settings": { "text": "Decor", "is_accent": true } }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  /* Import Fonts matching your other sections */
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,300;1,400&family=Inter:wght@400;700&display=swap');
+
+  .tm-section {
+    background-color: {{ section.settings.bg_color }};
+    padding: 30px 0;
+    overflow: hidden;
+    user-select: none;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .tm-wrapper {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    /* This ensures whitespace doesn't break */
+    white-space: nowrap; 
+  }
+
+  .tm-track {
+    display: flex;
+    align-items: center;
+    gap: 0; 
+    /* The animation logic */
+    animation: marquee {{ section.settings.speed }}s linear infinite;
+    {% if section.settings.direction == 'reverse' %}
+      animation-direction: reverse;
+    {% endif %}
+    will-change: transform;
+  }
+  
+  {% if section.settings.pause_hover %}
+  .tm-wrapper:hover .tm-track {
+    animation-play-state: paused;
+  }
+  {% endif %}
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* Text Styling */
+  .tm-item {
+    display: inline-flex;
+    align-items: center;
+    /* Spacing between words */
+    padding-right: 0.2em; 
+  }
+
+  .tm-text {
+    font-family: 'Larken', sans-serif;
+    font-weight: 700; /* Bold Sans-Serif */
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.font_size }}px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  /* Accent Styling (The "Flowers" style) */
+  .tm-accent {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    color: {{ section.settings.accent_color }};
+  }
+
+  /* Separator (The Dash) */
+  .tm-sep {
+    display: inline-block;
+    margin: 0 0.5em; /* Space around the dash */
+    width: 1em; /* Width of the dash line */
+    height: 4px; /* Thickness of dash */
+    background-color: {{ section.settings.text_color }};
+    vertical-align: middle;
+    opacity: 0.8;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .tm-text {
+      font-size: {{ section.settings.font_size | times: 0.6 }}px; /* 60% size on mobile */
+    }
+    .tm-sep {
+      height: 3px;
+      margin: 0 0.4em;
+    }
+  }
+{% endstyle %}
+
+<div class="tm-section">
+  <div class="tm-wrapper">
+    
+    <!-- We repeat the content set multiple times to ensure smooth looping -->
+    {% for i in (1..4) %}
+      <div class="tm-track">
+        {% for block in section.blocks %}
+          <div class="tm-item" {{ block.shopify_attributes }}>
+            
+            <span class="tm-text {% if block.settings.is_accent %}tm-accent{% endif %}">
+              {{ block.settings.text }}
+            </span>
+
+            {% if block.settings.show_separator %}
+              <span class="tm-sep"></span>
+            {% endif %}
+            
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+
+  </div>
+</div>

@@ -1,0 +1,507 @@
+{% schema %}
+{
+  "name": "Contact & Booking",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section Background",
+      "default": "#FAF8F5"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Button Color",
+      "default": "#6B7051"
+    },
+    {
+      "type": "header",
+      "content": "Left Side Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Small Top Text",
+      "default": "BOOKING YOUR FLORALS IS SIMPLE"
+    },
+    {
+      "type": "textarea",
+      "id": "heading_left",
+      "label": "Main Heading",
+      "default": "Let’s bring your\ncelebration to life"
+    },
+    {
+      "type": "header",
+      "content": "Contact Info 1 (Email)"
+    },
+    {
+      "type": "text",
+      "id": "email_label",
+      "label": "Label",
+      "default": "By Email"
+    },
+    {
+      "type": "text",
+      "id": "email_text",
+      "label": "Email Address",
+      "default": "shop@growingwildmanhattanbeach.com"
+    },
+    {
+      "type": "header",
+      "content": "Contact Info 2 (Phone)"
+    },
+    {
+      "type": "text",
+      "id": "phone_label",
+      "label": "Label",
+      "default": "By Phone"
+    },
+    {
+      "type": "text",
+      "id": "phone_text",
+      "label": "Phone Number",
+      "default": "(310) 545-4432 — Call or text us"
+    },
+    {
+      "type": "header",
+      "content": "Contact Info 3 (Address)"
+    },
+    {
+      "type": "text",
+      "id": "addr_label",
+      "label": "Label",
+      "default": "By Address"
+    },
+    {
+      "type": "textarea",
+      "id": "addr_text",
+      "label": "Address Text",
+      "default": "1201 Highland Ave, Manhattan Beach, CA 90266"
+    },
+    {
+      "type": "url",
+      "id": "addr_url",
+      "label": "Google Maps Link",
+      "info": "Paste the specific Google Maps link here."
+    },
+    {
+      "type": "header",
+      "content": "Right Side Form"
+    },
+    {
+      "type": "text",
+      "id": "form_title",
+      "label": "Form Heading",
+      "default": "Get in touch"
+    },
+    {
+      "type": "text",
+      "id": "form_sub",
+      "label": "Form Subtitle",
+      "default": "Need pricing? Have a question? Contact us today!"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact & Booking Section"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Inter:wght@300;400;500;600&display=swap');
+
+  .cbs-section {
+    background-color: {{ section.settings.bg_color }};
+    padding: 80px 20px;
+    font-family: 'Larken', sans-serif;
+    color: #1a1a1a;
+  }
+
+  .cbs-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  /* --- Left Column --- */
+  .cbs-left {
+    flex: 0 0 35%;
+    max-width: 400px;
+    position: sticky;
+    top: 150px;
+  }
+
+  .cbs-eyebrow {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #555;
+  }
+
+  .cbs-heading {
+    font-family: 'Larken', serif;
+    font-size: 42px;
+    line-height: 1.1;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #1a1a1a;
+    white-space: pre-line;
+  }
+
+  /* Contact Info Cards */
+  .cbs-contact-card {
+    background-color: #F8F5F2; 
+    background-color: rgba(255,255,255, 0.5);
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+
+  .cbs-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  
+  .cbs-icon svg {
+    width: 100%;
+    height: 100%;
+    stroke: #000;
+    fill: none;
+    stroke-width: 1.5;
+  }
+
+  .cbs-card-content h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: #000;
+  }
+
+  .cbs-card-content p {
+    font-size: 13px;
+    color: #444;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* Link Styles for Clickable Items */
+  .cbs-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid transparent;
+  }
+
+  .cbs-link:hover {
+    color: #000;
+    border-bottom: 1px solid #000;
+  }
+
+  /* --- Right Column (Form) --- */
+  .cbs-right {
+    flex: 1;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 50px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.03);
+  }
+
+  .cbs-form-header {
+    margin-bottom: 30px;
+  }
+
+  .cbs-form-title {
+    font-family: 'Larken', serif;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .cbs-form-sub {
+    font-size: 14px;
+    color: #555;
+  }
+
+  /* Form Fields */
+  .cbs-form-group {
+    margin-bottom: 24px;
+  }
+
+  .cbs-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+  }
+
+  .cbs-req { color: #D32F2F; } 
+
+  .cbs-input, .cbs-select, .cbs-textarea {
+    width: 100%;
+    background-color: #F9F9F9;
+    border: none;
+    border-bottom: 1px solid #E5E5E5;
+    padding: 12px 15px;
+    font-family: 'Larken', sans-serif;
+    font-size: 14px;
+    color: #333;
+    border-radius: 4px 4px 0 0;
+    transition: border-color 0.3s;
+  }
+
+  .cbs-input:focus, .cbs-select:focus, .cbs-textarea:focus {
+    outline: none;
+    border-bottom-color: {{ section.settings.accent_color }};
+    background-color: #F2F2F2;
+  }
+
+  .cbs-input::placeholder { color: #BBB; font-weight: 300; }
+
+  /* Checkboxes */
+  .cbs-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cbs-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #444;
+  }
+
+  .cbs-checkbox-label input {
+    width: 16px;
+    height: 16px;
+    accent-color: {{ section.settings.accent_color }};
+    border: 1px solid #ccc;
+  }
+
+  /* Submit Button */
+  .cbs-submit {
+    background-color: {{ section.settings.accent_color }};
+    color: #fff;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    margin-top: 10px;
+  }
+
+  .cbs-submit:hover {
+    opacity: 0.9;
+  }
+
+  @media (max-width: 900px) {
+    .cbs-container {
+      flex-direction: column;
+      gap: 50px;
+    }
+    .cbs-left {
+      flex: auto;
+      max-width: 100%;
+      position: static;
+    }
+    .cbs-right {
+      width: 100%;
+      padding: 30px 20px;
+    }
+    .cbs-heading {
+      font-size: 32px;
+    }
+  }
+{% endstyle %}
+
+<div class="cbs-section">
+  <div class="cbs-container">
+    
+    <!-- LEFT COLUMN: Contact Info -->
+    <div class="cbs-left">
+      <p class="cbs-eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="cbs-heading">{{ section.settings.heading_left }}</h2>
+
+      <!-- Card 1: Email (CLICKABLE) -->
+      <div class="cbs-contact-card">
+        <div class="cbs-icon">
+           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </div>
+        <div class="cbs-card-content">
+          <h4>{{ section.settings.email_label }}</h4>
+          <p>
+            <a href="mailto:{{ section.settings.email_text }}" class="cbs-link">
+              {{ section.settings.email_text }}
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2: Phone (CLICKABLE) -->
+      <div class="cbs-contact-card">
+        <div class="cbs-icon">
+           <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </div>
+        <div class="cbs-card-content">
+          <h4>{{ section.settings.phone_label }}</h4>
+          <p>
+            {%- comment -%} Strip text so the phone link works properly {%- endcomment -%}
+            {% assign clean_phone = section.settings.phone_text | split: '—' | first | remove: '(' | remove: ')' | remove: ' ' | remove: '-' %}
+            <a href="tel:{{ clean_phone }}" class="cbs-link">
+              {{ section.settings.phone_text }}
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3: Address (SPECIFIC URL) -->
+      <div class="cbs-contact-card">
+        <div class="cbs-icon">
+           <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        </div>
+        <div class="cbs-card-content">
+          <h4>{{ section.settings.addr_label }}</h4>
+          <p>
+            {% comment %} 
+              If user provides a custom URL in settings, use it. 
+              Otherwise fallback to a generic search for the address text.
+              Note: I've added your specific URL as a fallback below if the setting is empty.
+            {% endcomment %}
+            {% assign map_link = section.settings.addr_url %}
+            {% if map_link == blank %}
+               {% assign map_link = "https://www.google.com/maps/place/Growing+Wild/@33.8858057,-118.4102397,16z/data=!4m6!3m5!1s0x80c2b3ec78548b67:0xb63e5351abcac295!8m2!3d33.8858057!4d-118.4102397!16s%2Fg%2F1tfc6wf9" %}
+            {% endif %}
+            
+            <a href="{{ map_link }}" target="_blank" class="cbs-link">
+              {{ section.settings.addr_text }}
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: Form -->
+    <div class="cbs-right">
+      <div class="cbs-form-header">
+        <h3 class="cbs-form-title">{{ section.settings.form_title }}</h3>
+        <p class="cbs-form-sub">{{ section.settings.form_sub }}</p>
+      </div>
+
+      {% form 'contact' %}
+        
+        {% if form.posted_successfully? %}
+          <p style="color: green; font-weight: bold; margin-bottom: 20px;">Thanks for contacting us! We'll get back to you shortly.</p>
+        {% elsif form.errors %}
+          <div style="color: #D32F2F; margin-bottom: 20px;">
+             {{ form.errors | default_errors }}
+          </div>
+        {% endif %}
+
+        <!-- Full Name -->
+        <div class="cbs-form-group">
+          <label class="cbs-label" for="ContactFormName">Full name <span class="cbs-req">*</span></label>
+          <input type="text" id="ContactFormName" name="contact[name]" class="cbs-input" placeholder="Your name here" required>
+        </div>
+
+        <!-- Email -->
+        <div class="cbs-form-group">
+          <label class="cbs-label" for="ContactFormEmail">Email <span class="cbs-req">*</span></label>
+          <input type="email" id="ContactFormEmail" name="contact[email]" class="cbs-input" placeholder="E.g. myemail@email.com" required>
+        </div>
+
+        <!-- Phone -->
+        <div class="cbs-form-group">
+          <label class="cbs-label" for="ContactFormPhone">Phone number</label>
+          <input type="tel" id="ContactFormPhone" name="contact[phone]" class="cbs-input" placeholder="E.g. 555 444 0755">
+        </div>
+
+        <!-- Checkboxes (Interests) -->
+        <div class="cbs-form-group">
+          <label class="cbs-label">What Are You Interested In?</label>
+          <div class="cbs-checkbox-group">
+            <label class="cbs-checkbox-label">
+              <input type="checkbox" name="contact[Interest_Wedding]" value="Yes"> Wedding Florals
+            </label>
+            <label class="cbs-checkbox-label">
+              <input type="checkbox" name="contact[Interest_Party]" value="Yes"> Party / Event Florals
+            </label>
+            <label class="cbs-checkbox-label">
+              <input type="checkbox" name="contact[Interest_Venue]" value="Yes"> Full Venue Styling
+            </label>
+            <label class="cbs-checkbox-label">
+              <input type="checkbox" name="contact[Interest_Delivery]" value="Yes"> Delivery, Setup & Teardown Only
+            </label>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="cbs-form-group">
+          <label class="cbs-label">Event or Placement Location <span class="cbs-req">*</span></label>
+          <input type="text" name="contact[Location]" class="cbs-input" placeholder="City & State" required>
+        </div>
+
+        <!-- Date -->
+        <div class="cbs-form-group">
+          <label class="cbs-label">Event Date <span class="cbs-req">*</span></label>
+          <input type="date" name="contact[Date]" class="cbs-input" required>
+        </div>
+
+        <!-- Who Are You -->
+        <div class="cbs-form-group">
+          <label class="cbs-label">Who Are You?</label>
+          <select name="contact[Client_Type]" class="cbs-select">
+            <option value="" disabled selected>Select an option</option>
+            <option value="Bride/Groom">Bride / Groom</option>
+            <option value="Event Planner">Event Planner</option>
+            <option value="Corporate">Corporate Client</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <!-- How did you hear -->
+        <div class="cbs-form-group">
+          <label class="cbs-label">How did you hear about us?</label>
+          <select name="contact[Referral_Source]" class="cbs-select">
+            <option value="" disabled selected>Select an option</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Google">Google Search</option>
+            <option value="Friend">Friend / Family</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <!-- Message -->
+        <div class="cbs-form-group">
+          <label class="cbs-label">Tell us more about this project <span class="cbs-req">*</span></label>
+          <textarea rows="4" name="contact[body]" class="cbs-textarea" placeholder="What do we need to know about the project?" required></textarea>
+        </div>
+
+        <button type="submit" class="cbs-submit">Send Message</button>
+
+      {% endform %}
+    </div>
+
+  </div>
+</div>

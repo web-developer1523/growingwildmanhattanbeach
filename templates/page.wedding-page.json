@@ -1,0 +1,95 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "color_scheme": "",
+        "show_title": true,
+        "page_width": "xs"
+      }
+    },
+    "video_DttGxA": {
+      "type": "video",
+      "blocks": {
+        "play_VtxMVk": {
+          "type": "play",
+          "settings": {
+            "icon_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "play_VtxMVk"
+      ],
+      "name": "t:sections.video.presets.video.name",
+      "settings": {
+        "autoplay": false,
+        "show_controls": true,
+        "video_size": "sm",
+        "video": "shopify://files/videos/Wedding_Flower_Video_Delivered.mp4",
+        "mobile_video": "shopify://files/videos/Wedding_Flower_Video_Delivered.mp4",
+        "external_video_url": "",
+        "text_color": "#ffffff"
+      }
+    },
+    "rich_text_UQePJ9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yFkrhQ": {
+          "type": "heading",
+          "settings": {
+            "text": "Crafting Your Dream Wedding",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext_Hgq9Az": {
+          "type": "richtext",
+          "settings": {
+            "content": "<h3><strong>Your Love Story, In Full Bloom</strong></h3><p>Welcome to Growing Wild, where your wedding vision blossoms into reality. Nestled in the heart of Manhattan Beach, our wedding flower store specialize in creating breathtaking floral arrangements that tell your unique love story. From intimate gatherings to grand celebrations, our passion is to make your special day truly unforgettable with the timeless beauty of flowers.</p><h3>Our Wedding Floral Services</h3><p><strong>Bridal & Bridesmaid Bouquets</strong></p><p>Stunning, handcrafted <a href=\"/collections/bouquet\" title=\"Bouquet\"><strong>bouquets</strong></a> to complement your bridal party's attire.</p><p><strong>Boutonnieres & Corsages</strong></p><p>Elegant floral accents for the groom, groomsmen, and special guests.</p><p><strong>Ceremony Decor</strong></p><p>Breathtaking arches, aisle <a href=\"/collections/arrangements\" title=\"Arrangements\"><strong>arrangements</strong></a>, and altar flowers to set the scene.</p><p><strong>Reception Centerpieces</strong></p><p>Captivating table arrangements that enhance your reception's ambiance.</p><p><strong>Cake Flowers & Decor</strong></p><p>Delicate floral touches to adorn your wedding cake and venue.</p><p><strong>Custom Installations</strong></p><p>Unique floral installations, from hanging arrangements to photo backdrops.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yFkrhQ",
+        "richtext_Hgq9Az"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "custom_consultation_form_kc86J9": {
+      "type": "custom-consultation-form",
+      "name": "Consultation Form",
+      "settings": {
+        "heading": "Book Your Free Consultation",
+        "subheading": "<p>Ready to start planning your dream wedding flowers? Fill out the form below, and one of our expert designers will be in touch shortly.</p>",
+        "success_message": "Thanks for contacting us! We'll be in touch shortly.",
+        "background_color": "#ffffff",
+        "text_color": "#121212",
+        "button_background_color": "#121212",
+        "button_text_color": "#ffffff",
+        "button_text": "Submit"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "video_DttGxA",
+    "rich_text_UQePJ9",
+    "custom_consultation_form_kc86J9"
+  ]
+}
