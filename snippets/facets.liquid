@@ -20,6 +20,275 @@ Supported variables
 
 {%- assign color_label_list = 'general.label.color' | t | replace: ', ', ',' | downcase | split: ',' -%}
 {%- capture id_prefix -%}facets-{{ context }}{%- endcapture -%}
+{%- capture mobile_filter_id -%}mobile-filter-toggle-{{ id_prefix }}{%- endcapture -%}
+{%- capture mobile_filter_drawer_id -%}mobile-filter-drawer-{{ id_prefix }}{%- endcapture -%}
+{%- capture mobile_filter_overlay_id -%}mobile-filter-overlay-{{ id_prefix }}{%- endcapture -%}
+{%- capture mobile_filter_close_id -%}mobile-filter-close-{{ id_prefix }}{%- endcapture -%}
+
+<style>
+  /* Filter Design Styling to Match 2nd Screenshot - No background on heading */
+  .facets .accordion__toggle {
+    font-family: serif;
+    font-weight: 600;
+    color: #2F2E2A !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: transparent !important;
+    border-radius: 0 !important;
+    padding: 1rem 0 !important;
+    margin-bottom: 0.5rem;
+    justify-content: space-between !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .facets .accordion__toggle span {
+    font-family: serif;
+    font-weight: 600;
+    color: #2F2E2A;
+    text-transform: uppercase;
+    font-size: 14px !important
+  }
+
+  /* Chevron on right side */
+  .facets .accordion__toggle svg {
+    fill: #2F2E2A !important;
+    stroke: none !important;
+    width: 12px !important;
+    height: 12px !important;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  .facets .accordion__disclosure[open] .accordion__toggle svg,
+  .facets .accordion__disclosure.group[open] .accordion__toggle svg {
+    transform: rotate(180deg);
+  }
+
+  .facets .accordion__content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  /* Filter Options Styling */
+  .facets .accordion__content .v-stack,
+  .facets .accordion__content .h-stack {
+    font-family: sans-serif;
+    font-weight: 400;
+  }
+
+  .facets .checkbox-control {
+    margin-bottom: 0.5rem;
+    align-items: center;
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .facets .checkbox-control:last-child {
+    margin-bottom: 0;
+  }
+
+  .facets .checkbox-control label,
+  .facets .checkbox-control .text-subdued {
+    font-family: sans-serif !important;
+    font-weight: 400 !important;
+    color: #2F2E2A !important;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  /* Checkbox Styling - Simple square checkboxes matching screenshot */
+  .facets .checkbox-control input.checkbox {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    border: 1px solid #D0D0D0 !important;
+    border-radius: 2px !important;
+    margin-right: 0;
+    cursor: pointer;
+    background-color: #FFFFFF !important;
+    background-image: none !important;
+    position: relative;
+    flex-shrink: 0;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .facets .checkbox-control input.checkbox:checked {
+    background-color: #FFFFFF !important;
+    border-color: #2F2E2A !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='%232F2E2A' d='M11.5 3.5L5 10L2.5 7.5l1.5-1.5L5 7l5-5 1.5 1.5z'/%3E%3C/svg%3E") !important;
+    background-size: 14px 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Ensure all checkboxes are visible */
+  .facets .checkbox-control input[type="checkbox"] {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Dot checkbox styling (for hide_checkbox option) - match regular checkbox style */
+  .facets .checkbox-control .dot-checkbox {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    border: 1px solid #D0D0D0 !important;
+    border-radius: 2px !important;
+    margin-right: 0;
+    cursor: pointer;
+    background-color: #FFFFFF !important;
+    position: relative;
+    flex-shrink: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .facets .checkbox-control .dot-checkbox:checked {
+    background-color: #FFFFFF !important;
+    border-color: #2F2E2A !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath fill='%232F2E2A' d='M11.5 3.5L5 10L2.5 7.5l1.5-1.5L5 7l5-5 1.5 1.5z'/%3E%3C/svg%3E");
+    background-size: 14px 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .facets .checkbox-control .dot-checkbox:checked ~ label {
+    opacity: 1 !important;
+    transform: none !important;
+    color: #2F2E2A !important;
+  }
+
+  /* Spacing between filter pills */
+  .facets .accordion-list .accordion {
+    margin-bottom: 0;
+  }
+
+  .facets .accordion-list .accordion:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Ensure proper text styling for filter titles */
+  .facets .accordion__toggle.h6,
+  .facets .accordion__toggle .h6 {
+    font-family: serif !important;
+    font-weight: 600 !important;
+    color: #2F2E2A !important;
+    text-transform: uppercase !important;
+  }
+
+  /* Link styling in quick links */
+  .facets .accordion__content a {
+    font-family: sans-serif;
+    color: #595959;
+    text-decoration: none;
+  }
+
+  .facets .accordion__content a:hover {
+    color: #2F2E2A;
+  }
+
+  /* Mobile Filter Drawer Styles */
+  @media screen and (max-width: 699px) {
+
+    .collection__main {
+      margin-top: 0px;
+  }
+    #{{ mobile_filter_id }} {
+      display: block !important;
+    }
+
+    #{{ mobile_filter_drawer_id }} {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: min(85vw, 320px);
+      max-width: 320px;
+      height: 100vh;
+      background: rgb(var(--background));
+      z-index: 1000;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+      overflow-y: auto;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #{{ mobile_filter_drawer_id }}.mobile-filters-open {
+      transform: translateX(0);
+    }
+
+    #{{ mobile_filter_overlay_id }} {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+
+    #{{ mobile_filter_overlay_id }}.mobile-filters-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #{{ mobile_filter_drawer_id }} .mobile-filter-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid rgb(var(--border-color));
+      position: sticky;
+      top: 0;
+      background: rgb(var(--background));
+      z-index: 1;
+    }
+
+    #{{ mobile_filter_drawer_id }} .mobile-filter-close {
+      background: none;
+      border: none;
+      padding: 0.5rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: inherit;
+    }
+
+    #{{ mobile_filter_drawer_id }} .mobile-filter-body {
+      padding: 1.25rem;
+      overflow-y: auto;
+      height: calc(100vh - 60px);
+    }
+  }
+
+  /* Desktop: Always show filters, hide toggle button and drawer */
+  @media screen and (min-width: 700px) {
+    #{{ mobile_filter_id }},
+    #{{ mobile_filter_overlay_id }},
+    #{{ mobile_filter_drawer_id }} {
+      display: none !important;
+    }
+    .collection__main{
+      margin-top: 0px;
+    }
+    .container {
+      margin-top: 50px;
+  }
+  }
+</style>
 
 <facets-form {% if update_on_change %}update-on-change{% endif %} section-id="{{ section.id }}">
   <form method="GET" action="{{ request.path }}" class="facets">
@@ -38,7 +307,28 @@ Supported variables
       <input type="hidden" name="q" value="{{ results.terms | escape }}">
     {%- endif -%}
 
-    <div class="accordion-list">
+    {%- comment -%}Mobile Filter Toggle Button{%- endcomment -%}
+    {%- if show_filters or quick_links_menu.links.size > 0 -%}
+      <button type="button" id="{{ mobile_filter_id }}" class="mobile-filter-toggle" style="width: auto; padding: 12px; margin-top: 15px; background: transparent; border: 1px solid currentColor; text-align: center; cursor: pointer; font-size: inherit;">
+        {{ 'collection.faceting.filters' | t | default: 'Filter' }}
+      </button>
+    {%- endif -%}
+
+    {%- comment -%}Mobile Filter Drawer Overlay{%- endcomment -%}
+    <div id="{{ mobile_filter_overlay_id }}" class="mobile-filter-overlay"></div>
+
+    {%- comment -%}Mobile Filter Drawer{%- endcomment -%}
+    <div id="{{ mobile_filter_drawer_id }}" class="mobile-filter-drawer">
+      <div class="mobile-filter-header">
+        <h2 class="h4" style="margin: 0;">{{ 'collection.faceting.filters' | t | default: 'Filter' }}</h2>
+        <button type="button" id="{{ mobile_filter_close_id }}" class="mobile-filter-close" aria-label="{{ 'general.accessibility.close' | t | default: 'Close' }}">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="mobile-filter-body">
+        <div class="accordion-list sm-max:block md:hidden">
       {%- if quick_links_menu.links.size > 0 -%}
         {%- capture filter_content -%}
           <div class="v-stack gap-2.5">
@@ -57,8 +347,8 @@ Supported variables
             {%- if filter.type == 'boolean' or filter.param_name == 'filter.v.availability' -%}
               {%- if filter.param_name == 'filter.v.availability' -%}
                 <div class="checkbox-control">
-                  <input id="{{ id_prefix }}-{{ filter.param_name }}" type="checkbox" class="switch" name="{{ filter.param_name }}" value="1" {% if filter.active_values.size > 0 %}checked{% endif %}>
-                  <label for="{{ id_prefix }}-{{ filter.param_name }}" class="text-subdued">{{- 'collection.faceting.in_stock_only' | t -}}</label>
+                  <input id="{{ id_prefix }}-desktop-{{ filter.param_name }}" type="checkbox" class="switch" name="{{ filter.param_name }}" value="1" {% if filter.active_values.size > 0 %}checked{% endif %}>
+                  <label for="{{ id_prefix }}-desktop-{{ filter.param_name }}" class="text-subdued">{{- 'collection.faceting.in_stock_only' | t -}}</label>
                 </div>
               {%- else -%}
                 <div class="v-stack gap-2.5">
@@ -72,10 +362,10 @@ Supported variables
                     -%}
 
                     <div class="checkbox-control">
-                      {%- capture boolean_index -%}{% increment filter_boolean %}{%- endcapture -%}
+                      {%- capture boolean_index -%}{% increment filter_boolean_desktop %}{%- endcapture -%}
 
-                      <input id="{{ id_prefix }}-{{ filter_value.param_name }}-{{ boolean_index }}" type="checkbox" class="switch" name="{{ filter_value.param_name }}" value="{{ filter_value.value }}" {% if filter_value.active %}checked{% endif %}>
-                      <label for="{{ id_prefix }}-{{ filter_value.param_name }}-{{ boolean_index }}" class="text-subdued">{{ label }}</label>
+                      <input id="{{ id_prefix }}-desktop-{{ filter_value.param_name }}-{{ boolean_index }}" type="checkbox" class="switch" name="{{ filter_value.param_name }}" value="{{ filter_value.value }}" {% if filter_value.active %}checked{% endif %}>
+                      <label for="{{ id_prefix }}-desktop-{{ filter_value.param_name }}-{{ boolean_index }}" class="text-subdued">{{ label }}</label>
                     </div>
                   {%- endfor -%}
                 </div>
@@ -98,7 +388,7 @@ Supported variables
                   <div class="{{ wrapper_class_list }}">
                     {% liquid
                       for filter_value in filter.values
-                        assign value_id_prefix = id_prefix | append: '-' | append: forloop.index
+                        assign value_id_prefix = id_prefix | append: '-desktop-' | append: forloop.index
 
                         if filter.presentation == 'image'
                           render 'option-value', type: 'image_filter', filter_value: filter_value, id_prefix: value_id_prefix
@@ -111,7 +401,102 @@ Supported variables
                             assign label = filter_value.label
                           endif
 
-                          render 'checkbox', hide_checkbox: true, label: label, name: filter_value.param_name, value: filter_value.value, checked: filter_value.active, id_prefix: value_id_prefix
+                          render 'checkbox', hide_checkbox: false, label: label, name: filter_value.param_name, value: filter_value.value, checked: filter_value.active, id_prefix: value_id_prefix
+                        endif
+                      endfor
+                    %}
+                  </div>
+
+                {%- when 'price_range' -%}
+                  {%- render 'price-range', filter: filter -%}
+              {%- endcase -%}
+            {%- endif -%}
+          {%- endcapture -%}
+
+          {%- if filter_content != blank -%}
+            {%- render 'accordion', title: filter.label, content: filter_content, open: open_filters_by_default, show_arrow: true -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+        </div>
+      </div>
+    </div>
+
+    {%- comment -%}Desktop Filters (always visible){%- endcomment -%}
+    <div class="accordion-list sm-max:hidden md:block">
+      {%- if quick_links_menu.links.size > 0 -%}
+        {%- capture filter_content -%}
+          <div class="v-stack gap-2.5">
+            {%- for link in quick_links_menu.links -%}
+              <a href="{{ link.url }}" {% unless link.active %}class="link-faded"{% endunless %}>{{ link.title }}</a>
+            {%- endfor -%}
+          </div>
+        {%- endcapture -%}
+
+        {%- render 'accordion', title: quick_links_menu.title, content: filter_content, open: open_filters_by_default, show_arrow: true -%}
+      {%- endif -%}
+
+      {%- if show_filters -%}
+        {%- for filter in results.filters -%}
+          {%- capture filter_content -%}
+            {%- if filter.type == 'boolean' or filter.param_name == 'filter.v.availability' -%}
+              {%- if filter.param_name == 'filter.v.availability' -%}
+                <div class="checkbox-control">
+                  <input id="{{ id_prefix }}-desktop-{{ filter.param_name }}" type="checkbox" class="switch" name="{{ filter.param_name }}" value="1" {% if filter.active_values.size > 0 %}checked{% endif %}>
+                  <label for="{{ id_prefix }}-desktop-{{ filter.param_name }}" class="text-subdued">{{- 'collection.faceting.in_stock_only' | t -}}</label>
+                </div>
+              {%- else -%}
+                <div class="v-stack gap-2.5">
+                  {%- for filter_value in filter.values -%}
+                    {%- liquid
+                      if section.settings.show_filter_values_count
+                        assign label = filter_value.label | append: ' (' | append: filter_value.count | append: ')'
+                      else
+                        assign label = filter_value.label
+                      endif
+                    -%}
+
+                    <div class="checkbox-control">
+                      {%- capture boolean_index -%}{% increment filter_boolean_desktop %}{%- endcapture -%}
+
+                      <input id="{{ id_prefix }}-desktop-{{ filter_value.param_name }}-{{ boolean_index }}" type="checkbox" class="switch" name="{{ filter_value.param_name }}" value="{{ filter_value.value }}" {% if filter_value.active %}checked{% endif %}>
+                      <label for="{{ id_prefix }}-desktop-{{ filter_value.param_name }}-{{ boolean_index }}" class="text-subdued">{{ label }}</label>
+                    </div>
+                  {%- endfor -%}
+                </div>
+              {%- endif -%}
+            {%- else -%}
+              {%- assign downcase_label = filter.label | downcase -%}
+
+              {%- case filter.type -%}
+                {%- when 'list' -%}
+                  {%- liquid
+                    if filter.presentation == 'image'
+                      assign wrapper_class_list = 'v-stack gap-2'
+                    elsif filter.presentation == 'swatch' or color_label_list contains downcase_label
+                      assign wrapper_class_list = 'h-stack wrap gap-2'
+                    else
+                      assign wrapper_class_list = 'v-stack gap-2.5'
+                    endif
+                  -%}
+
+                  <div class="{{ wrapper_class_list }}">
+                    {% liquid
+                      for filter_value in filter.values
+                        assign value_id_prefix = id_prefix | append: '-desktop-' | append: forloop.index
+
+                        if filter.presentation == 'image'
+                          render 'option-value', type: 'image_filter', filter_value: filter_value, id_prefix: value_id_prefix
+                        elsif filter.presentation == 'swatch' or color_label_list contains downcase_label
+                          render 'option-value', type: 'swatch', filter_value: filter_value, show_tooltip: true, id_prefix: value_id_prefix
+                        else
+                          if section.settings.show_filter_values_count
+                            assign label = filter_value.label | append: ' (' | append: filter_value.count | append: ')'
+                          else
+                            assign label = filter_value.label
+                          endif
+
+                          render 'checkbox', hide_checkbox: false, label: label, name: filter_value.param_name, value: filter_value.value, checked: filter_value.active, id_prefix: value_id_prefix
                         endif
                       endfor
                     %}
@@ -136,3 +521,40 @@ Supported variables
     </noscript>
   </form>
 </facets-form>
+
+<script>
+  (function() {
+    const toggleButton = document.getElementById('{{ mobile_filter_id }}');
+    const drawer = document.getElementById('{{ mobile_filter_drawer_id }}');
+    const overlay = document.getElementById('{{ mobile_filter_overlay_id }}');
+    const closeButton = document.getElementById('{{ mobile_filter_close_id }}');
+    
+    function openDrawer() {
+      if (drawer && overlay) {
+        drawer.classList.add('mobile-filters-open');
+        overlay.classList.add('mobile-filters-open');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    
+    function closeDrawer() {
+      if (drawer && overlay) {
+        drawer.classList.remove('mobile-filters-open');
+        overlay.classList.remove('mobile-filters-open');
+        document.body.style.overflow = '';
+      }
+    }
+    
+    if (toggleButton) {
+      toggleButton.addEventListener('click', openDrawer);
+    }
+    
+    if (closeButton) {
+      closeButton.addEventListener('click', closeDrawer);
+    }
+    
+    if (overlay) {
+      overlay.addEventListener('click', closeDrawer);
+    }
+  })();
+</script>

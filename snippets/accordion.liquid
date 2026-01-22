@@ -29,16 +29,6 @@ Supported parameters
       {%- comment -%}iOS 14 does not support flex on the summary itself, so we have to use this extra div{%- endcomment -%}
       <span class="accordion__toggle {% if show_title_as_text %}text-lg{% else %}h6{% endif %}"
           style="display:flex; align-items:center; gap:12px; width:100%; justify-content:flex-start;">
-         {% comment %} arrow left {% endcomment %}
-           {%- if show_arrow -%}
-              {% comment %} {%- render 'icon' with 'chevron-down', class: 'group-expanded:rotate',  style: 'fill:#8B2F2F;' -%} {% endcomment %}
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#8B2F2F" class="group-expanded:rotate">
-                <path d="M12 15.5l-8-8h16l-8 8z"/>
-              </svg>
-            {%- else -%}
-              <span class="animated-plus group-expanded:rotate" aria-hidden="true"></span>
-            {%- endif -%}
-          {% comment %} end {% endcomment %}
         {%- if custom_icon != blank or icon != 'none' -%}
           <span class="text-with-icon gap-4 h3">
             {%- if custom_icon != blank -%}
@@ -53,6 +43,13 @@ Supported parameters
           <span>{{ title }}</span>
         {%- endif -%}
         {% comment %} arrow right {% endcomment %}
+           {%- if show_arrow -%}
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="#2F2E2A" class="group-expanded:rotate" style="flex-shrink: 0;">
+                <path d="M6 9L1 4h10L6 9z"/>
+              </svg>
+            {%- else -%}
+              <span class="animated-plus group-expanded:rotate" aria-hidden="true"></span>
+            {%- endif -%}
         {% comment %} {%- if show_arrow -%}
           {%- render 'icon' with 'chevron-down', class: 'group-expanded:rotate' -%}
         {%- else -%}
