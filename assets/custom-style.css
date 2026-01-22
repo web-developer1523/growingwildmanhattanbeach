@@ -1,6 +1,9 @@
 *{
     box-sizing: border-box !important;
 }
+.collection__main {
+    margin-top: 40px;
+}
 .cst-popup-btn {
    
     top: 10px !important;
@@ -32,6 +35,9 @@
   
     width: 100% !important;
     max-width: 50% !important;
+}
+height-observer.collection-toolbar.full-bleed {
+    display: none;
 }
 
 /* 26-12-2025 strat */
@@ -2003,6 +2009,13 @@ padding: 0 20px;
 }
 
 /* flower stand  */
+
+
+.cst-new-best .customviewall {
+    padding-top: 36px !important;
+}
+
+
 /* 02/01/2026 */
 
 @media screen and (max-width:1200px){
@@ -2065,6 +2078,10 @@ padding: 0 20px;
 }
 
 @media (max-width: 767px) {
+    .cst-new-best-sellings-pro .price-button {
+    font-family: CooperBT-Light;
+    font-size: 18px;
+}
     .cst-new-home-banner .content .prose .h2 {
     font-size: 45.12px;
     line-height: 45.4px;
@@ -2374,6 +2391,24 @@ body .timer-heading {
 }
 .cst-new-best-sellings-pro {
     padding-bottom: 0;
+}
+.cst-new-best-sellings-pro .cst-heading {
+    font-size: 15.5px;
+}
+.cst-new-best-sellings-pro .price-button {
+    font-size: 16px;
+}
+.featured-collection-btn-prev-template--20590007025918__ss_featured_coll_UMaXzA, .featured-collection-btn-next-template--20590007025918__ss_featured_coll_UMaXzA {
+    width: 35px !important;
+    height: 35px !important;
+}
+.featured-collection-btn-prev-template--20590007025918__ss_featured_coll_BtahGe, .featured-collection-btn-next-template--20590007025918__ss_featured_coll_BtahGe {
+    width: 35px !important;
+    height: 35px !important;
+}
+.cst-new-best .customviewall {
+    padding-top: 15px!important;
+    padding-bottom: 27px !important;
 }
 }
 

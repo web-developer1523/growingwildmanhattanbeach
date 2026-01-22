@@ -37,7 +37,7 @@
           "settings": {
             "menu": "shop",
             "show_menu_title": true,
-            "menu_title": ""
+            "menu_title": "Shop"
           }
         },
         "links": {
@@ -61,7 +61,7 @@
           "settings": {
             "menu": "other",
             "show_menu_title": true,
-            "menu_title": ""
+            "menu_title": "Other"
           }
         },
         "text_wzfCBd": {

@@ -44,7 +44,7 @@
             "button_2_style": "outline",
             "button_2_background": "#ffffff",
             "button_2_text_color": "#e3b35d",
-            "background": "#3b0a15",
+            "background": "#6a6e49",
             "background_opacity": 87,
             "text_color": "#ffffff",
             "border_color": "#e3b35d",
@@ -65,6 +65,98 @@
         "cycle_speed": 5,
         "background": "#000000",
         "controls_color": "#ffffff"
+      }
+    },
+    "scrolling_content_mE6zrY": {
+      "type": "scrolling-content",
+      "blocks": {
+        "text_fBEVyQ": {
+          "type": "text",
+          "settings": {
+            "text": "Custom Floral Design",
+            "icon": "shopify://shop_images/icn.png"
+          }
+        },
+        "text_nFdkig": {
+          "type": "text",
+          "settings": {
+            "text": "Delivery & Setup Done For You",
+            "icon": "shopify://shop_images/icn.png"
+          }
+        },
+        "text_pePptw": {
+          "type": "text",
+          "settings": {
+            "text": "Manhattan Beach Local",
+            "icon": "shopify://shop_images/icn.png"
+          }
+        },
+        "text_4piBzn": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "High-End Luxury Design",
+            "icon": "shopify://shop_images/flower.png"
+          }
+        },
+        "text_AGjGLj": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Your Local Florist, Serving with a Personal Touch",
+            "icon": "shopify://shop_images/flower-tulip.png"
+          }
+        },
+        "text_ri7QTw": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Arrive Fresh, Stay Fresh – Our Promise to You",
+            "icon": "shopify://shop_images/shield-check.png"
+          }
+        },
+        "text_AEPyQG": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Same-Day Delivery (Order Before 1 PM)",
+            "icon": "shopify://shop_images/truck-fast_595e799e-4693-41e4-ace0-ef39cafeef8c.png"
+          }
+        },
+        "text_jhGT3M": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "The Perfect Gift – Beautiful Blooms for Every Celebration",
+            "icon": "shopify://shop_images/0b7323f670af6d38be705a8c59d22a66.png"
+          }
+        }
+      },
+      "block_order": [
+        "text_fBEVyQ",
+        "text_nFdkig",
+        "text_pePptw",
+        "text_4piBzn",
+        "text_AGjGLj",
+        "text_ri7QTw",
+        "text_AEPyQG",
+        "text_jhGT3M"
+      ],
+      "settings": {
+        "separate_section_with_border": true,
+        "scrolling_speed": 0.1,
+        "scroll_direction": "left",
+        "pause_on_hover": true,
+        "text_font": "heading",
+        "text_font_size_mobile": 14,
+        "text_font_size_desktop": 20,
+        "section_vertical_spacing_mobile": 16,
+        "section_vertical_spacing_desktop": 20,
+        "item_horizontal_spacing_mobile": 60,
+        "item_horizontal_spacing_desktop": 60,
+        "background": "#f8f2ed",
+        "text_color": "#6a6e49",
+        "custom_css_class": "cst-new-scroll"
       }
     },
     "custom_rich_text_WdXNnK": {
@@ -102,68 +194,6 @@
         "content_width": "sm",
         "text_position": "center",
         "remove_vertical_spacing": false
-      }
-    },
-    "scrolling_content_TdmhfM": {
-      "type": "scrolling-content",
-      "blocks": {
-        "text_dUKpD6": {
-          "type": "text",
-          "settings": {
-            "text": "High-End Luxury Design",
-            "icon": "shopify://shop_images/flower.png"
-          }
-        },
-        "text_CfTjkB": {
-          "type": "text",
-          "settings": {
-            "text": "Your Local Florist, Serving with a Personal Touch",
-            "icon": "shopify://shop_images/flower-tulip.png"
-          }
-        },
-        "text_LUYgNh": {
-          "type": "text",
-          "settings": {
-            "text": "Arrive Fresh, Stay Fresh – Our Promise to You",
-            "icon": "shopify://shop_images/shield-check.png"
-          }
-        },
-        "text_FmCEyU": {
-          "type": "text",
-          "settings": {
-            "text": "Same-Day Delivery (Order Before 1 PM)",
-            "icon": "shopify://shop_images/truck-fast_595e799e-4693-41e4-ace0-ef39cafeef8c.png"
-          }
-        },
-        "text_Rj78G3": {
-          "type": "text",
-          "settings": {
-            "text": "The Perfect Gift – Beautiful Blooms for Every Celebration",
-            "icon": "shopify://shop_images/0b7323f670af6d38be705a8c59d22a66.png"
-          }
-        }
-      },
-      "block_order": [
-        "text_dUKpD6",
-        "text_CfTjkB",
-        "text_LUYgNh",
-        "text_FmCEyU",
-        "text_Rj78G3"
-      ],
-      "settings": {
-        "separate_section_with_border": false,
-        "scrolling_speed": 0.1,
-        "scroll_direction": "left",
-        "pause_on_hover": true,
-        "text_font": "body",
-        "text_font_size_mobile": 14,
-        "text_font_size_desktop": 20,
-        "section_vertical_spacing_mobile": 16,
-        "section_vertical_spacing_desktop": 20,
-        "item_horizontal_spacing_mobile": 60,
-        "item_horizontal_spacing_desktop": 60,
-        "background": "#f9f9f7",
-        "text_color": "#2e2e2e"
       }
     },
     "collection_list_PRNMEV": {
@@ -256,7 +286,11 @@
         "collections_per_row_desktop": 4,
         "subheading": "",
         "title": "",
-        "content": ""
+        "content": "",
+        "show_shop_all": true,
+        "shop_all_text": "Shop All",
+        "shop_all_link": "",
+        "custom_class_css": ""
       }
     },
     "collection_list_WrTgzK": {
@@ -349,7 +383,11 @@
         "collections_per_row_desktop": 4,
         "subheading": "",
         "title": "",
-        "content": ""
+        "content": "",
+        "show_shop_all": true,
+        "shop_all_text": "Shop All",
+        "shop_all_link": "",
+        "custom_class_css": ""
       }
     },
     "collection_list_m6rhw7": {
@@ -363,8 +401,8 @@
             "image": "shopify://shop_images/576901e187.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "Birthdays",
+            "subheading": "Birthdays",
+            "title": "",
             "button_text": "",
             "button_link": "",
             "button_style": "solid",
@@ -380,8 +418,8 @@
             "image": "shopify://shop_images/image_2.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "Anniversaries",
+            "subheading": "Anniversaries",
+            "title": "",
             "button_text": "",
             "button_link": "",
             "button_style": "solid",
@@ -397,8 +435,8 @@
             "image": "shopify://shop_images/image_3.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "Get Well Soon",
+            "subheading": "Get Well Soon",
+            "title": "",
             "button_text": "",
             "button_link": "",
             "button_style": "solid",
@@ -414,8 +452,8 @@
             "image": "shopify://shop_images/image_4.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "Love and Romance",
+            "subheading": "Love and Romance",
+            "title": "",
             "button_text": "",
             "button_link": "",
             "button_style": "solid",
@@ -431,8 +469,8 @@
             "image": "shopify://shop_images/image_5.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "Sympathy",
+            "subheading": "Sympathy",
+            "title": "",
             "button_text": "",
             "button_link": "",
             "button_style": "solid",
@@ -448,6 +486,7 @@
         "collection_6CapQL",
         "collection_ViFPih"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": false,
@@ -459,7 +498,126 @@
         "collections_per_row_desktop": 5,
         "subheading": "",
         "title": "Occasions",
-        "content": ""
+        "content": "",
+        "show_shop_all": true,
+        "shop_all_text": "Shop All",
+        "shop_all_link": "",
+        "custom_class_css": ""
+      }
+    },
+    "collection_list_eKLkqd": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_zkNybf": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "collection": "birthday",
+            "image": "shopify://shop_images/birthday.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-center text-center",
+            "subheading": "",
+            "title": "Birthdays",
+            "button_text": "Shop Birthdays",
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "rgba(0,0,0,0)",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_ke4beR": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "collection": "anniversaries",
+            "image": "shopify://shop_images/ann.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-center text-center",
+            "subheading": "",
+            "title": "Anniversaries",
+            "button_text": "Shop Anniversaries",
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "rgba(0,0,0,0)",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_chHUCc": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "collection": "get-well-soon",
+            "image": "shopify://shop_images/get-well-soon.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-center text-center",
+            "subheading": "",
+            "title": "Get Well Soon",
+            "button_text": "Shop Get Well Soon",
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_meLXBB": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "collection": "sympathy",
+            "image": "shopify://shop_images/IMG_1116_2.jpg",
+            "expand_collection": false,
+            "content_position": "place-self-end-center text-center",
+            "subheading": "",
+            "title": "Sympathy",
+            "button_text": "Shop Sympathy",
+            "button_link": "shopify://collections/sympathy-and-funeral",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 12
+          }
+        },
+        "collection_Ga9KNt": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "scheme-1",
+            "collection": "love-and-romance",
+            "image": "shopify://shop_images/image_4.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-start text-start",
+            "subheading": "",
+            "title": "Love and Romance",
+            "button_text": "",
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "collection_zkNybf",
+        "collection_ke4beR",
+        "collection_chHUCc",
+        "collection_meLXBB",
+        "collection_Ga9KNt"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "image_size": "auto",
+        "show_text_outside": false,
+        "space_items": true,
+        "stack_collections": false,
+        "collections_per_row_mobile": "2",
+        "collections_per_row_desktop": 4,
+        "subheading": "",
+        "title": "Shop By Category",
+        "content": "",
+        "show_shop_all": true,
+        "shop_all_text": "Shop All",
+        "shop_all_link": "#",
+        "custom_class_css": "cst-new-page-list"
       }
     },
     "custom_rich_text_NRXcPr": {
@@ -511,7 +669,10 @@
         "richtext_XwQmzf": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Freshness defines everything we do. Each bloom comes straight from the farm and is handled under ideal conditions to maintain its vibrancy. We create <a href=\"/collections/arrangements\" title=\"Arrangements\">arrangements </a>that express the feelings and meaning you want to share.</p><p><strong>Popular Picks:</strong></p><ul><li><a href=\"/products/1-dosen-roses-medium-size\" title=\"1 dosen roses, medium size\"><strong>Roses</strong></a><strong> </strong>in classic and contemporary shades</li><li><strong>Tulips </strong>bursting with spring energy</li><li><strong>Wildflowers </strong>blended for a natural touch</li><li><strong>Hydrangeas </strong>for full, elegant displays</li><li><a href=\"/products/wild-flowers-with-sunflowers\" title=\"Wild Flowers with Sunflowers\"><strong>Sunflowers</strong></a><strong> </strong>that bring warmth to any space</li><li>& so many more! </li></ul>"
+            "content": "<p>Freshness defines everything we do. Each bloom comes straight from the farm and is handled under ideal conditions to maintain its vibrancy. We create <a href=\"/collections/arrangements\" title=\"Arrangements\">arrangements </a>that express the feelings and meaning you want to share.</p><p><strong>Popular Picks:</strong></p><ul><li><a href=\"/products/1-dosen-roses-medium-size\" title=\"1 dosen roses, medium size\"><strong>Roses</strong></a><strong> </strong>in classic and contemporary shades</li><li><strong>Tulips </strong>bursting with spring energy</li><li><strong>Wildflowers </strong>blended for a natural touch</li><li><strong>Hydrangeas </strong>for full, elegant displays</li><li><a href=\"/products/wild-flowers-with-sunflowers\" title=\"Wild Flowers with Sunflowers\"><strong>Sunflowers</strong></a><strong> </strong>that bring warmth to any space</li><li>& so many more! </li></ul>",
+            "testimonial_text": "The attention to detail is stunning every bouquet felt like a piece of art. They made our event unforgettable.",
+            "testimonial_name": "",
+            "stars": 5
           }
         },
         "button_iHMdEh": {
@@ -539,12 +700,13 @@
         "narrow_section": true,
         "remove_left_padding": false,
         "separate_section_with_border": false,
-        "image": "shopify://shop_images/Custom_made.jpg",
-        "mobile_image": "shopify://shop_images/Custom_made.jpg",
+        "image": "shopify://shop_images/100_Premium_Quality_You_Can_Rely_On.png",
+        "mobile_image": "shopify://shop_images/100_Premium_Quality_You_Can_Rely_On.png",
         "reveal_on_scroll": true,
         "image_position": "start",
         "content_width": "sm",
-        "remove_vertical_spacing": false
+        "remove_vertical_spacing": false,
+        "custom_css_class": ""
       }
     },
     "image_with_text_64f3Dj": {
@@ -566,7 +728,10 @@
         "richtext_8KGmgJ": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Some occasions need flowers that feel personal. Our custom floral service lets you choose the colors, size, and style that fit your vision. Our arrangements are done with expertise to reflect the mood and meaning behind your gesture. </p><p><strong>Popular custom designs include:</strong></p><ul><li><a href=\"/collections/wedding\" title=\"Wedding\"><strong>Wedding Florals</strong></a><strong>:</strong> Elegant centrepieces, bouquets, and ceremony blooms</li><li><a href=\"/collections/anniversaries\" title=\"Anniversaries\"><strong>Anniversary Gifts:</strong></a> Romantic arrangements that speak without words</li><li><a href=\"/collections/birthday\" title=\"Birthday\"><strong>Birthday Bouquets:</strong></a> Bright, joyful pieces made to surprise</li><li><strong>Corporate Flowers:</strong> Refined designs for offices and client gifts</li><li><a href=\"/pages/sympathy\" title=\"Sympathy\"><strong>Sympathy Arrangements</strong></a><strong>:</strong> Gentle tributes offering comfort</li><li><strong>Seasonal Designs:</strong> Festive florals for holidays and Hermosa Beach events</li></ul>"
+            "content": "<p>Some occasions need flowers that feel personal. Our custom floral service lets you choose the colors, size, and style that fit your vision. Our arrangements are done with expertise to reflect the mood and meaning behind your gesture. </p><p><strong>Popular custom designs include:</strong></p><ul><li><a href=\"/collections/wedding\" title=\"Wedding\"><strong>Wedding Florals</strong></a><strong>:</strong> Elegant centrepieces, bouquets, and ceremony blooms</li><li><a href=\"/collections/anniversaries\" title=\"Anniversaries\"><strong>Anniversary Gifts:</strong></a> Romantic arrangements that speak without words</li><li><a href=\"/collections/birthday\" title=\"Birthday\"><strong>Birthday Bouquets:</strong></a> Bright, joyful pieces made to surprise</li><li><strong>Corporate Flowers:</strong> Refined designs for offices and client gifts</li><li><a href=\"/pages/sympathy\" title=\"Sympathy\"><strong>Sympathy Arrangements</strong></a><strong>:</strong> Gentle tributes offering comfort</li><li><strong>Seasonal Designs:</strong> Festive florals for holidays and Hermosa Beach events</li></ul>",
+            "testimonial_text": "The attention to detail is stunning every bouquet felt like a piece of art. They made our event unforgettable.",
+            "testimonial_name": "",
+            "stars": 5
           }
         },
         "button_x93itq": {
@@ -595,12 +760,13 @@
         "narrow_section": true,
         "remove_left_padding": false,
         "separate_section_with_border": false,
-        "image": "shopify://shop_images/IMG_3501.png",
-        "mobile_image": "shopify://shop_images/IMG_3501_3.png",
+        "image": "shopify://shop_images/Signature_Arrangements_Designed_for_All_Events.png",
+        "mobile_image": "shopify://shop_images/Signature_Arrangements_Designed_for_All_Events.png",
         "reveal_on_scroll": true,
         "image_position": "end",
         "content_width": "sm",
-        "remove_vertical_spacing": false
+        "remove_vertical_spacing": false,
+        "custom_css_class": ""
       }
     },
     "image_with_text_NYCDr8": {
@@ -616,7 +782,10 @@
         "richtext_VrdfJf": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Sending flowers is quick and easy. Our <strong>Hermosa Beach flower delivery service</strong> lets you browse, select, and order online in just a few clicks. We deliver to homes, offices, hotels, and event spaces across Hermosa Beach, CA, making sure every bouquet arrives fresh, on time, and in perfect condition. </p><p><em>Need flowers today? Our </em><a href=\"/pages/contact\" title=\"Contact\"><em>same-day delivery</em></a><em> ensures your gift reaches its destination quickly, brightening any occasion without stress.</em></p>"
+            "content": "<p>Sending flowers is quick and easy. Our <strong>Hermosa Beach flower delivery service</strong> lets you browse, select, and order online in just a few clicks. We deliver to homes, offices, hotels, and event spaces across Hermosa Beach, CA, making sure every bouquet arrives fresh, on time, and in perfect condition. </p><p><em>Need flowers today? Our </em><a href=\"/pages/contact\" title=\"Contact\"><em>same-day delivery</em></a><em> ensures your gift reaches its destination quickly, brightening any occasion without stress.</em></p>",
+            "testimonial_text": "The attention to detail is stunning every bouquet felt like a piece of art. They made our event unforgettable.",
+            "testimonial_name": "",
+            "stars": 5
           }
         },
         "button_De7VQU": {
@@ -644,12 +813,13 @@
         "narrow_section": true,
         "remove_left_padding": false,
         "separate_section_with_border": false,
-        "image": "shopify://shop_images/online_ordering_same_day_flower_1x_30e9057f-5538-47ce-ba2d-2ff65ba05a30.webp",
-        "mobile_image": "shopify://shop_images/online_ordering_same_day_flower_1x_30e9057f-5538-47ce-ba2d-2ff65ba05a30.webp",
+        "image": "shopify://shop_images/Same_Day_Online_Orders_With_Flower_Delivery_Redondo_Beach_CA.png",
+        "mobile_image": "shopify://shop_images/Same_Day_Online_Orders_With_Flower_Delivery_Redondo_Beach_CA.png",
         "reveal_on_scroll": true,
         "image_position": "start",
         "content_width": "sm",
-        "remove_vertical_spacing": false
+        "remove_vertical_spacing": false,
+        "custom_css_class": ""
       }
     },
     "image_with_text_WqdWit": {
@@ -671,7 +841,10 @@
         "richtext_AnJE7L": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Our signature collections combine nature’s beauty with design mastery. Whether you prefer elegant classics or modern garden styles, our arrangements complement the mood and season.</p><p><strong>Our Popular Categories Include:</strong></p><ul><li><strong>Luxury Bouquets:</strong> Sophisticated, statement-making blooms</li><li><strong>Seasonal Arrangements:</strong> Rotating designs with the best flowers of the month</li><li><strong>Wildflower Mixes:</strong> Free-spirited and naturally charming</li><li><strong>Succulent & Plant Designs:</strong> Long-lasting greenery with a modern twist</li><li><strong>Event Florals:</strong> Tailored creations for weddings, anniversaries, and gatherings</li></ul>"
+            "content": "<p>Our signature collections combine nature’s beauty with design mastery. Whether you prefer elegant classics or modern garden styles, our arrangements complement the mood and season.</p><p><strong>Our Popular Categories Include:</strong></p><ul><li><strong>Luxury Bouquets:</strong> Sophisticated, statement-making blooms</li><li><strong>Seasonal Arrangements:</strong> Rotating designs with the best flowers of the month</li><li><strong>Wildflower Mixes:</strong> Free-spirited and naturally charming</li><li><strong>Succulent & Plant Designs:</strong> Long-lasting greenery with a modern twist</li><li><strong>Event Florals:</strong> Tailored creations for weddings, anniversaries, and gatherings</li></ul>",
+            "testimonial_text": "The attention to detail is stunning every bouquet felt like a piece of art. They made our event unforgettable.",
+            "testimonial_name": "",
+            "stars": 5
           }
         },
         "button_3EL3pG": {
@@ -700,12 +873,13 @@
         "narrow_section": true,
         "remove_left_padding": false,
         "separate_section_with_border": false,
-        "image": "shopify://shop_images/our_signature_floral_collections_1x_49ec5fd5-a233-40a8-af25-f63eb9876772.webp",
-        "mobile_image": "shopify://shop_images/our_signature_floral_collections_1x_49ec5fd5-a233-40a8-af25-f63eb9876772.webp",
+        "image": "shopify://shop_images/Collections_Built_Around_Your_Desire.png",
+        "mobile_image": "shopify://shop_images/Collections_Built_Around_Your_Desire.png",
         "reveal_on_scroll": true,
         "image_position": "end",
         "content_width": "sm",
-        "remove_vertical_spacing": false
+        "remove_vertical_spacing": false,
+        "custom_css_class": ""
       }
     },
     "image_with_text_FgpVn3": {
@@ -721,7 +895,10 @@
         "richtext_yB3EtJ": {
           "type": "richtext",
           "settings": {
-            "content": "<p>Our dedication to quality, creativity, and customer satisfaction sets us apart from other flower shops in Hermosa Beach, CA. From the first order to regular delivery, we make each experience memorable.</p><h3><strong>Experienced Florists</strong></h3><ul><li>Skilled local florists with years of expertise</li><li>Designs that balance creativity and elegance</li><li>Attention to detail in every arrangement</li></ul><h3><strong>Affordable Options</strong></h3><ul><li>Beautiful arrangements to suit all budgets</li><li>Value without compromising quality</li><li>Seasonal promotions and special offers</li></ul><h3><strong>Weekly/Monthly Subscriptions</strong></h3><ul><li>Regular flower delivery for homes or offices</li><li>Customizable frequency and bouquet style</li><li>Convenient, hassle-free service</li></ul><h3><strong>Seasonal & Trendy Designs</strong></h3><ul><li>Rotating collections to match seasons and holidays</li><li>Modern, classic, and natural styles</li><li>Keeps your home or event on-trend with the latest floral designs</li></ul>"
+            "content": "<p>Our dedication to quality, creativity, and customer satisfaction sets us apart from other flower shops in Hermosa Beach, CA. From the first order to regular delivery, we make each experience memorable.</p><h3><strong>Experienced Florists</strong></h3><ul><li>Skilled local florists with years of expertise</li><li>Designs that balance creativity and elegance</li><li>Attention to detail in every arrangement</li></ul><h3><strong>Affordable Options</strong></h3><ul><li>Beautiful arrangements to suit all budgets</li><li>Value without compromising quality</li><li>Seasonal promotions and special offers</li></ul><h3><strong>Weekly/Monthly Subscriptions</strong></h3><ul><li>Regular flower delivery for homes or offices</li><li>Customizable frequency and bouquet style</li><li>Convenient, hassle-free service</li></ul><h3><strong>Seasonal & Trendy Designs</strong></h3><ul><li>Rotating collections to match seasons and holidays</li><li>Modern, classic, and natural styles</li><li>Keeps your home or event on-trend with the latest floral designs</li></ul>",
+            "testimonial_text": "The attention to detail is stunning every bouquet felt like a piece of art. They made our event unforgettable.",
+            "testimonial_name": "",
+            "stars": 5
           }
         },
         "button_DBjjjQ": {
@@ -750,12 +927,13 @@
         "narrow_section": true,
         "remove_left_padding": false,
         "separate_section_with_border": false,
-        "image": "shopify://shop_images/why_we_stand_out_in_hermosa_beach_1x_af6b6aa3-80c4-41da-b702-ef1fc0a5d5e3.webp",
-        "mobile_image": "shopify://shop_images/why_we_stand_out_in_hermosa_beach_1x_af6b6aa3-80c4-41da-b702-ef1fc0a5d5e3.webp",
+        "image": "shopify://shop_images/Decorating_Each_Corner.png",
+        "mobile_image": "shopify://shop_images/Decorating_Each_Corner.png",
         "reveal_on_scroll": true,
         "image_position": "start",
         "content_width": "sm",
-        "remove_vertical_spacing": false
+        "remove_vertical_spacing": false,
+        "custom_css_class": ""
       }
     },
     "image_with_text_z43Qw4": {
@@ -777,7 +955,10 @@
         "richtext_ktCyk8": {
           "type": "richtext",
           "settings": {
-            "content": "<p><em>Special moments won’t wait, and neither should your gesture. Order now and let Growing Wild in Hermosa Beach deliver vibrant, fresh blooms that make your occasion unforgettable.</em></p>"
+            "content": "<p><em>Special moments won’t wait, and neither should your gesture. Order now and let Growing Wild in Hermosa Beach deliver vibrant, fresh blooms that make your occasion unforgettable.</em></p>",
+            "testimonial_text": "The attention to detail is stunning every bouquet felt like a piece of art. They made our event unforgettable.",
+            "testimonial_name": "",
+            "stars": 5
           }
         },
         "button_HkGJeF": {
@@ -806,12 +987,13 @@
         "narrow_section": true,
         "remove_left_padding": false,
         "separate_section_with_border": false,
-        "image": "shopify://shop_images/brighten_someone_s_day_with_fresh_flowers_1x_829ab7ec-0de0-40a1-9c8d-f777357149b6.webp",
-        "mobile_image": "shopify://shop_images/brighten_someone_s_day_with_fresh_flowers_1x_829ab7ec-0de0-40a1-9c8d-f777357149b6.webp",
+        "image": "shopify://shop_images/Make_Their_Day_Life_Memorable_With_Fresh_Flowers.png",
+        "mobile_image": "shopify://shop_images/Make_Their_Day_Life_Memorable_With_Fresh_Flowers.png",
         "reveal_on_scroll": true,
         "image_position": "end",
         "content_width": "sm",
-        "remove_vertical_spacing": false
+        "remove_vertical_spacing": false,
+        "custom_css_class": ""
       }
     },
     "ss_featured_coll_Tm49he": {
@@ -827,6 +1009,7 @@
         "product_per_desktop": 4,
         "product_per_mobile": "2",
         "image_radius": 12,
+        "show_description": true,
         "image_ration": "square",
         "use_custom_height": false,
         "image_height_desktop": 400,
@@ -896,7 +1079,11 @@
         "padding_horizontal": 5,
         "padding_horizontal_mobile": 1.5,
         "content_width": 120,
-        "border_thickness": 0
+        "border_thickness": 0,
+        "show_shop_all": true,
+        "shop_all_text": "Shop All",
+        "shop_all_link": "",
+        "custom_css_class": ""
       }
     },
     "testimonials_v2_G4LpJz": {
@@ -1065,7 +1252,8 @@
         "show_categories": false,
         "subheading": "",
         "title": "Frequently Asked Questions",
-        "content": ""
+        "content": "",
+        "custom_css_Class": ""
       }
     },
     "custom_liquid_rqrTYQ": {
@@ -1084,11 +1272,12 @@
   "order": [
     "main",
     "slideshow_rmXj8V",
+    "scrolling_content_mE6zrY",
     "custom_rich_text_WdXNnK",
-    "scrolling_content_TdmhfM",
     "collection_list_PRNMEV",
     "collection_list_WrTgzK",
     "collection_list_m6rhw7",
+    "collection_list_eKLkqd",
     "custom_rich_text_NRXcPr",
     "image_with_text_XNncP9",
     "image_with_text_64f3Dj",

@@ -74,6 +74,10 @@
         "collection_hrLW8Q",
         "collection_J6KCQg"
       ],
+      "custom_css": [
+        ".collection-list .collection-card__top-title {display: none;}",
+        "@media screen and (max-width: 768px) {.collection-list {display: grid; grid-template-columns: 1fr; }}"
+      ],
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": true,
@@ -85,7 +89,11 @@
         "collections_per_row_desktop": 3,
         "subheading": "",
         "title": "",
-        "content": ""
+        "content": "",
+        "show_shop_all": true,
+        "shop_all_text": "Shop All",
+        "shop_all_link": "",
+        "custom_class_css": ""
       }
     },
     "collection_list_Cm847h": {
@@ -146,6 +154,10 @@
         "collection_nBRxzQ",
         "collection_imWdnD"
       ],
+      "custom_css": [
+        ".collection-list .collection-card__top-title {display: none;}",
+        "@media screen and (max-width: 768px) {.collection-list {display: grid; grid-template-columns: 1fr; }}"
+      ],
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": true,
@@ -157,7 +169,11 @@
         "collections_per_row_desktop": 3,
         "subheading": "",
         "title": "",
-        "content": ""
+        "content": "",
+        "show_shop_all": true,
+        "shop_all_text": "Shop All",
+        "shop_all_link": "",
+        "custom_class_css": ""
       }
     }
   },

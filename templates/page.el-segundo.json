@@ -19,40 +19,145 @@
         "page_width": "xs"
       }
     },
-    "custom_rich_text_WdXNnK": {
-      "type": "custom-rich-text",
+    "slideshow_g3iaqr": {
+      "type": "slideshow",
       "blocks": {
-        "heading_HyzbhD": {
-          "type": "heading",
+        "image_PTdmHD": {
+          "type": "image",
           "settings": {
-            "text": "<strong>Your Local Flower Shop El Segundo Trusts for Every Occasion</strong>",
-            "heading_tag": "h1",
-            "font_size_desktop": 48,
-            "font_size_mobile": 32,
-            "font_family": "Larken"
-          }
-        },
-        "richtext_NyW4XG": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p><em>Thoughtfully designed </em><a href=\"/collections/arrangements\" title=\"Arrangements\"><em>arrangements</em></a><em> are delivered fresh to El Segundo addresses daily.</em></p>"
+            "image": "shopify://shop_images/homebannerimageholidaycroppe1.webp",
+            "mobile_image": "shopify://shop_images/homebannerimageholidaycroppe1.webp",
+            "subheading": "<em>Thoughtfully designed </em><a href=\"/collections/arrangements\" title=\"Arrangements\"><em>arrangements</em></a><em> are delivered fresh to El Segundo addresses daily.</em>",
+            "show_stars": false,
+            "title": "<strong>Your Local Flower Shop El Segundo Trusts for Every Occasion</strong>",
+            "description": "",
+            "heading_size": "h2",
+            "mobile_text_position": "place-self-center-start text-start",
+            "desktop_text_position": "sm:place-self-center sm:text-center",
+            "content_max_width": 1200,
+            "button_1_text": "",
+            "button_1_link": "",
+            "button_1_style": "solid",
+            "button_1_background": "#ffffff",
+            "button_1_text_color": "#3b0a15",
+            "button_2_text": "",
+            "button_2_link": "",
+            "button_2_style": "outline",
+            "button_2_background": "#ffffff",
+            "button_2_text_color": "#e3b35d",
+            "background": "#6a6e49",
+            "background_opacity": 87,
+            "text_color": "#ffffff",
+            "border_color": "#e3b35d",
+            "gradient_overlay": "linear-gradient(360deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 39%)"
           }
         }
       },
       "block_order": [
-        "heading_HyzbhD",
-        "richtext_NyW4XG"
+        "image_PTdmHD"
       ],
-      "custom_css": [
-        ".prose a {color: rgb(255, 42, 0) !important; font-weight: 800;}"
-      ],
-      "name": "Custom Rich Text",
       "settings": {
-        "color_scheme": "",
+        "allow_transparent_header": false,
+        "show_next_section_button": false,
+        "media_size": "xs",
+        "show_initial_transition": false,
+        "autoplay": true,
+        "autoplay_pause_on_video": true,
+        "cycle_speed": 5,
+        "background": "#000000",
+        "controls_color": "#ffffff"
+      }
+    },
+    "scrolling_content_jwQf8K": {
+      "type": "scrolling-content",
+      "blocks": {
+        "text_htb49A": {
+          "type": "text",
+          "settings": {
+            "text": "Custom Floral Design",
+            "icon": "shopify://shop_images/icn.png"
+          }
+        },
+        "text_EaWyEe": {
+          "type": "text",
+          "settings": {
+            "text": "Delivery & Setup Done For You",
+            "icon": "shopify://shop_images/icn.png"
+          }
+        },
+        "text_jdyfE4": {
+          "type": "text",
+          "settings": {
+            "text": "Manhattan Beach Local",
+            "icon": "shopify://shop_images/icn.png"
+          }
+        },
+        "text_jpmht9": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "High-End Luxury Design",
+            "icon": "shopify://shop_images/flower.png"
+          }
+        },
+        "text_txHYKE": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Your Local Florist, Serving with a Personal Touch",
+            "icon": "shopify://shop_images/flower-tulip.png"
+          }
+        },
+        "text_gfctdH": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Arrive Fresh, Stay Fresh – Our Promise to You",
+            "icon": "shopify://shop_images/shield-check.png"
+          }
+        },
+        "text_UphBj9": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Same-Day Delivery (Order Before 1 PM)",
+            "icon": "shopify://shop_images/truck-fast_595e799e-4693-41e4-ace0-ef39cafeef8c.png"
+          }
+        },
+        "text_KDwem4": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "The Perfect Gift – Beautiful Blooms for Every Celebration",
+            "icon": "shopify://shop_images/0b7323f670af6d38be705a8c59d22a66.png"
+          }
+        }
+      },
+      "block_order": [
+        "text_htb49A",
+        "text_EaWyEe",
+        "text_jdyfE4",
+        "text_jpmht9",
+        "text_txHYKE",
+        "text_gfctdH",
+        "text_UphBj9",
+        "text_KDwem4"
+      ],
+      "settings": {
         "separate_section_with_border": true,
-        "content_width": "sm",
-        "text_position": "center",
-        "remove_vertical_spacing": false
+        "scrolling_speed": 0.1,
+        "scroll_direction": "left",
+        "pause_on_hover": true,
+        "text_font": "heading",
+        "text_font_size_mobile": 14,
+        "text_font_size_desktop": 20,
+        "section_vertical_spacing_mobile": 16,
+        "section_vertical_spacing_desktop": 20,
+        "item_horizontal_spacing_mobile": 60,
+        "item_horizontal_spacing_desktop": 60,
+        "background": "#f8f2ed",
+        "text_color": "#6a6e49",
+        "custom_css_class": "cst-new-scroll"
       }
     },
     "collection_list_m6rhw7": {
@@ -66,8 +171,8 @@
             "image": "shopify://shop_images/576901e187.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "Birthdays",
+            "subheading": "Birthdays",
+            "title": "",
             "button_text": "",
             "button_link": "",
             "button_style": "solid",
@@ -83,8 +188,8 @@
             "image": "shopify://shop_images/image_2.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "Anniversaries",
+            "subheading": "Anniversaries",
+            "title": "",
             "button_text": "",
             "button_link": "",
             "button_style": "solid",
@@ -100,8 +205,8 @@
             "image": "shopify://shop_images/image_3.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "Get Well Soon",
+            "subheading": "Get Well Soon",
+            "title": "",
             "button_text": "",
             "button_link": "",
             "button_style": "solid",
@@ -117,8 +222,8 @@
             "image": "shopify://shop_images/image_4.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "Love and Romance",
+            "subheading": "Love and Romance",
+            "title": "",
             "button_text": "",
             "button_link": "",
             "button_style": "solid",
@@ -134,8 +239,8 @@
             "image": "shopify://shop_images/image_5.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "Sympathy",
+            "subheading": "Sympathy",
+            "title": "",
             "button_text": "",
             "button_link": "",
             "button_style": "solid",
@@ -151,6 +256,7 @@
         "collection_6CapQL",
         "collection_ViFPih"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "color_scheme": "",
@@ -162,74 +268,96 @@
         "collections_per_row_mobile": "2",
         "collections_per_row_desktop": 5,
         "subheading": "",
-        "title": "",
-        "content": ""
+        "title": "Occasions",
+        "content": "",
+        "show_shop_all": true,
+        "shop_all_text": "Shop All",
+        "shop_all_link": "",
+        "custom_class_css": ""
       }
     },
-    "collection_list_PRNMEV": {
+    "collection_list_kkwNeV": {
       "type": "collection-list",
       "blocks": {
-        "collection_GPh4XR": {
+        "collection_EGc89H": {
           "type": "collection",
           "settings": {
-            "color_scheme": "scheme-1",
-            "collection": "wedding",
-            "image": "shopify://shop_images/wedding__1x_060b56ea-afcd-4b1e-acf8-010e3d730322.webp",
+            "color_scheme": "scheme-4",
+            "collection": "birthday",
+            "image": "shopify://shop_images/birthday.png",
             "expand_collection": false,
-            "content_position": "place-self-end-start text-start",
+            "content_position": "place-self-end-center text-center",
             "subheading": "",
-            "title": "Wedding",
-            "button_text": "",
+            "title": "Birthdays",
+            "button_text": "Shop Birthdays",
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "rgba(0,0,0,0)",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_g4JcbY": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "collection": "anniversaries",
+            "image": "shopify://shop_images/ann.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-center text-center",
+            "subheading": "",
+            "title": "Anniversaries",
+            "button_text": "Shop Anniversaries",
+            "button_link": "",
+            "button_style": "solid",
+            "overlay_color": "rgba(0,0,0,0)",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_UUXwR7": {
+          "type": "collection",
+          "settings": {
+            "color_scheme": "scheme-4",
+            "collection": "get-well-soon",
+            "image": "shopify://shop_images/get-well-soon.png",
+            "expand_collection": false,
+            "content_position": "place-self-end-center text-center",
+            "subheading": "",
+            "title": "Get Well Soon",
+            "button_text": "Shop Get Well Soon",
             "button_link": "",
             "button_style": "solid",
             "overlay_color": "#000000",
             "overlay_opacity": 0
           }
         },
-        "collection_x3HdmW": {
+        "collection_RrdpT7": {
           "type": "collection",
           "settings": {
-            "color_scheme": "scheme-1",
-            "collection": "thank-you",
-            "image": "shopify://shop_images/thank_you_1x_a166a076-2e49-4763-a2aa-d19a2a700357.webp",
+            "color_scheme": "scheme-4",
+            "collection": "sympathy",
+            "image": "shopify://shop_images/IMG_1116_2.jpg",
             "expand_collection": false,
-            "content_position": "place-self-end-start text-start",
+            "content_position": "place-self-end-center text-center",
             "subheading": "",
-            "title": "Thankyou",
-            "button_text": "",
-            "button_link": "",
+            "title": "Sympathy",
+            "button_text": "Shop Sympathy",
+            "button_link": "shopify://collections/sympathy-and-funeral",
             "button_style": "solid",
             "overlay_color": "#000000",
-            "overlay_opacity": 0
+            "overlay_opacity": 12
           }
         },
-        "collection_TxRALn": {
+        "collection_AJFB4t": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "color_scheme": "scheme-1",
-            "collection": "just-because",
-            "image": "shopify://shop_images/just_because_1x_ee2ce206-3871-4519-b5b7-284fd20aaa26.webp",
+            "collection": "love-and-romance",
+            "image": "shopify://shop_images/image_4.png",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
             "subheading": "",
-            "title": "Just Because",
-            "button_text": "",
-            "button_link": "",
-            "button_style": "solid",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "collection_T4yF3j": {
-          "type": "collection",
-          "settings": {
-            "color_scheme": "scheme-1",
-            "collection": "new-baby",
-            "image": "shopify://shop_images/new_baby_1x_2d6e7b85-c564-4455-b473-1cf922091dd6.webp",
-            "expand_collection": false,
-            "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "New Baby",
+            "title": "Love and Romance",
             "button_text": "",
             "button_link": "",
             "button_style": "solid",
@@ -239,115 +367,369 @@
         }
       },
       "block_order": [
-        "collection_GPh4XR",
-        "collection_x3HdmW",
-        "collection_TxRALn",
-        "collection_T4yF3j"
+        "collection_EGc89H",
+        "collection_g4JcbY",
+        "collection_UUXwR7",
+        "collection_RrdpT7",
+        "collection_AJFB4t"
       ],
       "settings": {
         "color_scheme": "",
         "separate_section_with_border": false,
         "image_size": "auto",
-        "show_text_outside": true,
+        "show_text_outside": false,
         "space_items": true,
         "stack_collections": false,
         "collections_per_row_mobile": "2",
         "collections_per_row_desktop": 4,
         "subheading": "",
-        "title": "Other Occasions",
-        "content": ""
+        "title": "Shop By Category",
+        "content": "",
+        "show_shop_all": true,
+        "shop_all_text": "Shop All",
+        "shop_all_link": "#",
+        "custom_class_css": "cst-new-page-list"
       }
     },
-    "collection_list_WrTgzK": {
-      "type": "collection-list",
+    "custom_rich_text_NRXcPr": {
+      "type": "custom-rich-text",
       "blocks": {
-        "collection_ekB6zB": {
-          "type": "collection",
+        "heading_7fPaGe": {
+          "type": "heading",
           "settings": {
-            "color_scheme": "scheme-1",
-            "collection": "im-sorry",
-            "image": "shopify://shop_images/sorry_1x_a59c6f76-cb51-4336-a357-cf2f78537842.webp",
-            "expand_collection": false,
-            "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "I'm Sorry",
-            "button_text": "",
-            "button_link": "",
-            "button_style": "solid",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
+            "text": "<strong>Three Decades Serving El Segundo With Intention</strong>",
+            "heading_tag": "h2",
+            "font_size_desktop": 48,
+            "font_size_mobile": 32,
+            "font_family": "Larken"
           }
         },
-        "collection_8BFHJ4": {
-          "type": "collection",
+        "richtext_8TQDfK": {
+          "type": "richtext",
           "settings": {
-            "color_scheme": "scheme-1",
-            "collection": "thinking-of-you",
-            "image": "shopify://shop_images/thinking_of_you_1x_20baf8f6-862a-489a-ba27-461204da8279.webp",
-            "expand_collection": false,
-            "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "Thinking of you",
-            "button_text": "",
-            "button_link": "",
-            "button_style": "solid",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "collection_JGaWbE": {
-          "type": "collection",
-          "settings": {
-            "color_scheme": "scheme-1",
-            "collection": "plants",
-            "image": "shopify://shop_images/plants_1x_b4ce7fda-f30d-4e03-b6ae-6a71da9fd092.webp",
-            "expand_collection": false,
-            "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "Plants",
-            "button_text": "",
-            "button_link": "",
-            "button_style": "solid",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
-          }
-        },
-        "collection_UBk3Rc": {
-          "type": "collection",
-          "settings": {
-            "color_scheme": "scheme-1",
-            "collection": "bouquet",
-            "image": "shopify://shop_images/bouquet_1x_fc44be1c-5d10-44df-88a3-80e97d2d7c9d.webp",
-            "expand_collection": false,
-            "content_position": "place-self-end-start text-start",
-            "subheading": "",
-            "title": "Bouquet",
-            "button_text": "",
-            "button_link": "",
-            "button_style": "solid",
-            "overlay_color": "#000000",
-            "overlay_opacity": 0
+            "content": "<p>Colours, textures, and scents merge into arrangements that communicate beyond words. We source blooms from growers who meet our standards, ensuring each stem arrives at peak beauty. Ou<em>r flower shop in El Segundo CA</em> focuses on creating pieces that resonate emotionally, whether celebrating joy or offering comfort. This isn't about following trends, but it's about understanding what flowers mean to the people who give and receive them.</p>"
           }
         }
       },
       "block_order": [
-        "collection_ekB6zB",
-        "collection_8BFHJ4",
-        "collection_JGaWbE",
-        "collection_UBk3Rc"
+        "heading_7fPaGe",
+        "richtext_8TQDfK"
+      ],
+      "custom_css": [
+        ".prose a {color: rgb(255, 42, 0) !important; font-weight: 800;}"
+      ],
+      "name": "Custom Rich Text",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": true,
+        "content_width": "sm",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "image_with_text_XNncP9": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_eHwm9R": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Farm-Direct Quality You Can See & Feel</strong>",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_XwQmzf": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our commitment begins before arrangements take shape. Direct relationships with growers give us access to blooms at their freshest. We handle each stem with precision, maintaining ideal conditions from arrival to delivery.</p><p><strong>You'll Find:</strong></p><ul><li>Roses spanning classic to contemporary palettes</li><li>Tulips capturing spring's vibrant spirit</li><li>Wildflowers create effortless, natural beauty</li><li>Hydrangeas offer fullness and romance</li><li>Sunflowers radiate warmth instantly</li><li>Plus many more seasonal varieties!</li></ul>",
+            "testimonial_text": "The attention to detail is stunning every bouquet felt like a piece of art. They made our event unforgettable.",
+            "testimonial_name": "",
+            "stars": 5
+          }
+        }
+      },
+      "block_order": [
+        "heading_eHwm9R",
+        "richtext_XwQmzf"
+      ],
+      "custom_css": [],
+      "settings": {
+        "color_scheme": "",
+        "color_scheme_inner": "scheme-4d8a7991-12ad-4ca0-8eb7-7f8f2837331e",
+        "narrow_section": true,
+        "remove_left_padding": false,
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/Farm-Direct_Quality_You_Can_See_Feel.png",
+        "mobile_image": "shopify://shop_images/Farm-Direct_Quality_You_Can_See_Feel.png",
+        "reveal_on_scroll": true,
+        "image_position": "start",
+        "content_width": "sm",
+        "remove_vertical_spacing": false,
+        "custom_css_class": ""
+      }
+    },
+    "image_with_text_64f3Dj": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_fAaA7i": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_mW3fdR": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Collections Built Around Your Desire </strong>",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_8KGmgJ": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Generic doesn't work when the moment matters. Our custom design approach lets you shape the arrangement. Match your loved one's favorite shades, sizes that fit the occasion, and styles that reflect your relationship. We transform your vision into florals that feel personal and purposeful.</p><p><strong>Custom Design Options:</strong></p><ul><li><strong>Wedding Florals:</strong> <a href=\"/collections/bouquet\" title=\"Bouquet\">Bridal bouquets</a>, ceremony backdrops, and table arrangements</li><li><a href=\"/collections/anniversaries\" title=\"Anniversaries\"><strong>Anniversary Gifts:</strong></a> Blooms expressing years of love</li><li><a href=\"/collections/birthday\" title=\"Birthday\"><strong>Birthday Bouquets:</strong> </a>Joyful designs celebrating another year</li><li><strong>Corporate Flowers:</strong> Polished arrangements for professional spaces</li><li><a href=\"/pages/sympathy\" title=\"Sympathy\"><strong>Sympathy Arrangements</strong></a><strong>:</strong> Gentle florals offering solace</li><li><strong>Seasonal Designs:</strong> Festive pieces for El Segundo holidays and gatherings</li></ul>",
+            "testimonial_text": "The attention to detail is stunning every bouquet felt like a piece of art. They made our event unforgettable.",
+            "testimonial_name": "",
+            "stars": 5
+          }
+        }
+      },
+      "block_order": [
+        "subheading_fAaA7i",
+        "heading_mW3fdR",
+        "richtext_8KGmgJ"
+      ],
+      "custom_css": [
+        ".prose a {color: rgb(255, 42, 0) !important; font-weight: 800;}"
       ],
       "settings": {
         "color_scheme": "",
+        "color_scheme_inner": "scheme-4d8a7991-12ad-4ca0-8eb7-7f8f2837331e",
+        "narrow_section": true,
+        "remove_left_padding": false,
         "separate_section_with_border": false,
-        "image_size": "auto",
-        "show_text_outside": true,
-        "space_items": true,
-        "stack_collections": false,
-        "collections_per_row_mobile": "2",
-        "collections_per_row_desktop": 4,
-        "subheading": "",
-        "title": "",
-        "content": ""
+        "image": "shopify://shop_images/Collections_Built_Around_Your_Desire.png",
+        "mobile_image": "shopify://shop_images/Collections_Built_Around_Your_Desire.png",
+        "reveal_on_scroll": true,
+        "image_position": "end",
+        "content_width": "sm",
+        "remove_vertical_spacing": false,
+        "custom_css_class": ""
+      }
+    },
+    "image_with_text_NYCDr8": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_cPtVPy": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Signature Arrangements Designed for All Events</strong>",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_VrdfJf": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our special collections show different styles from elegant and classy to fresh and garden-like. Each bouquet uses the best flowers and suits the mood or occasion perfectly</p><p><strong>Explore Our Range:</strong></p><ul><li><strong>Luxury Bouquets:</strong> Bold, memorable statement pieces</li><li><strong>Seasonal Arrangements:</strong> Fresh designs rotating with nature's calendar</li><li><strong>Wildflower Mixes:</strong> Unstructured beauty with organic appeal</li><li><strong>Succulent & Plant Designs:</strong> Lasting greenery with contemporary edge</li><li><strong>Event Florals:</strong> Scaled creations for weddings, celebrations, and corporate functions</li></ul>",
+            "testimonial_text": "The attention to detail is stunning every bouquet felt like a piece of art. They made our event unforgettable.",
+            "testimonial_name": "",
+            "stars": 5
+          }
+        }
+      },
+      "block_order": [
+        "heading_cPtVPy",
+        "richtext_VrdfJf"
+      ],
+      "custom_css": [
+        ".prose a {color: rgb(255, 42, 0) !important; font-weight: 800;}"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "color_scheme_inner": "scheme-4d8a7991-12ad-4ca0-8eb7-7f8f2837331e",
+        "narrow_section": true,
+        "remove_left_padding": false,
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/Signature_Arrangements_Designed_for_All_Events.png",
+        "mobile_image": "shopify://shop_images/Signature_Arrangements_Designed_for_All_Events.png",
+        "reveal_on_scroll": true,
+        "image_position": "start",
+        "content_width": "sm",
+        "remove_vertical_spacing": false,
+        "custom_css_class": ""
+      }
+    },
+    "image_with_text_WqdWit": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_Jkrzcg": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_zkz76m": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Easy Online Ordering & Fast Flower Delivery El Segundo CA</strong>",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_AnJE7L": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>A few clicks connect you to fresh flowers delivered anywhere in El Segundo. Browse our selection, personalize your choice, and schedule delivery to homes, offices, or event locations. Each arrangement arrives in pristine condition, handled with care throughout the journey. </p><p><em>Want your </em><a href=\"/pages/contact\" title=\"Contact\"><em>bouquet delivered today</em></a><em>? Our same-day flower delivery El Segundo handles last-minute occasions without compromising quality.</em></p>",
+            "testimonial_text": "The attention to detail is stunning every bouquet felt like a piece of art. They made our event unforgettable.",
+            "testimonial_name": "",
+            "stars": 5
+          }
+        },
+        "button_3EL3pG": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Talk To Florist",
+            "url": "shopify://pages/contact",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_Jkrzcg",
+        "heading_zkz76m",
+        "richtext_AnJE7L",
+        "button_3EL3pG"
+      ],
+      "custom_css": [
+        ".prose p a {color: rgb(255, 42, 0) !important; font-weight: 800;}"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "color_scheme_inner": "scheme-4d8a7991-12ad-4ca0-8eb7-7f8f2837331e",
+        "narrow_section": true,
+        "remove_left_padding": false,
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/Easy_Online_Ordering_Fast_Flower_Delivery_El_Segundo_CA.png",
+        "mobile_image": "shopify://shop_images/Easy_Online_Ordering_Fast_Flower_Delivery_El_Segundo_CA.png",
+        "reveal_on_scroll": true,
+        "image_position": "end",
+        "content_width": "sm",
+        "remove_vertical_spacing": false,
+        "custom_css_class": ""
+      }
+    },
+    "image_with_text_FgpVn3": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_fnDirC": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Why Choose Our Flower Shop El Segundo CA</strong>",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_yB3EtJ": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>We’re committed to delivering fresh, high-quality flowers with creativity and care. Every order, from a one-time bouquet to regular deliveries, is handled with attention to make your experience special.</p><p><strong>Expert Florists</strong></p><ul><li>Local florists craft each arrangement with skill and precision</li><li>Designs that blend artistry with elegance</li><li>Every bouquet gets careful attention to detail</li></ul><p><strong>Affordable Options</strong></p><ul><li>Beautiful flowers for any budget</li><li>Quality that doesn’t compromise value</li><li>Special deals and seasonal offers</li></ul><p><strong>Floral Subscriptions</strong></p><ul><li>Regular flower delivery for your home or office</li><li>Choose how often and what style suits you</li><li>Simple, convenient, and reliable service</li></ul><p><strong>Seasonal & Stylish Arrangements</strong></p><ul><li>Collections refreshed for holidays and seasonal trends</li><li>Designs from modern to classic to natural</li><li>Keeps your space or event looking vibrant and on-trend</li></ul>",
+            "testimonial_text": "The attention to detail is stunning every bouquet felt like a piece of art. They made our event unforgettable.",
+            "testimonial_name": "",
+            "stars": 5
+          }
+        },
+        "button_DBjjjQ": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "style": "solid",
+            "text": "Get Delivery Now",
+            "url": "tel:(310) 545-4432",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_fnDirC",
+        "richtext_yB3EtJ",
+        "button_DBjjjQ"
+      ],
+      "custom_css": [
+        ".prose a {color: rgb(255, 42, 0) !important; font-weight: 800;}"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "color_scheme_inner": "scheme-4d8a7991-12ad-4ca0-8eb7-7f8f2837331e",
+        "narrow_section": true,
+        "remove_left_padding": false,
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/Why_Choose_Our_Flower_Shop_El_Segundo_CA.png",
+        "mobile_image": "shopify://shop_images/Why_Choose_Our_Flower_Shop_El_Segundo_CA.png",
+        "reveal_on_scroll": true,
+        "image_position": "start",
+        "content_width": "sm",
+        "remove_vertical_spacing": false,
+        "custom_css_class": ""
+      }
+    },
+    "image_with_text_z43Qw4": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_AA9eDj": {
+          "type": "subheading",
+          "settings": {
+            "text": ""
+          }
+        },
+        "heading_A6RfAj": {
+          "type": "heading",
+          "settings": {
+            "text": "<strong>Get Unlimited Flowers & Smiles!</strong>",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext_ktCyk8": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p><em>Timing matters when expressing what words can't capture. Connect with our El Segundo flower shop now and send arrangements that transform ordinary days into occasions worth remembering.</em></p>",
+            "testimonial_text": "The attention to detail is stunning every bouquet felt like a piece of art. They made our event unforgettable.",
+            "testimonial_name": "",
+            "stars": 5
+          }
+        },
+        "button_HkGJeF": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Place Your Order",
+            "url": "shopify://pages/contact",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "subheading_AA9eDj",
+        "heading_A6RfAj",
+        "richtext_ktCyk8",
+        "button_HkGJeF"
+      ],
+      "custom_css": [
+        ".prose p a {color: rgb(255, 42, 0) !important; font-weight: 800;}"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "color_scheme_inner": "scheme-4d8a7991-12ad-4ca0-8eb7-7f8f2837331e",
+        "narrow_section": true,
+        "remove_left_padding": false,
+        "separate_section_with_border": false,
+        "image": "shopify://shop_images/Get_Unlimited_Flowers_Smiles.png",
+        "mobile_image": "shopify://shop_images/Get_Unlimited_Flowers_Smiles.png",
+        "reveal_on_scroll": true,
+        "image_position": "end",
+        "content_width": "sm",
+        "remove_vertical_spacing": false,
+        "custom_css_class": ""
       }
     },
     "ss_featured_coll_Tm49he": {
@@ -363,6 +745,7 @@
         "product_per_desktop": 4,
         "product_per_mobile": "2",
         "image_radius": 12,
+        "show_description": true,
         "image_ration": "square",
         "use_custom_height": false,
         "image_height_desktop": 400,
@@ -432,7 +815,11 @@
         "padding_horizontal": 5,
         "padding_horizontal_mobile": 1.5,
         "content_width": 120,
-        "border_thickness": 0
+        "border_thickness": 0,
+        "show_shop_all": true,
+        "shop_all_text": "Shop All",
+        "shop_all_link": "",
+        "custom_css_class": ""
       }
     },
     "testimonials_v2_G4LpJz": {
@@ -546,325 +933,6 @@
         "z_padding_bottom_mb": 60
       }
     },
-    "custom_rich_text_NRXcPr": {
-      "type": "custom-rich-text",
-      "blocks": {
-        "heading_7fPaGe": {
-          "type": "heading",
-          "settings": {
-            "text": "<strong>Three Decades Serving El Segundo With Intention</strong>",
-            "heading_tag": "h2",
-            "font_size_desktop": 48,
-            "font_size_mobile": 32,
-            "font_family": "Larken"
-          }
-        },
-        "richtext_8TQDfK": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Colours, textures, and scents merge into arrangements that communicate beyond words. We source blooms from growers who meet our standards, ensuring each stem arrives at peak beauty. Ou<em>r flower shop in El Segundo CA</em> focuses on creating pieces that resonate emotionally, whether celebrating joy or offering comfort. This isn't about following trends, but it's about understanding what flowers mean to the people who give and receive them.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_7fPaGe",
-        "richtext_8TQDfK"
-      ],
-      "custom_css": [
-        ".prose a {color: rgb(255, 42, 0) !important; font-weight: 800;}"
-      ],
-      "name": "Custom Rich Text",
-      "settings": {
-        "color_scheme": "",
-        "separate_section_with_border": true,
-        "content_width": "sm",
-        "text_position": "center",
-        "remove_vertical_spacing": false
-      }
-    },
-    "image_with_text_XNncP9": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_eHwm9R": {
-          "type": "heading",
-          "settings": {
-            "text": "<strong>Farm-Direct Quality You Can See & Feel</strong>",
-            "heading_tag": "h2"
-          }
-        },
-        "richtext_XwQmzf": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Our commitment begins before arrangements take shape. Direct relationships with growers give us access to blooms at their freshest. We handle each stem with precision, maintaining ideal conditions from arrival to delivery.</p><p><strong>You'll Find:</strong></p><ul><li>Roses spanning classic to contemporary palettes</li><li>Tulips capturing spring's vibrant spirit</li><li>Wildflowers create effortless, natural beauty</li><li>Hydrangeas offer fullness and romance</li><li>Sunflowers radiate warmth instantly</li><li>Plus many more seasonal varieties!</li></ul>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_eHwm9R",
-        "richtext_XwQmzf"
-      ],
-      "custom_css": [
-        ".prose a {color: rgb(255, 42, 0) !important; font-weight: 800;}"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "color_scheme_inner": "scheme-4d8a7991-12ad-4ca0-8eb7-7f8f2837331e",
-        "narrow_section": true,
-        "remove_left_padding": false,
-        "separate_section_with_border": false,
-        "image": "shopify://shop_images/Farm-Direct_Quality_You_Can_See_Feel.png",
-        "mobile_image": "shopify://shop_images/Farm-Direct_Quality_You_Can_See_Feel.png",
-        "reveal_on_scroll": true,
-        "image_position": "start",
-        "content_width": "sm",
-        "remove_vertical_spacing": false
-      }
-    },
-    "image_with_text_64f3Dj": {
-      "type": "image-with-text",
-      "blocks": {
-        "subheading_fAaA7i": {
-          "type": "subheading",
-          "settings": {
-            "text": ""
-          }
-        },
-        "heading_mW3fdR": {
-          "type": "heading",
-          "settings": {
-            "text": "<strong>Collections Built Around Your Desire </strong>",
-            "heading_tag": "h2"
-          }
-        },
-        "richtext_8KGmgJ": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Generic doesn't work when the moment matters. Our custom design approach lets you shape the arrangement. Match your loved one's favorite shades, sizes that fit the occasion, and styles that reflect your relationship. We transform your vision into florals that feel personal and purposeful.</p><p><strong>Custom Design Options:</strong></p><ul><li><strong>Wedding Florals:</strong> <a href=\"/collections/bouquet\" title=\"Bouquet\">Bridal bouquets</a>, ceremony backdrops, and table arrangements</li><li><a href=\"/collections/anniversaries\" title=\"Anniversaries\"><strong>Anniversary Gifts:</strong></a> Blooms expressing years of love</li><li><a href=\"/collections/birthday\" title=\"Birthday\"><strong>Birthday Bouquets:</strong> </a>Joyful designs celebrating another year</li><li><strong>Corporate Flowers:</strong> Polished arrangements for professional spaces</li><li><a href=\"/pages/sympathy\" title=\"Sympathy\"><strong>Sympathy Arrangements</strong></a><strong>:</strong> Gentle florals offering solace</li><li><strong>Seasonal Designs:</strong> Festive pieces for El Segundo holidays and gatherings</li></ul>"
-          }
-        }
-      },
-      "block_order": [
-        "subheading_fAaA7i",
-        "heading_mW3fdR",
-        "richtext_8KGmgJ"
-      ],
-      "custom_css": [
-        ".prose a {color: rgb(255, 42, 0) !important; font-weight: 800;}"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "color_scheme_inner": "scheme-4d8a7991-12ad-4ca0-8eb7-7f8f2837331e",
-        "narrow_section": true,
-        "remove_left_padding": false,
-        "separate_section_with_border": false,
-        "image": "shopify://shop_images/Collections_Built_Around_Your_Desire.png",
-        "mobile_image": "shopify://shop_images/Collections_Built_Around_Your_Desire.png",
-        "reveal_on_scroll": true,
-        "image_position": "end",
-        "content_width": "sm",
-        "remove_vertical_spacing": false
-      }
-    },
-    "image_with_text_NYCDr8": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_cPtVPy": {
-          "type": "heading",
-          "settings": {
-            "text": "<strong>Signature Arrangements Designed for All Events</strong>",
-            "heading_tag": "h2"
-          }
-        },
-        "richtext_VrdfJf": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>Our special collections show different styles from elegant and classy to fresh and garden-like. Each bouquet uses the best flowers and suits the mood or occasion perfectly</p><p><strong>Explore Our Range:</strong></p><ul><li><strong>Luxury Bouquets:</strong> Bold, memorable statement pieces</li><li><strong>Seasonal Arrangements:</strong> Fresh designs rotating with nature's calendar</li><li><strong>Wildflower Mixes:</strong> Unstructured beauty with organic appeal</li><li><strong>Succulent & Plant Designs:</strong> Lasting greenery with contemporary edge</li><li><strong>Event Florals:</strong> Scaled creations for weddings, celebrations, and corporate functions</li></ul>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_cPtVPy",
-        "richtext_VrdfJf"
-      ],
-      "custom_css": [
-        ".prose a {color: rgb(255, 42, 0) !important; font-weight: 800;}"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "color_scheme_inner": "scheme-4d8a7991-12ad-4ca0-8eb7-7f8f2837331e",
-        "narrow_section": true,
-        "remove_left_padding": false,
-        "separate_section_with_border": false,
-        "image": "shopify://shop_images/Signature_Arrangements_Designed_for_All_Events.png",
-        "mobile_image": "shopify://shop_images/Signature_Arrangements_Designed_for_All_Events.png",
-        "reveal_on_scroll": true,
-        "image_position": "start",
-        "content_width": "sm",
-        "remove_vertical_spacing": false
-      }
-    },
-    "image_with_text_WqdWit": {
-      "type": "image-with-text",
-      "blocks": {
-        "subheading_Jkrzcg": {
-          "type": "subheading",
-          "settings": {
-            "text": ""
-          }
-        },
-        "heading_zkz76m": {
-          "type": "heading",
-          "settings": {
-            "text": "<strong>Easy Online Ordering & Fast Flower Delivery El Segundo CA</strong>",
-            "heading_tag": "h2"
-          }
-        },
-        "richtext_AnJE7L": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>A few clicks connect you to fresh flowers delivered anywhere in El Segundo. Browse our selection, personalize your choice, and schedule delivery to homes, offices, or event locations. Each arrangement arrives in pristine condition, handled with care throughout the journey. </p><p><em>Want your </em><a href=\"/pages/contact\" title=\"Contact\"><em>bouquet delivered today</em></a><em>? Our same-day flower delivery El Segundo handles last-minute occasions without compromising quality.</em></p>"
-          }
-        },
-        "button_3EL3pG": {
-          "type": "button",
-          "settings": {
-            "style": "solid",
-            "text": "Talk To Florist",
-            "url": "shopify://pages/contact",
-            "background": "",
-            "text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "subheading_Jkrzcg",
-        "heading_zkz76m",
-        "richtext_AnJE7L",
-        "button_3EL3pG"
-      ],
-      "custom_css": [
-        ".prose p a {color: rgb(255, 42, 0) !important; font-weight: 800;}"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "color_scheme_inner": "scheme-4d8a7991-12ad-4ca0-8eb7-7f8f2837331e",
-        "narrow_section": true,
-        "remove_left_padding": false,
-        "separate_section_with_border": false,
-        "image": "shopify://shop_images/Easy_Online_Ordering_Fast_Flower_Delivery_El_Segundo_CA.png",
-        "mobile_image": "shopify://shop_images/Easy_Online_Ordering_Fast_Flower_Delivery_El_Segundo_CA.png",
-        "reveal_on_scroll": true,
-        "image_position": "end",
-        "content_width": "sm",
-        "remove_vertical_spacing": false
-      }
-    },
-    "image_with_text_FgpVn3": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_fnDirC": {
-          "type": "heading",
-          "settings": {
-            "text": "<strong>Why Choose Our Flower Shop El Segundo CA</strong>",
-            "heading_tag": "h2"
-          }
-        },
-        "richtext_yB3EtJ": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p>We’re committed to delivering fresh, high-quality flowers with creativity and care. Every order, from a one-time bouquet to regular deliveries, is handled with attention to make your experience special.</p><p><strong>Expert Florists</strong></p><ul><li>Local florists craft each arrangement with skill and precision</li><li>Designs that blend artistry with elegance</li><li>Every bouquet gets careful attention to detail</li></ul><p><strong>Affordable Options</strong></p><ul><li>Beautiful flowers for any budget</li><li>Quality that doesn’t compromise value</li><li>Special deals and seasonal offers</li></ul><p><strong>Floral Subscriptions</strong></p><ul><li>Regular flower delivery for your home or office</li><li>Choose how often and what style suits you</li><li>Simple, convenient, and reliable service</li></ul><p><strong>Seasonal & Stylish Arrangements</strong></p><ul><li>Collections refreshed for holidays and seasonal trends</li><li>Designs from modern to classic to natural</li><li>Keeps your space or event looking vibrant and on-trend</li></ul>"
-          }
-        },
-        "button_DBjjjQ": {
-          "type": "button",
-          "disabled": true,
-          "settings": {
-            "style": "solid",
-            "text": "Get Delivery Now",
-            "url": "tel:(310) 545-4432",
-            "background": "",
-            "text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "heading_fnDirC",
-        "richtext_yB3EtJ",
-        "button_DBjjjQ"
-      ],
-      "custom_css": [
-        ".prose a {color: rgb(255, 42, 0) !important; font-weight: 800;}"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "color_scheme_inner": "scheme-4d8a7991-12ad-4ca0-8eb7-7f8f2837331e",
-        "narrow_section": true,
-        "remove_left_padding": false,
-        "separate_section_with_border": false,
-        "image": "shopify://shop_images/Why_Choose_Our_Flower_Shop_El_Segundo_CA.png",
-        "mobile_image": "shopify://shop_images/Why_Choose_Our_Flower_Shop_El_Segundo_CA.png",
-        "reveal_on_scroll": true,
-        "image_position": "start",
-        "content_width": "sm",
-        "remove_vertical_spacing": false
-      }
-    },
-    "image_with_text_z43Qw4": {
-      "type": "image-with-text",
-      "blocks": {
-        "subheading_AA9eDj": {
-          "type": "subheading",
-          "settings": {
-            "text": ""
-          }
-        },
-        "heading_A6RfAj": {
-          "type": "heading",
-          "settings": {
-            "text": "<strong>Get Unlimited Flowers & Smiles!</strong>",
-            "heading_tag": "h2"
-          }
-        },
-        "richtext_ktCyk8": {
-          "type": "richtext",
-          "settings": {
-            "content": "<p><em>Timing matters when expressing what words can't capture. Connect with our El Segundo flower shop now and send arrangements that transform ordinary days into occasions worth remembering.</em></p>"
-          }
-        },
-        "button_HkGJeF": {
-          "type": "button",
-          "settings": {
-            "style": "solid",
-            "text": "Place Your Order",
-            "url": "shopify://pages/contact",
-            "background": "",
-            "text_color": ""
-          }
-        }
-      },
-      "block_order": [
-        "subheading_AA9eDj",
-        "heading_A6RfAj",
-        "richtext_ktCyk8",
-        "button_HkGJeF"
-      ],
-      "custom_css": [
-        ".prose p a {color: rgb(255, 42, 0) !important; font-weight: 800;}"
-      ],
-      "settings": {
-        "color_scheme": "",
-        "color_scheme_inner": "scheme-4d8a7991-12ad-4ca0-8eb7-7f8f2837331e",
-        "narrow_section": true,
-        "remove_left_padding": false,
-        "separate_section_with_border": false,
-        "image": "shopify://shop_images/Get_Unlimited_Flowers_Smiles.png",
-        "mobile_image": "shopify://shop_images/Get_Unlimited_Flowers_Smiles.png",
-        "reveal_on_scroll": true,
-        "image_position": "end",
-        "content_width": "sm",
-        "remove_vertical_spacing": false
-      }
-    },
     "faq_hcnPaE": {
       "type": "faq",
       "blocks": {
@@ -920,7 +988,8 @@
         "show_categories": false,
         "subheading": "",
         "title": "Frequently Asked Questions",
-        "content": ""
+        "content": "",
+        "custom_css_Class": ""
       }
     },
     "custom_liquid_Xa6Fky": {
@@ -938,12 +1007,10 @@
   },
   "order": [
     "main",
-    "custom_rich_text_WdXNnK",
+    "slideshow_g3iaqr",
+    "scrolling_content_jwQf8K",
     "collection_list_m6rhw7",
-    "collection_list_PRNMEV",
-    "collection_list_WrTgzK",
-    "ss_featured_coll_Tm49he",
-    "testimonials_v2_G4LpJz",
+    "collection_list_kkwNeV",
     "custom_rich_text_NRXcPr",
     "image_with_text_XNncP9",
     "image_with_text_64f3Dj",
@@ -951,6 +1018,8 @@
     "image_with_text_WqdWit",
     "image_with_text_FgpVn3",
     "image_with_text_z43Qw4",
+    "ss_featured_coll_Tm49he",
+    "testimonials_v2_G4LpJz",
     "faq_hcnPaE",
     "custom_liquid_Xa6Fky"
   ]

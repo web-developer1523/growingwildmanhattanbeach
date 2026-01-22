@@ -30,7 +30,7 @@
           "settings": {
             "style": "solid",
             "text": "Find Your Perfect Flower",
-            "url": "",
+            "url": "shopify://collections/all",
             "background": "#6a6e49",
             "text_color": "#ffffff"
           }
@@ -306,7 +306,7 @@
         "stack_products": false,
         "show_bar": false,
         "top_bar": false,
-        "product_show": 14,
+        "product_show": 28,
         "product_per_desktop": 4,
         "product_per_mobile": "2",
         "image_radius": 12,
@@ -325,7 +325,7 @@
         "card_title_size": 18,
         "card_title_letter": 0,
         "card_title_height": 100,
-        "heading": "",
+        "heading": "Best Sellers",
         "heading_custom": false,
         "heading_font": "assistant_n4",
         "heading_size": 45,
@@ -340,11 +340,11 @@
         "sub_heading_height": 100,
         "sub_heading_align": "left",
         "invert_content": true,
-        "link": "",
-        "link_url": "",
+        "link": "Shop Now",
+        "link_url": "shopify://collections/all",
         "link_custom": true,
         "link_font": "assistant_n4",
-        "link_size": 18,
+        "link_size": 22,
         "link_letter": 0,
         "link_height": 100,
         "link_position": false,
@@ -382,8 +382,8 @@
         "content_width": 120,
         "border_thickness": 0,
         "show_shop_all": true,
-        "shop_all_text": "",
-        "shop_all_link": "",
+        "shop_all_text": "Shop All",
+        "shop_all_link": "shopify://collections/best-sellers",
         "custom_css_class": "cst-new-best-sellings-pro   cst-new-best"
       }
     },
@@ -692,7 +692,7 @@
             "subheading": "",
             "title": "Sympathy",
             "button_text": "Shop Sympathy",
-            "button_link": "",
+            "button_link": "shopify://collections/sympathy-and-funeral",
             "button_style": "solid",
             "overlay_color": "#000000",
             "overlay_opacity": 12
@@ -1314,6 +1314,20 @@
             "question": "Are you a local florist?",
             "answer": "<p>Yes, we are! Growing Wild has been serving Manhattan Beach and the surrounding areas for over 30 years. We’re proud to be your local florist with a commitment to quality and personal service. </p>"
           }
+        },
+        "question_nreanA": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>How long do your flower arrangements stay fresh?</strong>",
+            "answer": "<p>We offer a wide range of flower arrangements including birthday, wedding, anniversary, sympathy, and seasonal designs, all created with fresh, high-quality flowers.</p>"
+          }
+        },
+        "question_nAqwDq": {
+          "type": "question",
+          "settings": {
+            "question": "<strong>What types of flower arrangements do you offer?</strong>",
+            "answer": "<p><br/> We offer a wide range of flower arrangements including birthday, wedding, anniversary, sympathy, and seasonal designs, all created with fresh, high-quality flowers.<br/><br/></p>"
+          }
         }
       },
       "block_order": [
@@ -1321,7 +1335,9 @@
         "question_Eq8EyK",
         "question_pRbcLc",
         "question_Cwkapd",
-        "question_kxfyAd"
+        "question_kxfyAd",
+        "question_nreanA",
+        "question_nAqwDq"
       ],
       "settings": {
         "right_image": "shopify://shop_images/answer.png",

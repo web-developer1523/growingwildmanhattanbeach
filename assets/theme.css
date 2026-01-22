@@ -4289,9 +4289,12 @@ product-rerender {
 }
 
 .collection-card {
-  align-content: start;
+  /* align-content: start; */
   gap: 1.5rem;
   display: grid;
+}
+.content-over-media.content-over-media--auto {
+    border-radius: 9px;
 }
 
 .countdown {
@@ -8241,7 +8244,7 @@ span.sale_badge svg{
 
     .theme-store-id-855.spf-has-filter #gf-products {
         gap: 10px !important;
-        padding-right: 0 !important;
+        /* padding-right: 0 !important; */
         grid: auto / repeat(auto-fit, var(--product-list-card-width));
         align-items: start;
         column-gap: var(--product-list-calculated-column-gap);
