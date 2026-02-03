@@ -168,10 +168,22 @@ Thumbnail specific parameters:
   {%- when 'swatch' -%}
     {%- assign white_label = 'general.label.white' | t | downcase -%}
 
-    <{{ option_value_tag }} class="color-swatch {% if disabled %}is-disabled{% endif %} {% if selected and option_value_tag == 'a' %}is-selected{% endif %} {% if settings.round_color_swatches %}rounded-full{% endif %} {% if white_label == downcase_label %}border{% endif %}" {{ attributes }} {% if show_tooltip %}data-tooltip="{{ label | default: value | escape }}"{% endif %} style="{{ swatch_style }}">
+    {% comment %} <{{ option_value_tag }} class="color-swatch {% if disabled %}is-disabled{% endif %} {% if selected and option_value_tag == 'a' %}is-selected{% endif %} {% if settings.round_color_swatches %}rounded-full{% endif %} {% if white_label == downcase_label %}border{% endif %}" {{ attributes }} {% if show_tooltip %}data-tooltip="{{ label | default: value | escape }}"{% endif %} style="{{ swatch_style }}">
       <span class="sr-only">{{ label | default: value }}</span>
-    </{{ option_value_tag }}>
+    </{{ option_value_tag }}> {% endcomment %}
+      <{{ option_value_tag }}
+        class="color-swatch {% if disabled %}is-disabled{% endif %}
+              {% if selected and option_value_tag == 'a' %}is-selected{% endif %}
+              {% if settings.round_color_swatches %}rounded-full{% endif %}
+              {% if white_label == downcase_label %}border{% endif %}"
+        {{ attributes }}
+        {% if show_tooltip %}data-tooltip="{{ label | default: value | escape }}"{% endif %}>
 
+        <span class="swatch-label">
+          {{ label | default: value }}
+        </span>
+
+      </{{ option_value_tag }}>
   {%- when 'image_filter' -%}
     <label class="image-filter {% if disabled %}is-disabled{% endif %}" for="{{ id | escape }}">
       {%- if filter_value.image -%}

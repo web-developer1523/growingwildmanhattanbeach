@@ -169,6 +169,22 @@
                   {%- render 'button', type: 'submit', content: update_button, style: 'outline' -%}
                 </noscript>
 
+                {% comment %} {% if section.settings.enable_agreement %}
+              <div id="agreementPopup" class="agreement-popup hidden">
+                <div class="agreement-popup__overlay"></div>
+
+                <div class="agreement-popup__content">
+                  <div class="agreement-popup__text">
+                    {{ section.settings.agreement_message }}
+                  </div>
+
+                  <button type="button" id="agreeButton" class="button button--primary">
+                    I Agree
+                  </button>
+                </div>
+              </div>
+          {% endif %} {% endcomment %}
+
                 {%- assign checkout_button = 'cart.general.checkout' | t -%}
                 {%- render 'button', type: 'submit', content: checkout_button, name: 'checkout' -%}
               </div>
@@ -189,7 +205,80 @@
     </div>
   {%- endif -%}
 </div>
+<style>
+  div#storePickupApp .checkoutMethodsContainer.default {
+    display: none;
+}
+</style>
+{% comment %} <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const popup = document.getElementById('agreementPopup');
+    const agreeBtn = document.getElementById('agreeButton');
+    const checkoutBtn = document.querySelector('button[name="checkout"]');
 
+    if (!popup || !agreeBtn || !checkoutBtn) return;
+
+    // Always disable checkout on load
+    checkoutBtn.disabled = true;
+
+    // Always show popup on page load
+    popup.classList.remove('hidden');
+
+    agreeBtn.addEventListener('click', function () {
+      popup.classList.add('hidden');
+      checkoutBtn.disabled = false;
+    });
+
+    /* OPTIONAL: show popup again if cart updates via AJAX */
+    document.addEventListener('cart:updated', function () {
+      checkoutBtn.disabled = true;
+      popup.classList.remove('hidden');
+    });
+  });
+</script> {% endcomment %}
+
+{% comment %} <style>
+  .agreement-popup.hidden {
+  display: none;
+}
+
+.agreement-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.agreement-popup__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+div#agreementPopup {
+    padding: 16px;
+}
+
+.agreement-popup__content {
+  position: relative;
+  background: #fff;
+  max-width: 500px;
+  padding: 24px;
+  border-radius: 8px;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.agreement-popup__text {
+    margin-bottom: 20px;
+    line-height: 28px;
+}
+button[name="checkout"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+</style> {% endcomment %}
 {% schema %}
 {
   "name": "t:sections.main_cart.name",
@@ -232,7 +321,19 @@
       "id": "show_shipping_estimator",
       "label": "t:sections.main_cart.show_shipping_estimator",
       "default": true
-    }
+    },
+    {
+      "type": "richtext",
+      "id": "agreement_message",
+      "label": "Agreement Message",
+      "default": "<p>I agree to the terms and conditions.</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_agreement",
+      "label": "Enable agreement checkbox",
+      "default": true
+    },
   ],
   "blocks": [
     {

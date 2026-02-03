@@ -17,7 +17,9 @@
         "show_order_weight": false,
         "show_shipping_text": false,
         "show_accelerated_buttons": false,
-        "show_shipping_estimator": false
+        "show_shipping_estimator": false,
+        "agreement_message": "<p><strong>Important Delivery Address Reminder:</strong><br/><br/>Sending flowers to someone else? 💐<br/>If you use <strong>Shop Pay or express checkout</strong>, your own address may be filled in automatically.Please make sure the <strong>Ship to address is the recipient’s address</strong>, not yours.<br/><br/>We also recommend entering the <strong>recipient’s phone number</strong> so our driver can complete the delivery successfully.</p>",
+        "enable_agreement": true
       }
     }
   },

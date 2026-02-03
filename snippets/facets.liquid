@@ -199,7 +199,9 @@ Supported variables
 
   /* Mobile Filter Drawer Styles */
   @media screen and (max-width: 699px) {
-
+    body #mobile-filter-toggle-facets-sidebar {
+      display: flex!important;
+    }
     .collection__main {
       margin-top: 0px;
   }
@@ -286,7 +288,7 @@ Supported variables
     }
     .container {
       margin-top: 50px;
-  }
+    }
   }
 </style>
 
@@ -309,7 +311,10 @@ Supported variables
 
     {%- comment -%}Mobile Filter Toggle Button{%- endcomment -%}
     {%- if show_filters or quick_links_menu.links.size > 0 -%}
-      <button type="button" id="{{ mobile_filter_id }}" class="mobile-filter-toggle" style="width: auto; padding: 12px; margin-top: 15px; background: transparent; border: 1px solid currentColor; text-align: center; cursor: pointer; font-size: inherit;">
+      <button type="button" id="{{ mobile_filter_id }}" class="mobile-filter-toggle" style="width: auto; padding: 12px; margin-top: 15px; background: transparent; text-align: center; cursor: pointer; font-size: inherit; display: flex; align-items: center; gap: 8px;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink: 0;">
+          <path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
         {{ 'collection.faceting.filters' | t | default: 'Filter' }}
       </button>
     {%- endif -%}
@@ -328,7 +333,7 @@ Supported variables
         </button>
       </div>
       <div class="mobile-filter-body">
-        <div class="accordion-list sm-max:block md:hidden">
+        <div class="accordion-list sm-max:block md:hidden 1">
       {%- if quick_links_menu.links.size > 0 -%}
         {%- capture filter_content -%}
           <div class="v-stack gap-2.5">
@@ -372,13 +377,18 @@ Supported variables
               {%- endif -%}
             {%- else -%}
               {%- assign downcase_label = filter.label | downcase -%}
+              {%- if color_label_list contains downcase_label -%}
+                {%- assign is_color_filter = true -%}
+              {%- else -%}
+                {%- assign is_color_filter = false -%}
+              {%- endif -%}
 
               {%- case filter.type -%}
                 {%- when 'list' -%}
                   {%- liquid
                     if filter.presentation == 'image'
                       assign wrapper_class_list = 'v-stack gap-2'
-                    elsif filter.presentation == 'swatch' or color_label_list contains downcase_label
+                    elsif filter.presentation == 'swatch' and is_color_filter == false
                       assign wrapper_class_list = 'h-stack wrap gap-2'
                     else
                       assign wrapper_class_list = 'v-stack gap-2.5'
@@ -392,7 +402,7 @@ Supported variables
 
                         if filter.presentation == 'image'
                           render 'option-value', type: 'image_filter', filter_value: filter_value, id_prefix: value_id_prefix
-                        elsif filter.presentation == 'swatch' or color_label_list contains downcase_label
+                        elsif filter.presentation == 'swatch' and is_color_filter == false
                           render 'option-value', type: 'swatch', filter_value: filter_value, show_tooltip: true, id_prefix: value_id_prefix
                         else
                           if section.settings.show_filter_values_count
@@ -467,13 +477,18 @@ Supported variables
               {%- endif -%}
             {%- else -%}
               {%- assign downcase_label = filter.label | downcase -%}
+              {%- if color_label_list contains downcase_label -%}
+                {%- assign is_color_filter = true -%}
+              {%- else -%}
+                {%- assign is_color_filter = false -%}
+              {%- endif -%}
 
               {%- case filter.type -%}
                 {%- when 'list' -%}
                   {%- liquid
                     if filter.presentation == 'image'
                       assign wrapper_class_list = 'v-stack gap-2'
-                    elsif filter.presentation == 'swatch' or color_label_list contains downcase_label
+                    elsif filter.presentation == 'swatch' and is_color_filter == false
                       assign wrapper_class_list = 'h-stack wrap gap-2'
                     else
                       assign wrapper_class_list = 'v-stack gap-2.5'
@@ -487,7 +502,7 @@ Supported variables
 
                         if filter.presentation == 'image'
                           render 'option-value', type: 'image_filter', filter_value: filter_value, id_prefix: value_id_prefix
-                        elsif filter.presentation == 'swatch' or color_label_list contains downcase_label
+                        elsif filter.presentation == 'swatch' and is_color_filter == false
                           render 'option-value', type: 'swatch', filter_value: filter_value, show_tooltip: true, id_prefix: value_id_prefix
                         else
                           if section.settings.show_filter_values_count

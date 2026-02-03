@@ -18,6 +18,30 @@
         "page_width": "xs"
       }
     },
+    "contact-form": {
+      "type": "contact",
+      "blocks": {
+        "text_yFxTB3": {
+          "type": "text",
+          "settings": {
+            "title": "Phone",
+            "use_long_text": false,
+            "required": false
+          }
+        }
+      },
+      "block_order": [
+        "text_yFxTB3"
+      ],
+      "settings": {
+        "custom_class": "cst-mobile-sub",
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "subheading": "",
+        "title": "<strong>Schedule a Consultation</strong>",
+        "content": "<p>Ready to bring lasting beauty to your space? <br/>Apply for a consultation here or call us at <a href=\"tel:(310) 545-4432\" title=\"tel:(310) 545-4432\"><strong>(310) 545-4432</strong></a> to get started. We would love to help you create the perfect arrangement for your home or a special gift for your loved ones.</p>"
+      }
+    },
     "media_grid_rnWWVp": {
       "type": "media-grid",
       "blocks": {
@@ -259,13 +283,14 @@
         "show_categories": false,
         "subheading": "",
         "title": "Frequently Asked Questions",
-        "content": ""
+        "content": "",
+        "custom_css_Class": ""
       }
     },
-    "contact-form": {
+    "contact_Q7tNcc": {
       "type": "contact",
       "blocks": {
-        "text_yFxTB3": {
+        "text_Ucjdcj": {
           "type": "text",
           "settings": {
             "title": "Phone",
@@ -275,9 +300,10 @@
         }
       },
       "block_order": [
-        "text_yFxTB3"
+        "text_Ucjdcj"
       ],
       "settings": {
+        "custom_class": "cst-desktop-sub",
         "color_scheme": "",
         "separate_section_with_border": false,
         "subheading": "",
@@ -288,9 +314,10 @@
   },
   "order": [
     "main",
+    "contact-form",
     "media_grid_rnWWVp",
     "media_grid_itQT3p",
     "faq_wgcMyX",
-    "contact-form"
+    "contact_Q7tNcc"
   ]
 }

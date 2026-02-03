@@ -237,6 +237,8 @@ height-observer {
   border-block-start-width: 0;
 }
 
+
+
 .accordion__toggle {
   justify-content: space-between;
   align-items: center;
@@ -752,6 +754,10 @@ shopify-accelerated-checkout, shopify-accelerated-checkout-cart {
 .prev-next-button[disabled] {
   opacity: 0;
   visibility: hidden;
+}
+
+.facets .checkbox-control input.checkbox {
+    margin-bottom: 10px;
 }
 
 @media screen and (pointer: fine) {
@@ -6765,7 +6771,7 @@ product-rerender {
 
 .border {
   border-width: 1px;
-  border-color: rgb(var(--border-color));
+  /* border-color: rgb(var(--border-color)); */
 }
 
 .border-x {
@@ -7366,7 +7372,7 @@ product-rerender {
 }
 
 .gap-2 {
-  gap: .5rem;
+  gap: 1.5rem;
 }
 
 .gap-2\.5 {

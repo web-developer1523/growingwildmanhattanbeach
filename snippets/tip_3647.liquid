@@ -46,7 +46,17 @@
       maxlength="150"
     >{{ cart.attributes['Personalized Note'] }}</textarea>
   </div>
-
+  <div class="note-field-group">
+    <label for="DeliveryNote">Delivery note</label>
+    <textarea
+      id="DeliveryNote"
+      name="attributes[Delivery Note]"
+      class="text-area"
+      rows="4"
+      placeholder="Special delivery instructions, gate codes, access notes, etc."
+      maxlength="150"
+    >{{ cart.attributes['Delivery Note'] }}</textarea>
+  </div>
   {% comment %} <div class="note-field-group">
     <label for="NoteSignature">
       Note Signature - <span class="note-signature-instruction">Make sure to add your name to take credit for these epic blooms and gifts!</span>
