@@ -47,6 +47,19 @@
     >{{ cart.attributes['Personalized Note'] }}</textarea>
   </div>
   <div class="note-field-group">
+    <label for="NoteSignature">
+      Note Signature</span>
+    </label>
+    <input
+      type="text"
+      id="NoteSignature"
+      name="attributes[Note Signature]"
+      class="input-text"
+      placeholder="Enter your name"
+      value="{{ cart.attributes['Note Signature'] }}"
+    >
+  </div>
+  <div class="note-field-group">
     <label for="DeliveryNote">Delivery note</label>
     <textarea
       id="DeliveryNote"

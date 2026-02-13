@@ -481,7 +481,7 @@
         "shipping_address": "Ship address ( Recipient) "
       },
       "shipping": {
-        "delivery_title": "Recipient Address - Where we will deliver the flowers. Enter the recipient's delivery address.",
+        "delivery_title": "Recipient Name and Receipient Address - Where we will deliver the flowers. Enter the recipient's name and delivery address.",
         "shipping_line_phone": "Enter Recipient Number"
       },
       "payment": {

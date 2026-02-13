@@ -49,11 +49,6 @@
     "favicon": "shopify://shop_images/updated_fav_icon_502c6766-e4a1-4298-b1d2-5ca16839db76.png",
     "content_for_index": [],
     "blocks": {
-      "14060646107696862457": {
-        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": false,
-        "settings": {}
-      },
       "8208493610395315515": {
         "type": "shopify://apps/dondy-whatsapp-chat-marketing/blocks/app-block/7f5a70cb-e171-4cc7-ac02-e2220203abd6",
         "disabled": false,
@@ -93,6 +88,11 @@
       "14479319785270113485": {
         "type": "shopify://apps/zapiet-pickup-delivery/blocks/app-embed/5599aff0-8af1-473a-a372-ecd72a32b4d5",
         "disabled": false,
+        "settings": {}
+      },
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": true,
         "settings": {}
       }
     },

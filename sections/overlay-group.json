@@ -87,12 +87,37 @@
         "title": "🍪 Cookie policy",
         "content": "<p>We use cookies and similar technologies to provide the best experience on our website. Refer to our Privacy Policy for more information.</p>"
       }
+    },
+    "valentine_popup_fmn3B4": {
+      "type": "valentine-popup",
+      "name": "Valentine's Order Pause",
+      "settings": {
+        "enable_popup": false,
+        "title": "💕 We're Paused for Valentine's Day 💕",
+        "message": "<p>Due to overwhelming demand for Valentine's Day, we are temporarily not accepting new orders. We'll be back soon! Thank you for your love and support.</p>",
+        "button_label": "Notify Me When Available",
+        "button_link": "",
+        "delay_time": 3,
+        "remember_close": false,
+        "background_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "border_color": "#ff6b6b",
+        "border_width": 2,
+        "border_radius": 12,
+        "heading_size": 30,
+        "text_size": 18,
+        "button_bg": "#ff6b6b",
+        "button_bg_hover": "#ff5252",
+        "button_text": "#ffffff",
+        "button_radius": 30
+      }
     }
   },
   "order": [
     "17584367848a36c73c",
     "cart-drawer",
     "newsletter-popup",
-    "privacy-banner"
+    "privacy-banner",
+    "valentine_popup_fmn3B4"
   ]
 }

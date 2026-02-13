@@ -887,13 +887,13 @@ For inquiries or permissions, contact daniel@section.store
       {% endif %}
       {% unless rating_text_hide and rating_hide and stars_count == 0 %}
         <div class="testimonials-rating-{{ section.id }}">
-          {% unless rating_text_hide %}
+          {% comment %} {% unless rating_text_hide %}
             <p class="testimonials-rating-text-{{ section.id }}">{{ rating_text }}</p>
           {% endunless %}
           {% unless rating_hide %}
             <span>{{ rating }}</span>
              <p class="testimonials-rating-text-{{ section.id }}"><strong>/ 5</strong></p>
-          {% endunless %}
+          {% endunless %} {% endcomment %}
           {% if stars_count != 0 %}
             <div class="testimonials-stars-{{ section.id }}">
                 {% if stars_icon != blank %}

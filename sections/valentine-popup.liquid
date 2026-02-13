@@ -1,0 +1,374 @@
+
+{%- style -%}
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .popup-content {
+    background: {{ section.settings.background_color }};
+    color: {{ section.settings.text_color }};
+    padding: 3rem 2.5rem;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    border-radius: {{ section.settings.border_radius }}px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+    border: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+  }
+
+  .popup-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2.8rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: {{ section.settings.text_color }};
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    line-height: 1;
+  }
+
+  .popup-close:hover {
+    opacity: 1;
+  }
+
+  .popup-heading {
+    font-size: {{ section.settings.heading_size }}px;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+
+  .popup-message {
+    font-size: {{ section.settings.text_size }}px;
+    margin-bottom: 2rem;
+  }
+
+  .popup-message p {
+    margin: 0 0 1rem;
+  }
+
+  .popup-button {
+    display: inline-block;
+    background: {{ section.settings.button_bg }};
+    color: {{ section.settings.button_text }};
+    padding: 1.2rem 3rem;
+    border-radius: {{ section.settings.button_radius }}px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+  }
+
+  .popup-button:hover {
+    opacity: 0.9;
+    background: {{ section.settings.button_bg_hover }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .popup-content {
+      padding: 2.5rem 1.5rem;
+      width: 95%;
+    }
+    .popup-heading {
+      font-size: {{ section.settings.heading_size | times: 0.8 }}px;
+    }
+    .popup-message {
+      font-size: {{ section.settings.text_size | times: 0.9 }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% if section.settings.enable_popup %}
+  <div id="popup-overlay-{{ section.id }}" class="popup-overlay">
+    <div class="popup-content">
+      <button class="popup-close" aria-label="Close popup">&times;</button>
+      
+      {% if section.settings.title != blank %}
+        <h2 class="popup-heading">{{ section.settings.title }}</h2>
+      {% endif %}
+      
+      <div class="popup-message">
+        {{ section.settings.message }}
+      </div>
+
+      {% if section.settings.button_label != blank %}
+        <a href="{{ section.settings.button_link | default: '#' }}" class="popup-button">
+          {{ section.settings.button_label }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      "use strict";
+      
+      const popup = document.getElementById('popup-overlay-{{ section.id }}');
+      const rememberClose = {{ section.settings.remember_close | json }};
+      const storageKey = 'popup_closed_{{ section.id }}';
+      
+      // Function to show popup
+      function showPopup() {
+        if (!popup) return;
+        
+        // Check if popup should be hidden based on session storage
+        if (rememberClose) {
+          const isClosed = sessionStorage.getItem(storageKey);
+          if (isClosed === 'true') {
+            return; // Don't show popup
+          }
+        }
+        
+        // Show the popup
+        popup.style.display = 'flex';
+      }
+
+      // Show popup after delay
+      const delay = {{ section.settings.delay_time | default: 3 | times: 1000 }};
+      
+      // Wait for DOM to be ready then set timeout
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(showPopup, delay);
+        });
+      } else {
+        setTimeout(showPopup, delay);
+      }
+
+      // Close popup functionality
+      if (popup) {
+        // Close button click handler
+        const closeBtn = popup.querySelector('.popup-close');
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            popup.style.display = 'none';
+            
+            // Set session storage if remember close is enabled
+            if (rememberClose) {
+              try {
+                sessionStorage.setItem(storageKey, 'true');
+              } catch(e) {
+                console.warn('Unable to access sessionStorage');
+              }
+            }
+          });
+        }
+
+        // Close when clicking overlay (outside popup content)
+        popup.addEventListener('click', function(e) {
+          if (e.target === popup) {
+            popup.style.display = 'none';
+            
+            // Set session storage if remember close is enabled
+            if (rememberClose) {
+              try {
+                sessionStorage.setItem(storageKey, 'true');
+              } catch(e) {
+                console.warn('Unable to access sessionStorage');
+              }
+            }
+          }
+        });
+
+        // Close with Escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && popup.style.display === 'flex') {
+            popup.style.display = 'none';
+            
+            // Set session storage if remember close is enabled
+            if (rememberClose) {
+              try {
+                sessionStorage.setItem(storageKey, 'true');
+              } catch(e) {
+                console.warn('Unable to access sessionStorage');
+              }
+            }
+          }
+        });
+      }
+    })();
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Valentine's Order Pause",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Activation"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_popup",
+      "label": "Enable pop-up",
+      "default": false,
+      "info": "Keep unchecked until you are ready to display this message."
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "💕 We're Paused for Valentine's Day 💕"
+    },
+    {
+      "type": "richtext",
+      "id": "message",
+      "label": "Message",
+      "default": "<p>Due to overwhelming demand for Valentine's Day, we are temporarily not accepting new orders. We'll be back soon! Thank you for your love and support.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Notify Me When Available"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link",
+      "info": "Link to 'Notify Me' page or leave empty to just close pop-up."
+    },
+    {
+      "type": "header",
+      "content": "Behavior"
+    },
+    {
+      "type": "range",
+      "id": "delay_time",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "sec",
+      "label": "Delay before pop-up appears",
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "remember_close",
+      "label": "Remember close for the session",
+      "default": true,
+      "info": "Pop-up will not reappear if customer closes it during their visit."
+    },
+    {
+      "type": "header",
+      "content": "Styling"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#ff6b6b"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Corner radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 14,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Message text size",
+      "default": 18
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button background",
+      "default": "#ff6b6b"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_hover",
+      "label": "Button hover background",
+      "default": "#ff5252"
+    },
+    {
+      "type": "color",
+      "id": "button_text",
+      "label": "Button text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Button corner radius",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "Valentine's Order Pause",
+      "category": "Promotional"
+    }
+  ]
+}
+{% endschema %}

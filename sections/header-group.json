@@ -22,6 +22,7 @@
         },
         "message-1": {
           "type": "message",
+          "disabled": true,
           "settings": {
             "icon": "shopify://shop_images/artisan.png",
             "text": "10% Off First Floral Subscription — Code: <strong>WELCOME10</strong>"
@@ -77,6 +78,7 @@
         },
         "message_E3Fkwn": {
           "type": "message",
+          "disabled": true,
           "settings": {
             "icon": "shopify://shop_images/artisan.png",
             "text": "Enjoy 10% off your first purchase — Code: <strong>WELCOME10</strong>"

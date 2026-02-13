@@ -169,21 +169,29 @@
                   {%- render 'button', type: 'submit', content: update_button, style: 'outline' -%}
                 </noscript>
 
-                {% comment %} {% if section.settings.enable_agreement %}
-              <div id="agreementPopup" class="agreement-popup hidden">
-                <div class="agreement-popup__overlay"></div>
+                {% if section.settings.enable_delivery_popup %}
+              <div id="deliveryBillingPopup" class="delivery-popup hidden" aria-hidden="true">
+                <div class="delivery-popup__overlay" data-popup-overlay></div>
 
-                <div class="agreement-popup__content">
-                  <div class="agreement-popup__text">
-                    {{ section.settings.agreement_message }}
+                <div class="delivery-popup__content" role="dialog" aria-modal="true" aria-labelledby="deliveryPopupTitle">
+                  <h2 id="deliveryPopupTitle" class="h4">{{ section.settings.delivery_popup_title }}</h2>
+
+                  <div class="delivery-popup__text">
+                    {{ section.settings.delivery_recipient_text }}
+                    {{ section.settings.delivery_billing_text }}
+                    {{ section.settings.delivery_reminder_text }}
                   </div>
 
-                  <button type="button" id="agreeButton" class="button button--primary">
-                    I Agree
-                  </button>
+                  <div class="delivery-popup__actions h-stack gap-2" style="margin-top:12px;">
+                    <label class="checkbox-inline" style="display:flex;align-items:center;gap:8px;">
+                      <input type="checkbox" id="deliveryPopupDontShow">
+                      <span>{{ section.settings.delivery_dont_show_text }}</span>
+                    </label>
+                    <button type="button" id="deliveryPopupClose" class="button button--primary">{{ section.settings.delivery_button_label }}</button>
+                  </div>
                 </div>
               </div>
-          {% endif %} {% endcomment %}
+          {% endif %}
 
                 {%- assign checkout_button = 'cart.general.checkout' | t -%}
                 {%- render 'button', type: 'submit', content: checkout_button, name: 'checkout' -%}
@@ -278,7 +286,226 @@ button[name="checkout"]:disabled {
   cursor: not-allowed;
 }
 
-</style> {% endcomment %}
+</style>
+{% endcomment %}
+<style>
+  /* Minimalist popup styling to match site aesthetic */
+  .delivery-popup.hidden { display: none; }
+
+  .delivery-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    font-family: inherit;
+  }
+
+  .delivery-popup__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 15, 15, 0.28);
+    backdrop-filter: blur(4px);
+  }
+
+  .delivery-popup__content {
+    position: relative;
+    background: var(--surface, #ffffff);
+    color: var(--text, #0f1720);
+    max-width: 480px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(16, 24, 32, 0.04);
+    box-shadow: 0 8px 24px rgba(16, 24, 32, 0.08);
+    z-index: 1;
+    text-align: left;
+  }
+
+  .delivery-popup__content h2 {
+    margin: 0 0 8px;
+    font-size: 26px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .delivery-popup__text p {
+    margin: 12px 0;
+    color: var(--muted, #000);
+    line-height: 1.45;
+    font-size: 16px;
+}
+
+  .delivery-popup__reminder {
+    margin-top: 10px;
+    color: #b21f2d;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .delivery-popup__actions {
+    display: grid;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .checkbox-inline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted, #475569);
+    font-size: 0.9rem;
+  }
+
+  .checkbox-inline input { width: 16px; height: 16px; }
+
+  #deliveryPopupClose {
+    background: #6a6e49;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: none;
+    border: 1px solid #6a6e49;
+    width: 30%;
+    margin: 0 auto;
+}
+
+  #deliveryPopupClose:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+    border: 1px solid #6a6e49;
+    color: #6a6e49;
+}
+
+  @media (max-width: 480px) {
+    .delivery-popup__content { padding: 16px; border-radius: 10px; }
+    .delivery-popup { padding: 12px; }
+    .delivery-popup__actions { gap: 8px; }
+  }
+</style>
+
+{% comment %} <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var popup = document.getElementById('deliveryBillingPopup');
+    if (!popup) return;
+
+    var closeBtn = document.getElementById('deliveryPopupClose');
+    var dontShowCheckbox = document.getElementById('deliveryPopupDontShow');
+    var overlay = popup.querySelector('[data-popup-overlay]');
+
+    function isHiddenPersisted() {
+      try {
+        return window.localStorage && localStorage.getItem('hideDeliveryPopup') === '1';
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function showPopup() {
+      if (isHiddenPersisted()) return;
+      popup.classList.remove('hidden');
+      popup.setAttribute('aria-hidden', 'false');
+      // focus the close button for keyboard users
+      if (closeBtn) closeBtn.focus();
+    }
+
+    function hidePopup(persist) {
+      popup.classList.add('hidden');
+      popup.setAttribute('aria-hidden', 'true');
+      if (persist && window.localStorage) {
+        try { localStorage.setItem('hideDeliveryPopup', '1'); } catch (e) {}
+      }
+    }
+
+    if (!isHiddenPersisted()) {
+      // show popup on initial load
+      showPopup();
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function () {
+        hidePopup(dontShowCheckbox && dontShowCheckbox.checked);
+      });
+    }
+
+    if (overlay) {
+      overlay.addEventListener('click', function () {
+        hidePopup(dontShowCheckbox && dontShowCheckbox.checked);
+      });
+    }
+
+    // Re-show after AJAX cart updates unless user chose to hide permanently
+    document.addEventListener('cart:updated', function () {
+      showPopup();
+    });
+  });
+</script> {% endcomment %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var popup = document.getElementById('deliveryBillingPopup');
+    if (!popup) return;
+
+    var closeBtn = document.getElementById('deliveryPopupClose');
+    var dontShowCheckbox = document.getElementById('deliveryPopupDontShow');
+    var overlay = popup.querySelector('[data-popup-overlay]');
+    var checkoutBtn = document.querySelector('button[name="checkout"]');
+
+    if (!checkoutBtn) return;
+
+    function isHiddenPersisted() {
+      try {
+        return window.localStorage && localStorage.getItem('hideDeliveryPopup') === '1';
+      } catch (e) {
+        return false;
+      }
+    }
+
+    function showPopup() {
+      popup.classList.remove('hidden');
+      popup.setAttribute('aria-hidden', 'false');
+      closeBtn && closeBtn.focus();
+    }
+
+    function hidePopup(persist) {
+      popup.classList.add('hidden');
+      popup.setAttribute('aria-hidden', 'true');
+
+      if (persist && window.localStorage) {
+        try { localStorage.setItem('hideDeliveryPopup', '1'); } catch (e) {}
+      }
+
+      // ✅ continue checkout after popup confirmation
+      checkoutBtn.closest('form').submit();
+    }
+
+    /* 🔹 Intercept checkout click */
+    checkoutBtn.addEventListener('click', function (e) {
+      if (isHiddenPersisted()) return; // allow normal checkout
+
+      e.preventDefault(); // stop checkout
+      showPopup();
+    });
+
+    /* 🔹 Popup actions */
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function () {
+        hidePopup(dontShowCheckbox && dontShowCheckbox.checked);
+      });
+    }
+
+    if (overlay) {
+      overlay.addEventListener('click', function () {
+        hidePopup(dontShowCheckbox && dontShowCheckbox.checked);
+      });
+    }
+  });
+</script>
+
 {% schema %}
 {
   "name": "t:sections.main_cart.name",
@@ -323,17 +550,47 @@ button[name="checkout"]:disabled {
       "default": true
     },
     {
-      "type": "richtext",
-      "id": "agreement_message",
-      "label": "Agreement Message",
-      "default": "<p>I agree to the terms and conditions.</p>"
-    },
-    {
       "type": "checkbox",
-      "id": "enable_agreement",
-      "label": "Enable agreement checkbox",
+      "id": "enable_delivery_popup",
+      "label": "Show delivery/billing popup",
       "default": true
     },
+    {
+      "type": "text",
+      "id": "delivery_popup_title",
+      "label": "Popup title",
+      "default": "Important: Delivery vs Billing"
+    },
+    {
+      "type": "richtext",
+      "id": "delivery_recipient_text",
+      "label": "Recipient (Delivery Details) text",
+      "default": "<p><strong>Recipient (Delivery Details)</strong> — Who will receive the flowers and where. Enter the recipient's full name and the complete delivery address so the flowers arrive at the right place.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "delivery_billing_text",
+      "label": "Billing (Your Details) text",
+      "default": "<p><strong>Billing (Your Details)</strong> — The person paying and their billing address. This is used for payment and receipts and may differ from the delivery address.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "delivery_reminder_text",
+      "label": "Reminder text",
+      "default": "<p><strong>Reminder:</strong> Please double-check the delivery address to avoid incorrect delivery.</p>"
+    },
+    {
+      "type": "text",
+      "id": "delivery_button_label",
+      "label": "Button label",
+      "default": "Got it"
+    },
+    {
+      "type": "text",
+      "id": "delivery_dont_show_text",
+      "label": "Don't show again label",
+      "default": "Don't show again"
+    }
   ],
   "blocks": [
     {
@@ -342,3 +599,18 @@ button[name="checkout"]:disabled {
   ]
 }
 {% endschema %}
+
+{% comment %} 
+ 
+    {
+      "type": "checkbox",
+      "id": "enable_agreement",
+      "label": "Enable Popup",
+      "default": true
+    },
+    {
+  "type": "richtext",
+  "id": "agreement_message",
+  "label": "Agreement Message",
+  "default": "<p>I agree to the terms and conditions.</p>"
+}, {% endcomment %}

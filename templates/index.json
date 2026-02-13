@@ -29,8 +29,8 @@
           "type": "button",
           "settings": {
             "style": "solid",
-            "text": "Find Your Perfect Flower",
-            "url": "shopify://collections/all",
+            "text": "Explore Valentine’s Collection",
+            "url": "shopify://collections/valentine",
             "background": "#6a6e49",
             "text_color": "#ffffff"
           }
