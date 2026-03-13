@@ -536,7 +536,34 @@ only way to do it on Shopify right now.
 }
 @media (max-width: 600px) {
   .product-review-slider-wrapper {
-    padding: 15px 4px;
+    {% comment %} padding: 15px 4px; {% endcomment %}
+  }
+  .product-review-slider .gallery-slider-card{
+    align-items: flex-start;
+  }
+  .product-review-slider .gallery-testimonial-content p{
+    font-size: 12px;
+  }
+  .review-stars.slider-stars span{
+    font-size: 14px !important;
+  }
+  .review-stars.slider-stars{
+    margin-top: 0px !important;
+  }
+  .product-review-slider .product-review-slider__avatar img, .product-review-slider .slider-avatar img {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px;
+    min-height: 60px;
+  }
+  .product-review-slider .product-review-slider__avatar{
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    min-height: 60px;
+  }
+  .product-review-slider .gallery-slider-card{
+    gap: 10px;
   }
 }
 </style>
