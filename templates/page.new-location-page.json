@@ -31,6 +31,7 @@
             "title": "<strong>Flower Shops in Hermosa Beach CA | Same-Day Fresh Floral Delivery</strong>",
             "description": "",
             "heading_size": "h2",
+            "heading_tag": "h1",
             "mobile_text_position": "place-self-center-start text-start",
             "desktop_text_position": "sm:place-self-center sm:text-center",
             "content_max_width": 1200,

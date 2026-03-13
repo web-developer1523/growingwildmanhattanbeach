@@ -2103,6 +2103,10 @@ height-observer.collection-toolbar.full-bleed {
 }
 
 @media (max-width: 767px) {
+
+    .header__secondary-nav {
+        gap: 4px !important;
+    }
     .cst-new-best-sellings-pro .price-button {
     font-family: CooperBT-Light;
     font-size: 18px;
@@ -2315,6 +2319,15 @@ body .timer-heading {
 }
 
 }
+
+
+@media (max-width: 440px) { 
+.header {
+column-gap: 0.8rem !important;
+grid-template-columns: auto 1fr 1fr;
+}
+}
+
 
 @media (max-width: 425px) {
     .cst-new-home-banner .content .prose .h2 {

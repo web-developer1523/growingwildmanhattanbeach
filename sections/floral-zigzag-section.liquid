@@ -29,6 +29,17 @@
       "id": "top_sub",
       "label": "Tiny Top Label",
       "default": "OVERVIEW"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Plan My Event Florals"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
     }
   ],
   "blocks": [
@@ -121,7 +132,14 @@
 {% style %}
   /* UPDATED: Using static weights for better compatibility */
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap');
-
+  .fs-btnbtn2 {
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+}
+.getinbtn {
+    text-align: center;
+}
   .fzz-section {
     background-color: {{ section.settings.bg_color }};
     padding: 80px 20px;
@@ -262,6 +280,12 @@
 
   /* Mobile Responsive */
   @media (max-width: 768px) {
+    .getinbtn{
+      margin-top:-70px;
+    }
+    .fs-btnbtn2 {
+      width:100%;
+    }
     .fzz-main-title { font-size: 36px; }
     
     .fzz-row, 
@@ -327,6 +351,10 @@
 
       </div>
     {% endfor %}
-
+    <div class="getinbtn">
+    {% if section.settings.btn_link != blank %}
+      <a href="{{ section.settings.btn_link }}" class="fs-btn fs-btnbtn2">{{ section.settings.btn_text }}</a>
+    {% endif %}
+    </div>
   </div>
 </div>

@@ -28,8 +28,8 @@
         "badge_text": "TOP-RATED EVENT FLORALS",
         "title": "Florals That Make Moments Last",
         "description": "From weddings to milestone parties, our handcrafted arrangements turn any celebration into a picture-perfect memory.",
-        "btn_text": "",
-        "btn_link": "",
+        "btn_text": "Get in touch",
+        "btn_link": "/pages/wedding?div#shopify-section-template--20789533868286__contact_booking_section_mHrKjV",
         "sub_note": "Same-day delivery & full event setup available",
         "review_image": "shopify://shop_images/Customer_Avatar.png",
         "review_name": "Casey",
@@ -117,7 +117,9 @@
         "bg_color": "#6b7051",
         "text_color": "#ffffff",
         "border_color": "#ffffff",
-        "title": "Flowers for Every Kind of\nCelebration"
+        "title": "Flowers for Every Kind of\nCelebration",
+        "btn_text": "Get in touch",
+        "btn_link": "/pages/wedding?div#shopify-section-template--20789533868286__contact_booking_section_mHrKjV"
       }
     },
     "floral_zigzag_section_jKT4X3": {
@@ -170,7 +172,9 @@
         "bg_color": "#faf8f5",
         "text_color": "#1a1a1a",
         "main_heading": "Florals that make every celebration unforgettable",
-        "top_sub": "OVERVIEW"
+        "top_sub": "OVERVIEW",
+        "btn_text": "Get in touch",
+        "btn_link": "/pages/wedding?div#shopify-section-template--20789533868286__contact_booking_section_mHrKjV"
       }
     },
     "floral_why_us_section_jAAWyx": {
@@ -382,6 +386,18 @@
         "pause_hover": true,
         "direction": "normal"
       }
+    },
+    "custom_liquid_aUHJyx": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom_liquid.presets.custom_liquid.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<script type=\"application/ld+json\">\n{\n\"@context\": \"https://schema.org\",\n\"@type\": \"Service\",\n\"serviceType\": \"wedding flower arrangementsmanhattan beach, wedding floral arrangements manhattan beach, wedding flower bouquets, wedding flower store manhattan beach, unique wedding flower bouquets manhattan beach, fresh flower wedding bouquet manhattan beach, \",\n\"Image\": \"https://growingwildmanhattanbeach.com/cdn/shop/files/Florals_That_Make_Moments_Last_4.png?v=1765198497&width=1200\",\n\"url\": \"https://growingwildmanhattanbeach.com/pages/wedding\",\n\"areaServed\": {\n\"@type\": \"Place\",\n\"name\": \"manhattan beach ca\",\n\"geo\": {\n\"@type\": \"GeoCoordinates\",\n\"latitude\": 33.8872777,\n\n\"longitude\": -118.4104324\n}\n}\n}\n</script>",
+        "text_alignment": "center"
+      }
     }
   },
   "order": [
@@ -394,6 +410,7 @@
     "testimonial_carousel_y9ipre",
     "effortless_process_section_eacYk4",
     "contact_booking_section_mHrKjV",
-    "text_marquee_section_k7UKad"
+    "text_marquee_section_k7UKad",
+    "custom_liquid_aUHJyx"
   ]
 }

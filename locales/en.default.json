@@ -481,11 +481,11 @@
         "shipping_address": "Ship address ( Recipient) "
       },
       "shipping": {
-        "delivery_title": "Recipient Name and Receipient Address - Where we will deliver the flowers. Enter the recipient's name and delivery address.",
+        "delivery_title": "RECIPIENT (DELIVERY DETAILS) This is where we will deliver the flowers. Please enter the recipient’s full name and complete delivery address to ensure accurate and timely delivery.",
         "shipping_line_phone": "Enter Recipient Number"
       },
       "payment": {
-        "billing_address_title": "Billing Address - Your contact information. Enter your own name, address, and phone number for order confirmation."
+        "billing_address_title": "BILLING DETAILS - Your Information (Person Paying) Enter your name, billing address, and phone number. This information is used to process your payment and send your order confirmation."
       },
       "payment_summary": {
         "billing_address_title": "Billing address - Your contact information."

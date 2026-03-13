@@ -15,8 +15,9 @@
         "heading_THq94G": {
           "type": "heading",
           "settings": {
-            "text": "Trusted local florist for over 30 years.",
-            "heading_tag": "h2"
+            "text": "Trusted local florist <br>for over 30 years.",
+            "heading_tag": "h1",
+            "html_tag": "h1"
           }
         },
         "richtext_b8yKbF": {
@@ -29,8 +30,8 @@
           "type": "button",
           "settings": {
             "style": "solid",
-            "text": "Explore Valentine’s Collection",
-            "url": "shopify://collections/valentine",
+            "text": "Find Your Perfect Flower",
+            "url": "shopify://collections/all",
             "background": "#6a6e49",
             "text_color": "#ffffff"
           }
@@ -78,6 +79,7 @@
             "title": "Celebrate the Holidays with Flowers",
             "description": "",
             "heading_size": "h2",
+            "heading_tag": "h2",
             "mobile_text_position": "place-self-center-start text-start",
             "desktop_text_position": "sm:place-self-center-start sm:text-start",
             "content_max_width": 400,
@@ -1000,7 +1002,7 @@
       "name": "Services cards",
       "settings": {
         "custom_class": "cst-service",
-        "heading": "Services We Offer"
+        "heading": "Services We Offer in Manhattan Beach"
       }
     },
     "our_purposeful_mission_j9H8Yx": {
@@ -1283,15 +1285,15 @@
         "question_RcncqF": {
           "type": "question",
           "settings": {
-            "question": "Can I get same-day delivery if I order before 1 PM?",
-            "answer": "<h3></h3><p>Yes! If you place your order before 1 PM, we can deliver your flowers the same day. We take pride in ensuring your arrangements arrive quickly and beautifully. </p>"
+            "question": "Can I get same-day delivery in Manhattan Beach if I order before 1 PM?",
+            "answer": "<h3></h3><p>Yes! If you place your order before 1 PM, we can deliver your flowers the same day in Manhattan Beach. We take pride in ensuring your arrangements arrive quickly and beautifully. </p>"
           }
         },
         "question_Eq8EyK": {
           "type": "question",
           "settings": {
             "question": "I don’t know much about flowers. Can you help me choose the right one?",
-            "answer": "<p>Of course! Whether you have a specific idea or need guidance, we’re happy to help you choose the perfect arrangement for any occasion. Just let us know what you’re looking for, and we’ll take care of the rest. You can always reach us at <strong>310-545-4432</strong> for assistance.</p>"
+            "answer": "<p>Of course! Whether you have a specific idea or need guidance, we’re happy to help you choose the perfect arrangement for any occasion. Just let us know what you’re looking for, and we’ll take care of the rest. You can always reach us at <a href=\"tel:310-545-4432\" title=\"tel:310-545-4432\"><strong>310-545-4432</strong></a> for assistance.</p>"
           }
         },
         "question_pRbcLc": {
@@ -1304,8 +1306,8 @@
         "question_Cwkapd": {
           "type": "question",
           "settings": {
-            "question": "Do you offer custom designs?",
-            "answer": "<h3></h3><p>Yes, we love creating custom designs! If you have something special in mind or want to tailor an arrangement to your needs, let us know, and we’ll craft something unique just for you. Feel free to call us at <strong>310-545-4432</strong> to discuss your ideas.</p>"
+            "question": "Do you offer custom designs in Manhattan Beach ?",
+            "answer": "<h3></h3><p>Yes, we love creating custom designs for Manhattan beach people If you have something special in mind or want to tailor an arrangement to your needs, let us know, and we’ll craft something unique just for you. Feel free to call us at <a href=\"tel:310-545-4432\" title=\"tel:310-545-4432\"><strong>310-545-4432</strong></a> to discuss your ideas.</p>"
           }
         },
         "question_kxfyAd": {
@@ -1325,8 +1327,8 @@
         "question_nAqwDq": {
           "type": "question",
           "settings": {
-            "question": "<strong>What types of flower arrangements do you offer?</strong>",
-            "answer": "<p><br/> We offer a wide range of flower arrangements including birthday, wedding, anniversary, sympathy, and seasonal designs, all created with fresh, high-quality flowers.<br/><br/></p>"
+            "question": "<strong>What types of flower arrangements do you offer in Manhattan Beach?</strong>",
+            "answer": "<p><br/> We offer a wide range of flower arrangements in Manhattan Beach including birthday, wedding, anniversary, sympathy, and seasonal designs, all created with fresh, high-quality flowers.<br/><br/></p>"
           }
         }
       },
@@ -1462,6 +1464,18 @@
       "disabled": true,
       "name": "Welcome popup",
       "settings": {}
+    },
+    "custom_liquid_GMpyEy": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom_liquid.presets.custom_liquid.name",
+      "settings": {
+        "color_scheme": "",
+        "separate_section_with_border": false,
+        "remove_vertical_spacing": false,
+        "remove_horizontal_spacing": false,
+        "liquid": "<script type=\"application/ld+json\">\n{\n\"@context\": \"https://schema.org\",\n\"@type\": \"Service\",\n\"serviceType\": \"Flower Arrangements, Floral Arrangements, Fresh Flower Delivery, Flower Arrangements Delivery, Floral Arrangements Delivery, Fresh Floral Arrangements, Fresh Flower Arrangements, Flower Arrangements and Delivery Shop, Fresh Flower Arrangements and Delivery, Flower and Floral Arrangements, \",\n\"Image\": \"https://growingwildmanhattanbeach.com/cdn/shop/files/IMG_2153.png?v=1749544936&width=1600\",\n\"url\": \"https://growingwildmanhattanbeach.com/\",\n\"areaServed\": {\n\"@type\": \"Place\",\n\"name\": \"manhattan beach ca\",\n\"geo\": {\n\"@type\": \"GeoCoordinates\",\n\"latitude\": 33.8872777,\n\n\"longitude\": -118.4104324\n}\n}\n}\n</script>",
+        "text_alignment": "center"
+      }
     }
   },
   "order": [
@@ -1484,6 +1498,7 @@
     "testimonials_v2_8RhNCB",
     "faq_ECeBfU",
     "scrolling_content_WizCKA",
-    "blocks_hewVYx"
+    "blocks_hewVYx",
+    "custom_liquid_GMpyEy"
   ]
 }

@@ -1071,6 +1071,25 @@
       "image_zoom_category_info": "Le zoom n'affiche ni les vidéos ni les modèles 3D",
       "image_zoom_enable": "Activer",
       "image_zoom_max_level": "Zoom maximum",
+      "review_slider_header": "Slider d'avis",
+      "review_slider_paragraph": "Affichez jusqu'à 5 avis clients dans un slider sous la galerie. Remplissez les champs pour chaque avis.",
+      "review_slider_rating": "Note",
+      "review_slider_verified": "Achat vérifié",
+      "review_slider_review_1_text": "Avis 1 – Texte",
+      "review_slider_review_1_name": "Avis 1 – Nom",
+      "review_slider_review_1_image": "Avis 1 – Photo",
+      "review_slider_review_2_text": "Avis 2 – Texte",
+      "review_slider_review_2_name": "Avis 2 – Nom",
+      "review_slider_review_2_image": "Avis 2 – Photo",
+      "review_slider_review_3_text": "Avis 3 – Texte",
+      "review_slider_review_3_name": "Avis 3 – Nom",
+      "review_slider_review_3_image": "Avis 3 – Photo",
+      "review_slider_review_4_text": "Avis 4 – Texte",
+      "review_slider_review_4_name": "Avis 4 – Nom",
+      "review_slider_review_4_image": "Avis 4 – Photo",
+      "review_slider_review_5_text": "Avis 5 – Texte",
+      "review_slider_review_5_name": "Avis 5 – Nom",
+      "review_slider_review_5_image": "Avis 5 – Photo",
       "blocks": {
         "vendor": {
           "name": "Marque"
@@ -1254,6 +1273,15 @@
           "name": "Plus d'information",
           "instructions": "Sur desktop, affiche un lien qui scroll vers les informations sous la galerie d'image. Si aucun contenu supplémentaire n'existe, ce bouton est caché automatiquement.",
           "text": "Texte"
+        },
+        "product_review_slider": {
+          "name": "Slider d'avis",
+          "instructions": "Ajoutez ce bloc plusieurs fois pour plusieurs avis (ex. 4–5 diapos). Chaque bloc = un avis dans le slider.",
+          "review_text": "Texte de l'avis",
+          "reviewer_name": "Nom du client",
+          "reviewer_image": "Photo du client",
+          "review_rating": "Note",
+          "review_verified": "Achat vérifié"
         }
       }
     },

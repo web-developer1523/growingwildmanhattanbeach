@@ -1071,6 +1071,25 @@
       "image_zoom_category_info": "Zoom won't show video or 3D models",
       "image_zoom_enable": "Enable",
       "image_zoom_max_level": "Max zoom level",
+      "review_slider_header": "Review slider",
+      "review_slider_paragraph": "Show up to 5 customer reviews in a slider below the gallery. Fill in the fields for each review you want to display.",
+      "review_slider_rating": "Rating",
+      "review_slider_verified": "Verified purchase",
+      "review_slider_review_1_text": "Review 1 – Review text",
+      "review_slider_review_1_name": "Review 1 – Reviewer name",
+      "review_slider_review_1_image": "Review 1 – Reviewer image",
+      "review_slider_review_2_text": "Review 2 – Review text",
+      "review_slider_review_2_name": "Review 2 – Reviewer name",
+      "review_slider_review_2_image": "Review 2 – Reviewer image",
+      "review_slider_review_3_text": "Review 3 – Review text",
+      "review_slider_review_3_name": "Review 3 – Reviewer name",
+      "review_slider_review_3_image": "Review 3 – Reviewer image",
+      "review_slider_review_4_text": "Review 4 – Review text",
+      "review_slider_review_4_name": "Review 4 – Reviewer name",
+      "review_slider_review_4_image": "Review 4 – Reviewer image",
+      "review_slider_review_5_text": "Review 5 – Review text",
+      "review_slider_review_5_name": "Review 5 – Reviewer name",
+      "review_slider_review_5_image": "Review 5 – Reviewer image",
       "blocks": {
         "vendor": {
           "name": "Vendor"
@@ -1254,6 +1273,15 @@
           "name": "More information",
           "instructions": "On desktop, display a link that scroll to extra information below image gallery. If no extra information is specified, this block is automatically hidden.",
           "text": "Text"
+        },
+        "product_review_slider": {
+          "name": "Review slider",
+          "instructions": "Add this block multiple times for multiple reviews (e.g. 4–5 slides). Each block is one review in the slider.",
+          "review_text": "Review text",
+          "reviewer_name": "Reviewer name",
+          "reviewer_image": "Reviewer image",
+          "review_rating": "Rating",
+          "review_verified": "Verified purchase"
         }
       }
     },

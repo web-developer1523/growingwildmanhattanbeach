@@ -138,7 +138,10 @@
               {%- endif -%}
 
               {%- if block.settings.title != blank -%}
-                <p class="{{ block.settings.heading_size }}">{{ block.settings.title }}</p>
+                {%- assign heading_tag = block.settings.heading_tag | default: 'h2' -%}
+                <{{ heading_tag }} class="{{ block.settings.heading_size }}">
+                  {{ block.settings.title }}
+                </{{ heading_tag }}>
               {%- endif -%}
 
               {%- comment -%} START: THIS IS THE NEW CODE TO ADD THE DESCRIPTION {%- endcomment -%}
@@ -427,6 +430,21 @@
         },
         {
           "type": "select",
+          "id": "heading_tag",
+          "label": "Heading Tag",
+          "options": [
+            { "value": "h1", "label": "H1" },
+            { "value": "h2", "label": "H2" },
+            { "value": "h3", "label": "H3" },
+            { "value": "h4", "label": "H4" },
+            { "value": "h5", "label": "H5" },
+            { "value": "h6", "label": "H6" },
+            { "value": "p", "label": "Paragraph" }
+          ],
+          "default": "h2"
+        },
+        {
+          "type": "select",
           "id": "mobile_text_position",
           "label": "t:global.position.mobile_content_position",
           "options": [
@@ -695,6 +713,41 @@
           "id": "description",
           "label": "Description",
           "default": "<p>Use this space to tell a compelling story.</p>"
+        },
+        {
+          "type": "select",
+          "id": "heading_size",
+          "label": "Heading Size",
+          "options": [
+            {
+              "value": "h1",
+              "label": "Large"
+            },
+            {
+              "value": "h2",
+              "label": "Medium"
+            },
+            {
+              "value": "h3",
+              "label": "Small"
+            }
+          ],
+          "default": "h1"
+        },
+        {
+          "type": "select",
+          "id": "heading_tag",
+          "label": "Heading Tag",
+          "options": [
+            { "value": "h1", "label": "H1" },
+            { "value": "h2", "label": "H2" },
+            { "value": "h3", "label": "H3" },
+            { "value": "h4", "label": "H4" },
+            { "value": "h5", "label": "H5" },
+            { "value": "h6", "label": "H6" },
+            { "value": "p", "label": "Paragraph" }
+          ],
+          "default": "h2"
         },
         {
           "type": "select",

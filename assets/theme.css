@@ -4728,12 +4728,13 @@ product-rerender {
   grid-area: logo;
   justify-self: start;
   position: relative;
+  padding-left: 33px;
 }
 
 .header__logo-image {
   width: var(--header-logo-width);
-  max-width: 100%;
-  height: auto;
+  max-width: 140px;
+  height: 28px;
 }
 
 .header__logo-image:where(:not(:only-of-type)) {

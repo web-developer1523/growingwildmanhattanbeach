@@ -18,7 +18,7 @@
         "show_shipping_text": false,
         "show_accelerated_buttons": false,
         "show_shipping_estimator": false,
-        "enable_delivery_popup": true,
+        "enable_delivery_popup": false,
         "delivery_popup_title": "Important: Delivery vs. Billing on the Next Checkout Page",
         "delivery_recipient_text": "<p><strong>Recipient (Delivery Details)</strong> — Who will receive the flowers and where. Please enter the recipient’s full name and complete delivery address to ensure the flowers arrive at the correct location.</p>",
         "delivery_billing_text": "<p><strong>Billing (Your Details)</strong> — The person paying and their billing address. This information is used for payment and receipts and may differ from the delivery address.</p>",

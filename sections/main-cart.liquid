@@ -445,7 +445,9 @@ button[name="checkout"]:disabled {
     });
   });
 </script> {% endcomment %}
+
 <script>
+  var checkoutUrl = "/checkout";
   document.addEventListener('DOMContentLoaded', function () {
     var popup = document.getElementById('deliveryBillingPopup');
     if (!popup) return;
@@ -453,9 +455,13 @@ button[name="checkout"]:disabled {
     var closeBtn = document.getElementById('deliveryPopupClose');
     var dontShowCheckbox = document.getElementById('deliveryPopupDontShow');
     var overlay = popup.querySelector('[data-popup-overlay]');
+    var checkoutForm = document.querySelector('form.cart-page');
     var checkoutBtn = document.querySelector('button[name="checkout"]');
+    
+    if (!checkoutForm || !checkoutBtn) return;
 
-    if (!checkoutBtn) return;
+    // Store the original form action
+    var originalFormAction = checkoutForm.action;
 
     function isHiddenPersisted() {
       try {
@@ -471,40 +477,105 @@ button[name="checkout"]:disabled {
       closeBtn && closeBtn.focus();
     }
 
-    function hidePopup(persist) {
+    function hidePopup() {
       popup.classList.add('hidden');
       popup.setAttribute('aria-hidden', 'true');
-
-      if (persist && window.localStorage) {
-        try { localStorage.setItem('hideDeliveryPopup', '1'); } catch (e) {}
-      }
-
-      // ✅ continue checkout after popup confirmation
-      checkoutBtn.closest('form').submit();
     }
 
-    /* 🔹 Intercept checkout click */
-    checkoutBtn.addEventListener('click', function (e) {
-      if (isHiddenPersisted()) return; // allow normal checkout
-
-      e.preventDefault(); // stop checkout
+    // Completely override the form submission
+    checkoutForm.addEventListener('submit', function (e) {
+      // If popup is permanently hidden, allow normal submission
+      if (isHiddenPersisted()) {
+        return true;
+      }
+      
+      // Always prevent default form submission
+      e.preventDefault();
+      
+      // Show the popup
       showPopup();
+      
+      return false;
     });
 
-    /* 🔹 Popup actions */
+    // Handle checkout button click separately
+    checkoutBtn.addEventListener('click', function (e) {
+      // If popup is permanently hidden, let the form submit normally
+      if (isHiddenPersisted()) {
+        return true;
+      }
+      
+      // Prevent default
+      e.preventDefault();
+      e.stopPropagation();
+      
+      // Show popup
+      showPopup();
+      
+      return false;
+    });
+
+    // Handle close button click
     if (closeBtn) {
       closeBtn.addEventListener('click', function () {
-        hidePopup(dontShowCheckbox && dontShowCheckbox.checked);
+        // Save preference if checkbox is checked
+        if (dontShowCheckbox && dontShowCheckbox.checked && window.localStorage) {
+          try { 
+            localStorage.setItem('hideDeliveryPopup', '1'); 
+          } catch (e) {}
+        }
+        
+        // Hide popup
+        hidePopup();
+        
+        // Now manually submit the form to checkout
+        // Use the original form action
+        window.location.href = checkoutUrl;
       });
     }
 
+    // Handle overlay click
     if (overlay) {
       overlay.addEventListener('click', function () {
-        hidePopup(dontShowCheckbox && dontShowCheckbox.checked);
+        hidePopup();
       });
     }
+
+    // Prevent any other click events on the form from submitting
+    checkoutForm.addEventListener('click', function (e) {
+      // If the clicked element is not the checkout button and not within the popup
+      if (!e.target.closest('button[name="checkout"]') && !e.target.closest('.delivery-popup')) {
+        return;
+      }
+      
+      // If it's the checkout button and popup is not permanently hidden
+      if (e.target.closest('button[name="checkout"]') && !isHiddenPersisted()) {
+        e.preventDefault();
+        e.stopPropagation();
+        showPopup();
+        return false;
+      }
+    }, true); // Use capture to ensure we get the event first
+
+    // Disable any JavaScript that might be auto-submitting the form
+    var originalSubmit = checkoutForm.submit;
+    checkoutForm.submit = function() {
+      // Only allow submit if popup is permanently hidden
+      if (isHiddenPersisted()) {
+        return originalSubmit.apply(this, arguments);
+      }
+      console.log('Form submission blocked until popup is acknowledged');
+      showPopup();
+    };
+
+    // Reset on cart updates
+    document.addEventListener('cart:updated', function () {
+      // No need to do anything special
+    });
+
   });
 </script>
+
 
 {% schema %}
 {

@@ -76,6 +76,12 @@
             "text": "Want your arrangement today? Same-day delivery ends soon!"
           }
         },
+        "message_Meerbk": {
+          "type": "message",
+          "settings": {
+            "text": "Free Shipping for orders over $150."
+          }
+        },
         "message_E3Fkwn": {
           "type": "message",
           "disabled": true,
@@ -87,6 +93,7 @@
       },
       "block_order": [
         "message_with_timer_r6paVx",
+        "message_Meerbk",
         "message_E3Fkwn"
       ],
       "name": "Timer bar",
@@ -120,6 +127,10 @@
         "mega_menu_pXybxG"
       ],
       "settings": {
+        "show_call_to_order": true,
+        "call_icon_image": "shopify://shop_images/by_phone.svg",
+        "call_label": "CALL-TO-ORDER",
+        "call_number": "(310) 545-4432",
         "color_scheme": "",
         "enable_sticky": true,
         "hide_on_scroll": false,

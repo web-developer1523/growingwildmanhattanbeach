@@ -13,6 +13,46 @@
     z-index: 4;
   }
 
+.call-to-order {
+  display: flex;
+  align-items: center;
+}
+
+/* Desktop full layout */
+.call-desktop {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.call-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+/* Hide mobile icon by default */
+.call-icon-mobile {
+  display: none;
+}
+
+/* 🔹 Below 1239px → icon only */
+@media screen and (max-width: 1239px) {
+
+  .call-desktop {
+    display: none;
+  }
+
+  .call-icon-mobile {
+    display: block;
+  }
+
+  .call-icon-mobile img {
+    width: 22px;
+    height: auto;
+  }
+}
+
   @media screen and (min-width: 700px) {
     #shopify-section-{{ section.id }} {
       --header-padding-block: {% if section.settings.reduce_padding %}1.2rem{% else %}1.6rem{% endif %};
@@ -90,9 +130,9 @@
     {%- endcapture -%}
 
     {%- if request.page_type == 'index' -%}
-      <h1 class="header__logo">
+      <p class="header__logo">
         <a href="{{ routes.root_url }}">{{ logo_content }}</a>
-      </h1>
+      </p>
     {% else %}
       <a href="{{ routes.root_url }}" class="header__logo">{{ logo_content }}</a>
     {% endif %}
@@ -199,7 +239,52 @@
     --------------------------------------------------------------------------------------------------------------------
     {%- endcomment -%}
 
+ 
+
     <nav class="header__secondary-nav" aria-label="{{ 'header.general.secondary_navigation' | t | escape }}">
+      {% if section.settings.show_call_to_order %}
+        <div class="call-to-order">
+
+          <!-- Mobile Clickable Icon -->
+          <a href="tel:{{ section.settings.call_number | remove: ' ' }}" class="call-icon-mobile">
+            {% if section.settings.call_icon_image != blank %}
+              <img 
+                src="{{ section.settings.call_icon_image | image_url: width: 40 }}" 
+                alt="Call"
+                width="22"
+                height="22"
+                loading="lazy"
+              >
+            {% endif %}
+          </a>
+
+          <!-- Desktop Layout -->
+          <div class="call-desktop">
+            {% if section.settings.call_icon_image != blank %}
+              <span class="phone-icon">
+                <img 
+                  src="{{ section.settings.call_icon_image | image_url: width: 40 }}" 
+                  alt="Call"
+                  width="20"
+                  height="20"
+                  loading="lazy"
+                >
+              </span>
+            {% endif %}
+
+            <div class="call-text">
+              <span class="label">
+                {{ section.settings.call_label }}
+              </span>
+
+              <a href="tel:{{ section.settings.call_number | remove: ' ' }}">
+                {{ section.settings.call_number }}
+              </a>
+            </div>
+          </div>
+
+        </div>
+      {% endif %}
       {%- liquid
         if section.settings.show_country_selector and localization.available_countries.size > 1
           assign show_country_selector = true
@@ -295,7 +380,7 @@
 <style>
   @media only screen and (max-width: 991px) {
     .header__secondary-nav{
-      gap:8px !important;
+      gap:4px !important;
     }
     .header{
       column-gap: 0.8rem !important;
@@ -309,6 +394,30 @@
   "class": "shopify-section--header",
   "tag": "header",
   "settings": [
+
+    {
+        "type": "checkbox",
+        "id": "show_call_to_order",
+        "label": "Enable Call To Order",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "call_icon_image",
+        "label": "Call Icon Image"
+      },
+      {
+        "type": "text",
+        "id": "call_label",
+        "label": "Call Label Text",
+        "default": "CALL-TO-ORDER"
+      },
+      {
+        "type": "text",
+        "id": "call_number",
+        "label": "Phone Number",
+        "default": "+1 833 773 3866"
+      },
     {
       "type": "color_scheme",
       "id": "color_scheme",

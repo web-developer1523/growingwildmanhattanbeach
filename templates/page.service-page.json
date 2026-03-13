@@ -24,13 +24,13 @@
           "type": "collection",
           "settings": {
             "color_scheme": "",
-            "collection": "arrangements",
+            "collection": "sympathy-and-funeral",
             "expand_collection": false,
             "content_position": "place-self-end-start text-start",
             "subheading": "",
-            "title": "Arrangements",
+            "title": "Sympathy and Funeral",
             "button_text": "View products",
-            "button_link": "shopify://collections/arrangements",
+            "button_link": "shopify://collections/sympathy-and-funeral",
             "button_style": "solid",
             "overlay_color": "#000000",
             "overlay_opacity": 30

@@ -33,6 +33,17 @@
       "id": "title",
       "label": "Main Heading",
       "default": "Flowers for Every Kind of\nCelebration"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Plan My Event Florals"
+    },
+    {
+      "type": "url",
+      "id": "btn_link",
+      "label": "Button Link"
     }
   ],
   "blocks": [
@@ -99,7 +110,12 @@
 
 {% style %}
   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400&display=swap');
-
+  .fs-btnbtn {
+    background: #fff;
+    color: #6b7051;
+    width: 20%;
+    margin: 0 auto;
+}
   .sag-section {
     background-color: {{ section.settings.bg_color }};
     padding: 80px 20px;
@@ -261,6 +277,11 @@
         margin-right: auto;
     }
   }
+  @media (max-width: 768px) {
+    .fs-btnbtn{
+      width:100%;
+    }
+  }
 {% endstyle %}
 
 <div class="sag-section">
@@ -308,6 +329,9 @@
         {% endif %}
 
       {% endfor %}
+      {% if section.settings.btn_link != blank %}
+        <a href="{{ section.settings.btn_link }}" class="fs-btn fs-btnbtn">{{ section.settings.btn_text }}</a>
+      {% endif %}
     </div>
 
   </div>

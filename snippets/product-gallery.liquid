@@ -366,5 +366,246 @@ only way to do it on Shopify right now.
     {% endif %}
   {% endif %}
 {% endfor %}
+{% comment %} Product Review Slider Start {% endcomment %}
+{% assign review_slider_has_slides = false %}
+{% for i in (1..5) %}
+  {% assign review_text_key = 'review_' | append: i | append: '_text' %}
+  {% assign review_name_key = 'review_' | append: i | append: '_name' %}
+  {% assign rt = section.settings[review_text_key] %}
+  {% assign rn = section.settings[review_name_key] %}
+  {% if rt != blank or rn != blank %}
+    {% assign review_slider_has_slides = true %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+{% if review_slider_has_slides %}
+<div class="product-review-slider-wrapper">
+  <div class="product-review-slider" data-review-slider role="region" aria-label="{{ 'accessibility.carousel' | t | default: 'Review slider' }}">
+    <div class="product-review-slider__track">
+    {% for i in (1..5) %}
+      {% assign review_text_key = 'review_' | append: i | append: '_text' %}
+      {% assign review_name_key = 'review_' | append: i | append: '_name' %}
+      {% assign review_image_key = 'review_' | append: i | append: '_image' %}
+      {% assign review_rating_key = 'review_' | append: i | append: '_rating' %}
+      {% assign review_verified_key = 'review_' | append: i | append: '_verified' %}
+      {% assign review_text = section.settings[review_text_key] %}
+      {% assign reviewer_name = section.settings[review_name_key] %}
+      {% assign reviewer_image = section.settings[review_image_key] %}
+      {% assign rating = section.settings[review_rating_key] %}
+      {% assign verified = section.settings[review_verified_key] %}
+      {% if review_text != blank or reviewer_name != blank %}
+        {% assign rating_num = rating | default: 5 %}
+        {% assign empty_stars_start = rating_num | plus: 1 %}
+        <div class="review-slide product-review-slider__slide">
+          <div class="review-card gallery-testimonial gallery-slider-card">
+            <div class="gallery-testimonial-avatar slider-avatar product-review-slider__avatar">
+              {% if reviewer_image %}
+                <img
+                  src="{{ reviewer_image | image_url }}"
+                  alt="{{ reviewer_name }}"
+                  class="slider-review-avatar"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                >
+              {% endif %}
+            </div>
+            <div class="gallery-testimonial-content slider-content">
+              {% if review_text != blank %}
+                <p class="review-text slider-review-text" style="font-style: italic;">{{ review_text | replace: '<p>', '' | replace: '</p>', '' }}</p>
+              {% endif %}
+              <div class="review-meta gallery-testimonial-author slider-author" style="display:flex;align-items:center;gap:8px;">
+                <span class="slider-reviewer-name" style="font-weight:500;">{{ reviewer_name }}</span>
+                {% if verified %}
+                  <span class="verified slider-verified" style="background:#e6efe5;color:#476243;padding:2px 10px;border-radius:16px;font-size:13px;display:inline-flex;align-items:center;gap:4px;">
+                    <svg style="width:14px;height:14px;margin-right:2px;" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="8" r="8" fill="#476243"/><path d="M7 10.46 11.417 6.04l-.942-.943L7 8.575 5.525 7.1l-.942.943L7 10.46Z" fill="#fff"/></svg>
+                    Verified
+                  </span>
+                {% endif %}
+              </div>
+              <div class="review-stars slider-stars" style="margin-top:7px;">
+                {% for star in (1..rating_num) %}
+                  <span style="color:gold;font-size:22px;font-weight:600;display:inline-block;vertical-align:middle;">&#9733;</span>
+                {% endfor %}
+                {% for star in (empty_stars_start..5) %}
+                  <span style="color:#e1e1e1;font-size:22px;font-weight:600;display:inline-block;vertical-align:middle;">&#9733;</span>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+    <div class="product-review-slider__dots" aria-hidden="true"></div>
+  </div>
+</div>
+
+<style>
+  /* Review slider card: avatar fixed size so it never distorts with text length */
+  .product-review-slider .gallery-slider-card {
+    display: flex;
+    gap: 20px;
+    background: #6a6e49;
+    padding: 15px;
+    border-radius: 14px;
+    box-shadow: none;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .product-review-slider .product-review-slider__avatar {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+  }
+  .product-review-slider .product-review-slider__avatar img,
+  .product-review-slider .slider-avatar img {
+    width: 80px !important;
+    height: 80px !important;
+    min-width: 80px;
+    min-height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .product-review-slider .slider-content {
+    flex: 1;
+    min-width: 0;
+  }
+  .gallery-testimonial-author.slider-author {
+    font-family: Montserrat, sans-serif;
+  }
+  .product-review-slider .gallery-testimonial-content p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: #fff;
+    font-family: Montserrat, sans-serif;
+  }
+  .product-review-slider-wrapper {
+    border-radius: 10px;
+  }
+.product-review-slider { position: relative; }
+.product-review-slider__track {
+  overflow: hidden;
+  position: relative;
+  transition: height 0.45s ease;
+}
+.product-review-slider .review-slide,
+.product-review-slider .product-review-slider__slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  outline: none;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+.product-review-slider .review-slide.is-active,
+.product-review-slider .product-review-slider__slide.is-active {
+  position: relative;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+.product-review-slider__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+.product-review-slider__dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: #d1d1d1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.product-review-slider__dots button:hover {
+  background: #b0b0b0;
+}
+.product-review-slider__dots button.is-active {
+  background: #6a6e49;
+}
+@media (max-width: 600px) {
+  .product-review-slider-wrapper {
+    padding: 15px 4px;
+  }
+}
+</style>
+
+<script>
+(function() {
+  function initReviewSliders() {
+    document.querySelectorAll('.product-review-slider[data-review-slider]').forEach(function(wrapper) {
+      var track = wrapper.querySelector('.product-review-slider__track');
+      var slides = wrapper.querySelectorAll('.product-review-slider__slide');
+      var dotsEl = wrapper.querySelector('.product-review-slider__dots');
+      if (!track || !slides.length || !dotsEl) return;
+      var total = slides.length;
+      var current = 0;
+      function updateTrackHeight() {
+        var active = wrapper.querySelector('.product-review-slider__slide.is-active');
+        if (active) track.style.height = active.offsetHeight + 'px';
+      }
+      function goTo(index) {
+        current = (index + total) % total;
+        slides.forEach(function(s, i) { s.classList.toggle('is-active', i === current); });
+        dotsEl.querySelectorAll('button').forEach(function(b, i) { b.classList.toggle('is-active', i === current); });
+        requestAnimationFrame(updateTrackHeight);
+      }
+      slides.forEach(function(s, i) { s.classList.toggle('is-active', i === 0); });
+      updateTrackHeight();
+      if (window.ResizeObserver) {
+        new ResizeObserver(updateTrackHeight).observe(track);
+      }
+      dotsEl.style.display = total <= 1 ? 'none' : 'flex';
+      for (var i = 0; i < total; i++) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        btn.classList.toggle('is-active', i === 0);
+        (function(idx) { btn.addEventListener('click', function() { goTo(idx); }); })(i);
+        dotsEl.appendChild(btn);
+      }
+      var autoplayMs = 5000;
+      var autoplayId = setInterval(function() { goTo(current + 1); }, autoplayMs);
+      wrapper.addEventListener('mouseenter', function() { clearInterval(autoplayId); });
+      wrapper.addEventListener('mouseleave', function() { autoplayId = setInterval(function() { goTo(current + 1); }, autoplayMs); });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initReviewSliders);
+  } else {
+    initReviewSliders();
+  }
+})();
+</script>
+{% endif %}
+
+{% comment %}
+  Review slider uses section settings (Product page > Media > Review slider).
+  Settings: review_1_text, review_1_name, review_1_image, review_1_rating, review_1_verified, and same for 2–5.
+{% endcomment %}
+
+{% comment %}
+  --- SETTINGS / BLOCKS IN main-product.liquid or product section ---
+  Block type: "product_review_slider"
+  Settings per block:
+    - review_text (textarea)
+    - reviewer_name (text)
+    - reviewer_image (image_picker)
+    - review_rating (1-5 range, integer)
+    - review_verified (checkbox)
+{% endcomment %}
+{% comment %} Product Review Slider End {% endcomment %}
+
 </product-gallery>
 

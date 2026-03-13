@@ -127,6 +127,58 @@
             "payment_button_text_color": ""
           }
         },
+        "feature_with_icon_z6WRzn": {
+          "type": "feature_with_icon",
+          "settings": {
+            "text": "Quality Guarantee — Not happy? We'll replace it the same day",
+            "link": "",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/high-quality.png",
+            "icon_width": 24,
+            "background": "#ffffff",
+            "text_color": "#000000",
+            "border_color": ""
+          }
+        },
+        "feature_with_icon_wNmRkN": {
+          "type": "feature_with_icon",
+          "settings": {
+            "text": "Fresh Daily — Blooms sourced every morning",
+            "link": "",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/pure-water.png",
+            "icon_width": 24,
+            "background": "#ffffff",
+            "text_color": "#000000",
+            "border_color": ""
+          }
+        },
+        "feature_with_icon_C4qBzT": {
+          "type": "feature_with_icon",
+          "settings": {
+            "text": "Same-Day Delivery — Order before 1 PM, free delivery above $150",
+            "link": "",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/24-hours.png",
+            "icon_width": 24,
+            "background": "#ffffff",
+            "text_color": "#000000",
+            "border_color": ""
+          }
+        },
+        "feature_with_icon_6J4dMt": {
+          "type": "feature_with_icon",
+          "settings": {
+            "text": "800+ 5-Star Reviews — Loved by Manhattan Beach locals",
+            "link": "",
+            "icon": "none",
+            "custom_icon": "shopify://shop_images/stars.png",
+            "icon_width": 24,
+            "background": "#ffffff",
+            "text_color": "#000000",
+            "border_color": ""
+          }
+        },
         "link_text_nTaKnr": {
           "type": "link_text",
           "disabled": true,
@@ -167,9 +219,9 @@
             "text1": "",
             "show_description": true,
             "title2": "Delivery Instructions",
-            "text2": "<p>We offer high-quality delivery every day of the week! For standard orders placed before 1 pm, we guarantee next-day delivery. Please note that custom or sympathy arrangements may require additional time.</p><p>For any special requests, feel free to call us at (310) 545-4432, or leave specific instructions when placing your order. We're here to make sure everything is just right for you, with careful attention to every detail.!</p>",
+            "text2": "<p>We offer high-quality delivery every day of the week! For standard orders placed before 1 pm, we guarantee same day delivery. Please note that custom or sympathy arrangements may require additional time.</p><p>For any special requests, feel free to call us at (310) 545-4432, or leave specific instructions when placing your order. We're here to make sure everything is just right for you, with careful attention to every detail.!</p>",
             "title3": "FAQ",
-            "text3": "<p><strong>Can I get same-day delivery if I order before 1 PM?</strong>Yes! If you place your order before 1 PM, we can deliver your flowers the same day. We take pride in ensuring your arrangements arrive quickly and beautifully.<br/><br/><strong>How fresh are your flowers?</strong>Our flowers are delivered fresh daily to ensure they’re at their best when they arrive at your door. We guarantee the highest quality and longest-lasting blooms.<br/><br/><strong>Do you offer custom designs?</strong>Yes, we love creating custom designs! If you have something special in mind or want to tailor an arrangement to your needs, let us know, and we’ll craft something unique just for you. Feel free to call us at<strong>310-545-4432</strong>to discuss your ideas.</p>"
+            "text3": "<p><strong>Can I get same-day delivery if I order before 1 PM? </strong>Yes! If you place your order before 1 PM, we can deliver your flowers the same day. We take pride in ensuring your arrangements arrive quickly and beautifully.<br/><br/><strong>How fresh are your flowers? </strong>Our flowers are delivered fresh daily to ensure they’re at their best when they arrive at your door. We guarantee the highest quality and longest-lasting blooms.<br/><br/><strong>Do you offer custom designs? </strong>Yes, we love creating custom designs! If you have something special in mind or want to tailor an arrangement to your needs, let us know, and we’ll craft something unique just for you. Feel free to call us at <strong>310-545-4432 </strong>to discuss your ideas.</p>"
           }
         },
         "accordion_HAwFkK": {
@@ -225,6 +277,10 @@
         "liquid_XJbzcm",
         "inventory_AaCHna",
         "buy_buttons",
+        "feature_with_icon_z6WRzn",
+        "feature_with_icon_wNmRkN",
+        "feature_with_icon_C4qBzT",
+        "feature_with_icon_6J4dMt",
         "link_text_nTaKnr",
         "complementary_products",
         "description",
@@ -235,7 +291,8 @@
         "accordion_fmthqV"
       ],
       "custom_css": [
-        "label#seal-purchase-options-labelSpecificity: (1, 0, 1) {display: none !important;}"
+        "label#seal-purchase-options-labelSpecificity: (1, 0, 1) {display: none !important;}",
+        ".product-info__block-group.feature-badge-list {display: grid; grid-template-columns: repeat(2, 1fr);}"
       ],
       "settings": {
         "color_scheme": "",
@@ -300,56 +357,6 @@
         "image": "shopify://shop_images/IMG_4359.png",
         "padding_top": 60,
         "padding_bottom": 80
-      }
-    },
-    "flower_features_Cz9TDk": {
-      "type": "flower-features",
-      "blocks": {
-        "feature_JDNLAg": {
-          "type": "feature",
-          "settings": {
-            "feature_image": "shopify://shop_images/f1.png",
-            "feature_title": "Full, Lush Arrangements",
-            "feature_text": "Always abundant — no sparse bouquets here."
-          }
-        },
-        "feature_xT8FzU": {
-          "type": "feature",
-          "settings": {
-            "feature_image": "shopify://shop_images/f2.png",
-            "feature_title": "Perfect For Any Occasion",
-            "feature_text": "Weddings, birthdays, sympathy, anniversaries & everyday joy."
-          }
-        },
-        "feature_TxgNzE": {
-          "type": "feature",
-          "settings": {
-            "feature_image": "shopify://shop_images/f31.png",
-            "feature_title": "Handcrafted Design",
-            "feature_text": "Styled with care for every unique order."
-          }
-        },
-        "feature_NtkCrP": {
-          "type": "feature",
-          "settings": {
-            "feature_image": "shopify://shop_images/f41.png",
-            "feature_title": "Fast Delivery",
-            "feature_text": "Timely doorstep delivery for special moments."
-          }
-        }
-      },
-      "block_order": [
-        "feature_JDNLAg",
-        "feature_xT8FzU",
-        "feature_TxgNzE",
-        "feature_NtkCrP"
-      ],
-      "name": "Flower Features Section",
-      "settings": {
-        "main_heading": "Why Our Flowers Stand Out",
-        "main_paragraph": "Premium arrangements handcrafted with care using fresh, long-lasting blooms sourced daily.",
-        "main_image": "shopify://shop_images/image-removebg-preview_19.png",
-        "custom_css_class": "cst-pro-flowers"
       }
     },
     "ss_featured_coll_ahhVTL": {
@@ -441,6 +448,56 @@
         "shop_all_text": "Shop All",
         "shop_all_link": "",
         "custom_css_class": ""
+      }
+    },
+    "flower_features_Cz9TDk": {
+      "type": "flower-features",
+      "blocks": {
+        "feature_JDNLAg": {
+          "type": "feature",
+          "settings": {
+            "feature_image": "shopify://shop_images/f1.png",
+            "feature_title": "Full, Lush Arrangements",
+            "feature_text": "Always abundant — no sparse bouquets here."
+          }
+        },
+        "feature_xT8FzU": {
+          "type": "feature",
+          "settings": {
+            "feature_image": "shopify://shop_images/f2.png",
+            "feature_title": "Perfect For Any Occasion",
+            "feature_text": "Weddings, birthdays, sympathy, anniversaries & everyday joy."
+          }
+        },
+        "feature_TxgNzE": {
+          "type": "feature",
+          "settings": {
+            "feature_image": "shopify://shop_images/f31.png",
+            "feature_title": "Handcrafted Design",
+            "feature_text": "Styled with care for every unique order."
+          }
+        },
+        "feature_NtkCrP": {
+          "type": "feature",
+          "settings": {
+            "feature_image": "shopify://shop_images/f41.png",
+            "feature_title": "Fast Delivery",
+            "feature_text": "Timely doorstep delivery for special moments."
+          }
+        }
+      },
+      "block_order": [
+        "feature_JDNLAg",
+        "feature_xT8FzU",
+        "feature_TxgNzE",
+        "feature_NtkCrP"
+      ],
+      "name": "Flower Features Section",
+      "settings": {
+        "main_heading": "Why Our Flowers Stand Out",
+        "main_paragraph": "Premium arrangements handcrafted with care using fresh, long-lasting blooms sourced daily.",
+        "main_image": "shopify://shop_images/image-removebg-preview_19.png",
+        "custom_css_class": "cst-pro-flowers"
       }
     },
     "blooms_comparison_VHAUVw": {
@@ -940,8 +997,8 @@
   "order": [
     "main",
     "features_section_qdTX3F",
-    "flower_features_Cz9TDk",
     "ss_featured_coll_ahhVTL",
+    "flower_features_Cz9TDk",
     "blooms_comparison_VHAUVw",
     "multi_column_c9gTh7",
     "scrolling_content_qTjdYB",
