@@ -53,7 +53,8 @@
               enable_media_autoplay: section.settings.enable_media_autoplay,
               enable_video_looping: section.settings.enable_video_looping,
               enable_image_zoom: section.settings.enable_image_zoom,
-              max_image_zoom_level: section.settings.max_image_zoom_level -%}
+              max_image_zoom_level: section.settings.max_image_zoom_level,
+              review_slider_source: section.settings.review_slider_source -%}
         {%- endif -%}
 
         {%- render 'product-info', 
@@ -436,6 +437,17 @@ quick buy information in a template, that will be extracted in JS, which ensures
     {
       "type": "header",
       "content": "t:sections.main_product.review_slider_header"
+    },
+    {
+      "type": "select",
+      "id": "review_slider_source",
+      "label": "t:sections.main_product.review_slider_source_label",
+      "info": "t:sections.main_product.review_slider_source_info",
+      "options": [
+        { "value": "settings", "label": "t:sections.main_product.review_slider_source_settings" },
+        { "value": "metafield", "label": "t:sections.main_product.review_slider_source_metafield" }
+      ],
+      "default": "settings"
     },
     {
       "type": "paragraph",

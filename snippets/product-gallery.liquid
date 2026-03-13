@@ -367,22 +367,103 @@ only way to do it on Shopify right now.
   {% endif %}
 {% endfor %}
 {% comment %} Product Review Slider Start {% endcomment %}
+{% assign review_slider_source = review_slider_source | default: 'settings' %}
 {% assign review_slider_has_slides = false %}
-{% for i in (1..5) %}
-  {% assign review_text_key = 'review_' | append: i | append: '_text' %}
-  {% assign review_name_key = 'review_' | append: i | append: '_name' %}
-  {% assign rt = section.settings[review_text_key] %}
-  {% assign rn = section.settings[review_name_key] %}
-  {% if rt != blank or rn != blank %}
+{% if review_slider_source == 'metafield' %}
+  {% assign metafield_reviews = product.metafields.custom.customer_reviews.value %}
+  {% if metafield_reviews and metafield_reviews.size > 0 %}
     {% assign review_slider_has_slides = true %}
-    {% break %}
   {% endif %}
-{% endfor %}
+{% else %}
+  {% for i in (1..5) %}
+    {% assign review_text_key = 'review_' | append: i | append: '_text' %}
+    {% assign review_name_key = 'review_' | append: i | append: '_name' %}
+    {% assign rt = section.settings[review_text_key] %}
+    {% assign rn = section.settings[review_name_key] %}
+    {% if rt != blank or rn != blank %}
+      {% assign review_slider_has_slides = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
 
 {% if review_slider_has_slides %}
 <div class="product-review-slider-wrapper">
   <div class="product-review-slider" data-review-slider role="region" aria-label="{{ 'accessibility.carousel' | t | default: 'Review slider' }}">
     <div class="product-review-slider__track">
+    {% if review_slider_source == 'metafield' %}
+      {% assign metafield_reviews = product.metafields.custom.customer_reviews.value %}
+      {% for review in metafield_reviews %}
+        {% comment %} Metaobject "Reviews" fields: Name, Text, Image, Rating - access by key (e.g. name, text, image, rating) {% endcomment %}
+        {% assign review_text = review.text | default: review.review_text %}
+        {% if review_text == blank and review.fields.text.value != blank %}
+          {% assign review_text = review.fields.text.value %}
+        {% endif %}
+        {% assign reviewer_name = review.name | default: review.reviewer_name %}
+        {% if reviewer_name == blank and review.fields.name.value != blank %}
+          {% assign reviewer_name = review.fields.name.value %}
+        {% endif %}
+        {% assign reviewer_image = review.image | default: review.fields.image.value %}
+        {% assign rating_raw = review.rating.value | default: review.fields.rating.value %}
+        {% comment %}
+          Shopify Rating metafield can be exposed as a rating object with:
+          - rating_raw.rating: score (often 0–1)
+          - rating_raw.scale_max: maximum of the scale (for us, 5)
+          We convert it to a 1–5 integer for the stars.
+        {% endcomment %}
+         
+        {% assign rating_num = 5 %}
+        {% if rating_raw != blank %}
+          {% assign r = rating_raw.rating | default: rating_raw.value | default: rating_raw %}
+          {% assign rating_num = r | round %}
+          {% if rating_num == 0 and rating_raw.scale_max != blank %}
+            {% assign rating_num = r | times: rating_raw.scale_max | round %}
+          {% endif %}
+        {% endif %}
+        {% if rating_num < 1 %}
+          {% assign rating_num = 1 %}
+        {% endif %}
+        {% if rating_num > 5 %}
+          {% assign rating_num = 5 %}
+        {% endif %}
+     
+        {% if review_text != blank or reviewer_name != blank %}
+          {% assign empty_stars_start = rating_num | plus: 1 %}
+          <div class="review-slide product-review-slider__slide">
+            <div class="review-card gallery-testimonial gallery-slider-card">
+              <div class="gallery-testimonial-avatar slider-avatar product-review-slider__avatar">
+                {% if reviewer_image %}
+                  <img
+                    src="{{ reviewer_image | image_url: width: 160 }}"
+                    alt="{{ reviewer_name | escape }}"
+                    class="slider-review-avatar"
+                    width="80"
+                    height="80"
+                    loading="lazy"
+                  >
+                {% endif %}
+              </div>
+              <div class="gallery-testimonial-content slider-content">
+                {% if review_text != blank %}
+                  <p class="review-text slider-review-text" style="font-style: italic;">{{ review_text | strip_html }}</p>
+                {% endif %}
+                <div class="review-meta gallery-testimonial-author slider-author" style="display:flex;align-items:center;gap:8px;">
+                  <span class="slider-reviewer-name" style="font-weight:500;">{{ reviewer_name }}</span>
+                </div>
+                <div class="review-stars slider-stars" style="margin-top:7px;">
+                  {% for star in (1..rating_num) %}
+                    <span style="color:gold;font-size:22px;font-weight:600;display:inline-block;vertical-align:middle;">&#9733;</span>
+                  {% endfor %}
+                  {% for star in (empty_stars_start..5) %}
+                    <span style="color:#e1e1e1;font-size:22px;font-weight:600;display:inline-block;vertical-align:middle;">&#9733;</span>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% else %}
     {% for i in (1..5) %}
       {% assign review_text_key = 'review_' | append: i | append: '_text' %}
       {% assign review_name_key = 'review_' | append: i | append: '_name' %}
@@ -403,7 +484,7 @@ only way to do it on Shopify right now.
               {% if reviewer_image %}
                 <img
                   src="{{ reviewer_image | image_url }}"
-                  alt="{{ reviewer_name }}"
+                  alt="{{ reviewer_name | strip_html | escape }}"
                   class="slider-review-avatar"
                   width="80"
                   height="80"
@@ -416,7 +497,7 @@ only way to do it on Shopify right now.
                 <p class="review-text slider-review-text" style="font-style: italic;">{{ review_text | replace: '<p>', '' | replace: '</p>', '' }}</p>
               {% endif %}
               <div class="review-meta gallery-testimonial-author slider-author" style="display:flex;align-items:center;gap:8px;">
-                <span class="slider-reviewer-name" style="font-weight:500;">{{ reviewer_name }}</span>
+                <span class="slider-reviewer-name" style="font-weight:500;">{{ reviewer_name | replace: '<p>', '' | replace: '</p>', '' }}</span>
                 {% if verified %}
                   <span class="verified slider-verified" style="background:#e6efe5;color:#476243;padding:2px 10px;border-radius:16px;font-size:13px;display:inline-flex;align-items:center;gap:4px;">
                     <svg style="width:14px;height:14px;margin-right:2px;" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="8" r="8" fill="#476243"/><path d="M7 10.46 11.417 6.04l-.942-.943L7 8.575 5.525 7.1l-.942.943L7 10.46Z" fill="#fff"/></svg>
@@ -437,6 +518,7 @@ only way to do it on Shopify right now.
         </div>
       {% endif %}
     {% endfor %}
+    {% endif %}
     </div>
     <div class="product-review-slider__dots" aria-hidden="true"></div>
   </div>
