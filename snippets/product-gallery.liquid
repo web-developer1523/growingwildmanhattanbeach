@@ -431,18 +431,18 @@ only way to do it on Shopify right now.
           {% assign empty_stars_start = rating_num | plus: 1 %}
           <div class="review-slide product-review-slider__slide">
             <div class="review-card gallery-testimonial gallery-slider-card">
-              <div class="gallery-testimonial-avatar slider-avatar product-review-slider__avatar">
-                {% if reviewer_image %}
-                  <img
-                    src="{{ reviewer_image | image_url: width: 160 }}"
-                    alt="{{ reviewer_name | escape }}"
-                    class="slider-review-avatar"
-                    width="80"
-                    height="80"
-                    loading="lazy"
-                  >
-                {% endif %}
-              </div>
+              {% if reviewer_image %}
+                <div class="gallery-testimonial-avatar slider-avatar product-review-slider__avatar">
+                    <img
+                      src="{{ reviewer_image | image_url: width: 160 }}"
+                      alt="{{ reviewer_name | escape }}"
+                      class="slider-review-avatar"
+                      width="80"
+                      height="80"
+                      loading="lazy"
+                    >
+                </div>
+              {% endif %}
               <div class="gallery-testimonial-content slider-content">
                 {% if review_text != blank %}
                   <p class="review-text slider-review-text" style="font-style: italic;">{{ review_text | strip_html }}</p>
@@ -480,18 +480,20 @@ only way to do it on Shopify right now.
         {% assign empty_stars_start = rating_num | plus: 1 %}
         <div class="review-slide product-review-slider__slide">
           <div class="review-card gallery-testimonial gallery-slider-card">
-            <div class="gallery-testimonial-avatar slider-avatar product-review-slider__avatar">
-              {% if reviewer_image %}
-                <img
-                  src="{{ reviewer_image | image_url }}"
-                  alt="{{ reviewer_name | strip_html | escape }}"
-                  class="slider-review-avatar"
-                  width="80"
-                  height="80"
-                  loading="lazy"
-                >
-              {% endif %}
-            </div>
+            {% if reviewer_image %}
+              <div class="gallery-testimonial-avatar slider-avatar product-review-slider__avatar">
+                
+                  <img
+                    src="{{ reviewer_image | image_url }}"
+                    alt="{{ reviewer_name | strip_html | escape }}"
+                    class="slider-review-avatar"
+                    width="80"
+                    height="80"
+                    loading="lazy"
+                  >
+                
+              </div>
+            {% endif %}
             <div class="gallery-testimonial-content slider-content">
               {% if review_text != blank %}
                 <p class="review-text slider-review-text" style="font-style: italic;">{{ review_text | replace: '<p>', '' | replace: '</p>', '' }}</p>
@@ -526,10 +528,14 @@ only way to do it on Shopify right now.
 
 <style>
   /* Review slider card: avatar fixed size so it never distorts with text length */
+  .gallery-testimonial-author{
+    color: #000;
+    font-size:14px;
+  }
   .product-review-slider .gallery-slider-card {
     display: flex;
     gap: 20px;
-    background: #6a6e49;
+    background: #f8f5f0;
     padding: 15px;
     border-radius: 14px;
     box-shadow: none;
@@ -564,7 +570,7 @@ only way to do it on Shopify right now.
   .product-review-slider .gallery-testimonial-content p {
     font-size: 16px;
     line-height: 1.65;
-    color: #fff;
+    color: #000;
     font-family: Montserrat, sans-serif;
   }
   .product-review-slider-wrapper {
